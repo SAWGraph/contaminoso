@@ -1,4 +1,3 @@
-@prefix : <http://sawgraph.spatialai.org/v1/contaminoso#> .
 @prefix coso: <http://sawgraph.spatialai.org/v1/contaminoso#> .
 @prefix pfas: <http://sawgraph.spatialai.org/v1/pfas#> .
 

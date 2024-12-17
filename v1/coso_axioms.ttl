@@ -9,7 +9,7 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix stad: <http://sawgraph.spatialai.org/v1/stad#> .
+@prefix stad: <http://purl.org/spatialai/stad/v2/core/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 
 @base <http://sawgraph.spatialai.org/v1/contaminoso#> . 
