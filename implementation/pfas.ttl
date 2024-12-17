@@ -74,37 +74,36 @@ dcterms:title rdf:type owl:AnnotationProperty .
 #    Classes
 #################################################################
 
-### included here for reference purposes only in Protege; defined in Geosparql
-###  http://www.opengis.net/ont/geosparql#Feature
-geo:Feature rdf:type owl:Class .
 
-### included here for reference purposes only in Protege; defined in Geosparql
-###  http://www.opengis.net/ont/geosparql#Geometry
-geo:Geometry rdf:type owl:Class .
 
-pfas:QuantitationLimit rdf:type owl:Class ;
-    rdfs:subClassOf coso:ResultQualifier.
-
-pfas:MethodDetectionLimit rdf:type owl:Class ;
-    rdfs:subClassOf coso:ResultQualifier.
-
+## Measurement 
 
 pfas:SinglePFASConcentrationMeasurement rdf:type owl:Class ;
-    rdfs:subClassOf coso:SingleContaminantMeasurement.
+    rdfs:subClassOf coso:SingleContaminantMeasurement,
+        coso:ContaminantConcentrationMeasurement.
 
-pfas:AnalysisMethod rdf:type owl:Class . 
+pfas:AggregatePFASConcentrationMeasurement rdf:type owl:Class ; 
+    rdfs:subClassOf coso:AggregateContaminantMeasurement,
+        coso:ContaminantConcentrationMeasurement.
+
+pfas:PFASMaximumConcentrationAggregate rdf:type owl:Class;
+    rdfs:subClassOf pfas:AggregatePFASConcentrationMeasurement .
+
+pfas:PFASMinimumConcentrationAggregate rdf:type owl:Class;
+    rdfs:subClassOf pfas:AggregatePFASConcentrationMeasurement .
+
+pfas:PFASSummedConcentrationAggregate rdf:type owl:Class;
+    rdfs:subClassOf pfas:AggregatePFASConcentrationMeasurement .
 					   
+pfas:SinglePFASVolumeMeasurement rdf:type owl:Class;
+    rdfs:subClassOf coso:SingleContaminantMeasurement,
+        coso:ContaminantVolumeMeasurement .
 
-pfas:PFAS-ConcentrationMeasurement rdf:type owl:Class ;
-    rdfs:subClassOf coso:ContaminantMeasurement .
+pfas:AggregatePFASVolumeMeasurement rdf:type owl:Class;
+    rdfs:subClassOf coso:AggregateContaminantMeasurement ;
+            coso:ContaminantVolumeMeasurement. 
 
-pfas:PFAS-VolumeMeasurement  rdf:type owl:Class;
-    rdfs:subClassOf coso:ContaminantVolumeMeasurement;
-    rdfs:subClassOf coso:ContaminantMeasurement.
-
-pfas:AggregatePFASAmountMeasurement rdf:type owl:Class;
-    rdfs:subClassOf coso:AggregateContaminantMeasurement .
-
+## Observation
 pfas:PFAS-ContaminantObservation rdf:type owl:Class ;
     rdfs:subClassOf coso:SampleContaminantObservation .
 
@@ -113,7 +112,18 @@ pfas:PFAS-ReleaseContaminantObservation rdf:type owl:Class ;
 
 pfas:PFAS-SampleContaminantObservation rdf:type owl:Class ;
     rdfs:subClassOf coso:SampleContaminantObservation .
+
+## Other
 					   
+pfas:AnalysisMethod rdf:type owl:Class . 
+
+pfas:QuantitationLimit rdf:type owl:Class ;
+    rdfs:subClassOf coso:ResultQualifier.
+
+pfas:MethodDetectionLimit rdf:type owl:Class ;
+    rdfs:subClassOf coso:ResultQualifier.
+
+
 #################################################################
 #    General axioms
 #################################################################

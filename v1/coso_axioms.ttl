@@ -1,0 +1,55 @@
+@prefix coso: <http://sawgraph.spatialai.org/v1/contaminoso#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix coso: <http://sawgraph.spatialai.org/v1/contaminoso#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix stad: <http://sawgraph.spatialai.org/v1/stad#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+
+@base <http://sawgraph.spatialai.org/v1/contaminoso#> . 
+
+
+# Classes
+
+## Main class disjointness
+
+[] rdf:type owl:AllDisjointClasses ;
+    owl:members (coso:ContaminantMeasurement coso:ContaminantObservation coso:Feature coso:MaterialSample coso:SampleMaterialType coso:ResultQualifier coso:Substance) .
+
+## Measurement
+
+
+coso:SingleContaminantMeasurement owl:disjointWith coso:AggregateContaminantMeasurement.
+
+coso:ContaminantConcentrationMeasurement owl:disjointWith coso:ContaminantVolumeMeasurement .
+
+## Observation
+
+coso:SampleContaminantObservation owl:disjointWith coso:ReleaseContaminantObservation .
+
+## Feature 
+
+#no explicit disjointness between SampledFeature and ReleaseFeature or between coso:Feature and coso:Point
+
+## Observable Property
+
+coso:VolumeQuantityKind owl:disjointWith coso:ConcentrationQuantityKind. 
+
+# Object Properties
+
+[] rdf:type owl:Restriction;
+    owl:onProperty coso:analyzedSample;
+    owl:qualifiedCardinality 1.  
+
+coso:observedAtSamplePoint owl:propertyChainAxiom (coso:analyzedSample coso:fromSamplePoint) .
+
+
+coso:measurementValue owl:propertyChainAxiom (qudt:quantityValue qudt:numericValue) .
+
+coso:measurementUnit owl:propertyChainAxiom (qudt:quantityValue qudt:unit) .
