@@ -1,0 +1,82 @@
+@prefix coso: <http://sawgraph.spatialai.org/v1/contaminoso#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix coso: <http://sawgraph.spatialai.org/v1/contaminoso#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix stad: <http://sawgraph.spatialai.org/v1/stad#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@base <http://sawgraph.spatialai.org/v1/contaminoso#> . 
+
+<http://sawgraph.spatialai.org/v1/contaminoso#> rdf:type owl:Ontology ;
+                                                 owl:versionIRI <http://sawgraph.spatialai.org/v1/contaminoso#> ;
+                                                 dcterms:created "2024-02-16"@en-us ;
+                                                 dcterms:creator <http://orcid.org/0000-0002-5331-5052> ,
+                                                                 <http://orcid.org/0000-0003-3547-8058> ;
+                                                 dcterms:description "the Contaminant Observation and Samples Ontology (ContaminOSO) developed as part of the AIKnowsPFAS and SAWGraph projects."@en-us ;
+                                                 dcterms:issued "2024-02-16"^^xsd:date ;
+                                                 dcterms:modified "2024-02-16"^^xsd:date ;
+                                                 dcterms:publisher <http://spatialai.org> ;
+                                                 dcterms:source "https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso.ttl"^^<xsd:anyURI> ;
+                                                 dcterms:title "Contaminant Observation and Samples Ontology (ContaminOSO)"@en-us ;
+                                                 rdfs:label "Contaminant Observation and Samples Ontology (ContaminOSO)"@en-us ;
+                                                 owl:versionInfo "1"@en-us .
+
+# Classes
+
+## Quantity
+###  http://sawgraph.spatialai.org/v1/stad#Quantity
+stad:Quantity rdf:type owl:Class .
+
+###  http://sawgraph.spatialai.org/v1/stad#StatisticalAggregateData
+stad:StatisticalAggregateData rdf:type owl:Class ;
+                                    rdfs:subClassOf stad:Quantity .
+
+###  http://sawgraph.spatialai.org/v1/stad#SingleData
+stad:SingleData rdf:type owl:Class ;
+                                    rdfs:subClassOf stad:Quantity .
+
+coso:SingleContaminantObservation rdfs:subClassOf stad:SingleData . 
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#AggregateContaminantMeasurement
+coso:AggregateContaminantMeasurement rdfs:subClassOf stad:StatisticalAggregateData .
+
+coso:ContaminantMeasurement rdfs:subClassOf stad:Quantity. 
+
+
+## quantity kind
+stad:QuantityKind rdf:type owl:Class .
+
+
+###  http://sawgraph.spatialai.org/v1/stad#StatisticalQuantityKind
+stad:StatisticalQuantityKind rdf:type owl:Class ;
+                        rdfs:subClassOf stad:QuantityKind . 
+
+coso:VolumeQuantityKind rdfs:subClassOf stad:StatisticalQuantityKind.
+
+coso:ConcentrationQuantityKind rdfs:subClassOf stad:StatisticalQuantityKind.
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#MaximumConcentration
+coso:MaximumConcentration rdf:type owl:Class ;
+                          rdfs:subClassOf stad:StatisticalQuantityKind .
+
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#MinimumConcentration
+coso:MinimumConcentration rdf:type owl:Class ;
+                          rdfs:subClassOf stad:StatisticalQuantityKind .
+
+# Object Properties
+
+qudt:quantityKind rdf:type owl:ObjectProperty.
+
+stad:hasTransformationKind rdf:type owl:ObjectProperty ;
+            rdfs:domain stad:StatisticalAggregateData ; 
+            rdfs:range stad:DataTransformation. 
+
+
+
