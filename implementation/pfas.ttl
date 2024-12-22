@@ -104,13 +104,13 @@ pfas:AggregatePFASVolumeMeasurement rdf:type owl:Class;
 
 ## Observation
 pfas:PFAS-ContaminantObservation rdf:type owl:Class ;
-    rdfs:subClassOf coso:SampleContaminantObservation .
+    rdfs:subClassOf coso:ContaminantSampleObservation .
 
-pfas:PFAS-ReleaseContaminantObservation rdf:type owl:Class ;
-    rdfs:subClassOf coso:ReleaseContaminantObservation .
+pfas:PFAS-ContaminantReleaseObservation rdf:type owl:Class ;
+    rdfs:subClassOf coso:ContaminantReleaseObservation .
 
-pfas:PFAS-SampleContaminantObservation rdf:type owl:Class ;
-    rdfs:subClassOf coso:SampleContaminantObservation .
+pfas:PFAS-ContaminantSampleObservation rdf:type owl:Class ;
+    rdfs:subClassOf coso:ContaminantSampleObservation .
 
 ## Other
 					   

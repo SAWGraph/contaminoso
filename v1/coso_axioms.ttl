@@ -31,7 +31,7 @@ coso:ContaminantConcentrationMeasurement owl:disjointWith coso:ContaminantVolume
 
 ## Observation
 
-coso:SampleContaminantObservation owl:disjointWith coso:ReleaseContaminantObservation .
+coso:ContaminantSampleObservation owl:disjointWith coso:ContaminantReleaseObservation .
 
 ## Feature 
 

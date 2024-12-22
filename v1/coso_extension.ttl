@@ -40,22 +40,38 @@ coso:ContaminantMeasurement rdfs:subClassOf stad:Quantity.
 stad:QuantityKind rdf:type owl:Class .
 
 
+### Stad extension
+
+stad:VolumeQuantityKind rdf:type owl:Class ;
+    rdfs:subClassOf stad:QuantityKind. 
+
+stad:ConcentrationQuantityKind rdf:type owl:Class ;
+    rdfs:subClassOf stad:QuantityKind. 
+
+
+
 ###  http://sawgraph.spatialai.org/v1/stad#StatisticalQuantityKind
 stad:StatisticalQuantityKind rdf:type owl:Class ;
                         rdfs:subClassOf stad:QuantityKind . 
 
-coso:VolumeQuantityKind rdfs:subClassOf stad:StatisticalQuantityKind.
+coso:ContaminantVolumeQuantityKind rdfs:subClassOf stad:VolumeQuantityKind.
 
-coso:ConcentrationQuantityKind rdfs:subClassOf stad:StatisticalQuantityKind.
+coso:ContaminantConcentrationQuantityKind rdfs:subClassOf stad:ConcentrationQuantityKind.
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#MaximumConcentration
-coso:MaximumConcentration rdf:type owl:Class ;
-                          rdfs:subClassOf stad:StatisticalQuantityKind .
+coso:MaximumContaminationConcentration rdf:type owl:NamedIndividual ;
+                          rdf:type stad:StatisticalQuantityKind ;
+                          rdf:type coso:ContaminantConcentrationQuantityKind.
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#MinimumConcentration
-coso:MinimumConcentration rdf:type owl:Class ;
-                          rdfs:subClassOf stad:StatisticalQuantityKind .
+coso:MinimumContaminationConcentration rdf:type owl:NamedIndividual ;
+                          rdf:type stad:StatisticalQuantityKind ;
+                          rdf:type coso:ContaminantConcentrationQuantityKind.
+
+
+#summed contaminant concentration 
+
 
 # Object Properties
 

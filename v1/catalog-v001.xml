@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://sawgraph.spatialai.org/v1/pfas#" uri="file:/C:/Users/kschw/Documents/SAWGraph/contaminoso/implementation/pfas.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/spatialai/stad/v2/core/" uri="https://raw.githubusercontent.com/theSKAILab/STAD/refs/heads/main/ttl/STAD.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.opengis.net/ont/geosparql/1.1" uri="https://opengeospatial.github.io/ogc-geosparql/geosparql11/geo.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://sawgraph.spatialai.org/v1/contaminoso#" uri="coso_extension.ttl"/>
     <uri id="Imports Wizard Entry" name="http://sawgraph.spatialai.org/v1/contaminoso#" uri="coso_extension.ttl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
 </catalog>
