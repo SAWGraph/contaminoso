@@ -236,16 +236,12 @@ coso:MaterialSample rdf:type owl:Class ;
                     rdfs:subClassOf sosa:Sample .
 
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#MaterialType
-coso:MaterialType rdf:type owl:Class .
-
-
 ###  http://sawgraph.spatialai.org/v1/contaminoso#MaximumConcentration
-coso:MaximumConcentration rdf:type owl:Class .
+coso:MaximumContaminationConcentration rdf:type owl:Class .
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#MinimumConcentration
-coso:MinimumConcentration rdf:type owl:Class .
+coso:MinimumContaminationConcentration rdf:type owl:Class .
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#MonitoredFeature

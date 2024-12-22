@@ -39,7 +39,7 @@ coso:ContaminantSampleObservation owl:disjointWith coso:ContaminantReleaseObserv
 
 ## Observable Property
 
-coso:VolumeQuantityKind owl:disjointWith coso:ConcentrationQuantityKind. 
+coso:ContaminantVolumeQuantityKind owl:disjointWith coso:ContaminantConcentrationQuantityKind. 
 
 # Object Properties
 
