@@ -1,0 +1,28 @@
+### Extracted from https://github.com/qudt/qudt-public-repo/blob/main/src/main/rdf/vocab/quantitykinds/VOCAB_QUDT-QUANTITY-KINDS-ALL.ttl
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix constant: <http://qudt.org/vocab/constant/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qkdv: <http://qudt.org/vocab/dimensionvector/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix si-quantity: <https://si-digital-framework.org/SI/quantities/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+
+<http://qudt.org/2.1/vocab/quantitykind>
+  a owl:Ontology ;
+  owl:imports <http://qudt.org/2.1/schema/facade/qudt> ;
+  owl:imports <http://qudt.org/2.1/vocab/dimensionvector> ;
+  owl:versionIRI <http://qudt.org/2.1/vocab/quantitykind> ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/vocab/quantitykind> ;
+  rdfs:label "QUDT Quantity Kind Vocabulary Version $$QUDT_VERSION$$" ;
+  vaem:hasGraphMetadata vaem:GMD_QUDT-QUANTITY-KINDS-ALL .
+

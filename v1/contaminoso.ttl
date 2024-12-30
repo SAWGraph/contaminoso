@@ -88,6 +88,10 @@ coso:analyzedSample rdf:type owl:ObjectProperty ;
                     rdfs:domain coso:ContaminantSampleObservation ;
                     rdfs:range coso:MaterialSample .
 
+coso:analyzedBy rdf:type owl:ObjectProperty ;
+                    rdfs:domain coso:ContaminantSampleObservation ;
+                    rdfs:range prov:Organization .
+
 coso:fromPoint rdf:type owl:ObjectProperty ;
                     rdfs:range coso:Point. 
 
@@ -148,6 +152,11 @@ coso:ofSampleMaterialType rdf:type owl:ObjectProperty ;
 coso:ofSubstance rdf:type owl:ObjectProperty ;
                  rdfs:domain coso:ContaminantObservation ;
                  rdfs:range [owl:intersectionOf (coso:Substance coso:SubstanceCollection)].
+
+
+coso:pointFromFeature rdf:type owl:ObjectProperty ;
+                rdfs:domain coso:Point ;
+                rdfs:range coso:Feature .
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#sampledFeature
@@ -301,7 +310,12 @@ coso:SingleContaminantMeasurement rdf:type owl:Class ;
 coso:Substance rdf:type owl:Class .
 
 coso:SubstanceCollection rdf:type owl:Class ;
-    owl:allValuesFrom coso:Substance . 
+    rdf:type [ rdf:type owl:Restriction ;
+    owl:onProperty rdfs:member ;
+    owl:allValuesFrom coso:Substance 
+    ].
+    
+    
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantVolumeQuantityKind

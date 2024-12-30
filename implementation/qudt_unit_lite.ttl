@@ -1,0 +1,138 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prefix: <http://qudt.org/vocab/prefix/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qkdv: <http://qudt.org/vocab/dimensionvector/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix si-unit: <https://si-digital-framework.org/SI/units/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sou: <http://qudt.org/vocab/sou/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+
+<http://qudt.org/2.1/vocab/unit>
+  a owl:Ontology ;
+  owl:imports <http://qudt.org/2.1/schema/facade/qudt> ;
+  owl:imports <http://qudt.org/2.1/vocab/prefix> ;
+  owl:imports <http://qudt.org/2.1/vocab/quantitykind> ;
+  owl:imports <http://qudt.org/2.1/vocab/sou> ;
+  owl:versionIRI <http://qudt.org/2.1/vocab/unit> ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/vocab/unit> ;
+  rdfs:label "QUDT VOCAB Units of Measure Release $$QUDT_VERSION$$" ;
+  vaem:hasGraphMetadata vaem:GMD_QUDT-UNITS-ALL .
+
+
+unit:NanoGM-PER-L
+  a qudt:Unit ;
+  qudt:applicableSystem sou:CGS ;
+  qudt:applicableSystem sou:CGS-EMU ;
+  qudt:applicableSystem sou:CGS-GAUSS ;
+  qudt:applicableSystem sou:SI ;
+  qudt:conversionMultiplier 0.000000001 ;
+  qudt:conversionMultiplierSN 1.0E-9 ;
+  qudt:hasDimensionVector qkdv:A0E0L-3I0M1H0T0D0 ;
+  qudt:hasQuantityKind quantitykind:Density ;
+  qudt:hasQuantityKind quantitykind:MassConcentration ;
+  qudt:hasQuantityKind quantitykind:MassDensity ;
+  qudt:symbol "ng/L" ;
+  qudt:ucumCode "ng.L-1"^^qudt:UCUMcs ;
+  qudt:ucumCode "ng/L"^^qudt:UCUMcs ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/vocab/unit> ;
+  rdfs:label "Nanogram per Liter"@nl ;
+  rdfs:label "Nanogram per Litre"@en .
+
+unit:NanoGM-PER-MicroL
+  a qudt:Unit ;
+  qudt:applicableSystem sou:CGS ;
+  qudt:applicableSystem sou:CGS-EMU ;
+  qudt:applicableSystem sou:CGS-GAUSS ;
+  qudt:applicableSystem sou:SI ;
+  qudt:conversionMultiplier 0.001 ;
+  qudt:conversionMultiplierSN 1.0E-3 ;
+  qudt:hasDimensionVector qkdv:A0E0L-3I0M1H0T0D0 ;
+  qudt:hasQuantityKind quantitykind:Density ;
+  qudt:hasQuantityKind quantitykind:MassDensity ;
+  qudt:symbol "ng/ÂµL" ;
+  qudt:ucumCode "ng.uL-1"^^qudt:UCUMcs ;
+  qudt:ucumCode "ng/uL"^^qudt:UCUMcs ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
+  rdfs:label "Nanogram per Microlitre"@en ;
+.
+
+unit:MilliGM-PER-L
+  a qudt:Unit ;
+  dcterms:description "0.000001-fold of the SI base unit kilogram divided by the unit litre"^^rdf:HTML ;
+  qudt:applicableSystem sou:CGS ;
+  qudt:applicableSystem sou:CGS-EMU ;
+  qudt:applicableSystem sou:CGS-GAUSS ;
+  qudt:applicableSystem sou:SI ;
+  qudt:conversionMultiplier 0.001 ;
+  qudt:conversionMultiplierSN 1.0E-3 ;
+  qudt:hasDimensionVector qkdv:A0E0L-3I0M1H0T0D0 ;
+  qudt:hasQuantityKind quantitykind:Density ;
+  qudt:hasQuantityKind quantitykind:MassConcentration ;
+  qudt:hasQuantityKind quantitykind:MassDensity ;
+  qudt:iec61360Code "0112/2///62720#UAA827" ;
+  qudt:plainTextDescription "0.000001-fold of the SI base unit kilogram divided by the unit litre" ;
+  qudt:symbol "mg/L" ;
+  qudt:ucumCode "mg.L-1"^^qudt:UCUMcs ;
+  qudt:ucumCode "mg/L"^^qudt:UCUMcs ;
+  qudt:uneceCommonCode "M1" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
+  rdfs:label "Milligram per Liter"@en-US ;
+  rdfs:label "Milligram per Liter"@nl ;
+  rdfs:label "Milligram per Litre"@en ;
+.
+
+unit:MicroGM-PER-KiloGM
+  a qudt:Unit ;
+  dcterms:description "mass ratio as 0.000000001-fold of the SI base unit kilogram divided by the SI base unit kilogram"^^rdf:HTML ;
+  qudt:applicableSystem sou:CGS ;
+  qudt:applicableSystem sou:CGS-EMU ;
+  qudt:applicableSystem sou:CGS-GAUSS ;
+  qudt:applicableSystem sou:SI ;
+  qudt:conversionMultiplier 0.000000001 ;
+  qudt:conversionMultiplierSN 1.0E-9 ;
+  qudt:hasDimensionVector qkdv:A0E0L0I0M0H0T0D1 ;
+  qudt:hasQuantityKind quantitykind:MassRatio ;
+  qudt:iec61360Code "0112/2///62720#UAA083" ;
+  qudt:plainTextDescription "mass ratio as 0.000000001-fold of the SI base unit kilogram divided by the SI base unit kilogram" ;
+  qudt:qkdvDenominator qkdv:A0E0L0I0M1H0T0D0 ;
+  qudt:qkdvNumerator qkdv:A0E0L0I0M1H0T0D0 ;
+  qudt:symbol "Î¼g/kg" ;
+  qudt:ucumCode "ug.kg-1"^^qudt:UCUMcs ;
+  qudt:ucumCode "ug/kg"^^qudt:UCUMcs ;
+  qudt:uneceCommonCode "J33" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
+  rdfs:label "Microgram per Kilogram"@en ;
+.
+
+unit:MicroGM-PER-L
+  a qudt:Unit ;
+  dcterms:description "0.000000001-fold of the SI base unit kilogram divided by the unit litre"^^rdf:HTML ;
+  qudt:applicableSystem sou:CGS ;
+  qudt:applicableSystem sou:CGS-EMU ;
+  qudt:applicableSystem sou:CGS-GAUSS ;
+  qudt:applicableSystem sou:SI ;
+  qudt:conversionMultiplier 0.000001 ;
+  qudt:conversionMultiplierSN 1.0E-6 ;
+  qudt:hasDimensionVector qkdv:A0E0L-3I0M1H0T0D0 ;
+  qudt:hasQuantityKind quantitykind:Density ;
+  qudt:hasQuantityKind quantitykind:MassConcentration ;
+  qudt:hasQuantityKind quantitykind:MassDensity ;
+  qudt:iec61360Code "0112/2///62720#UAA084" ;
+  qudt:plainTextDescription "0.000000001-fold of the SI base unit kilogram divided by the unit litre" ;
+  qudt:symbol "Î¼g/L" ;
+  qudt:ucumCode "ug.L-1"^^qudt:UCUMcs ;
+  qudt:ucumCode "ug/L"^^qudt:UCUMcs ;
+  qudt:uneceCommonCode "H29" ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
+  rdfs:label "Microgram per Liter"@en-US ;
+  rdfs:label "Microgram per Liter"@nl ;
+  rdfs:label "Microgram per Litre"@en ;
+.

@@ -114,7 +114,8 @@ pfas:PFAS-ContaminantSampleObservation rdf:type owl:Class ;
 
 ## Other
 					   
-pfas:AnalysisMethod rdf:type owl:Class . 
+pfas:AnalysisMethod rdf:type owl:Class ;
+    rdfs:subClassOf coso:AnalysisMethod . 
 
 pfas:QuantitationLimit rdf:type owl:Class ;
     rdfs:subClassOf coso:ResultQualifier.
