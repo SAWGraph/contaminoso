@@ -20,7 +20,7 @@
 ## Main class disjointness
 
 [] rdf:type owl:AllDisjointClasses ;
-    owl:members (coso:ContaminantMeasurement coso:ContaminantObservation coso:Feature coso:MaterialSample coso:SampleMaterialType coso:ResultQualifier coso:Substance) .
+    owl:members (coso:ContaminantMeasurement coso:ContaminantObservation coso:ContaminationProperty coso:Feature coso:MaterialSample coso:SampleMaterialType coso:ResultQualifier coso:Substance) .
 
 ## Measurement
 
@@ -29,13 +29,31 @@ coso:SingleContaminantMeasurement owl:disjointWith coso:AggregateContaminantMeas
 
 coso:ContaminantConcentrationMeasurement owl:disjointWith coso:ContaminantVolumeMeasurement .
 
+coso:ContaminantConcentrationMeasurement rdfs:subClassOf [ rdf:type owl:Restriction;
+    owl:onProperty coso:observedProperty ;
+    owl:allValuesFrom coso:ContaminantConcentrationQuantityKind ].
+
+coso:ContaminantVolumeMeasurement rdfs:subClassOf [ rdf:type owl:Restriction;
+    owl:onProperty coso:observedProperty ;
+    owl:allValuesFrom coso:ContaminantVolumeQuantityKind ].
+
 ## Observation
 
 coso:ContaminantSampleObservation owl:disjointWith coso:ContaminantReleaseObservation .
 
 ## Feature 
 
-#no explicit disjointness between SampledFeature and ReleaseFeature or between coso:Feature and coso:Point
+#no explicit disjointness between SampledFeature and ReleaseFeature
+coso:Feature owl:disjointWith coso:Point .
+
+#Observation 
+
+coso:ReleaseFeature owl:equivalentClass [
+    rdf:type owl:Restriction ;
+    owl:onProperty [owl:inverseOf coso:hasFeatureOfInterest];
+    owl:allValuesFrom coso:ReleaseObservation
+
+] .
 
 ## Observable Property
 

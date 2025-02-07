@@ -123,10 +123,12 @@ pfas:QuantitationLimit rdf:type owl:Class ;
 
 ###  http://sawgraph.spatialai.org/v1/pfas#ReportingLimit
 pfas:ReportingLimit rdf:type owl:Class ;
-                    rdfs:subClassOf coso:ResultQualifier .
+                    rdfs:subClassOf coso:ResultQualifier ;
+                    rdfs:subClassOf qudt:QuantityValue .
 
 pfas:MethodDetectionLimit rdf:type owl:Class ;
-    rdfs:subClassOf coso:ResultQualifier.
+    rdfs:subClassOf coso:ResultQualifier;
+    rdfs:subClassOf qudt:QuantityValue.
 
 
 #################################################################

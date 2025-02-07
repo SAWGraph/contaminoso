@@ -16,7 +16,10 @@
 
 # Classes
 
-## Quantity
+## Quantity / Measurement / Result
+
+coso:ContaminantMeasurement rdfs:subClassOf qudt:Quantity. 
+
 ###  http://sawgraph.spatialai.org/v1/stad#Quantity
 stad:Quantity rdf:type owl:Class .
 
@@ -32,12 +35,17 @@ coso:SingleContaminantObservation rdfs:subClassOf stad:SingleData .
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#AggregateContaminantMeasurement
 coso:AggregateContaminantMeasurement rdfs:subClassOf stad:StatisticalAggregateData .
+ 
 
-coso:ContaminantMeasurement rdfs:subClassOf stad:Quantity. 
+coso:ContaminationProperty rdfs:subClassOf qudt:QuantityKind.
+
+qudt:Quantity rdfs:subClassOf stad:Datapoint. 
 
 
 ## quantity kind
 stad:QuantityKind rdf:type owl:Class .
+
+qudt:QuantityKind rdfs:subClassOf stad:QuantityKind. 
 
 
 ### Stad extension
@@ -81,5 +89,5 @@ stad:hasTransformationKind rdf:type owl:ObjectProperty ;
             rdfs:domain stad:StatisticalAggregateData ; 
             rdfs:range stad:DataTransformation. 
 
-
+coso:observedProperty rdfs:subPropertyOf qudt:hasQuantityKind, stad:hasQualityKind. 
 
