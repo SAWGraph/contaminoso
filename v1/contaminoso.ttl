@@ -160,7 +160,7 @@ coso:observedAtSamplePoint rdf:type owl:ObjectProperty ;
 coso:observedAtReleasePoint rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf coso:observedAtPoint ;
                            rdfs:domain coso:ContaminantReleaseObservation ;
-                           rdfs:range coso:SamplePoint .
+                           rdfs:range coso:ReleasePoint .
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#observationAnnotation
 coso:observationAnnotation rdf:type owl:ObjectProperty .
@@ -200,15 +200,14 @@ coso:sampleAnnotation rdf:type owl:ObjectProperty .
 ###  http://sawgraph.spatialai.org/v1/contaminoso#sampledFeature
 coso:sampledFeature rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf coso:hasFeatureOfInterest ;
-                    rdfs:domain coso:SampleContaminantObservation ;
+                    rdfs:domain coso:ContaminantSampleObservation ;
                     rdfs:range coso:SampledFeature .
 
-
+###  http://sawgraph.spatialai.org/v1/contaminoso#releaseFeature
 coso:releaseFeature rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf coso:hasFeatureOfInterest ;
                     rdfs:domain coso:ReleaseContaminantObservation ;
                     rdfs:range coso:ReleaseFeature .
-
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#sampledTime

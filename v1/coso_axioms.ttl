@@ -48,12 +48,12 @@ coso:Feature owl:disjointWith coso:Point .
 
 #Observation 
 
-coso:ReleaseFeature owl:equivalentClass [
-    rdf:type owl:Restriction ;
-    owl:onProperty [owl:inverseOf coso:hasFeatureOfInterest];
-    owl:allValuesFrom coso:ReleaseObservation
+#coso:ReleaseFeature owl:equivalentClass [
+#    rdf:type owl:Restriction ;
+#    owl:onProperty [owl:inverseOf coso:hasFeatureOfInterest];
+#    owl:allValuesFrom coso:ReleaseObservation
 
-] .
+#] .
 
 ## Observable Property
 
