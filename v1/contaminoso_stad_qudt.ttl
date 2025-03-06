@@ -31,7 +31,7 @@ stad:StatisticalAggregateData rdf:type owl:Class ;
 stad:SingleData rdf:type owl:Class ;
                                     rdfs:subClassOf stad:Quantity .
 
-coso:SingleContaminantObservation rdfs:subClassOf stad:SingleData . 
+coso:SingleContaminantMeasurement rdfs:subClassOf stad:SingleData . 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#AggregateContaminantMeasurement
 coso:AggregateContaminantMeasurement rdfs:subClassOf stad:StatisticalAggregateData .
@@ -57,6 +57,11 @@ stad:ConcentrationQuantityKind rdf:type owl:Class ;
     rdfs:subClassOf stad:QuantityKind. 
 
 
+coso:NonDetectQuantityValue rdf:type owl:Class;
+    rdfs:subClassOf qudt:QuantityValue.
+
+coso:DetectQuantityValue rdf:type owl:Class;
+    rdfs:subClassOf qudt:QuantityValue. 
 
 ###  http://sawgraph.spatialai.org/v1/stad#StatisticalQuantityKind
 stad:StatisticalQuantityKind rdf:type owl:Class ;

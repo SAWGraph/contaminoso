@@ -10,6 +10,7 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 
 @base <http://sawgraph.spatialai.org/v1/pfas#> .
 
