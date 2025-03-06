@@ -14,11 +14,19 @@
 
 coso:ContaminantObservationShape a sh:NodeShape ;
     sh:targetClass coso:ContaminantObservation ;
-    sh:property coso:hasResultShape .
+    sh:property coso:hasResultShape ;
+    sh:property coso:hasChemicalShape .
 
 coso:hasResultShape a sh:PropertyShape ;
-    sh:path sosa:hasResult ;
+    sh:path coso:hasResult ;
     sh:targetObjectsOf coso:ContaminantMeasurement ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:description "every observation has one measurement".
+
+coso:hasChemicalShape as sh:PropertyShape ; 
+    sh:path coso:ofSubstance ;
+    sh:targetObjectsOf coso:Substance ;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:description "every observation is of one substance".
