@@ -225,8 +225,8 @@ qudt:QuantityKind
   rdfs:comment "A <b>Quantity Kind</b> is any observable property that can be  measured and quantified numerically. Familiar examples include physical properties such as length, mass, time, force, energy, power, electric charge, etc. Less familiar examples include currency, interest rate, price to earning ratio, and information capacity."^^rdf:HTML ;
   rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
   rdfs:label "Quantity Kind" ;
-  rdfs:subClassOf qudt:AbstractQuantityKind ;
-  rdfs:subClassOf qudt:Verifiable ;
+  #rdfs:subClassOf qudt:AbstractQuantityKind ;
+  #rdfs:subClassOf qudt:Verifiable ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:allValuesFrom qudt:QuantityKind ;
