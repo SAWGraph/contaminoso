@@ -96,6 +96,8 @@ coso:MinimumContaminationConcentration rdf:type owl:NamedIndividual ;
                           rdf:type stad:StatisticalQuantityKind ;
                           rdf:type coso:ContaminantConcentrationQuantityKind.
 
+coso:ResultQualifier rdfs:subClassOf qudt:Quantity. 
+
 
 #summed contaminant concentration 
 

@@ -116,19 +116,6 @@ pfas:PFAS-ContaminantSampleObservation rdf:type owl:Class ;
 pfas:AnalysisMethod rdf:type owl:Class ;
     rdfs:subClassOf coso:AnalysisMethod . 
 
-pfas:QuantitationLimit rdf:type owl:Class ;
-    rdfs:subClassOf coso:ResultQualifier.
-
-
-###  http://sawgraph.spatialai.org/v1/pfas#ReportingLimit
-pfas:ReportingLimit rdf:type owl:Class ;
-                    rdfs:subClassOf coso:ResultQualifier ;
-                    rdfs:subClassOf qudt:QuantityValue .
-
-pfas:MethodDetectionLimit rdf:type owl:Class ;
-    rdfs:subClassOf coso:ResultQualifier;
-    rdfs:subClassOf qudt:QuantityValue.
-
 
 #################################################################
 #    General axioms
