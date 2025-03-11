@@ -24,7 +24,7 @@ sosa:
   dcterms:description """
   This module imports all the terms in the SOSA module, and adds cross-module annotations (domain/rangeIncludes). 
   """@en ;
-  dcterms:creator [ a foaf:Agent ; foaf:name "W3C/OGC Spatial Data on the Web Working Group"@en ] ;
+  #dcterms:creator [ a foaf:Agent ; foaf:name "W3C/OGC Spatial Data on the Web Working Group"@en ] ;
   dcterms:rights "Copyright 2017 W3C/OGC." ;
   dcterms:license <http://www.w3.org/Consortium/Legal/2015/copyright-software-and-document> ;
   dcterms:license <http://www.opengeospatial.org/ogc/Software> ;

@@ -150,7 +150,7 @@ qudt:Enumeration
 <p>The tags are a set of positive whole numbers, not necessarily contiguous and having no numerical significance, each corresponding to the associated literal identifier. An order attribute can also be given on the enumeration elements. An enumeration can itself be a member of an enumeration. This allows enumerations to be enumerated in a selection. Enumerations are also subclasses of <em>Scalar Datatype</em>. This allows them to be used as the reference of a datatype specification.</p>"""^^rdf:HTML ;
   rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
   rdfs:label "Enumeration" ;
-  rdfs:subClassOf dtype:Enumeration ;
+  #dfs:subClassOf dtype:Enumeration ;
   rdfs:subClassOf qudt:Concept ;
   rdfs:subClassOf [
     a owl:Restriction ;
@@ -515,13 +515,6 @@ qudt:unitFor
   rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
   rdfs:label "unit for" .
 
-qudt:isQuantityKindOf
-  a owl:ObjectProperty ;
-  dcterms:description "`qudt:isQuantityKindOf` was a strict inverse of `qudt:hasQuantityKind` but is now deprecated."^^rdf:HTML ;
-  qudt:deprecated true ;
-  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
-  rdfs:label "is quantity kind of" .
-
 qudt:quantityValue
   a owl:ObjectProperty ;
   rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
@@ -552,7 +545,7 @@ qudt:numericValue
 # Special Class
 
 qudt:EnumeratedQuantity
-  a qudt:AspectClass ;
+  #a qudt:AspectClass ;
   rdfs:label "Enumerated Quantity" ;
   rdfs:subClassOf qudt:Concept ;
   rdfs:subClassOf [
