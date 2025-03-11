@@ -116,6 +116,13 @@ pfas:PFAS-ContaminantSampleObservation rdf:type owl:Class ;
 pfas:AnalysisMethod rdf:type owl:Class ;
     rdfs:subClassOf coso:AnalysisMethod . 
 
+pfas:NanoGM-PER-GM a qudt:Unit ;
+    qudt:symbol "ng/g" ;
+    qudt:ucumCode "ng.g-1"^^qudt:UCUMcs ;
+    qudt:ucumCode "ng/g"^^qudt:UCUMcs ;
+    rdfs:label "Microgram per Kilogram"@en ;
+    #owl:sameAs unit:MicroGM-PER-KiloGM
+.
 
 #################################################################
 #    General axioms
