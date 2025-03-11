@@ -104,6 +104,7 @@ coso:casNumber rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf coso:substanceID ;
                rdfs:label "cas number" .
 
+coso:substanceID rdf:type owl:DatatypeProperty.
 
 coso:fromPoint rdf:type owl:ObjectProperty ;
                     rdfs:range coso:Point. 
