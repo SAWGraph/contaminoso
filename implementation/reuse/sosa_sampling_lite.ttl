@@ -399,18 +399,18 @@ sosa:outputFor
 #   schema:domainIncludes sosa:SamplingCollection ;
 #   rdfs:isDefinedBy sosa-common: .
 
-# sosa:startTime 
-#   schema:domainIncludes sosa:Sampling ;
-#   schema:domainIncludes sosa:SamplingCollection ;
-#   rdfs:isDefinedBy sosa-common: .
+sosa:startTime 
+   schema:domainIncludes sosa:Sampling ;
+   schema:domainIncludes sosa:SamplingCollection ;
+   rdfs:isDefinedBy sosa-common: .
 
-# sosa:endTime 
-#   rdfs:isDefinedBy sosa-common: .
+sosa:endTime 
+   rdfs:isDefinedBy sosa-common: .
 
-# sosa:resultTime 
-#   schema:domainIncludes sosa:Sampling ;
-#   schema:domainIncludes sosa:SamplingCollection ;
-#   rdfs:isDefinedBy sosa-common: .
+sosa:resultTime 
+   schema:domainIncludes sosa:Sampling ;
+   schema:domainIncludes sosa:SamplingCollection ;
+   rdfs:isDefinedBy sosa-common: .
 
 # sosa:phenomenonTime 
 #   schema:domainIncludes sosa:Sampling ;
