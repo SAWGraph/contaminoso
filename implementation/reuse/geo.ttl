@@ -315,7 +315,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 # 	skos:definition """States that the subject SpatialObject spatially overlaps the object SpatialObject. DE-9IM: T*T***T**"""@en ;
 # 	rdfs:seeAlso <http://dbpedia.org/resource/DE-9IM> ;
 # 	skos:prefLabel "overlap"@en ;
-.
+#.
 
 :hasGeometry
 	a rdf:Property, owl:ObjectProperty ;

@@ -142,26 +142,26 @@ sosa:SampleCollection
 #  skos:note """The members of a collection do not necessarily share a common value for any property."""@en ;
 #  rdfs:isDefinedBy sosa-sam: .
 
-sosa:SpatialSample 
-  a owl:Class ;
-  rdfs:label "Spatial Sample"@en ;
-  skos:definition """
-  A SpatialSample is a geospatial Sample. 
-  When observations are made to estimate properties of a geospatial feature, in particular where the value of a property varies within the scope of the feature, a SpatialSample is used.
-  """@en ;
-  skos:example "Some common names for spatial samples include: borehole, flightline, interval, lidar cloud, map horizon, microscope slide, mine level, mine, observation well, profile,  quadrat, scene, section, ship track, spot, station, swath, trajectory, traverse, etc..."@en ;
-  skos:note "Depending on accessibility and on the nature of the expected property variation, the SpatialSample may be extensive in one, two or three spatial dimensions."@en ;
-  rdfs:isDefinedBy sosa-sam: .
+# sosa:SpatialSample 
+#   a owl:Class ;
+#   rdfs:label "Spatial Sample"@en ;
+#   skos:definition """
+#   A SpatialSample is a geospatial Sample. 
+#   When observations are made to estimate properties of a geospatial feature, in particular where the value of a property varies within the scope of the feature, a SpatialSample is used.
+#   """@en ;
+#   skos:example "Some common names for spatial samples include: borehole, flightline, interval, lidar cloud, map horizon, microscope slide, mine level, mine, observation well, profile,  quadrat, scene, section, ship track, spot, station, swath, trajectory, traverse, etc..."@en ;
+#   skos:note "Depending on accessibility and on the nature of the expected property variation, the SpatialSample may be extensive in one, two or three spatial dimensions."@en ;
+#   rdfs:isDefinedBy sosa-sam: .
 
-sosa:StatisticalSample 
-  a owl:Class ;
-  rdfs:label "Statistical Sample"@en ;
-  skos:definition """
-  A StatisticalSample is a statistical subset of a feature-of-interest, defined for the purpose of creating Observation(s).
-  """@en ;
-  skos:example "The male or female subset of a population."@en ;
-  skos:note "StatisticalSamples usually apply to populations or other sets, of which certain subset may be of specific interest."@en ;
-  rdfs:isDefinedBy sosa-sam: .
+# sosa:StatisticalSample 
+#   a owl:Class ;
+#   rdfs:label "Statistical Sample"@en ;
+#   skos:definition """
+#   A StatisticalSample is a statistical subset of a feature-of-interest, defined for the purpose of creating Observation(s).
+#   """@en ;
+#   skos:example "The male or female subset of a population."@en ;
+#   skos:note "StatisticalSamples usually apply to populations or other sets, of which certain subset may be of specific interest."@en ;
+#   rdfs:isDefinedBy sosa-sam: .
 
 sosa:featureSampledBy 
   a owl:ObjectProperty ;
