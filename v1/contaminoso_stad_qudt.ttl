@@ -86,13 +86,13 @@ coso:ContaminantVolumeQuantityKind rdfs:subClassOf stad:VolumeQuantityKind.
 coso:ContaminantConcentrationQuantityKind rdfs:subClassOf stad:ConcentrationQuantityKind.
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#MaximumConcentration
-coso:MaximumContaminationConcentration rdf:type owl:NamedIndividual ;
+coso:MaximumContaminationConcentrationQuantity rdf:type owl:NamedIndividual ;
                           rdf:type stad:StatisticalQuantityKind ;
                           rdf:type coso:ContaminantConcentrationQuantityKind.
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#MinimumConcentration
-coso:MinimumContaminationConcentration rdf:type owl:NamedIndividual ;
+coso:MinimumContaminationConcentrationQuantity rdf:type owl:NamedIndividual ;
                           rdf:type stad:StatisticalQuantityKind ;
                           rdf:type coso:ContaminantConcentrationQuantityKind.
 
@@ -110,5 +110,5 @@ stad:hasTransformationKind rdf:type owl:ObjectProperty ;
             rdfs:domain stad:StatisticalAggregateData ; 
             rdfs:range stad:DataTransformation. 
 
-coso:observedProperty rdfs:subPropertyOf qudt:hasQuantityKind, stad:hasQualityKind. 
+coso:observedProperty rdfs:subPropertyOf stad:hasQualityKind. 
 
