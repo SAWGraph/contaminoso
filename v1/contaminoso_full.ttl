@@ -14,20 +14,20 @@
 @base <http://sawgraph.spatialai.org/v1/contaminoso-full#> .
 
 <http://sawgraph.spatialai.org/contaminoso-full#> rdf:type owl:Ontology ;
-                                                      owl:versionIRI <http://sawgraph.spatialai.org/v1/contaminoso-full#>;
-                                                      owl:imports coso: ;
-                                                      dcterms:created "2024-02-16"@en-us ;
-                                                      dcterms:creator <http://orcid.org/0000-0002-5331-5052> ,
-                                                                      <http://orcid.org/0000-0003-3547-8058> ,
-                                                                      <https://orcid.org/0000-0003-3271-6700> ;
-                                                      dcterms:description "the Contaminant Observation and Samples Ontology (ContaminOSO) developed as part of the AIKnowsPFAS and SAWGraph projects."@en-us ;
-                                                      dcterms:issued "2024-02-16"^^xsd:date ;
-                                                      dcterms:modified "2024-02-16"^^xsd:date ;
-                                                      dcterms:publisher <http://spatialai.org> ;
-                                                      dcterms:source "https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso.ttl"^^<xsd:anyURI> ;
-                                                      dcterms:title "Contaminant Observation and Samples Ontology (ContaminOSO)"@en-us ;
-                                                      rdfs:label "Contaminant Observation and Samples Ontology (ContaminOSO) Full"@en-us ;
-                                                      owl:versionInfo "1"@en-us .
+                                                   owl:versionIRI : ;
+                                                   owl:imports coso: ;
+                                                   dcterms:created "2024-02-16"@en-us ;
+                                                   dcterms:creator <http://orcid.org/0000-0002-5331-5052> ,
+                                                                   <http://orcid.org/0000-0003-3547-8058> ,
+                                                                   <https://orcid.org/0000-0003-3271-6700> ;
+                                                   dcterms:description "the Contaminant Observation and Samples Ontology (ContaminOSO) developed as part of the AIKnowsPFAS and SAWGraph projects."@en-us ;
+                                                   dcterms:issued "2024-02-16"^^xsd:date ;
+                                                   dcterms:modified "2024-02-16"^^xsd:date ;
+                                                   dcterms:publisher <http://spatialai.org> ;
+                                                   dcterms:source "https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso-full.ttl" ;
+                                                   dcterms:title "Contaminant Observation and Samples Ontology (ContaminOSO)"@en-us ;
+                                                   rdfs:label "Contaminant Observation and Samples Ontology (ContaminOSO) Full"@en-us ;
+                                                   owl:versionInfo "1"@en-us .
 
 #################################################################
 #    Annotation properties
@@ -40,6 +40,10 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://qudt.org/schema/qudt/enumeratedValue
+qudt:enumeratedValue rdf:type owl:ObjectProperty .
+
 
 ###  http://qudt.org/schema/qudt/numericValue
 qudt:numericValue rdf:type owl:ObjectProperty .
@@ -61,6 +65,9 @@ coso:measurementUnit owl:propertyChainAxiom ( qudt:quantityValue
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#measurementValue
 coso:measurementValue owl:propertyChainAxiom ( qudt:quantityValue
+                                               qudt:enumeratedValue
+                                             ) ,
+                                             ( qudt:quantityValue
                                                qudt:numericValue
                                              ) .
 
@@ -80,11 +87,12 @@ coso:AggregateContaminantMeasurement owl:disjointWith coso:SingleContaminantMeas
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantConcentrationMeasurement
-coso:ContaminantConcentrationMeasurement rdfs:subClassOf [ rdf:type owl:Restriction ;
+coso:ContaminantRelativeMeasurement rdf:type owl:Class ;
+                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                            owl:onProperty coso:observedProperty ;
-                                                           owl:allValuesFrom coso:ContaminantConcentrationQuantityKind
+                                                           owl:allValuesFrom coso:ContaminantRelativeQuantityKind
                                                          ] ;
-                                         owl:disjointWith coso:ContaminantVolumeMeasurement .
+                                         owl:disjointWith coso:ContaminantAbsoluteMeasurement .
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantConcentrationQuantityKind
@@ -95,19 +103,16 @@ coso:ContaminantConcentrationQuantityKind owl:disjointWith coso:ContaminantVolum
 coso:ContaminantReleaseObservation owl:disjointWith coso:ContaminantSampleObservation .
 
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantVolumeMeasurement
-coso:ContaminantVolumeMeasurement rdfs:subClassOf [ rdf:type owl:Restriction ;
+###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantAbsoluteMeasurement
+coso:ContaminantAbsoluteMeasurement rdf:type owl:Class ;
+                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                     owl:onProperty coso:observedProperty ;
-                                                    owl:allValuesFrom coso:ContaminantVolumeQuantityKind
+                                                    owl:allValuesFrom coso:ContaminantAbsoluteQuantityKind
                                                   ] .
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#Feature
 coso:Feature owl:disjointWith coso:Point .
-
-
-[ owl:qualifiedCardinality 1
-] .
 
 #################################################################
 #    General axioms
@@ -122,6 +127,7 @@ coso:Feature owl:disjointWith coso:Point .
                  coso:ResultQualifier
                  coso:SampleMaterialType
                  coso:Substance
+                 coso:QuantityValue
                )
  ] .
 

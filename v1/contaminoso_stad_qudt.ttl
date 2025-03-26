@@ -59,31 +59,12 @@ qudt:Quantity rdfs:subClassOf stad:Datapoint.
 ## quantity kind
 stad:QuantityKind rdf:type owl:Class .
 
-qudt:QuantityKind rdfs:subClassOf stad:QuantityKind. 
-
-
-### Stad extension
-
-stad:VolumeQuantityKind rdf:type owl:Class ;
-    rdfs:subClassOf stad:QuantityKind. 
-
-stad:ConcentrationQuantityKind rdf:type owl:Class ;
-    rdfs:subClassOf stad:QuantityKind. 
-
-
-coso:NonDetectQuantityValue rdf:type owl:Class;
-    rdfs:subClassOf qudt:QuantityValue.
-
-coso:DetectQuantityValue rdf:type owl:Class;
-    rdfs:subClassOf qudt:QuantityValue. 
+qudt:QuantityKind rdfs:subClassOf stad:QualityKind. 
 
 ###  http://sawgraph.spatialai.org/v1/stad#StatisticalQuantityKind
 stad:StatisticalQuantityKind rdf:type owl:Class ;
-                        rdfs:subClassOf stad:QuantityKind . 
+                        rdfs:subClassOf stad:QualityKind . 
 
-coso:ContaminantVolumeQuantityKind rdfs:subClassOf stad:VolumeQuantityKind.
-
-coso:ContaminantConcentrationQuantityKind rdfs:subClassOf stad:ConcentrationQuantityKind.
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#MaximumConcentration
 coso:MaximumContaminationConcentrationQuantity rdf:type owl:NamedIndividual ;
@@ -95,6 +76,11 @@ coso:MaximumContaminationConcentrationQuantity rdf:type owl:NamedIndividual ;
 coso:MinimumContaminationConcentrationQuantity rdf:type owl:NamedIndividual ;
                           rdf:type stad:StatisticalQuantityKind ;
                           rdf:type coso:ContaminantConcentrationQuantityKind.
+
+## quantity value
+coso:QuantityValue rdfs:subClassOf qudt:QuantityValue. 
+
+qudt:QuantityValue rdfs:subClassOf stad:Datapoint.
 
 coso:ResultQualifier rdfs:subClassOf qudt:Quantity. 
 

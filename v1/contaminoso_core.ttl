@@ -1,30 +1,29 @@
-
+@prefix : <http://sawgraph.spatialai.org/contaminoso#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
 @prefix coso: <http://sawgraph.spatialai.org/v1/contaminoso#> .
-@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://sawgraph.spatialai.org/v1/contaminoso#> .
+@base <http://sawgraph.spatialai.org/contaminoso#> .
 
 <http://sawgraph.spatialai.org/contaminoso#> rdf:type owl:Ontology ;
-                                                 owl:versionIRI <http://sawgraph.spatialai.org/v1/contaminoso#> ;
-                                                 dcterms:created "2024-02-16"@en-us ;
-                                                 dcterms:creator <http://orcid.org/0000-0002-5331-5052> ,
-                                                                <https://orcid.org/0000-0003-3271-6700>,
-                                                                 <http://orcid.org/0000-0003-3547-8058> ;
-                                                 dcterms:description "the Contaminant Observation and Samples Ontology (ContaminOSO) developed as part of the AIKnowsPFAS and SAWGraph projects."@en-us ;
-                                                 dcterms:issued "2024-02-16"^^xsd:date ;
-                                                 dcterms:modified "2024-02-16"^^xsd:date ;
-                                                 dcterms:publisher <http://spatialai.org> ;
-                                                 dcterms:source "https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso.ttl"^^<xsd:anyURI> ;
-                                                 dcterms:title "Contaminant Observation and Samples Ontology (ContaminOSO)"@en-us ;
-                                                 rdfs:label "Contaminant Observation and Samples Ontology (ContaminOSO)"@en-us ;
-                                                 owl:versionInfo "1"@en-us .
+                                              owl:versionIRI coso: ;
+                                              dcterms:created "2024-02-16"@en-us ;
+                                              dcterms:creator <http://orcid.org/0000-0002-5331-5052> ,
+                                                              <http://orcid.org/0000-0003-3547-8058> ,
+                                                              <https://orcid.org/0000-0003-3271-6700> ;
+                                              dcterms:description "the Contaminant Observation and Samples Ontology (ContaminOSO) developed as part of the AIKnowsPFAS and SAWGraph projects."@en-us ;
+                                              dcterms:issued "2025-03-30"^^xsd:date ;
+                                              dcterms:modified "2025-03-30"^^xsd:date ;
+                                              dcterms:publisher <http://spatialai.org> ;
+                                              dcterms:source "https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso.ttl"^^<xsd:anyURI> ;
+                                              dcterms:title "Contaminant Observation and Samples Ontology (ContaminOSO)"@en-us ;
+                                              rdfs:label "Contaminant Observation and Samples Ontology (ContaminOSO)"@en-us ;
+                                              owl:versionInfo "1"@en-us .
 
 #################################################################
 #    Annotation properties
@@ -78,54 +77,52 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-
-###  http://sawgraph.spatialai.org/v1/contaminoso#analysisDate
-coso:analysisDate rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf sosa:resultTime .
-
 ###  http://sawgraph.spatialai.org/v1/contaminoso#analyzedSample
 coso:analyzedSample rdf:type owl:ObjectProperty ;
-                    owl:inverseOf sosa:isSampleOf ;
+                    rdfs:subPropertyOf sosa:hasFeatureOfInterest ;
                     rdfs:domain coso:ContaminantSampleObservation ;
                     rdfs:range coso:MaterialSample .
 
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#analysisMethod
-coso:usedAnalysisMethod rdf:type owl:ObjectProperty ;
-                rdfs:domain coso:ContaminantObservation;
-                rdfs:range coso:AnalysisMethod.
-
-
-
-###  http://sawgraph.spatialai.org/v1/contaminoso#casNumber
-coso:casNumber rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf coso:substanceID ;
-               rdfs:label "cas number" .
-
-coso:substanceID rdf:type owl:DatatypeProperty.
-
-coso:fromPoint rdf:type owl:ObjectProperty ;
-                    rdfs:range coso:Point. 
-
 ###  http://sawgraph.spatialai.org/v1/contaminoso#fromSamplePoint
 coso:fromSamplePoint rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf coso:fromPoint;
+                     rdfs:domain coso:MaterialSample ;
                      rdfs:range coso:SamplePoint .
 
-coso:fromReleasePoint rdf:type owl:ObjectProperty;
-                    rdfs:subPropertyOf coso:fromPoint;
-                    rdfs:range coso:ReleasePoint . 
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#hasAnyFeatureOfInterest
+coso:hasAnyFeatureOfInterest rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf sosa:hasAnyFeatureOfInterest ;
+                             rdfs:domain coso:ContaminantObservation ;
+                             rdfs:range sosa:FeatureOfInterest .
+
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#hasFeatureOfInterest
+coso:hasFeatureOfInterest rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf coso:hasAnyFeatureOfInterest ;
+                          rdfs:range coso:Feature .
+
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#hasResult
+coso:hasResult rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf sosa:hasResult .
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#hasResultQualifier
 coso:hasResultQualifier rdf:type owl:ObjectProperty ;
-                        #rdfs:domain coso:ContaminantMeasurement ;
-                        rdfs:range coso:ResultQualifier.
+                        rdfs:range coso:ResultQualifier .
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#hasTemporalCoverage
 coso:hasTemporalCoverage rdf:type owl:ObjectProperty ;
                          rdfs:domain coso:ContaminantObservation .
+
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#isSampleOf
+coso:isSampleOf rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf sosa:isSampleOf ;
+                rdfs:domain coso:MaterialSample ;
+                rdfs:range coso:SampledFeature .
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#measurementUnit
@@ -137,25 +134,33 @@ coso:measurementUnit rdf:type owl:ObjectProperty ;
 coso:measurementValue rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf owl:topObjectProperty .
 
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#observationAnnotation
+coso:observationAnnotation rdf:type owl:ObjectProperty ;
+    rdfs:domain coso:ContaminantObservation;
+    rdfs:range coso:ObservationAnnotation.
+
+
 ###  http://sawgraph.spatialai.org/v1/contaminoso#observedAtPoint
 coso:observedAtPoint rdf:type owl:ObjectProperty ;
-                           rdfs:domain coso:ContaminantObservation ;
-                           rdfs:range coso:Point .
+                     rdfs:subPropertyOf sosa:hasAnyFeatureOfInterest ;
+                     rdfs:domain coso:ContaminantObservation ;
+                     rdfs:range coso:Point .
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#observedAtSamplePoint
-coso:observedAtSamplePoint rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf coso:observedAtPoint ;
-                           rdfs:domain coso:ContaminantSampleObservation ;
-                           rdfs:range coso:SamplePoint .
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#observedAtReleasePoint
 coso:observedAtReleasePoint rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf coso:observedAtPoint ;
-                           rdfs:domain coso:ContaminantReleaseObservation ;
-                           rdfs:range coso:ReleasePoint .
+                            rdfs:subPropertyOf coso:observedAtPoint ;
+                            rdfs:domain coso:ContaminantReleaseObservation ;
+                            rdfs:range coso:ReleasePoint .
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#observationAnnotation
-coso:observationAnnotation rdf:type owl:ObjectProperty .
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#observedAtSamplePoint
+coso:observedAtSamplePoint rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf coso:hasAnyFeatureOfInterest ;
+                           rdfs:domain coso:ContaminantSampleObservation ;
+                           rdfs:range coso:SamplePoint .
+
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#observedProperty
 coso:observedProperty rdf:type owl:ObjectProperty ;
@@ -163,37 +168,22 @@ coso:observedProperty rdf:type owl:ObjectProperty ;
                       rdfs:domain coso:ContaminantObservation ;
                       rdfs:range coso:ContaminationProperty .
 
-            
-
-
-###  http://sawgraph.spatialai.org/v1/contaminoso#ofSampleMaterialType
-coso:sampleOfMaterialType rdf:type owl:ObjectProperty ;
-                          rdfs:domain coso:MaterialSample ;
-                          rdfs:range coso:SampleMaterialType .
-
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#ofSubstance
 coso:ofSubstance rdf:type owl:ObjectProperty ;
                  rdfs:domain coso:ContaminantObservation ;
-                 rdfs:range [owl:unionOf (coso:Substance coso:SubstanceCollection)].
+                 rdfs:range [ rdf:type owl:Class ;
+                              owl:unionOf ( coso:Substance
+                                            coso:SubstanceCollection
+                                          )
+                            ] .
+
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#pointFromFeature
 coso:pointFromFeature rdf:type owl:ObjectProperty ;
-                rdfs:domain coso:Point ;
-                rdfs:range coso:Feature .
+                      rdfs:domain coso:Point ;
+                      rdfs:range coso:Feature .
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#resultAnnotation
-coso:resultAnnotation rdf:type owl:ObjectProperty .
-
-
-###  http://sawgraph.spatialai.org/v1/contaminoso#sampleAnnotation
-coso:sampleAnnotation rdf:type owl:ObjectProperty .
-
-###  http://sawgraph.spatialai.org/v1/contaminoso#sampledFeature
-coso:sampledFeature rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf coso:hasFeatureOfInterest ;
-                    rdfs:domain coso:ContaminantSampleObservation ;
-                    rdfs:range coso:SampledFeature .
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#releaseFeature
 coso:releaseFeature rdf:type owl:ObjectProperty ;
@@ -202,37 +192,57 @@ coso:releaseFeature rdf:type owl:ObjectProperty ;
                     rdfs:range coso:ReleaseFeature .
 
 
+###  http://sawgraph.spatialai.org/v1/contaminoso#resultAnnotation
+coso:resultAnnotation rdf:type owl:ObjectProperty .
+
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#sampleAnnotation
+coso:sampleAnnotation rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:AnnotationProperty;
+    rdfs:domain coso:MaterialSample;
+    rdfs:range coso:SampleAnnotation. 
+
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#sampleOfMaterialType
+coso:sampleOfMaterialType rdf:type owl:ObjectProperty ;
+                          rdfs:domain coso:MaterialSample ;
+                          rdfs:range coso:SampleMaterialType .
+
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#sampledFeature
+coso:sampledFeature rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf coso:hasFeatureOfInterest ;
+                    rdfs:domain coso:ContaminantSampleObservation ;
+                    rdfs:range coso:SampledFeature .
+
+
 ###  http://sawgraph.spatialai.org/v1/contaminoso#sampledTime
 coso:sampledTime rdf:type owl:ObjectProperty .
 
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#usedAnalysisMethod
+coso:usedAnalysisMethod rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf sosa:usedProcedure ;
+                        rdfs:domain coso:ContaminantObservation ;
+                        rdfs:range coso:AnalysisMethod .
+
+
+###  http://www.w3.org/ns/sosa/hasAnyFeatureOfInterest
+sosa:hasAnyFeatureOfInterest rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#casNumber
+coso:casNumber rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf coso:substanceID ;
+               rdfs:label "cas number" .
+
+
 ###  http://sawgraph.spatialai.org/v1/contaminoso#substanceID
 coso:substanceID rdf:type owl:DatatypeProperty .
-
-
-###  http://sawgraph.spatialai.org/v1/contaminoso#usedProcedure
-coso:usedProcedure rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf sosa:usedProcedure ;
-                   rdfs:domain coso:ContaminantObservation ;
-                   rdfs:range coso:AnalysisMethod .
-
-
-###  http://www.w3.org/ns/sosa/hasFeatureOfInterest
-coso:hasFeatureOfInterest rdf:type owl:ObjectProperty ;
-                    #rdfs:domain coso:ContaminantObservation ;
-                    rdfs:range coso:Feature ;
-                    rdfs:subPropertyOf sosa:hasFeatureOfInterest.
-
-
-###  http://www.w3.org/ns/sosa/hasResult
-coso:hasResult rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf sosa:hasResult .
-
-
-###  http://www.w3.org/ns/sosa/isSampleOf
-coso:isSampleOf rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf sosa:isSampleOf;
-                rdfs:domain coso:MaterialSample ;
-                rdfs:range coso:SampledFeature .
 
 
 #################################################################
@@ -246,17 +256,28 @@ coso:AggregateContaminantMeasurement rdf:type owl:Class ;
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#AnalysisMethod
 coso:AnalysisMethod rdf:type owl:Class ;
-                                    rdfs:subClassOf sosa:Procedure. 
+                    rdfs:subClassOf sosa:Procedure .
+
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantAbsoluteMeasurement
+coso:ContaminantAbsoluteMeasurement rdf:type owl:Class ;
+                                    rdfs:subClassOf coso:ContaminantMeasurement .
+
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantAbsoluteQuantityKind
+coso:ContaminantAbsoluteQuantityKind rdf:type owl:Class ;
+                                     rdfs:subClassOf coso:ContaminationProperty .
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantConcentrationQuantityKind
 coso:ContaminantConcentrationQuantityKind rdf:type owl:Class ;
-                            rdfs:subClassOf coso:ContaminationProperty.
+                                          rdfs:subClassOf coso:ContaminantRelativeQuantityKind ,
+                                                          coso:ContaminationProperty .
 
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantRelativeMeasurement
-coso:ContaminantRelativeMeasurement rdf:type owl:Class ;
-                                         rdfs:subClassOf coso:ContaminantMeasurement .
+###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantMassQuantityKind
+coso:ContaminantMassQuantityKind rdf:type owl:Class ;
+                                 rdfs:subClassOf coso:ContaminantAbsoluteQuantityKind .
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantMeasurement
@@ -268,14 +289,45 @@ coso:ContaminantMeasurement rdf:type owl:Class ;
 coso:ContaminantObservation rdf:type owl:Class ;
                             rdfs:subClassOf sosa:Observation .
 
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantRelativeMeasurement
+coso:ContaminantRelativeMeasurement rdf:type owl:Class ;
+                                    rdfs:subClassOf coso:ContaminantMeasurement .
+
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantRelativeQuantityKind
+coso:ContaminantRelativeQuantityKind rdf:type owl:Class ;
+                                     rdfs:subClassOf coso:ContaminationProperty .
+
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantReleaseObservation
+coso:ContaminantReleaseObservation rdf:type owl:Class ;
+                                   rdfs:subClassOf coso:ContaminantObservation .
+
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantSampleObservation
+coso:ContaminantSampleObservation rdf:type owl:Class ;
+                                  rdfs:subClassOf coso:ContaminantObservation .
+
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantVolumeQuantityKind
+coso:ContaminantVolumeQuantityKind rdf:type owl:Class ;
+                                   rdfs:subClassOf coso:ContaminantAbsoluteQuantityKind .
+
+
 ###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminationProperty
 coso:ContaminationProperty rdf:type owl:Class ;
-                            rdfs:subClassOf sosa:Property .
+                           rdfs:subClassOf sosa:Property .
 
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantAbsoluteMeasurement
-coso:ContaminantAbsoluteMeasurement rdf:type owl:Class ;
-                                  rdfs:subClassOf coso:ContaminantMeasurement .
+###  http://sawgraph.spatialai.org/v1/contaminoso#DetectQuantityValue
+coso:DetectQuantityValue rdf:type owl:Class ;
+                         rdfs:subClassOf coso:QuantityValue .
+
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#DetectionLimit
+coso:DetectionLimit rdf:type owl:Class ;
+                    rdfs:subClassOf coso:ResultQualifier .
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#Feature
@@ -294,18 +346,28 @@ coso:MonitoredFeature rdf:type owl:Class ;
                       rdfs:subClassOf coso:ReleaseFeature .
 
 
+###  http://sawgraph.spatialai.org/v1/contaminoso#NonDetectQuantityValue
+coso:NonDetectQuantityValue rdf:type owl:Class ;
+                            rdfs:subClassOf coso:QuantityValue .
+
+
 ###  http://sawgraph.spatialai.org/v1/contaminoso#ObservationAnnotation
 coso:ObservationAnnotation rdf:type owl:Class .
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#Point
 coso:Point rdf:type owl:Class ;
-           rdfs:subClassOf geo:Feature .
+           rdfs:subClassOf geo:Feature ,
+                           sosa:FeatureOfInterest .
 
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantReleaseObservation
-coso:ContaminantReleaseObservation rdf:type owl:Class ;
-                                   rdfs:subClassOf coso:ContaminantObservation .
+###  http://sawgraph.spatialai.org/v1/contaminoso#QuantitationLimit
+coso:QuantitationLimit rdf:type owl:Class ;
+                       rdfs:subClassOf coso:ResultQualifier .
+
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#QuantityValue
+coso:QuantityValue rdf:type owl:Class .
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#ReleaseFeature
@@ -321,21 +383,9 @@ coso:ReleasePoint rdf:type owl:Class ;
 ###  http://sawgraph.spatialai.org/v1/contaminoso#ResultQualifier
 coso:ResultQualifier rdf:type owl:Class .
 
-coso:QuantitationLimit rdf:type owl:Class ;
-    rdfs:subClassOf coso:ResultQualifier.
-
-
-coso:DetectionLimit rdf:type owl:Class ;
-    rdfs:subClassOf coso:ResultQualifier.
-
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#SampleAnnotation
 coso:SampleAnnotation rdf:type owl:Class .
-
-
-###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantSampleObservation
-coso:ContaminantSampleObservation rdf:type owl:Class ;
-                                  rdfs:subClassOf coso:ContaminantObservation .
 
 
 ###  http://sawgraph.spatialai.org/v1/contaminoso#SampleMaterialType
@@ -360,66 +410,36 @@ coso:SingleContaminantMeasurement rdf:type owl:Class ;
 ###  http://sawgraph.spatialai.org/v1/contaminoso#Substance
 coso:Substance rdf:type owl:Class .
 
+
+###  http://sawgraph.spatialai.org/v1/contaminoso#SubstanceCollection
 coso:SubstanceCollection rdf:type owl:Class ;
-    rdfs:subClassOf [ rdf:type owl:Restriction ;
-    owl:onProperty rdfs:member ;
-    owl:allValuesFrom coso:Substance 
-    ].
-    
-    
-coso:ContaminantAbsoluteQuantityKind rdf:type owl:Class;
-    rdfs:subClassOf coso:ContaminationProperty.
+                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                           owl:onProperty rdfs:member ;
+                                           owl:allValuesFrom coso:Substance
+                                         ] .
 
-coso:ContaminantRelativeQuantityKind rdf:type owl:Class;
-    rdfs:subClassOf coso:ContaminationProperty. 
+#################################################################
+#    Individuals
+#################################################################
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantVolumeQuantityKind
-coso:ContaminantVolumeQuantityKind rdf:type owl:Class ;
-    rdfs:subClassOf coso:ContaminantAbsoluteQuantityKind.
-
-coso:ContaminantMassQuantityKind rdf:type owl:Class ;
-    rdfs:subClassOf coso:ContaminantAbsoluteQuantityKind.
-
-coso:ContaminantConcentrationQuantityKind rdf:type owl:Class;
-    rdfs:subClassOf coso:ContaminantRelativeQuantityKind. 
+###  http://sawgraph.spatialai.org/v1/contaminoso#MaximumContaminantConcentrationQuantity
+coso:MaximumContaminantConcentrationQuantity rdf:type owl:NamedIndividual ,
+                                                      coso:ContaminantConcentrationQuantityKind .
 
 
-#imported classes
-###  http://www.opengis.net/ont/geosparql#Feature
-geo:Feature rdf:type owl:Class .
+###  http://sawgraph.spatialai.org/v1/contaminoso#SingleContaminantConcentrationQuantity
+coso:SingleContaminantConcentrationQuantity rdf:type owl:NamedIndividual ,
+                                                     coso:ContaminantConcentrationQuantityKind .
 
 
-###  http://www.opengis.net/ont/geosparql#Geometry
-geo:Geometry rdf:type owl:Class .
+###  http://sawgraph.spatialai.org/v1/contaminoso#SingleContaminantVolumeQuantity
+coso:SingleContaminantVolumeQuantity rdf:type owl:NamedIndividual ,
+                                              coso:ContaminantVolumeQuantityKind .
 
 
-###  http://www.w3.org/ns/sosa/FeatureOfInterest
-sosa:FeatureOfInterest rdf:type owl:Class .
+###  http://sawgraph.spatialai.org/v1/contaminoso#SummedContaminantVolumeQuantity
+coso:SummedContaminantVolumeQuantity rdf:type owl:NamedIndividual ,
+                                              coso:ContaminantVolumeQuantityKind .
 
-
-###  http://www.w3.org/ns/sosa/Property
-sosa:Property rdf:type owl:Class .
-
-
-###  http://www.w3.org/ns/sosa/Observation
-sosa:Observation rdf:type owl:Class .
-
-
-###  http://www.w3.org/ns/sosa/Result
-sosa:Result rdf:type owl:Class .
-
-
-###  http://www.w3.org/ns/sosa/Sample
-sosa:Sample rdf:type owl:Class .
-
-## Named Individuals
-
-coso:SingleContaminantConcentrationQuantity rdf:type coso:ContaminantConcentrationQuantityKind. 
-
-coso:MaximumContaminantConcentrationQuantity rdf:type coso:ContaminantConcentrationQuantityKind. 
-
-coso:SummedContaminantVolumeQuantity rdf:type coso:ContaminantVolumeQuantityKind.
-
-coso:SingleContaminantVolumeQuantity rdf:type coso:ContaminantVolumeQuantityKind.
 
 ###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
