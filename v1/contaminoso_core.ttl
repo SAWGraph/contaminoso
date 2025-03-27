@@ -77,172 +77,151 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://w3id.org/coso/v1/contaminoso#analyzedSample
-coso:analyzedSample rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf sosa:hasFeatureOfInterest ;
-                    rdfs:domain coso:ContaminantSampleObservation ;
-                    rdfs:range coso:MaterialSample .
-
-
-###  http://w3id.org/coso/v1/contaminoso#fromSamplePoint
-coso:fromSamplePoint rdf:type owl:ObjectProperty ;
-                     rdfs:domain coso:MaterialSample ;
-                     rdfs:range coso:SamplePoint .
-
-
-###  http://w3id.org/coso/v1/contaminoso#hasAnyFeatureOfInterest
 coso:hasAnyFeatureOfInterest rdf:type owl:ObjectProperty ;
-                             rdfs:subPropertyOf sosa:hasAnyFeatureOfInterest ;
-                             rdfs:domain coso:ContaminantObservation ;
-                             rdfs:range sosa:FeatureOfInterest .
+    rdfs:label "has any feature of interest";
+    rdfs:domain coso:ContaminantObservation ;
+    rdfs:range sosa:FeatureOfInterest .
 
+coso:analyzedSample rdf:type owl:ObjectProperty ;
+    rdfs:label "analyzed sample";
+    rdfs:subPropertyOf coso:hasAnyFeatureOfInterest ;
+    rdfs:domain coso:ContaminantSampleObservation ;
+    rdfs:range coso:MaterialSample .
 
-###  http://w3id.org/coso/v1/contaminoso#hasFeatureOfInterest
 coso:hasFeatureOfInterest rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf coso:hasAnyFeatureOfInterest ;
-                          rdfs:range coso:Feature .
+    rdfs:label "has feature of interest";
+    rdfs:subPropertyOf coso:hasAnyFeatureOfInterest ;
+    rdfs:range coso:Feature .
 
+coso:sampledFeature rdf:type owl:ObjectProperty ;
+    rdfs:label "sampled feature";
+    rdfs:subPropertyOf coso:hasFeatureOfInterest ;
+    rdfs:domain coso:ContaminantSampleObservation ;
+    rdfs:range coso:SampledFeature .
 
-###  http://w3id.org/coso/v1/contaminoso#hasResult
-coso:hasResult rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf sosa:hasResult .
+coso:releaseFeature rdf:type owl:ObjectProperty ;
+    rdfs:label "release feature";
+    rdfs:subPropertyOf coso:hasFeatureOfInterest ;
+    rdfs:domain coso:ContaminantReleaseObservation ;
+    rdfs:range coso:ReleaseFeature .
 
+coso:observedAtPoint rdf:type owl:ObjectProperty ;
+    rdfs:label "observed at point";
+    rdfs:subPropertyOf coso:hasAnyFeatureOfInterest ;
+    rdfs:domain coso:ContaminantObservation ;
+    rdfs:range coso:Point .
 
-###  http://w3id.org/coso/v1/contaminoso#hasResultQualifier
-coso:hasResultQualifier rdf:type owl:ObjectProperty ;
-                        rdfs:range coso:ResultQualifier .
+coso:observedAtReleasePoint rdf:type owl:ObjectProperty ;
+    rdfs:label "observed at release point";
+    rdfs:subPropertyOf coso:observedAtPoint ;
+    rdfs:domain coso:ContaminantReleaseObservation ;
+    rdfs:range coso:ReleasePoint .
 
+coso:observedAtSamplePoint rdf:type owl:ObjectProperty ;
+    rdfs:label "observed at sample point";
+    rdfs:subPropertyOf coso:observedAtPoint ;
+    rdfs:domain coso:ContaminantSampleObservation ;
+    rdfs:range coso:SamplePoint .
 
-###  http://w3id.org/coso/v1/contaminoso#hasTemporalCoverage
-coso:hasTemporalCoverage rdf:type owl:ObjectProperty ;
-                         rdfs:domain coso:ContaminantObservation .
+coso:fromSamplePoint rdf:type owl:ObjectProperty ;
+    rdfs:label "from sample point";
+    rdfs:domain coso:MaterialSample ;
+    rdfs:range coso:SamplePoint .
 
-
-###  http://w3id.org/coso/v1/contaminoso#isSampleOf
 coso:isSampleOf rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf sosa:isSampleOf ;
-                rdfs:domain coso:MaterialSample ;
-                rdfs:range coso:SampledFeature .
+    rdfs:label "is sample of";
+    rdfs:subPropertyOf sosa:isSampleOf ;
+    rdfs:domain coso:MaterialSample ;
+    rdfs:range coso:SampledFeature .
 
+coso:hasResult rdf:type owl:ObjectProperty ;
+    rdfs:label "has result";
+    rdfs:subPropertyOf sosa:hasResult;
+    rdfs:domain coso:ContaminantObservation;
+    rdfs:range coso:ContaminantMeasurement.
 
-###  http://w3id.org/coso/v1/contaminoso#measurementUnit
-coso:measurementUnit rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf owl:topObjectProperty .
+coso:hasResultQualifier rdf:type owl:ObjectProperty ;
+    rdfs:label "has result qualifier";
+    rdfs:domain coso:ContaminantMeasurement;
+    rdfs:range coso:ResultQualifier .
 
+coso:pointFromFeature rdf:type owl:ObjectProperty ;
+    rdfs:label "point from feature";
+    rdfs:domain coso:Point ;
+    rdfs:range coso:Feature .
 
-###  http://w3id.org/coso/v1/contaminoso#measurementValue
-coso:measurementValue rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf owl:topObjectProperty .
-
-
-###  http://w3id.org/coso/v1/contaminoso#observationAnnotation
 coso:observationAnnotation rdf:type owl:ObjectProperty ;
+    rdfs:label "observation annotation";
+    rdfs:subPropertyOf owl:AnnotationProperty;
     rdfs:domain coso:ContaminantObservation;
     rdfs:range coso:ObservationAnnotation.
 
-
-###  http://w3id.org/coso/v1/contaminoso#observedAtPoint
-coso:observedAtPoint rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf sosa:hasAnyFeatureOfInterest ;
-                     rdfs:domain coso:ContaminantObservation ;
-                     rdfs:range coso:Point .
-
-
-###  http://w3id.org/coso/v1/contaminoso#observedAtReleasePoint
-coso:observedAtReleasePoint rdf:type owl:ObjectProperty ;
-                            rdfs:subPropertyOf coso:observedAtPoint ;
-                            rdfs:domain coso:ContaminantReleaseObservation ;
-                            rdfs:range coso:ReleasePoint .
-
-
-###  http://w3id.org/coso/v1/contaminoso#observedAtSamplePoint
-coso:observedAtSamplePoint rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf coso:hasAnyFeatureOfInterest ;
-                           rdfs:domain coso:ContaminantSampleObservation ;
-                           rdfs:range coso:SamplePoint .
-
-
-###  http://w3id.org/coso/v1/contaminoso#observedProperty
 coso:observedProperty rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf sosa:observedProperty ;
-                      rdfs:domain coso:ContaminantObservation ;
-                      rdfs:range coso:ContaminationProperty .
+    rdfs:label "observed property";
+    rdfs:subPropertyOf sosa:observedProperty ;
+    rdfs:domain coso:ContaminantObservation ;
+    rdfs:range coso:ContaminationProperty .
 
-
-###  http://w3id.org/coso/v1/contaminoso#ofSubstance
 coso:ofSubstance rdf:type owl:ObjectProperty ;
-                 rdfs:domain coso:ContaminantObservation ;
-                 rdfs:range [ rdf:type owl:Class ;
-                              owl:unionOf ( coso:Substance
-                                            coso:SubstanceCollection
-                                          )
-                            ] .
+    rdfs:label "of substance";
+    rdfs:domain coso:ContaminantObservation ;
+    rdfs:range [ rdf:type owl:Class ;
+                 owl:unionOf ( coso:Substance
+                               coso:SubstanceCollection
+                              )
+                ] .
 
+coso:resultAnnotation rdf:type owl:ObjectProperty ;
+    rdfs:label "result annotation";
+    rdfs:subPropertyOf owl:AnnotationProperty.
 
-###  http://w3id.org/coso/v1/contaminoso#pointFromFeature
-coso:pointFromFeature rdf:type owl:ObjectProperty ;
-                      rdfs:domain coso:Point ;
-                      rdfs:range coso:Feature .
-
-
-###  http://w3id.org/coso/v1/contaminoso#releaseFeature
-coso:releaseFeature rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf coso:hasFeatureOfInterest ;
-                    rdfs:domain coso:ContaminantReleaseObservation ;
-                    rdfs:range coso:ReleaseFeature .
-
-
-###  http://w3id.org/coso/v1/contaminoso#resultAnnotation
-coso:resultAnnotation rdf:type owl:ObjectProperty .
-
-
-###  http://w3id.org/coso/v1/contaminoso#sampleAnnotation
 coso:sampleAnnotation rdf:type owl:ObjectProperty ;
+    rdfs:label "sample annotation";
     rdfs:subPropertyOf owl:AnnotationProperty;
     rdfs:domain coso:MaterialSample;
     rdfs:range coso:SampleAnnotation. 
 
 
-###  http://w3id.org/coso/v1/contaminoso#sampleOfMaterialType
 coso:sampleOfMaterialType rdf:type owl:ObjectProperty ;
-                          rdfs:domain coso:MaterialSample ;
-                          rdfs:range coso:SampleMaterialType .
+    rdfs:label "sample of material type";
+    rdfs:domain coso:MaterialSample ;
+    rdfs:range coso:SampleMaterialType .
 
-
-###  http://w3id.org/coso/v1/contaminoso#sampledFeature
-coso:sampledFeature rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf coso:hasFeatureOfInterest ;
-                    rdfs:domain coso:ContaminantSampleObservation ;
-                    rdfs:range coso:SampledFeature .
-
-
-###  http://w3id.org/coso/v1/contaminoso#sampledTime
-coso:sampledTime rdf:type owl:ObjectProperty .
-
-
-###  http://w3id.org/coso/v1/contaminoso#usedAnalysisMethod
 coso:usedAnalysisMethod rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf sosa:usedProcedure ;
-                        rdfs:domain coso:ContaminantObservation ;
-                        rdfs:range coso:AnalysisMethod .
+    rdfs:label "used analysis method";
+    rdfs:subPropertyOf sosa:usedProcedure ;
+    rdfs:domain coso:ContaminantObservation ;
+    rdfs:range coso:AnalysisMethod .
 
+###  reused Object Properties
 
-###  http://www.w3.org/ns/sosa/hasAnyFeatureOfInterest
-sosa:hasAnyFeatureOfInterest rdf:type owl:ObjectProperty .
+sosa:hasFeatureOfInterest rdf:type owl:ObjectProperty. 
 
+sosa:isSampleOf rdf:type owl:ObjectProperty. 
 
+sosa:hasResult rdf:type owl:ObjectProperty. 
+
+sosa:observedProperty rdf:type owl:ObjectProperty. 
+
+sosa:usedProcedure rdf:type owl:ObjectProperty. 
 #################################################################
 #    Data properties
 #################################################################
 
-###  http://w3id.org/coso/v1/contaminoso#casNumber
+coso:substanceID rdf:type owl:DatatypeProperty;
+    rdfs:label "substance identifier" . 
+
 coso:casNumber rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf coso:substanceID ;
-               rdfs:label "cas number" .
+    rdfs:subPropertyOf coso:substanceID ;
+    rdfs:label "cas number" .
 
+coso:measurementUnit rdf:type owl:DatatypeProperty ;
+    rdfs:label "measurement unit";
+    rdfs:domain coso:ContaminantMeasurement.
 
-###  http://w3id.org/coso/v1/contaminoso#substanceID
-coso:substanceID rdf:type owl:DatatypeProperty .
+coso:measurementValue rdf:type owl:DatatypeProperty ;
+    rdfs:label "measurement value";
+    rdfs:domain coso:ContaminantMeasurement.
 
 
 #################################################################
