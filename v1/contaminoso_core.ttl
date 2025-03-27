@@ -29,35 +29,20 @@
 #    Annotation properties
 #################################################################
 
-###  http://purl.org/dc/terms/created
 dcterms:created rdf:type owl:AnnotationProperty .
 
-
-###  http://purl.org/dc/terms/creator
 dcterms:creator rdf:type owl:AnnotationProperty .
 
-
-###  http://purl.org/dc/terms/description
 dcterms:description rdf:type owl:AnnotationProperty .
 
-
-###  http://purl.org/dc/terms/issued
 dcterms:issued rdf:type owl:AnnotationProperty .
 
-
-###  http://purl.org/dc/terms/modified
 dcterms:modified rdf:type owl:AnnotationProperty .
 
-
-###  http://purl.org/dc/terms/publisher
 dcterms:publisher rdf:type owl:AnnotationProperty .
 
-
-###  http://purl.org/dc/terms/source
 dcterms:source rdf:type owl:AnnotationProperty .
 
-
-###  http://purl.org/dc/terms/title
 dcterms:title rdf:type owl:AnnotationProperty .
 
 
@@ -72,6 +57,158 @@ xsd:date rdf:type rdfs:Datatype .
 ###  xsd:anyURI
 <xsd:anyURI> rdf:type rdfs:Datatype .
 
+
+#################################################################
+#    Classes
+#################################################################
+
+coso:ContaminantObservation rdf:type owl:Class ;
+    rdfs:label "Contaminant Observation" ;
+    rdfs:subClassOf sosa:Observation .
+
+coso:ContaminantReleaseObservation rdf:type owl:Class ;
+    rdfs:label "Contaminant Release Observation" ;
+    rdfs:subClassOf coso:ContaminantObservation .
+
+coso:ContaminantSampleObservation rdf:type owl:Class ;
+    rdfs:label "Contaminant Sample Observation" ;
+    rdfs:subClassOf coso:ContaminantObservation .
+
+coso:Feature rdf:type owl:Class ;
+    rdfs:label "Feature" ;
+    rdfs:subClassOf geo:Feature ,
+                    sosa:FeatureOfInterest .
+
+coso:SampledFeature rdf:type owl:Class ;
+    rdfs:label "Sampled Feature" ;
+    rdfs:subClassOf coso:Feature .
+
+coso:ReleaseFeature rdf:type owl:Class ;
+    rdfs:label "Release Feature" ;
+    rdfs:subClassOf coso:Feature .
+
+coso:MonitoredFeature rdf:type owl:Class ;
+    rdfs:label "Monitored Feature" ;
+    rdfs:subClassOf coso:ReleaseFeature .
+
+coso:Point rdf:type owl:Class ;
+    rdfs:label "Point" ;
+    rdfs:subClassOf geo:Feature ,
+                    sosa:FeatureOfInterest .
+
+coso:SamplePoint rdf:type owl:Class ;
+    rdfs:label "Sample Point" ;
+    rdfs:subClassOf coso:Point .
+
+coso:ReleasePoint rdf:type owl:Class ;
+    rdfs:label "Release Point" ;
+    rdfs:subClassOf coso:Point .
+
+coso:MaterialSample rdf:type owl:Class ;
+    rdfs:label "Material Sample" ;
+    rdfs:subClassOf sosa:Sample .
+
+coso:SampleMaterialType rdf:type owl:Class ;
+    rdfs:label "Sample Material Type" .
+
+coso:AnalysisMethod rdf:type owl:Class ;
+    rdfs:label "Analysis Method" ;
+    rdfs:subClassOf sosa:Procedure .
+
+coso:ContaminationProperty rdf:type owl:Class ;
+    rdfs:label "Contamination Property" ;
+    rdfs:subClassOf sosa:Property .
+
+coso:ContaminantAbsoluteQuantityKind rdf:type owl:Class ;
+    rdfs:label "Contaminant Absolute Quantity Kind" ;
+    rdfs:subClassOf coso:ContaminationProperty .
+
+coso:ContaminantRelativeQuantityKind rdf:type owl:Class ;
+    rdfs:label "Contaminant Relative Quantity Kind" ;
+    rdfs:subClassOf coso:ContaminationProperty .
+
+coso:ContaminantMassQuantityKind rdf:type owl:Class ;
+    rdfs:label "Contaminant Quantity Kind" ;
+    rdfs:subClassOf coso:ContaminantAbsoluteQuantityKind .
+
+coso:ContaminantVolumeQuantityKind rdf:type owl:Class ;
+    rdfs:label "Contaminant Volume Quantity Kind" ;
+    rdfs:subClassOf coso:ContaminantAbsoluteQuantityKind .
+
+coso:ContaminantConcentrationQuantityKind rdf:type owl:Class ;
+    rdfs:label "Contaminant Concentration Quantity Kind" ;
+    rdfs:subClassOf coso:ContaminantRelativeQuantityKind.
+
+coso:ContaminantMeasurement rdf:type owl:Class ;
+    rdfs:label "Contaminant Measurement" ;
+    rdfs:subClassOf sosa:Result .
+
+coso:ContaminantAbsoluteMeasurement rdf:type owl:Class ;
+    rdfs:label "Contaminant Absolute Measurement" ;
+    rdfs:subClassOf coso:ContaminantMeasurement .
+
+coso:ContaminantRelativeMeasurement rdf:type owl:Class ;
+    rdfs:label "Contaminant Relative Measurement" ;
+    rdfs:subClassOf coso:ContaminantMeasurement .
+
+coso:AggregateContaminantMeasurement rdf:type owl:Class ;
+    rdfs:label "Aggregate Contaminant Measurement";
+    rdfs:subClassOf coso:ContaminantMeasurement .
+
+coso:SingleContaminantMeasurement rdf:type owl:Class ;
+    rdfs:label "Single Contaminant Measurement" ;
+    rdfs:subClassOf coso:ContaminantMeasurement .
+
+coso:QuantityValue rdf:type owl:Class;
+    rdfs:label "Quantity Value" .
+
+coso:DetectQuantityValue rdf:type owl:Class ;
+    rdfs:label "Detect Quantity Value" ;
+    rdfs:subClassOf coso:QuantityValue .
+
+coso:NonDetectQuantityValue rdf:type owl:Class ;
+    rfs:label "Non-Detect Quantity Value" ;
+    rdfs:subClassOf coso:QuantityValue .
+
+coso:ResultQualifier rdf:type owl:Class ;
+    rdfs:label "Result Qualifier".
+
+coso:DetectionLimit rdf:type owl:Class ;
+    rdfs:label "Detection Limit" ;
+    rdfs:subClassOf coso:ResultQualifier .
+
+coso:QuantitationLimit rdf:type owl:Class ;
+    rdfs:label "Quantitation Limit" ;
+    rdfs:subClassOf coso:ResultQualifier .
+
+coso:ObservationAnnotation rdf:type owl:Class ;
+    rdfs:label "Observation Annotation".
+
+coso:SampleAnnotation rdf:type owl:Class ;
+    rdfs:label "Sample Annotation".
+
+coso:Substance rdf:type owl:Class ;
+    rdfs:label "Substance".
+
+coso:SubstanceCollection rdf:type owl:Class ;
+    rdfs:label "Substance Collection" ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty rdfs:member ;
+                        owl:allValuesFrom coso:Substance
+                    ] .
+
+## Reused Classes
+sosa:Observation rdf:type owl:Class. 
+
+geo:Feature rdf:type owl:Class.
+
+sosa:FeatureOfInterest rdf:type owl:Class. 
+
+sosa:Sample rdf:type owl:Class. 
+
+sosa:Procedure rdf:type owl:Class. 
+
+sosa:Property rdf:type owl:Class. 
 
 #################################################################
 #    Object Properties
@@ -193,7 +330,7 @@ coso:usedAnalysisMethod rdf:type owl:ObjectProperty ;
     rdfs:domain coso:ContaminantObservation ;
     rdfs:range coso:AnalysisMethod .
 
-###  reused Object Properties
+###  Reused Object Properties
 
 sosa:hasFeatureOfInterest rdf:type owl:ObjectProperty. 
 
@@ -223,202 +360,23 @@ coso:measurementValue rdf:type owl:DatatypeProperty ;
     rdfs:label "measurement value";
     rdfs:domain coso:ContaminantMeasurement.
 
-
-#################################################################
-#    Classes
-#################################################################
-
-###  http://w3id.org/coso/v1/contaminoso#AggregateContaminantMeasurement
-coso:AggregateContaminantMeasurement rdf:type owl:Class ;
-                                     rdfs:subClassOf coso:ContaminantMeasurement .
-
-
-###  http://w3id.org/coso/v1/contaminoso#AnalysisMethod
-coso:AnalysisMethod rdf:type owl:Class ;
-                    rdfs:subClassOf sosa:Procedure .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteMeasurement
-coso:ContaminantAbsoluteMeasurement rdf:type owl:Class ;
-                                    rdfs:subClassOf coso:ContaminantMeasurement .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteQuantityKind
-coso:ContaminantAbsoluteQuantityKind rdf:type owl:Class ;
-                                     rdfs:subClassOf coso:ContaminationProperty .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationQuantityKind
-coso:ContaminantConcentrationQuantityKind rdf:type owl:Class ;
-                                          rdfs:subClassOf coso:ContaminantRelativeQuantityKind ,
-                                                          coso:ContaminationProperty .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ContaminantMassQuantityKind
-coso:ContaminantMassQuantityKind rdf:type owl:Class ;
-                                 rdfs:subClassOf coso:ContaminantAbsoluteQuantityKind .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement
-coso:ContaminantMeasurement rdf:type owl:Class ;
-                            rdfs:subClassOf sosa:Result .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ContaminantObservation
-coso:ContaminantObservation rdf:type owl:Class ;
-                            rdfs:subClassOf sosa:Observation .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ContaminantRelativeMeasurement
-coso:ContaminantRelativeMeasurement rdf:type owl:Class ;
-                                    rdfs:subClassOf coso:ContaminantMeasurement .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ContaminantRelativeQuantityKind
-coso:ContaminantRelativeQuantityKind rdf:type owl:Class ;
-                                     rdfs:subClassOf coso:ContaminationProperty .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ContaminantReleaseObservation
-coso:ContaminantReleaseObservation rdf:type owl:Class ;
-                                   rdfs:subClassOf coso:ContaminantObservation .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ContaminantSampleObservation
-coso:ContaminantSampleObservation rdf:type owl:Class ;
-                                  rdfs:subClassOf coso:ContaminantObservation .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ContaminantVolumeQuantityKind
-coso:ContaminantVolumeQuantityKind rdf:type owl:Class ;
-                                   rdfs:subClassOf coso:ContaminantAbsoluteQuantityKind .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ContaminationProperty
-coso:ContaminationProperty rdf:type owl:Class ;
-                           rdfs:subClassOf sosa:Property .
-
-
-###  http://w3id.org/coso/v1/contaminoso#DetectQuantityValue
-coso:DetectQuantityValue rdf:type owl:Class ;
-                         rdfs:subClassOf coso:QuantityValue .
-
-
-###  http://w3id.org/coso/v1/contaminoso#DetectionLimit
-coso:DetectionLimit rdf:type owl:Class ;
-                    rdfs:subClassOf coso:ResultQualifier .
-
-
-###  http://w3id.org/coso/v1/contaminoso#Feature
-coso:Feature rdf:type owl:Class ;
-             rdfs:subClassOf geo:Feature ,
-                             sosa:FeatureOfInterest .
-
-
-###  http://w3id.org/coso/v1/contaminoso#MaterialSample
-coso:MaterialSample rdf:type owl:Class ;
-                    rdfs:subClassOf sosa:Sample .
-
-
-###  http://w3id.org/coso/v1/contaminoso#MonitoredFeature
-coso:MonitoredFeature rdf:type owl:Class ;
-                      rdfs:subClassOf coso:ReleaseFeature .
-
-
-###  http://w3id.org/coso/v1/contaminoso#NonDetectQuantityValue
-coso:NonDetectQuantityValue rdf:type owl:Class ;
-                            rdfs:subClassOf coso:QuantityValue .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ObservationAnnotation
-coso:ObservationAnnotation rdf:type owl:Class .
-
-
-###  http://w3id.org/coso/v1/contaminoso#Point
-coso:Point rdf:type owl:Class ;
-           rdfs:subClassOf geo:Feature ,
-                           sosa:FeatureOfInterest .
-
-
-###  http://w3id.org/coso/v1/contaminoso#QuantitationLimit
-coso:QuantitationLimit rdf:type owl:Class ;
-                       rdfs:subClassOf coso:ResultQualifier .
-
-
-###  http://w3id.org/coso/v1/contaminoso#QuantityValue
-coso:QuantityValue rdf:type owl:Class .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ReleaseFeature
-coso:ReleaseFeature rdf:type owl:Class ;
-                    rdfs:subClassOf coso:Feature .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ReleasePoint
-coso:ReleasePoint rdf:type owl:Class ;
-                  rdfs:subClassOf coso:Point .
-
-
-###  http://w3id.org/coso/v1/contaminoso#ResultQualifier
-coso:ResultQualifier rdf:type owl:Class .
-
-
-###  http://w3id.org/coso/v1/contaminoso#SampleAnnotation
-coso:SampleAnnotation rdf:type owl:Class .
-
-
-###  http://w3id.org/coso/v1/contaminoso#SampleMaterialType
-coso:SampleMaterialType rdf:type owl:Class .
-
-
-###  http://w3id.org/coso/v1/contaminoso#SamplePoint
-coso:SamplePoint rdf:type owl:Class ;
-                 rdfs:subClassOf coso:Point .
-
-
-###  http://w3id.org/coso/v1/contaminoso#SampledFeature
-coso:SampledFeature rdf:type owl:Class ;
-                    rdfs:subClassOf coso:Feature .
-
-
-###  http://w3id.org/coso/v1/contaminoso#SingleContaminantMeasurement
-coso:SingleContaminantMeasurement rdf:type owl:Class ;
-                                  rdfs:subClassOf coso:ContaminantMeasurement .
-
-
-###  http://w3id.org/coso/v1/contaminoso#Substance
-coso:Substance rdf:type owl:Class .
-
-
-###  http://w3id.org/coso/v1/contaminoso#SubstanceCollection
-coso:SubstanceCollection rdf:type owl:Class ;
-                         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                           owl:onProperty rdfs:member ;
-                                           owl:allValuesFrom coso:Substance
-                                         ] .
-
 #################################################################
 #    Individuals
 #################################################################
 
-###  http://w3id.org/coso/v1/contaminoso#MaximumContaminantConcentrationQuantity
 coso:MaximumContaminantConcentrationQuantity rdf:type owl:NamedIndividual ,
-                                                      coso:ContaminantConcentrationQuantityKind .
+                                                      coso:ContaminantConcentrationQuantityKind ;
+                                        rdfs:label "Maximum Contaminant Concentration Quantity" .
 
 
-###  http://w3id.org/coso/v1/contaminoso#SingleContaminantConcentrationQuantity
 coso:SingleContaminantConcentrationQuantity rdf:type owl:NamedIndividual ,
-                                                     coso:ContaminantConcentrationQuantityKind .
+                                                     coso:ContaminantConcentrationQuantityKind ;
+                                        rdfs:label "Single Contamiant Concentration Quantity" .
 
-
-###  http://w3id.org/coso/v1/contaminoso#SingleContaminantVolumeQuantity
 coso:SingleContaminantVolumeQuantity rdf:type owl:NamedIndividual ,
-                                              coso:ContaminantVolumeQuantityKind .
+                                              coso:ContaminantVolumeQuantityKind ;
+                                        rdfs:label "Single Contaminant Volume Quantity" .
 
-
-###  http://w3id.org/coso/v1/contaminoso#SummedContaminantVolumeQuantity
 coso:SummedContaminantVolumeQuantity rdf:type owl:NamedIndividual ,
-                                              coso:ContaminantVolumeQuantityKind .
-
-
-###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
+                                              coso:ContaminantVolumeQuantityKind ;
+                                        rdfs:label "Summed Contaminant Volume Quantity"
