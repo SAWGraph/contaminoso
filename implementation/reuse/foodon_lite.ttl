@@ -1,0 +1,1870 @@
+@prefix : <http://purl.obolibrary.org/obo/foodon.owl#> .
+@prefix go: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix dce: <http://purl.org/dc/elements/1.1/> .
+@prefix efo: <http://www.ebi.ac.uk/efo/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix grin: <http://www.ars-grin.gov/cgi-bin/npgs/html/taxon.pl?> .
+@prefix itis: <http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=> .
+@prefix pato: <http://purl.obolibrary.org/obo/pato#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix asfis: <https://www.fao.org/fishery/en/aqspecies/> .
+@prefix chebi: <http://purl.obolibrary.org/obo/chebi/> .
+@prefix siren: <https://bioregistry.io/reference/siren:> .
+@prefix eolife: <http://eol.org/pages/> .
+@prefix schema: <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix langual: <http://www.langual.org/langual_thesaurus.asp?termid=> .
+@prefix wikipedia: <https://en.wikipedia.org/wiki/> .
+@prefix indexfungorum: <http://www.indexfungorum.org/names/NamesRecord.asp?RecordID=> .
+@base <http://purl.obolibrary.org/obo/foodon.owl#> .
+
+<http://purl.obolibrary.org/obo/foodon_lite.owl> rdf:type owl:Ontology ;
+                                             owl:versionIRI <http://purl.obolibrary.org/obo/foodon/releases/2025-02-01/foodon_lite.owl> ;
+                                             dcterms:contributor "Anoosha Sehar" ,
+                                                                 "Damion Dooley" ,
+                                                                 "Diane Alexander" ,
+                                                                 "Emma Griffiths" ,
+                                                                 "Gurinder Gosal" ,
+                                                                 "Hande Küçük McGinty" ,
+                                                                 "Lauren Chen" ,
+                                                                 "Magalie Weber" ,
+                                                                 "Rhiannon Cameron" ;
+                                             dcterms:date "2025-01-29" ;
+                                             dcterms:description "FoodOn is a consortium-driven project to build a comprehensive and easily accessible global farm-to-fork ontology about food, that accurately and consistently describes foods commonly known in cultures from around the world. See https://foodon.org for more details."@en ;
+                                             dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                             dcterms:title "FoodOn Food Ontology"@en ;
+                                             go:default-namespace "FOODON" ;
+                                             owl:versionInfo "2025-02-01" .
+
+
+############################################
+# Classes
+############################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000040
+obo:BFO_0000040 rdf:type owl:Class ;
+                obo:IAO_0000111 "material entity"@en ;
+                obo:IAO_0000115 "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." ,
+                                "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time."@en ;
+                obo:IAO_0000116 "Elucidation: An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." ;
+                obo:IAO_0000412 obo:agro.owl ,
+                                obo:cob.owl ,
+                                obo:dron.owl ,
+                                obo:envo.owl ,
+                                obo:obi.owl ,
+                                obo:ons.owl ,
+                                obo:po.owl ,
+                                obo:uberon.owl ;
+                rdfs:label "material entity" ,
+                           "material entity"@en .
+
+###  http://purl.obolibrary.org/obo/OBI_0100026
+obo:OBI_0100026 rdf:type owl:Class ;
+                rdfs:subClassOf obo:BFO_0000040 ;
+                obo:IAO_0000114 obo:IAO_0000122 ;
+                obo:IAO_0000115 "A material entity that is an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs."@en ;
+                obo:IAO_0000119 "WEB: http://en.wikipedia.org/wiki/Organism"@en ;
+                obo:IAO_0000412 obo:obi.owl ;
+                rdfs:label "organism"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03420116
+obo:FOODON_03420116 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:BFO_0000040 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "Anatomical or other part(s) or substances derived from plant or animal or fungal organisms."@en ;
+                    obo:IAO_0000116 "This was renamed from \"part of organism\" (and from LanguaL's original \"part of plant or animal\") to encompass organism material that is produced by an animal or plant rather than \"part of\" it, such as an egg, and might not be countable per se, such as milk. Additionally the existing definition's \"from which a food product or its major ingredient is derived.\" was removed as an unnecessary constraint. [2023/03/02]"@en ;
+                    go:hasDbXref langual:C0116 ;
+                    rdfs:comment "LanguaL curation note: \"e.g. *LEAF*, *ROOT OR TUBER*, *ORGAN MEAT*, *MILK* OR *EGG*; it also includes components of parts, such as *CREAM*, and extracts, concentrates or isolates, such as *PROTEIN EXTRACT* or *SUGAR*.\""@en ;
+                    rdfs:label "organism material"@en .
+
+
+############################################
+## Organism mid level Classes
+############################################
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_2759
+obo:NCBITaxon_2759 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:OBI_0100026 ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   go:hasExactSynonym "eucaryotes" ,
+                                      "eukaryotes" ;
+                   rdfs:label "Eukaryota" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_33154
+obo:NCBITaxon_33154 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:NCBITaxon_2759 ;
+                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+                    rdfs:label "Opisthokonta" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_33208
+obo:NCBITaxon_33208 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:NCBITaxon_33154 ;
+                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+                    go:hasExactSynonym "metazoans" ,
+                                       "multicellular animals" ;
+                    rdfs:label "Metazoa" .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411564
+obo:FOODON_03411564 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:OBI_0100026 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "This is a hierarchy of organisms, grouped minimally in a combination of taxonomy and consumer-oriented food groups."@en ;
+                    go:hasDbXref langual:B0001 ,
+                                 langual:B1564 ;
+                    rdfs:comment "This was LanguaL definition: Individual plant or animal from which the food product or its major ingredient is derived; also a chemical food source [FDA CFSAN 1995]."@en ;
+                    rdfs:label "organism by alternate grouping"@en .
+
+    ###  http://purl.obolibrary.org/obo/FOODON_00003004
+obo:FOODON_00003004 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:UBERON_0000468
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0002162 ;
+                                                                 owl:someValuesFrom obo:NCBITaxon_33208
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_03411564 ,
+                                    obo:UBERON_0000468 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0002162 ;
+                                      owl:someValuesFrom obo:NCBITaxon_33208
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A whole animal."@en ;
+                    obo:IAO_0000119 wikipedia:Animal ;
+                    obo:IAO_0000600 "A multicellular eukaryotic heterotrophic organism within the kingdom Animalia."@en ;
+                    dcterms:contributor "http://orcid.org/0000-0002-8844-9165" ;
+                    dcterms:date "2019-08-14T18:02:36Z"^^xsd:dateTime ;
+                    go:hasDbXref langual:B1297 ;
+                    rdfs:comment "A whole animal can be dead or alive, but its body must be relatively intact."@en ,
+                                 "An animal which is dead or alive and has a relatively intact body."@en ;
+                    rdfs:label "animal"@en .
+
+###  http://purl.obolibrary.org/obo/PO_0000003
+obo:PO_0000003 rdf:type owl:Class ;
+               rdfs:subClassOf obo:FOODON_03411564 ,
+                               obo:PO_0009011 ;
+               obo:IAO_0000115 "A plant structure (PO:0005679) which is a whole organism." ;
+               obo:IAO_0000412 obo:po.owl ;
+               go:hasBroadSynonym "genet (broad)" ,
+                                  "ramet (broad)" ;
+               go:hasDbXref langual:B1347 ,
+                            "FNA:4b610104-1bb0-4c6b-9bb9-e3cc61d11ac0" ,
+                            "FNA:99508f62-7116-4e2b-90c0-19ff55ebd967" ,
+                            "FNA:ba1b1bd5-75bd-4195-b11c-3aba08da08c2" ,
+                            "FNA:c1ccca7d-2a98-4a9d-8603-c34b551935e0" ,
+                            "FNA:e4dde193-57f7-4ab9-9d25-96b4ca0088ba" ,
+                            "FNA:ec8c2064-2a67-43d7-8e14-aecfef5cf33b" ,
+                            "FNA:f8f31520-e4bc-4430-9274-8dd3cee7ffd8" ,
+                            "PO_GIT:538" ,
+                            "PO_GIT:69" ;
+               go:hasExactSynonym "planta entera (Spanish, exact)" ,
+                                  "植物体全体 (Japanese, exact)" ;
+               go:hasNarrowSynonym "bush (narrow)" ,
+                                   "frutex (narrow)" ,
+                                   "frutices (narrow, plural)" ,
+                                   "gametophyte (narrow)" ,
+                                   "herb (narrow)" ,
+                                   "liana (narrow)" ,
+                                   "prothalli (narrow, plural)" ,
+                                   "prothallium (narrow)" ,
+                                   "prothallus (narrow)" ,
+                                   "shrub (narrow)" ,
+                                   "sporophyte (narrow)" ,
+                                   "suffrutex (narrow)" ,
+                                   "suffrutices (narrow, plural)" ,
+                                   "tree (narrow)" ,
+                                   "vine (narrow)" ,
+                                   "woody clump (narrow)" ;
+               go:hasOBONamespace "plant_anatomy" ;
+               go:hasRelatedSynonym "clonal colony (related)" ,
+                                    "colony (related)" ;
+               go:id "PO:0000003" ;
+               go:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/po#TraitNet> ,
+                           <http://purl.oboInOwllibrary.org/oboInOwl/po#reference> ;
+               rdfs:comment "Examples include plant embryo (PO:0009009), megagametophyte (PO:0025279) and microgametophyte (PO:0025280)." ;
+               rdfs:label "whole plant" .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411021
+obo:FOODON_03411021 rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Class ;
+                                          owl:unionOf ( obo:FOODON_03411222
+                                                        obo:FOODON_03411433
+                                                        obo:FOODON_03412409
+                                                      )
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_00003004 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "An aquatic animal is an animal, either vertebrate or invertebrate, which lives in the water for most or all of its lifetime."@en ;
+                    go:hasDbXref langual:B1021 ;
+                    rdfs:comment """This is equivalent to:
+
+'fish (food source)' or 'shellfish (food source)' or 'crustacean (food source)' or 'echinoderm (food source)' or 'coelenterate (food source)'
+
+However, this disjunction appears to be a burden on reasoners, and so this is currently not implemented."""@en ;
+                    rdfs:label "fish or lower water animal"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411222
+obo:FOODON_03411222 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411021 ,
+                                    obo:FOODON_03411297 ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A gill-bearing aquatic craniate animal that lacks limbs with digits."@en ;
+                    obo:IAO_0000117 "Damion Dooley"@en ;
+                    obo:IAO_0000119 wikipedia:Fish ;
+                    go:hasDbXref langual:B1222 ;
+                    rdfs:comment "\"Most fish are ectothermic ('cold-blooded'), allowing their body temperatures to vary as ambient temperatures change, though some of the large active swimmers like white shark and tuna can hold a higher core temperature.\" - https://en.wikipedia.org/wiki/Fish"@en ;
+                    rdfs:label "fish"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411433
+obo:FOODON_03411433 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_00002581 ,
+                                    obo:FOODON_03411021 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "The term shellfish is used both broadly and specifically. For regulatory purposes it is often narrowly defined as filter-feeding molluscs such as clams, mussels, and oyster to the exclusion of crustaceans and all else. Although their shells may differ, all shellfish are invertebrates."@en ;
+                    obo:IAO_0000119 wikipedia:Shellfish ;
+                    go:hasDbXref langual:B1433 ;
+                    rdfs:comment "Covers both freshwater and saltwater organisms"@en ;
+                    rdfs:label "shellfish"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03412409
+obo:FOODON_03412409 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411021 ,
+                                    obo:FOODON_03411142 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "Coelenterata is an obsolete term encompassing the animal phyla *Cnidaria* (coral animals, true jellies, sea anemones, sea pens, and their allies) and *Ctenophora* (comb jellies).  [https://en.wikipedia.org/wiki/Coelenterata]"@en ;
+                    go:hasDbXref langual:B2409 ;
+                    go:hasSynonym "coelenterata"@en ;
+                    rdfs:label "coelenterate"@en .
+
+
+
+###  http://purl.obolibrary.org/obo/FOODON_00002452
+obo:FOODON_00002452 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_00003004 ;
+                    obo:IAO_0000112 "Familiar examples of invertebrates include arthropods (insects, arachnids, crustaceans, and myriapods), mollusks (chitons, snails, bivalves, squids, and octopuses), annelids (earthworms and leeches), and cnidarians (hydras, jellyfishes, sea anemones, and corals).[wikipedia]"@en ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "Invertebrates are animals that neither possess nor develop a vertebral column (commonly known as a backbone or spine), derived from the notochord. This includes all animals apart from the subphylum Vertebrata."@en ;
+                    obo:IAO_0000117 "Damion Dooley"@en ;
+                    obo:IAO_0000119 "https://en.wikipedia.org/wiki/Invertebrate"^^xsd:anyURI ;
+                    rdfs:label "invertebrate animal"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411142
+obo:FOODON_03411142 rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Class ;
+                                          owl:unionOf ( obo:FOODON_03412115
+                                                        obo:FOODON_03412409
+                                                        obo:FOODON_03414466
+                                                      )
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_00002581 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "Aquatic animals other than fish and shellfish"@en ;
+                    go:hasDbXref langual:B1142 ;
+                    rdfs:label "aquatic invertebrate animal (excluding shellfish)"@en .
+
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03411297
+obo:FOODON_03411297 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_00003004 ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A vertebrate animal is any species of organism within the subphylum Vertebrata (chordates with backbones). Vertebrates represent the overwhelming majority of the phylum Chordata, with currently about 69,276 species described."@en ;
+                    obo:IAO_0000117 "Damion Dooley" ;
+                    obo:IAO_0000119 wikipedia:Vertebrate ;
+                    go:hasBroadSynonym "animal"@en ;
+                    go:hasDbXref langual:B1297 ;
+                    rdfs:comment "LanguaL curation note: For a unicellular animal, use *ALGAE OR FUNGUS USED AS FOOD SOURCE*."@en ;
+                    rdfs:label "vertebrate animal"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_00002581
+obo:FOODON_00002581 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_00002452 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "An aquatic invertebrate may live entirely beneath the water, or may live upon its surface or on the plants surrounding it. Some breathe air, others breathe water. To move, they may walk, swim, float, skate, fly or glide on their bellies—or they may not move much at all."@en ;
+                    obo:IAO_0000116 "Because snails are members of gastropod, a subclass of molluscs, ... leading to aquatic invertebrates, we can't make aquatic invertebrates disjoint with terrestrial invertebrates."@en ;
+                    obo:IAO_0000117 "Damion Dooley" ;
+                    obo:IAO_0000119 "https://nature.mdc.mo.gov/discover-nature/general-species-information/aquatic-invertebrate-facts"^^xsd:anyURI ;
+                    dcterms:date "2019-04-29T19:23:38Z"^^xsd:dateTime ;
+                    rdfs:label "aquatic invertebrate"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03414899
+obo:FOODON_03414899 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_00002452 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 """Invertebrates are animals that neither possess nor develop a vertebral column (commonly known as a backbone or spine), derived from the notochord. This includes all animals apart from the subphylum *Vertebrata*. Familiar examples of invertebrates include insects; crabs, lobsters and their kin; snails, clams, octopuses and their kin; starfish, sea-urchins and their kin; jellyfish, and worms. [https://en.wikipedia.org/wiki/Invertebrate] 
+ Terrestrial invertebrates include ants, flies, crickets, grasshoppers and spiders. [https://en.wikipedia.org/wiki/Terrestrial_animal]"""@en ;
+                    go:hasDbXref langual:B4899 ;
+                    go:hasSynonym "insect"@en ,
+                                  "invertebrate, land"@en ,
+                                  "land snail"@en ;
+                    rdfs:label "terrestrial invertebrate"@en .
+
+
+############################################
+### Fish lower level Classes
+############################################
+
+#TODO come back for diadromous, freshwater and saltwater categories
+
+###  http://purl.obolibrary.org/obo/FOODON_03411365
+obo:FOODON_03411365 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411222 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref langual:B1365 ;
+                    go:hasSynonym "osteichthyes"@en ;
+                    rdfs:label "fish, bony"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411164
+obo:FOODON_03411164 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411222 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref langual:B1164 ;
+                    go:hasSynonym "agnatha"@en ;
+                    rdfs:label "fish, jawless"@en .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03411581
+obo:FOODON_03411581 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411365 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "Perciformes, also called the Percomorpha or Acanthopteri, are the most numerous order of vertebrates, containing about 41% of all bony fish. Perciformes means \"perch-like\". They belong to the class of ray-finned fish, and comprise over 10,000 species found in almost all aquatic ecosystems. The order contains about 160 families, which is the most of any order within the vertebrates. [https://en.wikipedia.org/wiki/Perciformes]"@en ;
+                    go:hasDbXref <http://eol.org/pages/5184> ,
+                                 langual:B1581 ;
+                    go:hasSynonym "perciformes"@en ;
+                    rdfs:label "fish, perciform"@en .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03411020
+obo:FOODON_03411020 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411365 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "Acipenseriformes is an order of basal ray-finned fishes that includes the sturgeons and paddlefishes, as well as some extinct families. [https://en.wikipedia.org/wiki/Acipenseriformes]"@en ;
+                    go:hasDbXref <http://eol.org/pages/8300> ,
+                                 langual:B1020 ;
+                    go:hasSynonym "acipenseriformes"@en ,
+                                  "aciperseriformes"@en ;
+                    rdfs:label "fish, acipenseriform"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411592
+obo:FOODON_03411592 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411365 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref <http://eol.org/pages/5157> ,
+                                 langual:B1592 ;
+                    go:hasSynonym "salmoniformes"@en ;
+                    rdfs:label "fish, salmoniform"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03413808
+obo:FOODON_03413808 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411365 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "Esociformes are a small order of ray-finned fish, with two families, the *Umbridae* (mudminnows) and the *Esocidae* (pikes). The pikes of genus *Esox* give the order its name."@en ;
+                    obo:IAO_0000119 "WIKIPEDIA:Esociformes" ;
+                    go:hasDbXref langual:B3808 ;
+                    go:hasNarrowSynonym "Esociformes" ;
+                    go:hasSynonym "esciformes"@en ;
+                    rdfs:label "fish, esociform"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411594
+obo:FOODON_03411594 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411365 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "Cypriniformes is an order of ray-finned fish, including the carps, minnows, loaches and relatives. This order contains 11-12 families, over 400 genera, and more than 4,250 species, with new species being described every few months or so, and new genera being recognized frequently. They are most diverse in southeastern Asia, and are entirely absent from Australia and South America. [https://en.wikipedia.org/wiki/Cypriniformes]"@en ;
+                    go:hasDbXref <http://eol.org/pages/3194> ,
+                                 langual:B1594 ;
+                    go:hasSynonym "cypriniformes"@en ,
+                                  "minnow"@en ,
+                                  "sucker"@en ;
+                    rdfs:label "fish, cypriniform"@en .
+
+#these classes would be useful but currently are not completed with any subclasses or species references
+# ###  http://purl.obolibrary.org/obo/FOODON_03413361
+# obo:FOODON_03413361 rdf:type owl:Class ;
+#                     rdfs:subClassOf obo:FOODON_03411222 ;
+#                     obo:IAO_0000114 obo:IAO_0000428 ;
+#                     obo:IAO_0000115 "Potamodromous fish migrate within fresh water only."@en ;
+#                     obo:IAO_0000119 "WIKIPEDIA:Potamodromous" ;
+#                     go:hasDbXref langual:B3361 ;
+#                     go:hasSynonym "potamodromous fish"@en ;
+#                     rdfs:label "freshwater fish"@en .
+
+
+# ###  http://purl.obolibrary.org/obo/FOODON_03413362
+# obo:FOODON_03413362 rdf:type owl:Class ;
+#                     rdfs:subClassOf obo:FOODON_03411222 ;
+#                     obo:IAO_0000114 obo:IAO_0000428 ;
+#                     obo:IAO_0000115 "Oceanodromous fish migrate within salt water only"@en ;
+#                     obo:IAO_0000119 "WIKIPEDIA:Oceanodromous" ;
+#                     go:hasDbXref langual:B3362 ;
+#                     go:hasSynonym "oceanodromous fish"@en ;
+#                     rdfs:label "marine fish"@en .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03413360
+obo:FOODON_03413360 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411222 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "Diadromous fish travel between salt and fresh water. Anadromous fish live in the sea mostly, breed in fresh water; the best-known are salmon, which hatch in small freshwater streams, go down to the sea and live there for several years, then return to the same streams where they were hatched, spawn, and die shortly thereafter. Salmon are capable of going hundreds of kilometers upriver, and humans must install fish ladders in dams to enable the salmon to get past. Catadromous fish live in fresh water, breed in the sea; the most remarkable are freshwater eels of genus Anguilla, whose larvae drift on the open ocean, sometimes for months or years, before travelling thousands of kilometres back to their original streams. Amphidromous fish move between fresh and salt water during some part of life cycle, but not for breeding."@en ;
+                    obo:IAO_0000119 "WIKIPEDIA:Diadromous_fish" ;
+                    go:hasDbXref langual:B3360 ;
+                    rdfs:label "diadromous fish"@en .
+
+
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03413448
+obo:FOODON_03413448 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03413360 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "Anadromous fish live in the sea mostly, breed in fresh water; the best-known are salmon, which hatch in small freshwater streams, go down to the sea and live there for several years, then return to the same streams where they were hatched, spawn, and die shortly thereafter."@en ;
+                    go:hasDbXref langual:B3448 ;
+                    rdfs:label "anadromous fish"@en .
+
+
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03411818
+obo:FOODON_03411818 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411581 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref <http://eol.org/pages/5358> ,
+                                 langual:B1818 ;
+                    go:hasSynonym "centrarchidae"@en ;
+                    rdfs:label "sunfish family"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411129
+obo:FOODON_03411129 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411592 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "Salmonidae is a family of ray-finned fish, the only living family currently placed in the order Salmoniformes. It includes salmon, trout, chars, freshwater whitefishes, and graylings, which collectively are known as the salmonids. The Atlantic salmon and trout of the genus *Salmo* give the family and order their names. [https://en.wikipedia.org/wiki/Salmonidae]"@en ;
+                    go:hasDbXref <http://eol.org/pages/5158> ,
+                                 langual:B1129 ;
+                    go:hasSynonym "salmonidae"@en ;
+                    rdfs:label "trout and salmon family"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411826
+obo:FOODON_03411826 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03413808 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "Esox is a genus of freshwater fish, the only living genus in the family *Esocidae* the esocids which were endemic to North America, Europe and Eurasia during the Paleogene through present."@en ;
+                    obo:IAO_0000119 "WIKIPEDIA:Esocidae" ;
+                    go:hasDbXref <http://eol.org/pages/5509> ,
+                                 langual:B1826 ;
+                    go:hasSynonym "esocidae"@en ;
+                    rdfs:label "pike family"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411892
+obo:FOODON_03411892 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411594 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "The *Catostomidae* are the suckers of the order Cypriniformes, with about 78 species in this family of freshwater fishes. The *Catostomidae* are primarily native to North America, but *Catostomus catostomus* is found in both North America and Russia, and *Myxocyprinus asiaticus* is from China.. [https://en.wikipedia.org/wiki/Catostomidae]"@en ;
+                    go:hasDbXref <http://eol.org/pages/3196> ,
+                                 langual:B1892 ;
+                    go:hasSynonym "catostomidae"@en ;
+                    rdfs:label "sucker family"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03412004
+obo:FOODON_03412004 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411581 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref langual:B2004 ;
+                    go:hasNarrowSynonym "Percidae" ;
+                    go:hasSynonym "percidae"@en ,
+                                  "true perch"@en ;
+                    rdfs:label "perch family"@en .
+
+
+
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03412426
+obo:FOODON_03412426 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411818 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref langual:B2426 ;
+                    rdfs:label "freshwater bass"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03412665
+obo:FOODON_03412665 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03412426 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref <http://eol.org/pages/25075> ,
+                                 langual:B2665 ;
+                    go:hasSynonym "micropterus spp."@en ;
+                    rdfs:label "black bass"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411184
+obo:FOODON_03411184 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411581 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 """The *Moronidae* are a family of perciform fishes, commonly called the temperate basses, consisting of at least six freshwater, brackish water, and marine species. The members of this family are most commonly found near the coastal regions of eastern North America (including the Gulf of Mexico), northern Africa, and Europe. The family includes the genera *Morone* and *Dicentrarchus*. [https://en.wikipedia.org/wiki/Moronidae] 
+The members of the family *Percichthyidae* are known as the temperate perches. They belong to the order Perciformes, the perch-like fishes. Almost 40 species of percichthyids are now recognised, grouped in 10 genera. Most but not all are exclusively freshwater fishes. They are mainly found in Australia, but species are also found in southern South America (Percichthys) and eastern Asia (Coreoperca and Siniperca).
+[https://en.wikipedia.org/wiki/Temperate_perch]"""@en ;
+                    go:hasDbXref <http://eol.org/pages/5184> ,
+                                 langual:B1184 ;
+                    go:hasSynonym "moronidae"@en ,
+                                  "percichthyidae"@en ;
+                    rdfs:label "temperate bass families"@en .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03413807
+obo:FOODON_03413807 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411129 ,
+                                    obo:FOODON_03413448 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref langual:B3807 ;
+                    go:hasNarrowSynonym "Salmoninae" ;
+                    go:hasSynonym "salmoninae"@en ;
+                    rdfs:label "salmonins"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03414051
+obo:FOODON_03414051 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03413807 ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A genus of salmonid fish often called char or charr; some species are called \"trout\". Salvelinus is a member of the subfamily Salmoninae within the family Salmonidae. The genus has a northern circumpolar distribution, and most of its members are typically cold-water fish that primarily inhabit fresh waters. Many species also migrate to the sea."@en ;
+                    obo:IAO_0000117 "Damion Dooley"@en ;
+                    obo:IAO_0000119 wikipedia:Salvelinus ;
+                    go:hasDbXref <http://eol.org/pages/5158> ,
+                                 langual:B4051 ;
+                    go:hasExactSynonym "charr"@en ,
+                                       "salvelinus spp."@en ;
+                    go:hasNarrowSynonym "Salvelinus Richardson, 1836" ;
+                    rdfs:label "char"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411409
+obo:FOODON_03411409 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411818 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "The species of this genus are known as crappies and are extremely popular game fish. The genus has two species the white and black crappie. Crappie of both species are sometimes referred to as papermouths, calico bass, and strawberry bass. Both species of crappie feed on minnows as adults. Both species spawn in the early spring when the water temperature nears 64 to 68 degrees. Crappie create a nest in fine silt or gravel, and the nests are often congregated in very high densities in shallow waters. ("@en ;
+                    obo:IAO_0000119 "WIKIPEDIA:White_crappie)" ;
+                    go:hasDbXref <http://eol.org/pages/27527> ,
+                                 langual:B1409 ;
+                    go:hasSynonym "pomoxis spp."@en ;
+                    rdfs:label "crappie"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411293
+obo:FOODON_03411293 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411826 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000119 "WIKIPEDIA:Esox" ;
+                    go:hasDbXref <http://eol.org/pages/25461> ,
+                                 langual:B1293 ;
+                    go:hasSynonym "esox spp."@en ;
+                    rdfs:label "pike"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411319
+obo:FOODON_03411319 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411892 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref <http://eol.org/pages/3196> ,
+                                 langual:B1319 ;
+                    go:hasNarrowSynonym "Catostomus Lesueur, 1817" ;
+                    go:hasSynonym "catostomus spp."@en ;
+                    rdfs:label "sucker"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411557
+obo:FOODON_03411557 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03412004 ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "Perch is a common name for fish of the genus Perca, freshwater gamefish belonging to the family Percidae."@en ;
+                    obo:IAO_0000117 "Damion Dooley"@en ;
+                    obo:IAO_0000119 "https://en.wikipedia.org/wiki/Perch"^^xsd:anyURI ;
+                    go:hasDbXref <http://eol.org/pages/24007> ,
+                                 langual:B1557 ;
+                    go:hasExactSynonym "freshwater perch"@en ,
+                                       "perca spp."@en ;
+                    rdfs:label "perch"@en .
+
+
+
+###############################################
+### Fish species classes
+###############################################
+
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_147949
+obo:NCBITaxon_147949 rdf:type owl:Class ;
+                     rdfs:subClassOf obo:FOODON_03412665 ;# ,
+                                     #obo:NCBITaxon_27705 ;
+                     obo:IAO_0000114 obo:IAO_0000428 ;
+                     obo:IAO_0000118 "smallmouth bass"@en ;
+                     obo:IAO_0000412 obo:ncbitaxon.owl ;
+                     dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                     go:hasBroadSynonym "bass"@en ;
+                     go:hasDbXref <http://eol.org/pages/207898> ,
+                                  langual:B2427 ,
+                                  asfis:mpj ,
+                                  "CEC1993:594" ,
+                                  "itis:550562" ;
+                     go:hasExactSynonym "smallmouth bass" ,
+                                        "smallmouth bass"@en ,
+                                        "smallmouth blackbass" ;
+                     go:hasNarrowSynonym "Micropterus dolomieu" ,
+                                         "Micropterus dolomieui Lacepède, 1802" ,
+                                         "Micropterus dolomieui Lacépède, 1801" ;
+                     go:hasSynonym "micropterus dolomieui"@en ;
+                     rdfs:label "Micropterus dolomieu" ;
+                     rdfs:seeAlso "https://en.wikipedia.org/wiki/Smallmouth_bass" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_147949 ;
+   owl:annotatedProperty go:hasBroadSynonym ;
+   owl:annotatedTarget "bass"@en ;
+   obo:IAO_0000412 "FDA SFL Acceptable Market Name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_147949 ;
+   owl:annotatedProperty go:hasExactSynonym ;
+   owl:annotatedTarget "smallmouth bass"@en ;
+   obo:IAO_0000412 "FDA SFL Common Name"
+ ] .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_27706
+obo:NCBITaxon_27706 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03412665 ;#,
+                                    #obo:NCBITaxon_27705 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "The largemouth bass (Micropterus salmoides) is a carnivorous freshwater gamefish in the Centrarchidae (sunfish) family."@en ;
+                    obo:IAO_0000118 "largemouth bass"@en ;
+                    obo:IAO_0000119 wikipedia:Largemouth_bass ,
+                                    "American Fisheries Society" ;
+                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    go:hasBroadSynonym "bass"@en ;
+                    go:hasDbXref <http://eol.org/pages/223475> ,
+                                 langual:B2182 ,
+                                 asfis:mps ,
+                                 "CEC1993:595" ,
+                                 "itis:168160" ;
+                    go:hasExactSynonym "Florida bass"@en ,
+                                       "Florida largemouth"@en ,
+                                       "Green trout"@en ,
+                                       "Micropterus salmoides"@en ,
+                                       "Oswego bass"@en ,
+                                       "Potter's fish"@en ,
+                                       "bigmouth bass"@en ,
+                                       "black bass"@en ,
+                                       "bucketmouth"@en ,
+                                       "gilsdorf bass"@en ,
+                                       "green bass"@en ,
+                                       "large mouth bass"@en ,
+                                       "largemouth bass" ,
+                                       "largemouth bass"@en ,
+                                       "largemouth blackbass" ,
+                                       "largies"@en ,
+                                       "northern largemouth"@en ,
+                                       "southern largemouth"@en ,
+                                       "widemouth bass"@en ;
+                    go:hasNarrowSynonym "Micropterus salmoides (Lacepède, 1802)" ,
+                                        "Micropterus salmoides (Lacépède, 1801)" ;
+                    go:hasSynonym "black bass"@en ,
+                                  "micropterus salmoides"@en ;
+                    rdfs:label "Micropterus salmoides" ;
+                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Largemouth_bass" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_27706 ;
+   owl:annotatedProperty go:hasBroadSynonym ;
+   owl:annotatedTarget "bass"@en ;
+   obo:IAO_0000412 "FDA SFL Acceptable Market Name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_27706 ;
+   owl:annotatedProperty go:hasExactSynonym ;
+   owl:annotatedTarget "largemouth bass"@en ;
+   obo:IAO_0000412 "FDA SFL Common Name"
+ ] .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_8038
+obo:NCBITaxon_8038 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:FOODON_03414051 ; #,
+                                   #obo:NCBITaxon_8033 ;
+                   obo:IAO_0000114 obo:IAO_0000428 ;
+                   obo:IAO_0000118 "brook trout"@en ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                   go:hasBroadSynonym "trout"@en ;
+                   go:hasDbXref <http://eol.org/pages/205276> ,
+                                langual:B1077 ,
+                                asfis:svf ,
+                                "CEC1993:258" ,
+                                "itis:162003" ;
+                   go:hasExactSynonym "brook trout" ,
+                                      "brook trout"@en ;
+                   go:hasNarrowSynonym "Salvelinus fontinalis" ;
+                   go:hasSynonym "speckled trout"@en ;
+                   rdfs:label "Salvelinus fontinalis" ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Brook_trout" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_8038 ;
+   owl:annotatedProperty go:hasBroadSynonym ;
+   owl:annotatedTarget "trout"@en ;
+   obo:IAO_0000412 "FDA SFL Acceptable Market Name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_8038 ;
+   owl:annotatedProperty go:hasExactSynonym ;
+   owl:annotatedTarget "brook trout"@en ;
+   obo:IAO_0000412 "FDA SFL Common Name"
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_8182
+obo:NCBITaxon_8182 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:FOODON_03411409 ; # ,
+                                   #obo:NCBITaxon_8181 ;
+                   obo:IAO_0000114 obo:IAO_0000428 ;
+                   obo:IAO_0000115 "The black crappie, *Pomoxis nigromaculatus* (Lesueur, 1829), is very similar to *P. annularis* in size, shape, and habits, except that it is darker, with a pattern of black spots. The black crappie has 7-8 spines on its dorsal fin. The number of spines on the dorsal fin, is occasionally the only way to differeniate between a juvenile black crappie and a white crappie. The black crappie tends to prefer clearer water than the white crappie does. Its native range is uncertain, since it has been so widely transplanted, but it is presumed to be similar to the white crappie's. The black crappie is also known as the strawberry bass or Oswego bass. ("@en ;
+                   obo:IAO_0000118 "black crappie"@en ;
+                   obo:IAO_0000119 "WIKIPEDIA:White_crappie)" ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                   go:hasBroadSynonym "crappie"@en ;
+                   go:hasDbXref <http://eol.org/pages/225242> ,
+                                langual:B1819 ,
+                                asfis:pxg ,
+                                "CEC1993:597" ,
+                                "itis:168167" ;
+                   go:hasExactSynonym "black crappie" ,
+                                      "black crappie"@en ;
+                   go:hasNarrowSynonym "Pomoxis nigromaculatus" ;
+                   go:hasSynonym "crappie, black"@en ,
+                                 "pomoxis nigromaculatus"@en ;
+                   rdfs:label "Pomoxis nigromaculatus" ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Black_crappie" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_8182 ;
+   owl:annotatedProperty go:hasBroadSynonym ;
+   owl:annotatedTarget "crappie"@en ;
+   obo:IAO_0000412 "FDA SFL Acceptable Market Name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_8182 ;
+   owl:annotatedProperty go:hasExactSynonym ;
+   owl:annotatedTarget "black crappie"@en ;
+   obo:IAO_0000412 "FDA SFL Common Name"
+ ] .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_46260
+obo:NCBITaxon_46260 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411184 ;#,
+                                    #obo:NCBITaxon_34815 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000118 "white perch"@en ;
+                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    go:hasBroadSynonym "white perch"@en ;
+                    go:hasDbXref <http://eol.org/pages/216654> ,
+                                 langual:B1152 ,
+                                 asfis:pew ,
+                                 "CEC1993:588" ,
+                                 "itis:167678" ;
+                    go:hasExactSynonym "white perch" ,
+                                       "white perch"@en ;
+                    go:hasNarrowSynonym "Morone americana" ;
+                    rdfs:label "Morone americana" ;
+                    rdfs:seeAlso "https://en.wikipedia.org/wiki/White_perch" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_46260 ;
+   owl:annotatedProperty go:hasBroadSynonym ;
+   owl:annotatedTarget "white perch"@en ;
+   obo:IAO_0000412 "FDA SFL Acceptable Market Name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_46260 ;
+   owl:annotatedProperty go:hasExactSynonym ;
+   owl:annotatedTarget "white perch"@en ;
+   obo:IAO_0000412 "FDA SFL Common Name"
+ ] .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_8167
+obo:NCBITaxon_8167 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:FOODON_03411557 ; # ,
+                                   #obo:NCBITaxon_8166 ;
+                   obo:IAO_0000114 obo:IAO_0000122 ;
+                   obo:IAO_0000115 "The yellow perch (Perca flavescens), commonly referred to as perch, is a freshwater perciform fish native to much of North America. The yellow perch was described in 1814 by Samuel Latham Mitchill from New York. It is closely related, and morphologically similar to the European perch (Perca fluviatilis)."@en ;
+                   obo:IAO_0000118 "yellow perch"@en ;
+                   obo:IAO_0000119 "https://en.wikipedia.org/wiki/Yellow_perch"^^xsd:anyURI ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                   go:hasBroadSynonym "lake perch"@en ,
+                                      "yellow"@en ;
+                   go:hasDbXref <http://eol.org/pages/205259> ,
+                                langual:B1177 ,
+                                asfis:fpy ,
+                                "CEC1993:607" ,
+                                "itis:168469" ;
+                   go:hasExactSynonym "American perch"@en ,
+                                      "Dodd fish"@en ,
+                                      "Perca flavescens" ,
+                                      "coontail"@en ,
+                                      "lake perch"@en ,
+                                      "raccoon perch"@en ,
+                                      "ring-tail perch"@en ,
+                                      "ringed perch"@en ,
+                                      "striped perch"@en ,
+                                      "yellow perch" ,
+                                      "yellow perch"@en ;
+                   go:hasNarrowSynonym "Perca flavescens (Mitchill, 1814)" ;
+                   go:hasSynonym "perca flavescens"@en ;
+                   rdfs:label "Perca flavescens" ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Yellow_perch" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_8167 ;
+   owl:annotatedProperty go:hasBroadSynonym ;
+   owl:annotatedTarget "lake perch"@en ;
+   obo:IAO_0000412 "FDA SFL Acceptable Market Name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_8167 ;
+   owl:annotatedProperty go:hasBroadSynonym ;
+   owl:annotatedTarget "yellow"@en ;
+   obo:IAO_0000412 "FDA SFL Acceptable Market Name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_8167 ;
+   owl:annotatedProperty go:hasExactSynonym ;
+   owl:annotatedTarget "yellow perch"@en ;
+   obo:IAO_0000412 "FDA SFL Common Name"
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_8010
+obo:NCBITaxon_8010 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:FOODON_03411293 ; #,
+                                   #obo:NCBITaxon_8009 ;
+                   obo:IAO_0000114 obo:IAO_0000428 ;
+                   obo:IAO_0000118 "northern pike"@en ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                   go:hasBroadSynonym "pike"@en ;
+                   go:hasDbXref <http://eol.org/pages/206652> ,
+                                langual:B1143 ,
+                                asfis:fpi ,
+                                "CEC1993:282" ,
+                                "itis:162139" ;
+                   go:hasExactSynonym "northern pike" ,
+                                      "northern pike"@en ;
+                   go:hasNarrowSynonym "Esox lucius" ;
+                   go:hasSynonym "esox lucius"@en ;
+                   rdfs:label "Esox lucius" ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Northern_pike" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_8010 ;
+   owl:annotatedProperty go:hasBroadSynonym ;
+   owl:annotatedTarget "pike"@en ;
+   obo:IAO_0000412 "FDA SFL Acceptable Market Name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_8010 ;
+   owl:annotatedProperty go:hasExactSynonym ;
+   owl:annotatedTarget "northern pike"@en ;
+   obo:IAO_0000412 "FDA SFL Common Name"
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_126735
+obo:NCBITaxon_126735 rdf:type owl:Class ;
+                     rdfs:subClassOf obo:FOODON_03411293 ;# ,
+                                     #obo:NCBITaxon_8009 ;
+                     obo:IAO_0000114 obo:IAO_0000428 ;
+                     obo:IAO_0000118 "muskellunge"@en ;
+                     obo:IAO_0000412 obo:ncbitaxon.owl ;
+                     dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                     go:hasBroadSynonym "muskellunge"@en ;
+                     go:hasDbXref <http://eol.org/pages/223145> ,
+                                  langual:B1165 ,
+                                  "itis:162144" ;
+                     go:hasExactSynonym "muskellunge" ,
+                                        "muskellunge"@en ;
+                     go:hasNarrowSynonym "Esox masquinongy" ;
+                     go:hasSynonym "esox masquinongy"@en ;
+                     rdfs:label "Esox masquinongy" ;
+                     rdfs:seeAlso "https://en.wikipedia.org/wiki/Muskellunge" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_126735 ;
+   owl:annotatedProperty go:hasBroadSynonym ;
+   owl:annotatedTarget "muskellunge"@en ;
+   obo:IAO_0000412 "FDA SFL Acceptable Market Name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_126735 ;
+   owl:annotatedProperty go:hasExactSynonym ;
+   owl:annotatedTarget "muskellunge"@en ;
+   obo:IAO_0000412 "FDA SFL Common Name"
+ ] .
+
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_7971
+obo:NCBITaxon_7971 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:FOODON_03411319 ; # ,
+                                   #obo:NCBITaxon_7969 ;
+                   obo:IAO_0000114 obo:IAO_0000428 ;
+                   obo:IAO_0000118 "white sucker"@en ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                   go:hasBroadSynonym "sucker"@en ;
+                   go:hasDbXref <http://eol.org/pages/224315> ,
+                                langual:B2402 ,
+                                asfis:ato ,
+                                "itis:553273" ;
+                   go:hasExactSynonym "white sucker" ,
+                                      "white sucker"@en ;
+                   go:hasNarrowSynonym "Catostomus commersoni (Lacepède 1803)" ,
+                                       "Catostomus commersonii" ;
+                   go:hasSynonym "buffalo fish (catostomus)"@en ,
+                                 "catostomus commersoni"@en ;
+                   rdfs:label "Catostomus commersonii" ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/White_sucker" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_7971 ;
+   owl:annotatedProperty go:hasBroadSynonym ;
+   owl:annotatedTarget "sucker"@en ;
+   obo:IAO_0000412 "FDA SFL Acceptable Market Name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_7971 ;
+   owl:annotatedProperty go:hasExactSynonym ;
+   owl:annotatedTarget "white sucker"@en ;
+   obo:IAO_0000412 "FDA SFL Common Name"
+ ] .
+
+
+
+# ###  http://purl.obolibrary.org/obo/NCBITaxon_7996
+# obo:NCBITaxon_7996 rdf:type owl:Class ;
+#                    rdfs:subClassOf obo:NCBITaxon_1489793 ;
+#                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+#                    go:hasExactSynonym "North American freshwater catfishes" ,
+#                                       "bullhead catfishes" ;
+#                    rdfs:label "Ictaluridae" .
+
+# ###  http://purl.obolibrary.org/obo/NCBITaxon_50384
+# obo:NCBITaxon_50384 rdf:type owl:Class ;
+#                     rdfs:subClassOf obo:NCBITaxon_7996 ;
+#                     obo:IAO_0000412 obo:ncbitaxon.owl ;
+#                     rdfs:label "Ameiurus" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_27778
+obo:NCBITaxon_27778 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:NCBITaxon_50384 ;  
+                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    go:hasBroadSynonym "bullhead"@en ,
+                                       "catfish"@en ;
+                    go:hasDbXref "itis:164043" ;
+                    go:hasExactSynonym "brown bullhead" ,
+                                       "brown bullhead"@en ;
+                    rdfs:label "Ameiurus nebulosus" ;
+                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Brown_bullhead" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_27778 ;
+   owl:annotatedProperty go:hasBroadSynonym ;
+   owl:annotatedTarget "bullhead"@en ;
+   obo:IAO_0000412 "FDA SFL Acceptable Market Name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_27778 ;
+   owl:annotatedProperty go:hasBroadSynonym ;
+   owl:annotatedTarget "catfish"@en ;
+   obo:IAO_0000412 "FDA SFL Acceptable Market Name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_27778 ;
+   owl:annotatedProperty go:hasExactSynonym ;
+   owl:annotatedTarget "brown bullhead"@en ;
+   obo:IAO_0000412 "FDA SFL Common Name"
+ ] .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_184451
+obo:NCBITaxon_184451 rdf:type owl:Class ;
+                     rdfs:subClassOf obo:FOODON_03411293 ;# ,
+                                     #obo:NCBITaxon_8009 ;
+                     obo:IAO_0000114 obo:IAO_0000428 ;
+                     obo:IAO_0000118 "chain pickerel"@en ;
+                     obo:IAO_0000412 obo:ncbitaxon.owl ;
+                     dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                     go:hasBroadSynonym "pickerel"@en ;
+                     go:hasDbXref <http://eol.org/pages/223146> ,
+                                  langual:B2334 ,
+                                  "CEC1993:284" ,
+                                  "itis:162143" ;
+                     go:hasExactSynonym "chain pickerel" ,
+                                        "chain pickerel"@en ;
+                     go:hasNarrowSynonym "Esox niger" ;
+                     go:hasSynonym "eastern pickerel"@en ,
+                                   "esox niger"@en ,
+                                   "esox reticulatus"@en ;
+                     rdfs:label "Esox niger" ;
+                     rdfs:seeAlso "https://en.wikipedia.org/wiki/Chain_pickerel" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_184451 ;
+   owl:annotatedProperty go:hasBroadSynonym ;
+   owl:annotatedTarget "pickerel"@en ;
+   obo:IAO_0000412 "FDA SFL Acceptable Market Name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_184451 ;
+   owl:annotatedProperty go:hasExactSynonym ;
+   owl:annotatedTarget "chain pickerel"@en ;
+   obo:IAO_0000412 "FDA SFL Common Name"
+ ] .
+
+
+
+
+#####################################
+### Shellfish lower level classes
+#####################################
+
+###  http://purl.obolibrary.org/obo/FOODON_03412112
+obo:FOODON_03412112 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411433 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "Mollusca is a large phylum of invertebrate animals whose members are known as molluscs or mollusks. Molluscs are the largest marine phylum, comprising about 23% of all the named marine organisms. Numerous molluscs also live in freshwater and terrestrial habitats. [https://en.wikipedia.org/wiki/Mollusca]"@en ;
+                    go:hasDbXref <http://eol.org/pages/2195> ,
+                                 langual:B2112 ,
+                                 asfis:mol ,
+                                 "EC:No 216/2009 MOL" ;
+                    go:hasExactSynonym "Mollusca" ,
+                                       "mollusk"@en ;
+                    rdfs:label "mollusc"@en .
+
+
+
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03412113
+obo:FOODON_03412113 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03412112 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "Bivalvia, in previous centuries referred to as the *Lamellibranchiata* and *Pelecypoda*, is a class of marine and freshwater molluscs that have laterally compressed bodies enclosed by a shell consisting of two hinged parts. Bivalves as a group have no head and they lack some usual molluscan organs like the radula and the odontophore. They include the clams, oysters, cockles, mussels, scallops, and numerous other families that live in saltwater, as well as a number of families that live in freshwater.[https://en.wikipedia.org/wiki/Bivalvia]"@en ;
+                    go:hasDbXref <http://eol.org/pages/2215> ,
+                                 langual:B2113 ;
+                    go:hasSynonym "bivalvia"@en ,
+                                  "lamellibranchiata"@en ,
+                                  "pelecypod"@en ,
+                                  "pelecypoda"@en ;
+                    rdfs:label "bivalve"@en .
+
+
+
+
+
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03411331
+obo:FOODON_03411331 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03412113 ;
+                                    #obo:FOODON_00001291 , 
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "Clam is a common name for several kinds of bivalve molluscs. The word is often applied only to those that are edible and live as infauna, spending most of their lives halfway buried in the sand of the seafloor."@en ;
+                    obo:IAO_0000119 "https://en.wikipedia.org/wiki/Clam"^^xsd:anyURI ;
+                    dcterms:contributor "Damion Dooley"@en ;
+                    schema:image "https://upload.wikimedia.org/wikipedia/commons/3/3b/LittleNeck_clams_USDA96c1862.jpg"@en ;
+                    go:hasDbXref "langual:B1331" ;
+                    rdfs:label "clam"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411223
+obo:FOODON_03411223 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03412113 ;
+                                    #obo:FOODON_00002051 ,
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A whole mussel."@en ;
+                    obo:IAO_0000119 wikipedia:Mussel ;
+                    obo:IAO_0000600 "Mussel is the common name used for members of several families of bivalve molluscs, from saltwater and freshwater habitats. These groups have in common a shell whose outline is elongated and asymmetrical compared with other edible clams, which are often more or less rounded or oval."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0002-8844-9165" ;
+                    dcterms:date "2025-02-01T09:59:11Z"^^xsd:dateTime ;
+                    schema:image "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/CornishMussels.JPG/640px-CornishMussels.JPG"^^xsd:anyURI ;
+                    go:hasBroadSynonym "palaeoheterodonta"@en ,
+                                       "pteriomorphia"@en ;
+                    go:hasDbXref <https://eol.org/pages/2235> ,
+                                 <https://www.langual.org/langual_thesaurus.asp?termid=B1223> ;
+                    go:hasExactSynonym "mytilidae"@en ;
+                    rdfs:comment "A mussel which is dead or alive and has a relatively intact body."@en ;
+                    rdfs:label "mussel"@en .
+
+
+
+#####################################
+### Shellfish species
+#####################################
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_6550
+obo:NCBITaxon_6550 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:FOODON_03411223 ; #,
+                                   #obo:NCBITaxon_6548 ;
+                   obo:IAO_0000114 obo:IAO_0000428 ;
+                   obo:IAO_0000118 "blue mussel"@en ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                   go:hasBroadSynonym "mussel"@en ;
+                   go:hasDbXref <http://eol.org/pages/449959> ,
+                                langual:B2875 ,
+                                asfis:mus ,
+                                "CEC1993:1360" ,
+                                "itis:79454" ;
+                   go:hasExactSynonym "blue mussel" ,
+                                      "blue mussel"@en ,
+                                      "edible mussel" ;
+                   go:hasNarrowSynonym "Mytilus edulis" ;
+                   go:hasSynonym "common mussel"@en ,
+                                 "edible mussel"@en ,
+                                 "mytilus edulis"@en ;
+                   rdfs:label "Mytilus edulis" ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Blue_mussel" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_6550 ;
+   owl:annotatedProperty go:hasBroadSynonym ;
+   owl:annotatedTarget "mussel"@en ;
+   obo:IAO_0000412 "FDA SFL Acceptable Market Name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_6550 ;
+   owl:annotatedProperty go:hasExactSynonym ;
+   owl:annotatedTarget "blue mussel"@en ;
+   obo:IAO_0000412 "FDA SFL Common Name"
+ ] .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_6604
+obo:NCBITaxon_6604 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:FOODON_03411331 ;# ,
+                                   #obo:NCBITaxon_6602 ;
+                   obo:IAO_0000114 obo:IAO_0000428 ;
+                   obo:IAO_0000118 "softshell clam"@en ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                   go:hasBroadSynonym "softshell clam"@en ;
+                   go:hasDbXref <http://eol.org/pages/492903> ,
+                                langual:B2356 ,
+                                asfis:cls ,
+                                "CEC1993:1398" ,
+                                "itis:81692" ;
+                   go:hasExactSynonym "softshell" ,
+                                      "softshell clam"@en ;
+                   go:hasNarrowSynonym "Mya arenaria" ;
+                   go:hasSynonym "maninose clam"@en ,
+                                 "mya arenaria"@en ,
+                                 "steamer"@en ;
+                   rdfs:label "Mya arenaria" ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Soft-shell_clam" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_6604 ;
+   owl:annotatedProperty go:hasBroadSynonym ;
+   owl:annotatedTarget "softshell clam"@en ;
+   obo:IAO_0000412 "FDA SFL Acceptable Market Name"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource obo:NCBITaxon_6604 ;
+   owl:annotatedProperty go:hasExactSynonym ;
+   owl:annotatedTarget "softshell clam"@en ;
+   obo:IAO_0000412 "FDA SFL Common Name"
+ ] .
+
+#########################################
+### terrestrial mid-level classes
+#########################################
+
+###  http://purl.obolibrary.org/obo/FOODON_03411134
+obo:FOODON_03411134 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411297 ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "Mammals (from Latin mamma \"breast\") are vertebrate animals constituting the class Mammalia, and characterized by the presence of mammary glands which in females produce milk for feeding (nursing) their young, a neocortex (a region of the brain), fur or hair, and three middle ear bones."@en ;
+                    obo:IAO_0000117 "Damion Dooley"@en ;
+                    obo:IAO_0000119 "https://en.wikipedia.org/wiki/Mammal"^^xsd:anyURI ;
+                    go:hasDbXref langual:B1134 ;
+                    rdfs:label "mammal"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_00004298
+obo:FOODON_00004298 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411563 ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A whole poultry."@en ;
+                    obo:IAO_0000600 "A domesticated bird that is kept by humans for its eggs, meat or feathers. Chickens, turkeys, quail, ducks, and geese are only called poultry if they aren't reared in the wild."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ,
+                                        "https://orcid.org/0000-0002-9578-0788" ;
+                    dcterms:date "2022-08-25T10:01:00Z"^^xsd:dateTime ;
+                    rdfs:comment "A poultry which is dead or alive and has a relatively intact body."@en ;
+                    rdfs:label "poultry"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03414381
+obo:FOODON_03414381 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411134 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 """A bovid (family *Bovidae*) is any of almost 140 species of cloven-hoofed, ruminant mammal which has males with characteristic unbranching horns covered in a permanent sheath of keratin.
+
+The family is widespread, being native to Asia, Africa, Europe and North America, and diverse: members include bison, African buffalo, water buffalo, antelopes, gazelles, sheep, goats, muskoxen, and domestic cattle."""@en ;
+                    obo:IAO_0000119 "WIKIPEDIA:Bovidae" ;
+                    go:hasDbXref <http://eol.org/pages/7687> ,
+                                 langual:B4381 ;
+                    go:hasSynonym "bovidae"@en ;
+                    rdfs:label "bovid"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_00002616
+obo:FOODON_00002616 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:FOODON_03411297
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0002162 ;
+                                                                 owl:someValuesFrom obo:NCBITaxon_8782
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_03411297 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0002162 ;
+                                      owl:someValuesFrom obo:NCBITaxon_8782
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A whole avian animal."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ,
+                                        "https://orcid.org/0000-0002-3410-4655" ,
+                                        "https://orcid.org/0000-0002-8844-9165" ;
+                    dcterms:date "2024-02-12T14:11:19Z"^^xsd:dateTime ;
+                    go:hasExactSynonym "Aves"@en ,
+                                       "avian"@en ,
+                                       "bird"@en ;
+                    rdfs:comment "An avian animal which is dead or alive and has a relatively intact body."@en ;
+                    rdfs:label "avian animal"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411563
+obo:FOODON_03411563 rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Class ;
+                                          owl:unionOf ( obo:FOODON_00004298
+                                                        obo:FOODON_03602002
+                                                      )
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_00002616 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000116 "This \"or\" class is just to represent an equivalency with a commonly used classification outside of FoodOn. It should not have subclasses under it. (2022-11-30)"@en ;
+                    dcterms:contributor <https://orcid.org/0000-0002-9578-0788> ;
+                    go:hasDbXref langual:B1563 ;
+                    go:hasNarrowSynonym "fjerkrae"@da ,
+                                        "gamebird"@en ;
+                    go:hasSynonym "fowl"@en ,
+                                  "game birds"@en ;
+                    rdfs:label "poultry or game bird"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411500
+obo:FOODON_03411500 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411134 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000117 <http://orcid.org/0000-0002-9578-0788> ;
+                    go:hasDbXref <http://eol.org/pages/7685> ,
+                                 <http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=180693> ,
+                                 langual:B1500 ;
+                    go:hasExactSynonym "cervid"@en ;
+                    go:hasSynonym "cervidae"@en ;
+                    rdfs:label "deer family"@en .
+
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03414374
+obo:FOODON_03414374 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03414381 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "The biological subfamily *Bovinae* includes a diverse group of 10 genera of medium- to large-sized ungulates, including domestic cattle, the bison, African buffalo, the water buffalo, the yak, and the four-horned and spiral-horned antelopes. The evolutionary relationship between the members of the group is obscure, and their classification into loose tribes rather than formal subgroups reflects this uncertainty. General characteristics include cloven hoofs and usually at least one of the sexes of a species having true horns."@en ;
+                    obo:IAO_0000119 "WIKIPEDIA:Bovinae" ;
+                    go:hasDbXref <http://eol.org/pages/2851454> ,
+                                 langual:B4374 ;
+                    go:hasSynonym "bovinae"@en ;
+                    rdfs:label "bovine"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_02020840
+obo:FOODON_02020840 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:FOODON_03414374
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0002162 ;
+                                                                 owl:someValuesFrom obo:NCBITaxon_9900
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_03414374 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0002162 ;
+                                      owl:someValuesFrom obo:NCBITaxon_9900
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A whole bison."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ,
+                                        "https://orcid.org/0000-0002-3410-4655" ,
+                                        "https://orcid.org/0000-0002-8844-9165" ;
+                    dcterms:date "2024-02-12T14:11:19Z"^^xsd:dateTime ;
+                    rdfs:comment "A bison which is dead or alive and has a relatively intact body."@en ;
+                    rdfs:label "bison"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411457
+obo:FOODON_03411457 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:FOODON_00004298
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0002162 ;
+                                                                 owl:someValuesFrom obo:NCBITaxon_9031
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_00001040 ,
+                                    obo:FOODON_00004298 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0002162 ;
+                                      owl:someValuesFrom obo:NCBITaxon_9031
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A whole chicken."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    dcterms:date "2025-02-01T09:59:11Z"^^xsd:dateTime ;
+                    go:hasDbXref <http://eol.org/pages/1049263> ,
+                                 <http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=176086> ,
+                                 langual:B1457 ;
+                    go:hasNarrowSynonym "Gallus gallus (Linnaeus, 1758)" ,
+                                        "Gallus gallus (Linnaeus, 1758)"@en ;
+                    rdfs:comment "A chicken which is dead or alive and has a relatively intact body."@en ;
+                    rdfs:label "chicken"@en ;
+                    rdfs:seeAlso "https://www.usda.gov/media/blog/2011/11/17/poultry-classifications-get-21st-century-upgrade" .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411583
+obo:FOODON_03411583 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:FOODON_03411500
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0002162 ;
+                                                                 owl:someValuesFrom obo:NCBITaxon_9850
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_03411500 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0002162 ;
+                                      owl:someValuesFrom obo:NCBITaxon_9850
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A whole deer."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    dcterms:date "2025-02-01T09:59:11Z"^^xsd:dateTime ;
+                    go:hasDbXref <http://eol.org/pages/34545> ,
+                                 langual:B1583 ;
+                    go:hasSynonym "cervus spp."@en ;
+                    rdfs:comment "A deer which is dead or alive and has a relatively intact body."@en ;
+                    rdfs:label "deer"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411183
+obo:FOODON_03411183 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:FOODON_03414381
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0002162 ;
+                                                                 owl:someValuesFrom obo:NCBITaxon_9940
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_03414381 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0002162 ;
+                                      owl:someValuesFrom obo:NCBITaxon_9940
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A whole sheep."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    dcterms:date "2025-02-01T09:59:11Z"^^xsd:dateTime ;
+                    schema:image "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flock_of_sheep.jpg/316px-Flock_of_sheep.jpg"^^xsd:anyURI ;
+                    go:hasDbXref <http://eol.org/pages/39510> ,
+                                 langual:B1183 ;
+                    go:hasSynonym "mutton (meat)"@en ,
+                                  "ovis spp."@en ;
+                    rdfs:comment "A sheep which is dead or alive and has a relatively intact body."@en ;
+                    rdfs:label "sheep"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411328
+obo:FOODON_03411328 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:FOODON_03411134
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0002162 ;
+                                                                 owl:someValuesFrom obo:NCBITaxon_9925
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_03411134 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0002162 ;
+                                      owl:someValuesFrom obo:NCBITaxon_9925
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A whole goat."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    dcterms:date "2025-02-01T09:59:11Z"^^xsd:dateTime ;
+                    go:hasDbXref <MSW3:14200776> ,
+                                 <http://eol.org/pages/328660> ,
+                                 obo:NCBITaxon_9925 ,
+                                 <http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=180715> ,
+                                 langual:B1328 ,
+                                 "MSW3:14200776" ;
+                    go:hasExactSynonym "caprine"@en ;
+                    go:hasNarrowSynonym "Capra hircus Linnaeus, 1758"@en ;
+                    go:hasSynonym "capra hircus"@en ;
+                    rdfs:comment "A goat which is dead or alive and has a relatively intact body."@en ;
+                    rdfs:label "goat"@en .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_02021651
+obo:FOODON_02021651 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:FOODON_03411136
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0002162 ;
+                                                                 owl:someValuesFrom obo:NCBITaxon_9825
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_03411136 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0002162 ;
+                                      owl:someValuesFrom obo:NCBITaxon_9825
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A whole pig."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ,
+                                        "https://orcid.org/0000-0002-3410-4655" ,
+                                        "https://orcid.org/0000-0002-8844-9165" ;
+                    dcterms:date "2024-02-12T14:11:19Z"^^xsd:dateTime ;
+                    rdfs:comment "A pig which is dead or alive and has a relatively intact body."@en ;
+                    rdfs:label "pig"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_02020418
+obo:FOODON_02020418 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:FOODON_03411236
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0002162 ;
+                                                                 owl:someValuesFrom obo:NCBITaxon_9103
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_03411236 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0002162 ;
+                                      owl:someValuesFrom obo:NCBITaxon_9103
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A whole turkey."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ,
+                                        "https://orcid.org/0000-0002-3410-4655" ,
+                                        "https://orcid.org/0000-0002-8844-9165" ;
+                    dcterms:date "2024-02-12T14:11:19Z"^^xsd:dateTime ;
+                    rdfs:comment "A turkey which is dead or alive and has a relatively intact body."@en ;
+                    rdfs:label "turkey"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_02020892
+obo:FOODON_02020892 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:FOODON_03414374
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0002162 ;
+                                                                 owl:someValuesFrom obo:NCBITaxon_9913
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_03414374 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0002162 ;
+                                      owl:someValuesFrom obo:NCBITaxon_9913
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A whole cow."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ,
+                                        "https://orcid.org/0000-0002-3410-4655" ,
+                                        "https://orcid.org/0000-0002-8844-9165" ;
+                    dcterms:date "2024-02-12T14:11:19Z"^^xsd:dateTime ;
+                    rdfs:comment "A cow which is dead or alive and has a relatively intact body."@en ;
+                    rdfs:label "cow"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_00003083
+obo:FOODON_00003083 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_02020892 ;
+                                    #obo:FOODON_00001678 ,
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A whole veal."@en ;
+                    obo:IAO_0000119 wikipedia:Veal ;
+                    dcterms:contributor "http://orcid.org/0000-0002-8844-9165" ;
+                    dcterms:date "2019-08-26T15:25:51Z"^^xsd:dateTime ;
+                    rdfs:comment "A veal which is dead or alive and has a relatively intact body."@en ;
+                    rdfs:label "veal"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411325
+obo:FOODON_03411325 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:FOODON_03411134
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0002162 ;
+                                                                 owl:someValuesFrom obo:NCBITaxon_10184
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_03411134 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0002162 ;
+                                      owl:someValuesFrom obo:NCBITaxon_10184
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A whole beaver."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    dcterms:date "2025-02-01T09:59:11Z"^^xsd:dateTime ;
+                    go:hasDbXref <http://eol.org/pages/42276> ,
+                                 langual:B1325 ;
+                    go:hasSynonym "castor spp."@en ;
+                    rdfs:comment "A beaver which is dead or alive and has a relatively intact body."@en ;
+                    rdfs:label "beaver"@en .
+
+#########################################
+### terrestrial species classes
+#########################################
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_9913
+obo:NCBITaxon_9913 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:FOODON_03414374 ;# ,
+                                   #obo:NCBITaxon_9903 ;
+                   obo:IAO_0000115 "Cattle (colloquially cows) are the most common type of large domesticated ungulates. They are a prominent modern member of the subfamily *Bovinae*, are the most widespread species of the genus *Bos*, and are most commonly classified collectively as *Bos taurus*... with three subspecies: *Bos taurus primigenius, Bos taurus indicus, Bos taurus taurus*."@en ;
+                   obo:IAO_0000118 "cattle"@en ;
+                   obo:IAO_0000119 wikipedia:Cattle ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   go:hasDbXref <http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=183838> ,
+                                langual:B1161 ,
+                                <https://eol.org/pages/328699> ,
+                                "MSW3:14200687"@en ;
+                   go:hasExactSynonym "Bos taurus Linnaeus, 1758"@en ,
+                                      "bovine" ,
+                                      "cow" ,
+                                      "dairy cow" ,
+                                      "domestic cattle" ,
+                                      "domestic cow" ,
+                                      "ox" ;
+                   rdfs:label "Bos taurus" ;
+                   rdfs:seeAlso wikipedia:List_of_cattle_breeds .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_9031
+obo:NCBITaxon_9031 rdf:type owl:Class ;
+                   #rdfs:subClassOf obo:NCBITaxon_9072 ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   go:hasExactSynonym "Gallus domesticus" ,
+                                      "bantam" ,
+                                      "chicken" ,
+                                      "chickens" ,
+                                      "gallus gallus domesticus"@en ;
+                   rdfs:label "Gallus gallus" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_9850
+obo:NCBITaxon_9850 rdf:type owl:Class ;
+                   #rdfs:subClassOf obo:NCBITaxon_35500 ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   go:hasExactSynonym "deer" ;
+                   rdfs:label "Cervidae" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_9940
+obo:NCBITaxon_9940 rdf:type owl:Class ;
+                   #rdfs:subClassOf obo:NCBITaxon_9935 ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   go:hasExactSynonym "domestic sheep" ,
+                                      "lambs" ,
+                                      "sheep" ,
+                                      "wild sheep" ;
+                   rdfs:label "Ovis aries" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_9825
+obo:NCBITaxon_9825 rdf:type owl:Class ;
+                   #rdfs:subClassOf obo:NCBITaxon_9823 ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                   go:hasDbXref "itis:898917" ;
+                   go:hasExactSynonym "domestic pig" ,
+                                      "domestic pig"@en ;
+                   rdfs:label "Sus scrofa domesticus" ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Domestic_pig" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_9103
+obo:NCBITaxon_9103 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:FOODON_03411236 ;#,
+                                   #obo:NCBITaxon_9102 ;
+                   obo:IAO_0000117 <http://orcid.org/0000-0002-8844-9165> ;
+                   obo:IAO_0000118 "wild turkey"@en ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   dcterms:date "2019-08-12T20:54:03Z"^^xsd:dateTime ;
+                   go:hasDbXref <http://eol.org/pages/1049266> ,
+                                <http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=176136> ,
+                                langual:B4166 ;
+                   go:hasExactSynonym "common turkey" ,
+                                      "turkey" ,
+                                      "wild turkey" ;
+                   go:hasNarrowSynonym "Meleagris gallopavo Linnaeus, 1758" ;
+                   go:hasSynonym "meleagris gallopavo"@en ;
+                   rdfs:label "Meleagris gallopavo" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_10184
+obo:NCBITaxon_10184 rdf:type owl:Class ;
+                    #rdfs:subClassOf obo:NCBITaxon_29132 ;
+                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+                    rdfs:label "Castor" .
+
+#############################
+### Plant mid-level classes
+#############################
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03411579
+obo:FOODON_03411579 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:PO_0000003 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref langual:B1579 ;
+                    rdfs:label "vegetable-producing plant"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411057
+obo:FOODON_03411057 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411579 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref langual:B1057 ;
+                    rdfs:label "vegetable-producing plant, above-ground parts"@en .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03411156
+obo:FOODON_03411156 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411057 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "A legume  is a plant or its fruit or seed in the family *Fabaceae* (or *Leguminosae*). Legumes are grown agriculturally, primarily for their grain seed called pulse, for livestock forage and silage, and as soil-enhancing green manure. Well-known legumes include alfalfa, clover, peas, beans, chickpeas, lentils, lupin bean, mesquite, carob, soybeans, peanuts and tamarind. [https://en.wikipedia.org/wiki/Legume]"@en ;
+                    go:hasDbXref <http://eol.org/pages/4277> ,
+                                 langual:B1156 ;
+                    go:hasSynonym "fabaceae"@en ;
+                    rdfs:label "pod or seed vegetable plant"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411047
+obo:FOODON_03411047 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:PO_0000003 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref langual:B1047 ;
+                    rdfs:label "grain or seed-producing plant"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411324
+obo:FOODON_03411324 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411047 ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "Any grass cultivated (grown) for the edible components of its grain."@en ;
+                    obo:IAO_0000117 "Damion Dooley"@en ;
+                    obo:IAO_0000119 wikipedia:Cereal ;
+                    go:hasDbXref langual:B1324 ;
+                    rdfs:label "grain plant"@en ;
+                    rdfs:seeAlso wikipedia:List_of_edible_seeds .
+
+###  http://purl.obolibrary.org/obo/FOODON_03413358
+obo:FOODON_03413358 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:PO_0000003 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref langual:B3358 ;
+                    go:hasSynonym "feed plant"@en ,
+                                  "fodder"@en ,
+                                  "fodder plant"@en ,
+                                  "forage"@en ;
+                    rdfs:label "plant used as fodder"@en .
+
+
+
+
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03411232
+obo:FOODON_03411232 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411156 ,
+                                    obo:FOODON_03411324 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0002162 ;
+                                      owl:someValuesFrom obo:NCBITaxon_4577
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref <http://eol.org/pages/1115259> ,
+                                 obo:NCBITaxon_4577 ,
+                                 <http://www.ars-grin.gov/cgi-bin/npgs/html/taxon.pl?311987> ,
+                                 <http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=42269> ,
+                                 langual:B1232 ,
+                                 "MANSFELD:36372" ,
+                                 "PLANTS:ZEMA" ;
+                    go:hasNarrowSynonym "Zea mays L." ;
+                    go:hasSynonym "maize"@en ,
+                                  "zea mays"@en ;
+                    rdfs:comment "LanguaL curation note: Use 'field corn' for any breakfast cereals or snack foods having 'corn' as the main ingredient."@en ;
+                    rdfs:label "Zia mays plant"@en .
+
+###########################
+### Plant Species classes
+###########################
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_4577
+obo:NCBITaxon_4577 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:NCBITaxon_147429 ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   go:hasExactSynonym "maize" ;
+                   rdfs:comment "FoodOn Note: the NCBITaxon exact synonym \"maize\" is more appropriate for \"Zea mays subsp. mays\""@en ;
+                   rdfs:label "Zea mays" .
+
+
+#############################
+### Organism Material mid-level classes
+###################################
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03420164
+obo:FOODON_03420164 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:FOODON_03420116
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0001000 ;
+                                                                 owl:someValuesFrom obo:FOODON_00003004
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_03420116 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0001000 ;
+                                      owl:someValuesFrom obo:FOODON_00003004
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "Material that derives from some animal."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    dcterms:date "2023-08-01T21:25:29Z"^^xsd:dateTime ;
+                    go:hasDbXref langual:C0164 ;
+                    rdfs:comment "Langual note: Includes eggs and milk that, although separated from the animal, are produced as integral parts and are affected by the animal's food intake and metabolism."@en ,
+                                 "This branch isn't necessarily food material"@en ;
+                    rdfs:label "animal material"@en .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_02010001
+obo:FOODON_02010001 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:UBERON_0000463
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0002162 ;
+                                                                 owl:someValuesFrom obo:NCBITaxon_33208
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_03420164 ,
+                                    obo:UBERON_0000463 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0002162 ;
+                                      owl:someValuesFrom obo:NCBITaxon_33208
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "Material which is produced by an animal."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    dcterms:date "2023-08-01T21:25:29Z"^^xsd:dateTime ;
+                    rdfs:comment "This includes things like eggs and milk."@en ;
+                    rdfs:label "animal substance"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_00004328
+obo:FOODON_00004328 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03420116 ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A piece or pieces or amount of substance derived from one or more organisms."@en ;
+                    obo:IAO_0000117 <https://orcid.org/0000-0002-8844-9165> ;
+                    dcterms:date "2023-03-02T22:30:19Z"^^xsd:dateTime ;
+                    rdfs:label "organism piece"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_00004332
+obo:FOODON_00004332 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:FOODON_00004328
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0002162 ;
+                                                                 owl:someValuesFrom obo:NCBITaxon_33208
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_00004328 ,
+                                    obo:FOODON_03420164 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0002162 ;
+                                      owl:someValuesFrom obo:NCBITaxon_33208
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "A severed part of an animal."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0002-8844-9165" ;
+                    dcterms:date "2023-08-01T21:25:29Z"^^xsd:dateTime ;
+                    rdfs:label "piece of animal"@en .                
+
+
+####################################
+### organism specific material classes
+####################################
+
+###  http://purl.obolibrary.org/obo/FOODON_02010015
+obo:FOODON_02010015 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:FOODON_02010014
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0000086 ;
+                                                                 owl:someValuesFrom obo:FOODON_00004348
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_02010014 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0000086 ;
+                                      owl:someValuesFrom obo:FOODON_00004348
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "Raw animal blood."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    dcterms:date "2023-08-01T21:25:29Z"^^xsd:dateTime ;
+                    rdfs:label "animal blood (raw)"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_02010012
+obo:FOODON_02010012 rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( obo:UBERON_0001913
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty obo:RO_0003001 ;
+                                                                 owl:someValuesFrom obo:FOODON_00003004
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf obo:FOODON_02010001 ,
+                                    obo:UBERON_0001913 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0003001 ;
+                                      owl:someValuesFrom obo:FOODON_00003004
+                                    ] ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "Milk which is produced by animal lactation."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    dcterms:date "2023-08-01T21:25:29Z"^^xsd:dateTime ;
+                    rdfs:label "animal milk"@en .
