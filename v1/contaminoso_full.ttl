@@ -1,19 +1,18 @@
-@prefix : <http://sawgraph.spatialai.org/v1/contaminoso-full#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix coso: <http://sawgraph.spatialai.org/v1/contaminoso#> .
+@prefix coso: <http://w3id.org/coso/v1/contaminoso#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix stad: <http://purl.org/spatialai/stad/v2/core/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://sawgraph.spatialai.org/v1/contaminoso-full#> .
+@base <http://w3id.org/coso/v1/contaminoso-full#> .
 
-<http://sawgraph.spatialai.org/contaminoso-full#> rdf:type owl:Ontology ;
+<http://w3id.org/coso/contaminoso-full#> rdf:type owl:Ontology ;
                                                    owl:versionIRI : ;
                                                    owl:imports coso: ;
                                                    dcterms:created "2024-02-16"@en-us ;
@@ -57,22 +56,7 @@ qudt:quantityValue rdf:type owl:ObjectProperty .
 qudt:unit rdf:type owl:ObjectProperty .
 
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#measurementUnit
-coso:measurementUnit owl:propertyChainAxiom ( qudt:quantityValue
-                                              qudt:unit
-                                            ) .
-
-
-###  http://sawgraph.spatialai.org/v1/contaminoso#measurementValue
-coso:measurementValue owl:propertyChainAxiom ( qudt:quantityValue
-                                               qudt:enumeratedValue
-                                             ) ,
-                                             ( qudt:quantityValue
-                                               qudt:numericValue
-                                             ) .
-
-
-###  http://sawgraph.spatialai.org/v1/contaminoso#observedAtSamplePoint
+###  http://w3id.org/coso/v1/contaminoso#observedAtSamplePoint
 coso:observedAtSamplePoint owl:propertyChainAxiom ( coso:analyzedSample
                                                     coso:fromSamplePoint
                                                   ) .
@@ -82,11 +66,11 @@ coso:observedAtSamplePoint owl:propertyChainAxiom ( coso:analyzedSample
 #    Classes
 #################################################################
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#AggregateContaminantMeasurement
+###  http://w3id.org/coso/v1/contaminoso#AggregateContaminantMeasurement
 coso:AggregateContaminantMeasurement owl:disjointWith coso:SingleContaminantMeasurement .
 
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantConcentrationMeasurement
+###  http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationMeasurement
 coso:ContaminantRelativeMeasurement rdf:type owl:Class ;
                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                            owl:onProperty coso:observedProperty ;
@@ -95,15 +79,15 @@ coso:ContaminantRelativeMeasurement rdf:type owl:Class ;
                                          owl:disjointWith coso:ContaminantAbsoluteMeasurement .
 
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantConcentrationQuantityKind
+###  http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationQuantityKind
 coso:ContaminantConcentrationQuantityKind owl:disjointWith coso:ContaminantVolumeQuantityKind .
 
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantReleaseObservation
+###  http://w3id.org/coso/v1/contaminoso#ContaminantReleaseObservation
 coso:ContaminantReleaseObservation owl:disjointWith coso:ContaminantSampleObservation .
 
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#ContaminantAbsoluteMeasurement
+###  http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteMeasurement
 coso:ContaminantAbsoluteMeasurement rdf:type owl:Class ;
                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                     owl:onProperty coso:observedProperty ;
@@ -111,7 +95,7 @@ coso:ContaminantAbsoluteMeasurement rdf:type owl:Class ;
                                                   ] .
 
 
-###  http://sawgraph.spatialai.org/v1/contaminoso#Feature
+###  http://w3id.org/coso/v1/contaminoso#Feature
 coso:Feature owl:disjointWith coso:Point .
 
 #################################################################
