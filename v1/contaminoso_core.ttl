@@ -360,6 +360,10 @@ coso:measurementValue rdf:type owl:DatatypeProperty ;
     rdfs:label "measurement value";
     rdfs:domain coso:ContaminantMeasurement.
 
+coso:observedTime rdf:type owl:DatatypeProperty ;
+    rdfs:label "observed time"
+    rdfs:domain coso:ContaminantObservation. 
+
 #################################################################
 #    Individuals
 #################################################################
