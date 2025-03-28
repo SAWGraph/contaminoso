@@ -13,7 +13,7 @@
 @base <http://w3id.org/coso/v1/contaminoso-full#> .
 
 <http://w3id.org/coso/contaminoso-full#> rdf:type owl:Ontology ;
-                                                   owl:versionIRI : ;
+                                                   owl:versionIRI <http://w3id.org/coso/v1/contaminoso-full#> ;
                                                    owl:imports <http://w3id.org/coso/v1/contaminoso-full#> ;
                                                    dcterms:created "2025-03-30"@en-us ;
                                                    dcterms:creator <http://orcid.org/0000-0002-5331-5052> ,

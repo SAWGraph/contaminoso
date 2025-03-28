@@ -210,6 +210,8 @@ sosa:Procedure rdf:type owl:Class.
 
 sosa:Property rdf:type owl:Class. 
 
+sosa:Result rdf:type owl:Class. 
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -353,15 +355,15 @@ coso:casNumber rdf:type owl:DatatypeProperty ;
     rdfs:label "cas number" .
 
 coso:measurementUnit rdf:type owl:DatatypeProperty ;
-    rdfs:label "measurement unit";
+    rdfs:label "measurement unit" ;
     rdfs:domain coso:ContaminantMeasurement.
 
 coso:measurementValue rdf:type owl:DatatypeProperty ;
-    rdfs:label "measurement value";
+    rdfs:label "measurement value" ;
     rdfs:domain coso:ContaminantMeasurement.
 
 coso:observedTime rdf:type owl:DatatypeProperty ;
-    rdfs:label "observed time"
+    rdfs:label "observed time" ;
     rdfs:domain coso:ContaminantObservation. 
 
 #################################################################
