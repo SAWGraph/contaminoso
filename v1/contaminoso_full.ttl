@@ -99,6 +99,42 @@ coso:ContaminantAbsoluteMeasurement rdf:type owl:Class ;
 coso:Feature owl:disjointWith coso:Point .
 
 #################################################################
+#    Specialized Classes
+#################################################################
+
+coso:BiotaSample rdf:type owl:Class;
+  rdfs:label "Biota Sample";
+  rdfs:subClassOf coso:MaterialSample.
+
+coso:WaterSample rdf:type owl:Class;
+  rdfs:label "Water Sample";
+  rdfs:subClassOf coso:MaterialSample. 
+
+coso:PlantMaterialSample rdf:type owl:Class;
+  rdfs:label "Plant Material Sample";
+  rdfs:subClassOf coso:BiotaSample. 
+
+coso:PlantAbovegroundSample rdf:type owl:Class;
+  rdfs:label "Plant Aboveground Sample";
+  rdfs:subClassOf coso:PlantMaterialSample. 
+
+coso:PlantUndergroundSample rdf:type owl:Class;
+  rdfs:label "Plant underground Sample";
+  rdfs:subClassOf coso:PlantMaterialSample. 
+
+coso:AnimalMaterialSample rdf:type owl:Class;
+  rdfs:label "Animal Material Sample";
+  rdfs:subClassOf coso:BiotaSample. 
+
+coso:AnimalTissueSample rdf:type owl:Class;
+  rdfs:label "Animal Tissue Sample";
+  rdfs:subClassOf coso:AnimalMaterialSample. 
+
+coso:AnimalBloodSample rdf:type owl:Class;
+  rdfs:label "Animal Blood Sample";
+  rdfs:subClassOf coso:AnimalMaterialSample. 
+
+#################################################################
 #    General axioms
 #################################################################
 
