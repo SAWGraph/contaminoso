@@ -167,7 +167,7 @@ coso:DetectQuantityValue rdf:type owl:Class ;
     rdfs:subClassOf coso:QuantityValue .
 
 coso:NonDetectQuantityValue rdf:type owl:Class ;
-    rfs:label "Non-Detect Quantity Value" ;
+    rdfs:label "Non-Detect Quantity Value" ;
     rdfs:subClassOf coso:QuantityValue .
 
 coso:ResultQualifier rdf:type owl:Class ;
@@ -379,4 +379,4 @@ coso:SingleContaminantVolumeQuantity rdf:type owl:NamedIndividual ,
 
 coso:SummedContaminantVolumeQuantity rdf:type owl:NamedIndividual ,
                                               coso:ContaminantVolumeQuantityKind ;
-                                        rdfs:label "Summed Contaminant Volume Quantity"
+                                        rdfs:label "Summed Contaminant Volume Quantity" .
