@@ -24,7 +24,7 @@
                                                    dcterms:modified "2025-03-30"^^xsd:date ;
                                                    dcterms:publisher <http://spatialai.org> ;
                                                    dcterms:source "https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso_full.ttl" ;
-                                                   dcterms:title "Contaminant Observation and Samples Ontology (ContaminOSO)"@en-us ;
+                                                   dcterms:title "Contaminant Observation and Samples Ontology (ContaminOSO) Full"@en-us ;
                                                    rdfs:label "Contaminant Observation and Samples Ontology (ContaminOSO) Full"@en-us ;
                                                    owl:versionInfo "1"@en-us .
 
