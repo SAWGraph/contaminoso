@@ -13,7 +13,7 @@
 @base <http://w3id.org/coso/v1/contaminoso-materialsample-ext#> .
 
 <http://w3id.org/coso/contaminoso-materialsample-ext#> rdf:type owl:Ontology ;
-                                                   owl:versionIRI : ;
+                                                   owl:versionIRI <http://w3id.org/coso/v1/contaminoso-materialsample-ext#>;
                                                    owl:imports coso: ;
                                                    dcterms:created "2025-03-30"@en-us ;
                                                    dcterms:creator <http://orcid.org/0000-0002-5331-5052> ,
