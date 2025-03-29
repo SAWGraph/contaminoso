@@ -80,7 +80,7 @@ coso:ContaminantRelativeMeasurement rdf:type owl:Class ;
 
 
 ###  http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationQuantityKind
-coso:ContaminantConcentrationQuantityKind owl:disjointWith coso:ContaminantVolumeQuantityKind .
+coso:ContaminantConcentrationQuantityKind owl:disjointWith coso:ContaminantAbsoluteQuantityKind .
 
 
 ###  http://w3id.org/coso/v1/contaminoso#ContaminantReleaseObservation

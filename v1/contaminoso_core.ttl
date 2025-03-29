@@ -370,19 +370,19 @@ coso:observedTime rdf:type owl:DatatypeProperty ;
 #    Individuals
 #################################################################
 
-coso:MaximumContaminantConcentrationQuantity rdf:type owl:NamedIndividual ,
+coso:MaximumContaminantConcentrationQuantityKind rdf:type owl:NamedIndividual ,
                                                       coso:ContaminantConcentrationQuantityKind ;
                                         rdfs:label "Maximum Contaminant Concentration Quantity" .
 
 
-coso:SingleContaminantConcentrationQuantity rdf:type owl:NamedIndividual ,
+coso:SingleContaminantConcentrationQuantityKind rdf:type owl:NamedIndividual ,
                                                      coso:ContaminantConcentrationQuantityKind ;
                                         rdfs:label "Single Contamiant Concentration Quantity" .
 
-coso:SingleContaminantVolumeQuantity rdf:type owl:NamedIndividual ,
+coso:SingleContaminantVolumeQuantityKind rdf:type owl:NamedIndividual ,
                                               coso:ContaminantVolumeQuantityKind ;
                                         rdfs:label "Single Contaminant Volume Quantity" .
 
-coso:SummedContaminantVolumeQuantity rdf:type owl:NamedIndividual ,
+coso:SummedContaminantVolumeQuantityKind rdf:type owl:NamedIndividual ,
                                               coso:ContaminantVolumeQuantityKind ;
                                         rdfs:label "Summed Contaminant Volume Quantity" .

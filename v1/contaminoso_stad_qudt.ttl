@@ -77,7 +77,7 @@ coso:MinimumContaminationConcentrationQuantity rdf:type owl:NamedIndividual ;
 
 coso:QuantityValue rdfs:subClassOf qudt:QuantityValue. 
 
-qudt:QuantityValue rdfs:subClassOf stad:Datapoint.
+qudt:QuantityValue rdfs:subClassOf stad:DataValue.
 
 coso:ResultQualifier rdfs:subClassOf qudt:Quantity. 
 
@@ -92,7 +92,7 @@ stad:hasTransformationKind rdf:type owl:ObjectProperty ;
             rdfs:domain stad:StatisticalAggregateData ; 
             rdfs:range stad:DataTransformation . 
 
-coso:observedProperty rdfs:subPropertyOf stad:hasQualityKind . 
+coso:observedProperty rdfs:subPropertyOf stad:hasQualityKind , qudt:hasQuantityKind.
 
 coso:measurementUnit owl:propertyChainAxiom ( qudt:quantityValue
                                               qudt:unit
