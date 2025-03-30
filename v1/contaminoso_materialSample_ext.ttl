@@ -65,3 +65,11 @@ coso:AnimalTissueSample rdf:type owl:Class;
 coso:AnimalBloodSample rdf:type owl:Class;
   rdfs:label "Animal Blood Sample";
   rdfs:subClassOf coso:AnimalMaterialSample. 
+
+coso:FilteredWaterSample rdf:type owl:Class;
+  rdfs:label "Filtered Water Sample";
+  rdfs:subClassOf coso:WaterSample. 
+
+coso:RawWaterSample rdf:type owl:Class;
+  rdfs:label "Raw Water Sample";
+  rdfs:subClassOf coso:WaterSample. 
