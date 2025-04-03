@@ -1,0 +1,939 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://w3id.org/coso/contaminoso#"
+     xml:base="http://w3id.org/coso/contaminoso"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://w3id.org/coso/contaminoso#">
+        <owl:versionIRI rdf:resource="http://w3id.org/coso/v1/contaminoso#"/>
+        <terms:created xml:lang="en-us">2025-03-30</terms:created>
+        <terms:creator rdf:resource="http://orcid.org/0000-0002-5331-5052"/>
+        <terms:creator rdf:resource="http://orcid.org/0000-0003-3547-8058"/>
+        <terms:creator rdf:resource="https://orcid.org/0000-0003-3271-6700"/>
+        <terms:description xml:lang="en-us">the Contaminant Observation and Samples Ontology (ContaminOSO) developed as part of the AIKnowsPFAS and SAWGraph projects.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-03-30</terms:issued>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-03-30</terms:modified>
+        <terms:publisher rdf:resource="http://spatialai.org"/>
+        <terms:source rdf:datatype="xsd:anyURI">https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso.ttl</terms:source>
+        <terms:title xml:lang="en-us">Contaminant Observation and Samples Ontology (ContaminOSO)</terms:title>
+        <rdfs:label xml:lang="en-us">Contaminant Observation and Samples Ontology (ContaminOSO)</rdfs:label>
+        <owl:versionInfo xml:lang="en-us">1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/source -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/source"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- xsd:anyURI -->
+
+
+    <rdfs:Datatype rdf:about="xsd:anyURI"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#analyzedSample -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#analyzedSample">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/coso/v1/contaminoso#hasAnyFeatureOfInterest"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantSampleObservation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#MaterialSample"/>
+        <rdfs:label>analyzed sample</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#fromSamplePoint -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#fromSamplePoint">
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#MaterialSample"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#SamplePoint"/>
+        <rdfs:label>from sample point</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#hasAnyFeatureOfInterest -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#hasAnyFeatureOfInterest">
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantObservation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+        <rdfs:label>has any feature of interest</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#hasFeatureOfInterest -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#hasFeatureOfInterest">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/coso/v1/contaminoso#hasAnyFeatureOfInterest"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#Feature"/>
+        <rdfs:label>has feature of interest</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#hasResult -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#hasResult">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantObservation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement"/>
+        <rdfs:label>has result</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#hasResultQualifier -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#hasResultQualifier">
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#ResultQualifier"/>
+        <rdfs:label>has result qualifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#isSampleOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#isSampleOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/isSampleOf"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#MaterialSample"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#SampledFeature"/>
+        <rdfs:label>is sample of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#observationAnnotation -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#observationAnnotation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantObservation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#ObservationAnnotation"/>
+        <rdfs:label>observation annotation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#observedAtPoint -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#observedAtPoint">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/coso/v1/contaminoso#hasAnyFeatureOfInterest"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantObservation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#Point"/>
+        <rdfs:label>observed at point</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#observedAtReleasePoint -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#observedAtReleasePoint">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/coso/v1/contaminoso#observedAtPoint"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantReleaseObservation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#ReleasePoint"/>
+        <rdfs:label>observed at release point</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#observedAtSamplePoint -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#observedAtSamplePoint">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/coso/v1/contaminoso#observedAtPoint"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantSampleObservation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#SamplePoint"/>
+        <rdfs:label>observed at sample point</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#observedProperty -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#observedProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantObservation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminationProperty"/>
+        <rdfs:label>observed property</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ofSubstance -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#ofSubstance">
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantObservation"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/coso/v1/contaminoso#Substance"/>
+                    <rdf:Description rdf:about="http://w3id.org/coso/v1/contaminoso#SubstanceCollection"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label>of substance</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#pointFromFeature -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#pointFromFeature">
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#Point"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#Feature"/>
+        <rdfs:label>point from feature</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#releaseFeature -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#releaseFeature">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/coso/v1/contaminoso#hasFeatureOfInterest"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantReleaseObservation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#ReleaseFeature"/>
+        <rdfs:label>release feature</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#resultAnnotation -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#resultAnnotation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+        <rdfs:label>result annotation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#sampleAnnotation -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#sampleAnnotation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#MaterialSample"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#SampleAnnotation"/>
+        <rdfs:label>sample annotation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#sampleOfMaterialType -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#sampleOfMaterialType">
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#MaterialSample"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#SampleMaterialType"/>
+        <rdfs:label>sample of material type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#sampledFeature -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#sampledFeature">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/coso/v1/contaminoso#hasFeatureOfInterest"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantSampleObservation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#SampledFeature"/>
+        <rdfs:label>sampled feature</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#usedAnalysisMethod -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/coso/v1/contaminoso#usedAnalysisMethod">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantObservation"/>
+        <rdfs:range rdf:resource="http://w3id.org/coso/v1/contaminoso#AnalysisMethod"/>
+        <rdfs:label>used analysis method</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#member -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#member"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#AnnotationProperty -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hasFeatureOfInterest -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hasResult -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hasResult"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/isSampleOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/isSampleOf"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/observedProperty -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/observedProperty"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/usedProcedure -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/usedProcedure"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#casNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coso/v1/contaminoso#casNumber">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/coso/v1/contaminoso#substanceID"/>
+        <rdfs:label>cas number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#measurementUnit -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coso/v1/contaminoso#measurementUnit">
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement"/>
+        <rdfs:label>measurement unit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#measurementValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coso/v1/contaminoso#measurementValue">
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement"/>
+        <rdfs:label>measurement value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#observedTime -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coso/v1/contaminoso#observedTime">
+        <rdfs:domain rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantObservation"/>
+        <rdfs:label>observed time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#substanceID -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/coso/v1/contaminoso#substanceID">
+        <rdfs:label>substance identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#AggregateContaminantMeasurement -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#AggregateContaminantMeasurement">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement"/>
+        <rdfs:label>Aggregate Contaminant Measurement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#AnalysisMethod -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#AnalysisMethod">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+        <rdfs:label>Analysis Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteMeasurement -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteMeasurement">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement"/>
+        <rdfs:label>Contaminant Absolute Measurement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteQuantityKind -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteQuantityKind">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminationProperty"/>
+        <rdfs:label>Contaminant Absolute Quantity Kind</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationQuantityKind -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationQuantityKind">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantRelativeQuantityKind"/>
+        <rdfs:label>Contaminant Concentration Quantity Kind</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ContaminantMassQuantityKind -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ContaminantMassQuantityKind">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteQuantityKind"/>
+        <rdfs:label>Contaminant Quantity Kind</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:label>Contaminant Measurement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ContaminantObservation -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ContaminantObservation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:label>Contaminant Observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ContaminantRelativeMeasurement -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ContaminantRelativeMeasurement">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement"/>
+        <rdfs:label>Contaminant Relative Measurement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ContaminantRelativeQuantityKind -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ContaminantRelativeQuantityKind">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminationProperty"/>
+        <rdfs:label>Contaminant Relative Quantity Kind</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ContaminantReleaseObservation -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ContaminantReleaseObservation">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantObservation"/>
+        <rdfs:label>Contaminant Release Observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ContaminantSampleObservation -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ContaminantSampleObservation">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantObservation"/>
+        <rdfs:label>Contaminant Sample Observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ContaminantVolumeQuantityKind -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ContaminantVolumeQuantityKind">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteQuantityKind"/>
+        <rdfs:label>Contaminant Volume Quantity Kind</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ContaminationProperty -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ContaminationProperty">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Property"/>
+        <rdfs:label>Contamination Property</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#DetectQuantityValue -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#DetectQuantityValue">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#QuantityValue"/>
+        <rdfs:label>Detect Quantity Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#DetectionLimit -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#DetectionLimit">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#ResultQualifier"/>
+        <rdfs:label>Detection Limit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#Feature -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#Feature">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+        <rdfs:label>Feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#MaterialSample -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#MaterialSample">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
+        <rdfs:label>Material Sample</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#MonitoredFeature -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#MonitoredFeature">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#ReleaseFeature"/>
+        <rdfs:label>Monitored Feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#NonDetectQuantityValue -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#NonDetectQuantityValue">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#QuantityValue"/>
+        <rdfs:label>Non-Detect Quantity Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ObservationAnnotation -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ObservationAnnotation">
+        <rdfs:label>Observation Annotation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#Point -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#Point">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+        <rdfs:label>Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#QuantitationLimit -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#QuantitationLimit">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#ResultQualifier"/>
+        <rdfs:label>Quantitation Limit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#QuantityValue -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#QuantityValue">
+        <rdfs:label>Quantity Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ReleaseFeature -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ReleaseFeature">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#Feature"/>
+        <rdfs:label>Release Feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ReleasePoint -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ReleasePoint">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#Point"/>
+        <rdfs:label>Release Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#ResultQualifier -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#ResultQualifier">
+        <rdfs:label>Result Qualifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#SampleAnnotation -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#SampleAnnotation">
+        <rdfs:label>Sample Annotation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#SampleMaterialType -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#SampleMaterialType">
+        <rdfs:label>Sample Material Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#SamplePoint -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#SamplePoint">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#Point"/>
+        <rdfs:label>Sample Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#SampledFeature -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#SampledFeature">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#Feature"/>
+        <rdfs:label>Sampled Feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#SingleContaminantMeasurement -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#SingleContaminantMeasurement">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement"/>
+        <rdfs:label>Single Contaminant Measurement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#Substance -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#Substance">
+        <rdfs:label>Substance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#SubstanceCollection -->
+
+
+    <owl:Class rdf:about="http://w3id.org/coso/v1/contaminoso#SubstanceCollection">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#member"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/coso/v1/contaminoso#Substance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Substance Collection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Feature -->
+
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/FeatureOfInterest -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Observation -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Observation"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Procedure -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Procedure"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Property -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Property"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Result -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Result"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sample -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sample"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#MaximumContaminantConcentrationQuantityKind -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coso/v1/contaminoso#MaximumContaminantConcentrationQuantityKind">
+        <rdf:type rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationQuantityKind"/>
+        <rdfs:label>Maximum Contaminant Concentration Quantity</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#SingleContaminantConcentrationQuantityKind -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coso/v1/contaminoso#SingleContaminantConcentrationQuantityKind">
+        <rdf:type rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationQuantityKind"/>
+        <rdfs:label>Single Contamiant Concentration Quantity</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#SingleContaminantVolumeQuantityKind -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coso/v1/contaminoso#SingleContaminantVolumeQuantityKind">
+        <rdf:type rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantVolumeQuantityKind"/>
+        <rdfs:label>Single Contaminant Volume Quantity</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/coso/v1/contaminoso#SummedContaminantVolumeQuantityKind -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/coso/v1/contaminoso#SummedContaminantVolumeQuantityKind">
+        <rdf:type rdf:resource="http://w3id.org/coso/v1/contaminoso#ContaminantVolumeQuantityKind"/>
+        <rdfs:label>Summed Contaminant Volume Quantity</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
