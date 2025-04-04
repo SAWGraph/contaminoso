@@ -95,7 +95,7 @@ stad:hasTransformationKind rdf:type owl:ObjectProperty ;
 coso:observedProperty rdfs:subPropertyOf stad:hasQualityKind , qudt:hasQuantityKind.
 
 coso:measurementUnit owl:propertyChainAxiom ( qudt:quantityValue
-                                              qudt:unit
+                                              qudt:hasUnit
                                             ) .
 
 
@@ -105,3 +105,13 @@ coso:measurementValue owl:propertyChainAxiom ( qudt:quantityValue
                                              ( qudt:quantityValue
                                                qudt:numericValue
                                              ) .
+
+# Individuals
+
+coso:NanoGM-PER-GM rdf:type <http://qudt.org/schema/qudt/Unit> ;
+  dcterms:description "mass ratio as 0.000000001-fold of the SI base unit gram divided by the SI base unit gram"^^rdf:HTML ;
+  qudt:hasQuantityKind <http://qudt.org/vocab/quantitykind/MassRatio> ;
+  qudt:symbol "ng/g" ;
+  qudt:ucumCode "ng/g"^^qudt:UCUMcs;
+  rdfs:isDefinedBy <http://w3id.org/coso/contaminoso-stad-qudt#> ;
+  rdfs:label "Nanogram per Gram"@en ;
