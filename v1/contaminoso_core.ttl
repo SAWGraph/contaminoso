@@ -1,13 +1,13 @@
-@prefix : <http://w3id.org/coso/contaminoso#> .
+@prefix coso: <http://w3id.org/coso/v1/contaminoso#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix coso: <http://w3id.org/coso/v1/contaminoso#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @base <http://w3id.org/coso/contaminoso#> .
 
 <http://w3id.org/coso/contaminoso#> rdf:type owl:Ontology ;
@@ -17,12 +17,15 @@
                                                               <http://orcid.org/0000-0003-3547-8058> ,
                                                               <https://orcid.org/0000-0003-3271-6700> ;
                                               dcterms:description "the Contaminant Observation and Samples Ontology (ContaminOSO) developed as part of the AIKnowsPFAS and SAWGraph projects."@en-us ;
+                                              dcterms:abstract "";
                                               dcterms:issued "2025-03-30"^^xsd:date ;
                                               dcterms:modified "2025-03-30"^^xsd:date ;
                                               dcterms:publisher <http://spatialai.org> ;
                                               dcterms:source "https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso.ttl"^^<xsd:anyURI> ;
-                                              dcterms:title "Contaminant Observation and Samples Ontology (ContaminOSO)"@en-us ;
-                                              rdfs:label "Contaminant Observation and Samples Ontology (ContaminOSO)"@en-us ;
+                                              dcterms:title "Contaminant Observation and Samples Ontology"@en-us ;
+                                              rdfs:label "ContaminOSO"@en-us ;
+                                              vann:preferredNamespaceUri <http://w3id.org/coso/contaminoso#>;
+                                              vann:preferredNamespacePrefix "coso:";
                                               owl:versionInfo "1"@en-us .
 
 #################################################################
@@ -291,7 +294,6 @@ coso:pointFromFeature rdf:type owl:ObjectProperty ;
 
 coso:observationAnnotation rdf:type owl:ObjectProperty ;
     rdfs:label "observation annotation";
-    rdfs:subPropertyOf owl:AnnotationProperty;
     rdfs:domain coso:ContaminantObservation;
     rdfs:range coso:ObservationAnnotation.
 
@@ -311,12 +313,10 @@ coso:ofSubstance rdf:type owl:ObjectProperty ;
                 ] .
 
 coso:resultAnnotation rdf:type owl:ObjectProperty ;
-    rdfs:label "result annotation";
-    rdfs:subPropertyOf owl:AnnotationProperty.
+    rdfs:label "result annotation".
 
 coso:sampleAnnotation rdf:type owl:ObjectProperty ;
     rdfs:label "sample annotation";
-    rdfs:subPropertyOf owl:AnnotationProperty;
     rdfs:domain coso:MaterialSample;
     rdfs:range coso:SampleAnnotation. 
 
