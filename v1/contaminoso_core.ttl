@@ -386,3 +386,8 @@ coso:SingleContaminantVolumeQuantityKind rdf:type owl:NamedIndividual ,
 coso:SummedContaminantVolumeQuantityKind rdf:type owl:NamedIndividual ,
                                               coso:ContaminantVolumeQuantityKind ;
                                         rdfs:label "Summed Contaminant Volume Quantity" .
+
+coso:non-detect rdf:type qudt:EnumeratedValue ;
+                        rdfs:label "Non-Detect";
+                        dcterms:description "Non-Detect Value" ;
+                        qudt:abbreviation "ND" .
