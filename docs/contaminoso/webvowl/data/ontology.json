@@ -1,0 +1,79 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en-us", "undefined" ],
+    "title" : {
+      "en-us" : "Contaminant Observation and Samples Ontology (ContaminOSO)"
+    },
+    "iri" : "http://w3id.org/coso/contaminoso#",
+    "version" : "1",
+    "author" : [ "https://orcid.org/0000-0003-3271-6700", "http://orcid.org/0000-0003-3547-8058", "http://orcid.org/0000-0002-5331-5052" ],
+    "description" : {
+      "en-us" : "the Contaminant Observation and Samples Ontology (ContaminOSO) developed as part of the AIKnowsPFAS and SAWGraph projects."
+    },
+    "labels" : {
+      "en-us" : "Contaminant Observation and Samples Ontology (ContaminOSO)"
+    },
+    "other" : {
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "http://orcid.org/0000-0003-3547-8058",
+        "type" : "iri"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "http://orcid.org/0000-0002-5331-5052",
+        "type" : "iri"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "https://orcid.org/0000-0003-3271-6700",
+        "type" : "iri"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "en-us",
+        "value" : "2025-03-30",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "http://spatialai.org",
+        "type" : "iri"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2025-03-30",
+        "type" : "label"
+      } ],
+      "source" : [ {
+        "identifier" : "source",
+        "language" : "undefined",
+        "value" : "https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso.ttl",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "en-us",
+        "value" : "1",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en-us",
+        "value" : "Contaminant Observation and Samples Ontology (ContaminOSO)",
+        "type" : "label"
+      } ],
+      "issued" : [ {
+        "identifier" : "issued",
+        "language" : "undefined",
+        "value" : "2025-03-30",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ]
+}

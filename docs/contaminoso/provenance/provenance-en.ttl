@@ -1,0 +1,16 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix : <> .
+<http://w3id.org/coso/v1/contaminoso#> a prov:Entity;
+	 dc:title "Contaminant Observation and Samples Ontology (ContaminOSO)";
+	 prov:wasAttributedTo <http://orcid.org/0000-0002-5331-5052>;
+	 dc:creator <http://orcid.org/0000-0002-5331-5052>;
+	 prov:wasAttributedTo <http://orcid.org/0000-0003-3547-8058>;
+	 dc:creator <http://orcid.org/0000-0003-3547-8058>;
+	 prov:wasAttributedTo <https://orcid.org/0000-0003-3271-6700>;
+	 dc:creator <https://orcid.org/0000-0003-3271-6700>;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:specializationOf <http://w3id.org/coso/contaminoso#>;
+	 prov:wasGeneratedAt "2025-03-30";
+.

@@ -1,0 +1,493 @@
+<http://w3id.org/coso/contaminoso#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://w3id.org/coso/contaminoso#> <http://www.w3.org/2002/07/owl#versionIRI> <http://w3id.org/coso/v1/contaminoso#> .
+<http://w3id.org/coso/contaminoso#> <http://purl.org/dc/terms/created> "2025-03-30"@en-us .
+<http://w3id.org/coso/contaminoso#> <http://purl.org/dc/terms/creator> <http://orcid.org/0000-0002-5331-5052> .
+<http://w3id.org/coso/contaminoso#> <http://purl.org/dc/terms/creator> <http://orcid.org/0000-0003-3547-8058> .
+<http://w3id.org/coso/contaminoso#> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-3271-6700> .
+<http://w3id.org/coso/contaminoso#> <http://purl.org/dc/terms/description> "the Contaminant Observation and Samples Ontology (ContaminOSO) developed as part of the AIKnowsPFAS and SAWGraph projects."@en-us .
+<http://w3id.org/coso/contaminoso#> <http://purl.org/dc/terms/issued> "2025-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://w3id.org/coso/contaminoso#> <http://purl.org/dc/terms/modified> "2025-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://w3id.org/coso/contaminoso#> <http://purl.org/dc/terms/publisher> <http://spatialai.org> .
+<http://w3id.org/coso/contaminoso#> <http://purl.org/dc/terms/source> "https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso.ttl"^^<xsd:anyURI> .
+<http://w3id.org/coso/contaminoso#> <http://purl.org/dc/terms/title> "Contaminant Observation and Samples Ontology (ContaminOSO)"@en-us .
+<http://w3id.org/coso/contaminoso#> <http://www.w3.org/2000/01/rdf-schema#label> "Contaminant Observation and Samples Ontology (ContaminOSO)"@en-us .
+<http://w3id.org/coso/contaminoso#> <http://www.w3.org/2002/07/owl#versionInfo> "1"@en-us .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# xsd:anyURI
+<xsd:anyURI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://w3id.org/coso/v1/contaminoso#analyzedSample
+<http://w3id.org/coso/v1/contaminoso#analyzedSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#analyzedSample> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://w3id.org/coso/v1/contaminoso#hasAnyFeatureOfInterest> .
+<http://w3id.org/coso/v1/contaminoso#analyzedSample> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantSampleObservation> .
+<http://w3id.org/coso/v1/contaminoso#analyzedSample> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#MaterialSample> .
+<http://w3id.org/coso/v1/contaminoso#analyzedSample> <http://www.w3.org/2000/01/rdf-schema#label> "analyzed sample" .
+# 
+# http://w3id.org/coso/v1/contaminoso#fromSamplePoint
+<http://w3id.org/coso/v1/contaminoso#fromSamplePoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#fromSamplePoint> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#MaterialSample> .
+<http://w3id.org/coso/v1/contaminoso#fromSamplePoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#SamplePoint> .
+<http://w3id.org/coso/v1/contaminoso#fromSamplePoint> <http://www.w3.org/2000/01/rdf-schema#label> "from sample point" .
+# 
+# http://w3id.org/coso/v1/contaminoso#hasAnyFeatureOfInterest
+<http://w3id.org/coso/v1/contaminoso#hasAnyFeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#hasAnyFeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantObservation> .
+<http://w3id.org/coso/v1/contaminoso#hasAnyFeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<http://w3id.org/coso/v1/contaminoso#hasAnyFeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#label> "has any feature of interest" .
+# 
+# http://w3id.org/coso/v1/contaminoso#hasFeatureOfInterest
+<http://w3id.org/coso/v1/contaminoso#hasFeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#hasFeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://w3id.org/coso/v1/contaminoso#hasAnyFeatureOfInterest> .
+<http://w3id.org/coso/v1/contaminoso#hasFeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#Feature> .
+<http://w3id.org/coso/v1/contaminoso#hasFeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#label> "has feature of interest" .
+# 
+# http://w3id.org/coso/v1/contaminoso#hasResult
+<http://w3id.org/coso/v1/contaminoso#hasResult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#hasResult> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/sosa/hasResult> .
+<http://w3id.org/coso/v1/contaminoso#hasResult> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantObservation> .
+<http://w3id.org/coso/v1/contaminoso#hasResult> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement> .
+<http://w3id.org/coso/v1/contaminoso#hasResult> <http://www.w3.org/2000/01/rdf-schema#label> "has result" .
+# 
+# http://w3id.org/coso/v1/contaminoso#hasResultQualifier
+<http://w3id.org/coso/v1/contaminoso#hasResultQualifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#hasResultQualifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement> .
+<http://w3id.org/coso/v1/contaminoso#hasResultQualifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#ResultQualifier> .
+<http://w3id.org/coso/v1/contaminoso#hasResultQualifier> <http://www.w3.org/2000/01/rdf-schema#label> "has result qualifier" .
+# 
+# http://w3id.org/coso/v1/contaminoso#isSampleOf
+<http://w3id.org/coso/v1/contaminoso#isSampleOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#isSampleOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/sosa/isSampleOf> .
+<http://w3id.org/coso/v1/contaminoso#isSampleOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#MaterialSample> .
+<http://w3id.org/coso/v1/contaminoso#isSampleOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#SampledFeature> .
+<http://w3id.org/coso/v1/contaminoso#isSampleOf> <http://www.w3.org/2000/01/rdf-schema#label> "is sample of" .
+# 
+# http://w3id.org/coso/v1/contaminoso#observationAnnotation
+<http://w3id.org/coso/v1/contaminoso#observationAnnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#observationAnnotation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2002/07/owl#AnnotationProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#observationAnnotation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantObservation> .
+<http://w3id.org/coso/v1/contaminoso#observationAnnotation> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#ObservationAnnotation> .
+<http://w3id.org/coso/v1/contaminoso#observationAnnotation> <http://www.w3.org/2000/01/rdf-schema#label> "observation annotation" .
+# 
+# http://w3id.org/coso/v1/contaminoso#observedAtPoint
+<http://w3id.org/coso/v1/contaminoso#observedAtPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#observedAtPoint> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://w3id.org/coso/v1/contaminoso#hasAnyFeatureOfInterest> .
+<http://w3id.org/coso/v1/contaminoso#observedAtPoint> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantObservation> .
+<http://w3id.org/coso/v1/contaminoso#observedAtPoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#Point> .
+<http://w3id.org/coso/v1/contaminoso#observedAtPoint> <http://www.w3.org/2000/01/rdf-schema#label> "observed at point" .
+# 
+# http://w3id.org/coso/v1/contaminoso#observedAtReleasePoint
+<http://w3id.org/coso/v1/contaminoso#observedAtReleasePoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#observedAtReleasePoint> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://w3id.org/coso/v1/contaminoso#observedAtPoint> .
+<http://w3id.org/coso/v1/contaminoso#observedAtReleasePoint> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantReleaseObservation> .
+<http://w3id.org/coso/v1/contaminoso#observedAtReleasePoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#ReleasePoint> .
+<http://w3id.org/coso/v1/contaminoso#observedAtReleasePoint> <http://www.w3.org/2000/01/rdf-schema#label> "observed at release point" .
+# 
+# http://w3id.org/coso/v1/contaminoso#observedAtSamplePoint
+<http://w3id.org/coso/v1/contaminoso#observedAtSamplePoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#observedAtSamplePoint> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://w3id.org/coso/v1/contaminoso#observedAtPoint> .
+<http://w3id.org/coso/v1/contaminoso#observedAtSamplePoint> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantSampleObservation> .
+<http://w3id.org/coso/v1/contaminoso#observedAtSamplePoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#SamplePoint> .
+<http://w3id.org/coso/v1/contaminoso#observedAtSamplePoint> <http://www.w3.org/2000/01/rdf-schema#label> "observed at sample point" .
+# 
+# http://w3id.org/coso/v1/contaminoso#observedProperty
+<http://w3id.org/coso/v1/contaminoso#observedProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#observedProperty> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/sosa/observedProperty> .
+<http://w3id.org/coso/v1/contaminoso#observedProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantObservation> .
+<http://w3id.org/coso/v1/contaminoso#observedProperty> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#ContaminationProperty> .
+<http://w3id.org/coso/v1/contaminoso#observedProperty> <http://www.w3.org/2000/01/rdf-schema#label> "observed property" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ofSubstance
+<http://w3id.org/coso/v1/contaminoso#ofSubstance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#ofSubstance> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantObservation> .
+<http://w3id.org/coso/v1/contaminoso#ofSubstance> <http://www.w3.org/2000/01/rdf-schema#range> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/coso/v1/contaminoso#SubstanceCollection> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/coso/v1/contaminoso#Substance> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ofSubstance> <http://www.w3.org/2000/01/rdf-schema#label> "of substance" .
+# 
+# http://w3id.org/coso/v1/contaminoso#pointFromFeature
+<http://w3id.org/coso/v1/contaminoso#pointFromFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#pointFromFeature> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#Point> .
+<http://w3id.org/coso/v1/contaminoso#pointFromFeature> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#Feature> .
+<http://w3id.org/coso/v1/contaminoso#pointFromFeature> <http://www.w3.org/2000/01/rdf-schema#label> "point from feature" .
+# 
+# http://w3id.org/coso/v1/contaminoso#releaseFeature
+<http://w3id.org/coso/v1/contaminoso#releaseFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#releaseFeature> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://w3id.org/coso/v1/contaminoso#hasFeatureOfInterest> .
+<http://w3id.org/coso/v1/contaminoso#releaseFeature> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantReleaseObservation> .
+<http://w3id.org/coso/v1/contaminoso#releaseFeature> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#ReleaseFeature> .
+<http://w3id.org/coso/v1/contaminoso#releaseFeature> <http://www.w3.org/2000/01/rdf-schema#label> "release feature" .
+# 
+# http://w3id.org/coso/v1/contaminoso#resultAnnotation
+<http://w3id.org/coso/v1/contaminoso#resultAnnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#resultAnnotation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://w3id.org/coso/v1/contaminoso#resultAnnotation> <http://www.w3.org/2000/01/rdf-schema#label> "result annotation" .
+# 
+# http://w3id.org/coso/v1/contaminoso#sampleAnnotation
+<http://w3id.org/coso/v1/contaminoso#sampleAnnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#sampleAnnotation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://w3id.org/coso/v1/contaminoso#sampleAnnotation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#MaterialSample> .
+<http://w3id.org/coso/v1/contaminoso#sampleAnnotation> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#SampleAnnotation> .
+<http://w3id.org/coso/v1/contaminoso#sampleAnnotation> <http://www.w3.org/2000/01/rdf-schema#label> "sample annotation" .
+# 
+# http://w3id.org/coso/v1/contaminoso#sampleOfMaterialType
+<http://w3id.org/coso/v1/contaminoso#sampleOfMaterialType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#sampleOfMaterialType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#MaterialSample> .
+<http://w3id.org/coso/v1/contaminoso#sampleOfMaterialType> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#SampleMaterialType> .
+<http://w3id.org/coso/v1/contaminoso#sampleOfMaterialType> <http://www.w3.org/2000/01/rdf-schema#label> "sample of material type" .
+# 
+# http://w3id.org/coso/v1/contaminoso#sampledFeature
+<http://w3id.org/coso/v1/contaminoso#sampledFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#sampledFeature> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://w3id.org/coso/v1/contaminoso#hasFeatureOfInterest> .
+<http://w3id.org/coso/v1/contaminoso#sampledFeature> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantSampleObservation> .
+<http://w3id.org/coso/v1/contaminoso#sampledFeature> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#SampledFeature> .
+<http://w3id.org/coso/v1/contaminoso#sampledFeature> <http://www.w3.org/2000/01/rdf-schema#label> "sampled feature" .
+# 
+# http://w3id.org/coso/v1/contaminoso#usedAnalysisMethod
+<http://w3id.org/coso/v1/contaminoso#usedAnalysisMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/coso/v1/contaminoso#usedAnalysisMethod> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/sosa/usedProcedure> .
+<http://w3id.org/coso/v1/contaminoso#usedAnalysisMethod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantObservation> .
+<http://w3id.org/coso/v1/contaminoso#usedAnalysisMethod> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/coso/v1/contaminoso#AnalysisMethod> .
+<http://w3id.org/coso/v1/contaminoso#usedAnalysisMethod> <http://www.w3.org/2000/01/rdf-schema#label> "used analysis method" .
+# 
+# http://www.w3.org/2000/01/rdf-schema#member
+<http://www.w3.org/2000/01/rdf-schema#member> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/2002/07/owl#AnnotationProperty
+# 
+# http://www.w3.org/ns/sosa/hasFeatureOfInterest
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/ns/sosa/hasResult
+<http://www.w3.org/ns/sosa/hasResult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/ns/sosa/isSampleOf
+<http://www.w3.org/ns/sosa/isSampleOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/ns/sosa/observedProperty
+<http://www.w3.org/ns/sosa/observedProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/ns/sosa/usedProcedure
+<http://www.w3.org/ns/sosa/usedProcedure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://w3id.org/coso/v1/contaminoso#casNumber
+<http://w3id.org/coso/v1/contaminoso#casNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/coso/v1/contaminoso#casNumber> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://w3id.org/coso/v1/contaminoso#substanceID> .
+<http://w3id.org/coso/v1/contaminoso#casNumber> <http://www.w3.org/2000/01/rdf-schema#label> "cas number" .
+# 
+# http://w3id.org/coso/v1/contaminoso#measurementUnit
+<http://w3id.org/coso/v1/contaminoso#measurementUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/coso/v1/contaminoso#measurementUnit> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement> .
+<http://w3id.org/coso/v1/contaminoso#measurementUnit> <http://www.w3.org/2000/01/rdf-schema#label> "measurement unit" .
+# 
+# http://w3id.org/coso/v1/contaminoso#measurementValue
+<http://w3id.org/coso/v1/contaminoso#measurementValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/coso/v1/contaminoso#measurementValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement> .
+<http://w3id.org/coso/v1/contaminoso#measurementValue> <http://www.w3.org/2000/01/rdf-schema#label> "measurement value" .
+# 
+# http://w3id.org/coso/v1/contaminoso#observedTime
+<http://w3id.org/coso/v1/contaminoso#observedTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/coso/v1/contaminoso#observedTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/coso/v1/contaminoso#ContaminantObservation> .
+<http://w3id.org/coso/v1/contaminoso#observedTime> <http://www.w3.org/2000/01/rdf-schema#label> "observed time" .
+# 
+# http://w3id.org/coso/v1/contaminoso#substanceID
+<http://w3id.org/coso/v1/contaminoso#substanceID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/coso/v1/contaminoso#substanceID> <http://www.w3.org/2000/01/rdf-schema#label> "substance identifier" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://w3id.org/coso/v1/contaminoso#AggregateContaminantMeasurement
+<http://w3id.org/coso/v1/contaminoso#AggregateContaminantMeasurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#AggregateContaminantMeasurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement> .
+<http://w3id.org/coso/v1/contaminoso#AggregateContaminantMeasurement> <http://www.w3.org/2000/01/rdf-schema#label> "Aggregate Contaminant Measurement" .
+# 
+# http://w3id.org/coso/v1/contaminoso#AnalysisMethod
+<http://w3id.org/coso/v1/contaminoso#AnalysisMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#AnalysisMethod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Procedure> .
+<http://w3id.org/coso/v1/contaminoso#AnalysisMethod> <http://www.w3.org/2000/01/rdf-schema#label> "Analysis Method" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteMeasurement
+<http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteMeasurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteMeasurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteMeasurement> <http://www.w3.org/2000/01/rdf-schema#label> "Contaminant Absolute Measurement" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteQuantityKind
+<http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteQuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteQuantityKind> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#ContaminationProperty> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteQuantityKind> <http://www.w3.org/2000/01/rdf-schema#label> "Contaminant Absolute Quantity Kind" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationQuantityKind
+<http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationQuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationQuantityKind> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#ContaminantRelativeQuantityKind> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationQuantityKind> <http://www.w3.org/2000/01/rdf-schema#label> "Contaminant Concentration Quantity Kind" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ContaminantMassQuantityKind
+<http://w3id.org/coso/v1/contaminoso#ContaminantMassQuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantMassQuantityKind> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteQuantityKind> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantMassQuantityKind> <http://www.w3.org/2000/01/rdf-schema#label> "Contaminant Quantity Kind" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement
+<http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Result> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement> <http://www.w3.org/2000/01/rdf-schema#label> "Contaminant Measurement" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ContaminantObservation
+<http://w3id.org/coso/v1/contaminoso#ContaminantObservation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantObservation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Observation> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantObservation> <http://www.w3.org/2000/01/rdf-schema#label> "Contaminant Observation" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ContaminantRelativeMeasurement
+<http://w3id.org/coso/v1/contaminoso#ContaminantRelativeMeasurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantRelativeMeasurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantRelativeMeasurement> <http://www.w3.org/2000/01/rdf-schema#label> "Contaminant Relative Measurement" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ContaminantRelativeQuantityKind
+<http://w3id.org/coso/v1/contaminoso#ContaminantRelativeQuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantRelativeQuantityKind> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#ContaminationProperty> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantRelativeQuantityKind> <http://www.w3.org/2000/01/rdf-schema#label> "Contaminant Relative Quantity Kind" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ContaminantReleaseObservation
+<http://w3id.org/coso/v1/contaminoso#ContaminantReleaseObservation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantReleaseObservation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#ContaminantObservation> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantReleaseObservation> <http://www.w3.org/2000/01/rdf-schema#label> "Contaminant Release Observation" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ContaminantSampleObservation
+<http://w3id.org/coso/v1/contaminoso#ContaminantSampleObservation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantSampleObservation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#ContaminantObservation> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantSampleObservation> <http://www.w3.org/2000/01/rdf-schema#label> "Contaminant Sample Observation" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ContaminantVolumeQuantityKind
+<http://w3id.org/coso/v1/contaminoso#ContaminantVolumeQuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantVolumeQuantityKind> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteQuantityKind> .
+<http://w3id.org/coso/v1/contaminoso#ContaminantVolumeQuantityKind> <http://www.w3.org/2000/01/rdf-schema#label> "Contaminant Volume Quantity Kind" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ContaminationProperty
+<http://w3id.org/coso/v1/contaminoso#ContaminationProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ContaminationProperty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Property> .
+<http://w3id.org/coso/v1/contaminoso#ContaminationProperty> <http://www.w3.org/2000/01/rdf-schema#label> "Contamination Property" .
+# 
+# http://w3id.org/coso/v1/contaminoso#DetectQuantityValue
+<http://w3id.org/coso/v1/contaminoso#DetectQuantityValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#DetectQuantityValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#QuantityValue> .
+<http://w3id.org/coso/v1/contaminoso#DetectQuantityValue> <http://www.w3.org/2000/01/rdf-schema#label> "Detect Quantity Value" .
+# 
+# http://w3id.org/coso/v1/contaminoso#DetectionLimit
+<http://w3id.org/coso/v1/contaminoso#DetectionLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#DetectionLimit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#ResultQualifier> .
+<http://w3id.org/coso/v1/contaminoso#DetectionLimit> <http://www.w3.org/2000/01/rdf-schema#label> "Detection Limit" .
+# 
+# http://w3id.org/coso/v1/contaminoso#Feature
+<http://w3id.org/coso/v1/contaminoso#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#Feature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://w3id.org/coso/v1/contaminoso#Feature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<http://w3id.org/coso/v1/contaminoso#Feature> <http://www.w3.org/2000/01/rdf-schema#label> "Feature" .
+# 
+# http://w3id.org/coso/v1/contaminoso#MaterialSample
+<http://w3id.org/coso/v1/contaminoso#MaterialSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#MaterialSample> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sample> .
+<http://w3id.org/coso/v1/contaminoso#MaterialSample> <http://www.w3.org/2000/01/rdf-schema#label> "Material Sample" .
+# 
+# http://w3id.org/coso/v1/contaminoso#MonitoredFeature
+<http://w3id.org/coso/v1/contaminoso#MonitoredFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#MonitoredFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#ReleaseFeature> .
+<http://w3id.org/coso/v1/contaminoso#MonitoredFeature> <http://www.w3.org/2000/01/rdf-schema#label> "Monitored Feature" .
+# 
+# http://w3id.org/coso/v1/contaminoso#NonDetectQuantityValue
+<http://w3id.org/coso/v1/contaminoso#NonDetectQuantityValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#NonDetectQuantityValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#QuantityValue> .
+<http://w3id.org/coso/v1/contaminoso#NonDetectQuantityValue> <http://www.w3.org/2000/01/rdf-schema#label> "Non-Detect Quantity Value" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ObservationAnnotation
+<http://w3id.org/coso/v1/contaminoso#ObservationAnnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ObservationAnnotation> <http://www.w3.org/2000/01/rdf-schema#label> "Observation Annotation" .
+# 
+# http://w3id.org/coso/v1/contaminoso#Point
+<http://w3id.org/coso/v1/contaminoso#Point> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://w3id.org/coso/v1/contaminoso#Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<http://w3id.org/coso/v1/contaminoso#Point> <http://www.w3.org/2000/01/rdf-schema#label> "Point" .
+# 
+# http://w3id.org/coso/v1/contaminoso#QuantitationLimit
+<http://w3id.org/coso/v1/contaminoso#QuantitationLimit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#QuantitationLimit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#ResultQualifier> .
+<http://w3id.org/coso/v1/contaminoso#QuantitationLimit> <http://www.w3.org/2000/01/rdf-schema#label> "Quantitation Limit" .
+# 
+# http://w3id.org/coso/v1/contaminoso#QuantityValue
+<http://w3id.org/coso/v1/contaminoso#QuantityValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#QuantityValue> <http://www.w3.org/2000/01/rdf-schema#label> "Quantity Value" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ReleaseFeature
+<http://w3id.org/coso/v1/contaminoso#ReleaseFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ReleaseFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#Feature> .
+<http://w3id.org/coso/v1/contaminoso#ReleaseFeature> <http://www.w3.org/2000/01/rdf-schema#label> "Release Feature" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ReleasePoint
+<http://w3id.org/coso/v1/contaminoso#ReleasePoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ReleasePoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#Point> .
+<http://w3id.org/coso/v1/contaminoso#ReleasePoint> <http://www.w3.org/2000/01/rdf-schema#label> "Release Point" .
+# 
+# http://w3id.org/coso/v1/contaminoso#ResultQualifier
+<http://w3id.org/coso/v1/contaminoso#ResultQualifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#ResultQualifier> <http://www.w3.org/2000/01/rdf-schema#label> "Result Qualifier" .
+# 
+# http://w3id.org/coso/v1/contaminoso#SampleAnnotation
+<http://w3id.org/coso/v1/contaminoso#SampleAnnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#SampleAnnotation> <http://www.w3.org/2000/01/rdf-schema#label> "Sample Annotation" .
+# 
+# http://w3id.org/coso/v1/contaminoso#SampleMaterialType
+<http://w3id.org/coso/v1/contaminoso#SampleMaterialType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#SampleMaterialType> <http://www.w3.org/2000/01/rdf-schema#label> "Sample Material Type" .
+# 
+# http://w3id.org/coso/v1/contaminoso#SamplePoint
+<http://w3id.org/coso/v1/contaminoso#SamplePoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#SamplePoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#Point> .
+<http://w3id.org/coso/v1/contaminoso#SamplePoint> <http://www.w3.org/2000/01/rdf-schema#label> "Sample Point" .
+# 
+# http://w3id.org/coso/v1/contaminoso#SampledFeature
+<http://w3id.org/coso/v1/contaminoso#SampledFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#SampledFeature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#Feature> .
+<http://w3id.org/coso/v1/contaminoso#SampledFeature> <http://www.w3.org/2000/01/rdf-schema#label> "Sampled Feature" .
+# 
+# http://w3id.org/coso/v1/contaminoso#SingleContaminantMeasurement
+<http://w3id.org/coso/v1/contaminoso#SingleContaminantMeasurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#SingleContaminantMeasurement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/coso/v1/contaminoso#ContaminantMeasurement> .
+<http://w3id.org/coso/v1/contaminoso#SingleContaminantMeasurement> <http://www.w3.org/2000/01/rdf-schema#label> "Single Contaminant Measurement" .
+# 
+# http://w3id.org/coso/v1/contaminoso#Substance
+<http://w3id.org/coso/v1/contaminoso#Substance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#Substance> <http://www.w3.org/2000/01/rdf-schema#label> "Substance" .
+# 
+# http://w3id.org/coso/v1/contaminoso#SubstanceCollection
+<http://w3id.org/coso/v1/contaminoso#SubstanceCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/coso/v1/contaminoso#SubstanceCollection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://w3id.org/coso/v1/contaminoso#Substance> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2000/01/rdf-schema#member> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/coso/v1/contaminoso#SubstanceCollection> <http://www.w3.org/2000/01/rdf-schema#label> "Substance Collection" .
+# 
+# http://www.opengis.net/ont/geosparql#Feature
+<http://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/sosa/FeatureOfInterest
+<http://www.w3.org/ns/sosa/FeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/sosa/Observation
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/sosa/Procedure
+<http://www.w3.org/ns/sosa/Procedure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/sosa/Property
+<http://www.w3.org/ns/sosa/Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/sosa/Result
+<http://www.w3.org/ns/sosa/Result> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/sosa/Sample
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://w3id.org/coso/v1/contaminoso#MaximumContaminantConcentrationQuantityKind
+<http://w3id.org/coso/v1/contaminoso#MaximumContaminantConcentrationQuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/coso/v1/contaminoso#MaximumContaminantConcentrationQuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationQuantityKind> .
+<http://w3id.org/coso/v1/contaminoso#MaximumContaminantConcentrationQuantityKind> <http://www.w3.org/2000/01/rdf-schema#label> "Maximum Contaminant Concentration Quantity" .
+# 
+# http://w3id.org/coso/v1/contaminoso#SingleContaminantConcentrationQuantityKind
+<http://w3id.org/coso/v1/contaminoso#SingleContaminantConcentrationQuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/coso/v1/contaminoso#SingleContaminantConcentrationQuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationQuantityKind> .
+<http://w3id.org/coso/v1/contaminoso#SingleContaminantConcentrationQuantityKind> <http://www.w3.org/2000/01/rdf-schema#label> "Single Contamiant Concentration Quantity" .
+# 
+# http://w3id.org/coso/v1/contaminoso#SingleContaminantVolumeQuantityKind
+<http://w3id.org/coso/v1/contaminoso#SingleContaminantVolumeQuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/coso/v1/contaminoso#SingleContaminantVolumeQuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/coso/v1/contaminoso#ContaminantVolumeQuantityKind> .
+<http://w3id.org/coso/v1/contaminoso#SingleContaminantVolumeQuantityKind> <http://www.w3.org/2000/01/rdf-schema#label> "Single Contaminant Volume Quantity" .
+# 
+# http://w3id.org/coso/v1/contaminoso#SummedContaminantVolumeQuantityKind
+<http://w3id.org/coso/v1/contaminoso#SummedContaminantVolumeQuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/coso/v1/contaminoso#SummedContaminantVolumeQuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/coso/v1/contaminoso#ContaminantVolumeQuantityKind> .
+<http://w3id.org/coso/v1/contaminoso#SummedContaminantVolumeQuantityKind> <http://www.w3.org/2000/01/rdf-schema#label> "Summed Contaminant Volume Quantity" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
