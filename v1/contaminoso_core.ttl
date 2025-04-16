@@ -5,6 +5,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
@@ -348,7 +349,8 @@ sosa:usedProcedure rdf:type owl:ObjectProperty.
 #################################################################
 
 coso:substanceID rdf:type owl:DatatypeProperty;
-    rdfs:label "substance identifier" . 
+    rdfs:label "substance identifier" ;
+    rdfs:subPropertyOf dcterms:identifier. 
 
 coso:casNumber rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf coso:substanceID ;

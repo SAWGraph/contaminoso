@@ -114,4 +114,4 @@ coso:NanoGM-PER-GM rdf:type <http://qudt.org/schema/qudt/Unit> ;
   qudt:symbol "ng/g" ;
   qudt:ucumCode "ng/g"^^qudt:UCUMcs;
   rdfs:isDefinedBy <http://w3id.org/coso/contaminoso-stad-qudt#> ;
-  rdfs:label "Nanogram per Gram"@en ;
+  rdfs:label "Nanogram per Gram"@en .
