@@ -10,6 +10,7 @@
 @prefix stad: <http://purl.org/spatialai/stad/v2/core/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
 @base <http://w3id.org/coso/v1/contaminoso-materialsample-ext#> .
 
 <http://w3id.org/coso/contaminoso-materialsample-ext#> rdf:type owl:Ontology ;
@@ -66,6 +67,14 @@ coso:AnimalBloodSample rdf:type owl:Class;
   rdfs:label "Animal Blood Sample";
   rdfs:subClassOf coso:AnimalMaterialSample. 
 
+coso:AnimalOrganSample rdf:type owl:Class;
+  rdfs:label "Animal Organ Sample";
+  rdfs:subClassOf coso:AnimalMaterialSample. 
+
+coso:AnimalMilkSample rdf:type owl:Class;
+  rdfs:label "Animal Milk Sample";
+  rdfs:subClassOf coso:AnimalMaterialSample. 
+
 coso:FilteredWaterSample rdf:type owl:Class;
   rdfs:label "Filtered Water Sample";
   rdfs:subClassOf coso:WaterSample. 
@@ -73,3 +82,27 @@ coso:FilteredWaterSample rdf:type owl:Class;
 coso:RawWaterSample rdf:type owl:Class;
   rdfs:label "Raw Water Sample";
   rdfs:subClassOf coso:WaterSample. 
+
+#############################################################
+# FOODON alignment
+#############################################################
+
+coso:AnimalMaterialSample rdfs:subClassOf [rdf:type owl:Restriction;
+            owl:onProperty coso:sampleOfMaterialType;
+            owl:someValuesFrom obo:FOODON_03420164] . #some animal material
+
+coso:AnimalBloodSample rdfs:subClassOf [rdf:type owl:Restriction;
+            owl:onProperty coso:sampleOfMaterialType;
+            owl:someValuesFrom obo:FOODON_02010015] .# some animal blood
+
+coso:AnimalTissueSample rdfs:subClassOf [rdf:type owl:Restriction; 
+            owl:onProperty coso:sampleOfMaterialType;
+            owl:someValuesFrom [ owl:unionOf (obo:FOODON_02010032 obo:FOODON_02010029 obo:FOODON_02010028 obo:FOODON_02010107)]] . #some animal muscle, skinless piece, piece with skin, meat piece
+
+coso:AnimalOrganSample rdfs:subClassOf [rdf:type owl:Restriction;
+            owl:onProperty coso:sampleOfMaterialType;
+            owl:someValuesFrom obo:FOODON_00004436]. #some animal organ
+
+coso:AnimalMilkSample rdfs:subClassOf [rdf:type owl:Restriction;
+            owl:onProperty coso:sampleOfMaterialType;
+            owl:someValuesFrom obo:FOODON_02010012] . #some animal milk

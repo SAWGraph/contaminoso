@@ -79,8 +79,9 @@ coso:QuantityValue rdfs:subClassOf qudt:QuantityValue.
 
 qudt:QuantityValue rdfs:subClassOf stad:DataValue.
 
-coso:ResultQualifier rdfs:subClassOf qudt:Quantity. 
+coso:QuantitationLimit rdfs:subClassOf qudt:Quantity.
 
+coso:DetectionLimit rdfs:subClassOf qudt:Quantity.
 
 # Object Properties
 
