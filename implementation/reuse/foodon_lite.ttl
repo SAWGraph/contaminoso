@@ -1,4 +1,3 @@
-@prefix : <http://purl.obolibrary.org/obo/FOODON/external/foodon_lite#> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -518,6 +517,14 @@ obo:FOODON_00001105 rdf:type owl:Class ;
                     obo:IAO_0000115 "A food product made from an avian egg."@en ;
                     rdfs:label "avian egg food product"@en .
 
+###  http://purl.obolibrary.org/obo/FOODON_02010033
+obo:FOODON_02010033 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_00004332 ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "Fat derived from an animal."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    dcterms:date "2023-08-01T21:25:29Z"^^xsd:dateTime ;
+                    rdfs:label "animal fat"@en .
 
 ###  http://purl.obolibrary.org/obo/FOODON_00001131
 obo:FOODON_00001131 rdf:type owl:Class ;
