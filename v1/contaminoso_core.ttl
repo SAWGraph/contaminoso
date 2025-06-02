@@ -149,7 +149,7 @@ coso:ContaminantRelativeQuantityKind rdf:type owl:Class ;
 
 coso:ContaminantMassQuantityKind rdf:type owl:Class ;
     rdfs:label "Contaminant Quantity Kind" ;
-    dcterms:description "The type of quantity that is measured for the contaminant."
+    dcterms:description "The type of quantity that is measured for the contaminant.";
     rdfs:subClassOf coso:ContaminantAbsoluteQuantityKind .
 
 coso:ContaminantVolumeQuantityKind rdf:type owl:Class ;
@@ -198,7 +198,7 @@ coso:DetectQuantityValue rdf:type owl:Class ;
 
 coso:NonDetectQuantityValue rdf:type owl:Class ;
     rdfs:label "Non-Detect Quantity Value" ;
-    dcterms:description "A Quantity Value that represents a non-detection of the contaminant. No numeric value is specified."
+    dcterms:description "A Quantity Value that represents a non-detection of the contaminant. No numeric value is specified.";
     rdfs:subClassOf coso:QuantityValue .
 
 coso:ResultQualifier rdf:type owl:Class ;
@@ -207,12 +207,12 @@ coso:ResultQualifier rdf:type owl:Class ;
 
 coso:DetectionLimit rdf:type owl:Class ;
     rdfs:label "Detection Limit" ;
-    dcterms:description "The lowest concentration of a substance that can be reliably detected as present with a reasonable degree of confidence."
+    dcterms:description "The lowest concentration of a substance that can be reliably detected as present with a reasonable degree of confidence.";
     rdfs:subClassOf coso:ResultQualifier .
 
 coso:QuantitationLimit rdf:type owl:Class ;
     rdfs:label "Quantitation Limit" ;
-    dcterms:description "The lowest concentration of a substance that can be reliably measured with acceptable precision and accuracy."
+    dcterms:description "The lowest concentration of a substance that can be reliably measured with acceptable precision and accuracy.";
     rdfs:subClassOf coso:ResultQualifier .
 
 coso:ObservationAnnotation rdf:type owl:Class ;
@@ -229,7 +229,7 @@ coso:Substance rdf:type owl:Class ;
 
 coso:SubstanceCollection rdf:type owl:Class ;
     rdfs:label "Substance Collection" ;
-    dcterms:description "A collection of more than one substances.". 
+    dcterms:description "A collection of more than one substances.";
     rdfs:subClassOf [ rdf:type owl:Restriction ;
                         owl:onProperty rdfs:member ;
                         owl:allValuesFrom coso:Substance
@@ -355,7 +355,7 @@ coso:observedProperty rdf:type owl:ObjectProperty ;
 
 coso:ofSubstance rdf:type owl:ObjectProperty ;
     rdfs:label "of substance";
-    dcterms:description "A relation between an observation of a contaminant and the substance or substances being observed."
+    dcterms:description "A relation between an observation of a contaminant and the substance or substances being observed.";
     rdfs:domain coso:ContaminantObservation ;
     rdfs:range [ rdf:type owl:Class ;
                  owl:unionOf ( coso:Substance
@@ -382,7 +382,7 @@ coso:sampleOfMaterialType rdf:type owl:ObjectProperty ;
 
 coso:usedAnalysisMethod rdf:type owl:ObjectProperty ;
     rdfs:label "used analysis method";
-    dcterms:description "A relation between an observation of a contaminant and the analysis method that was used to perform the observation."
+    dcterms:description "A relation between an observation of a contaminant and the analysis method that was used to perform the observation.";
     rdfs:subPropertyOf sosa:usedProcedure ;
     rdfs:domain coso:ContaminantObservation ;
     rdfs:range coso:AnalysisMethod .
