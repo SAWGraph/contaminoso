@@ -2,6 +2,8 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
 PREFIX me_egad: <http://sawgraph.spatialai.org/v1/me-egad#>
 
+#What Samples have tested for PFOA? What type of sample are they?
+
 SELECT * WHERE {
     ?sample a coso:MaterialSample;  # all samples
     		coso:sampleOfMaterialType/rdfs:label ?sampleType;  # with type labels
