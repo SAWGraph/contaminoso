@@ -4,6 +4,8 @@ To evaluate COSO, we distill questions from the larger SAWGraph use case to the 
 
 These competency questions also serve as template questions, and by modifying the *variables* additional questions can be answered. 
 
+The SAWGraph questions demonstrate some of the more complicated questions that require to COSO competency highlighted, but also require linking to data and ontologies in other graphs in order answer. 
+
 | Question # (link) | COSO Question | Variables | Result (link) | SAWGraph Extended Questions |
 | -- | ------------------ | ------------------ | --------- | --------- |
 | [CQ1](./CQ1.rq) | What Samples have tested for *PFOA*? What type of sample are they? | Substance | [CQ1-result](./CQ1-result.csv) | <ul><li> What wells are near locations with a reported  PFOA contamination above 4ppt? </li></ul>|
