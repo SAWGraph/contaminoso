@@ -43,6 +43,10 @@ coso:WaterSample rdf:type owl:Class;
   rdfs:label "Water Sample";
   rdfs:subClassOf coso:MaterialSample. 
 
+coso:SoilSample rdf:type owl:Class;
+  rdfs:label "Soil Sample";
+  rdfs:subClassOf coso:MaterialSample. 
+
 coso:PlantMaterialSample rdf:type owl:Class;
   rdfs:label "Plant Material Sample";
   rdfs:subClassOf coso:BiotaSample. 

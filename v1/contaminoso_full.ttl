@@ -63,6 +63,9 @@ coso:observedAtSamplePoint owl:propertyChainAxiom ( coso:analyzedSample
                                                     coso:fromSamplePoint
                                                   ) .
 
+coso:isSampleOf owl:propertyChainAxiom ( coso:fromSamplePoint 
+                                          coso:pointFromFeature
+                                          ) .
 
 #################################################################
 #    Classes

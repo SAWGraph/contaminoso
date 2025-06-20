@@ -87,6 +87,10 @@ coso:Feature rdf:type owl:Class ;
     rdfs:subClassOf geo:Feature ,
                     sosa:FeatureOfInterest .
 
+coso:FeatureType rdf:type owl:Class ;
+    rdfs:label "Feature Type" ;
+    dcterms:description "A category applied to differentiate discrete spatial phenomenon. ". 
+
 coso:SampledFeature rdf:type owl:Class ;
     rdfs:label "Sampled Feature" ;
     dcterms:description "The discrete spatial phenomenon that is the target of a sample observation. ";
@@ -362,6 +366,11 @@ coso:ofSubstance rdf:type owl:ObjectProperty ;
                                coso:SubstanceCollection
                               )
                 ] .
+
+coso:ofFeatureType rdf:type owl:ObjectProperty ;
+    rdfs:label "of feature type";
+    dcterms:description "A relation between a feature and a controlled vocabulary term that describes the type of feature";
+    rdfs:range coso:FeatureType. 
 
 coso:resultAnnotation rdf:type owl:ObjectProperty ;
     rdfs:label "result annotation"; 

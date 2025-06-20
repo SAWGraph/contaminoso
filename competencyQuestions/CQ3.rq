@@ -1,0 +1,21 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
+PREFIX me_egad_data: <http://sawgraph.spatialai.org/v1/me-egad-data#>
+
+# What wells have been tested for PFOA at levels below 20 ppt or it was not detected?
+
+SELECT * WHERE {
+    ?feature coso:ofFeatureType ?featureType;                                   # all features
+    		^coso:pointFromFeature/^coso:observedAtSamplePoint ?observation.    # with observations
+    ?observation coso:ofSubstance/coso:casNumber ?cas;                          # that were tested for a specific substance
+    			coso:ofSubstance/rdfs:label ?substanceName;
+    			coso:hasResult ?measurement. 
+   ?measurement coso:measurementValue ?value;                                   # with the measured value
+    		coso:measurementUnit/qudt:symbol ?unit.                             # and unit
+    VALUES ?cas{'335671'}                                                       # where the substance is PFOA
+    VALUES ?featureType{ me_egad_data:featureType.PWSW}                         # and the feature is a private water supply well
+    FILTER( ?value < 20 || ?value = coso:non-detect)                            # and the value is below 20 or non-detect
+
+} ORDER BY ?value

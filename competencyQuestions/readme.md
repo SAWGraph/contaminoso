@@ -2,12 +2,14 @@
 
 To evaluate COSO, we distill questions from the larger SAWGraph use case to the components that the COSO ontology must support about contaminant samples, releases, observations, results and features.
 
-| Question # (link) | COSO Question | Variables | Result (link) | SAWGraph Questions | 
+| Question # (link) | COSO Question | Variables | Result (link) | SAWGraph Extended Questions |
 | -- | ------------------ | ------------------ | --------- | --------- |
-| [1](./CQ1.rq) | What Samples have tested for *PFOA*? What type of sample are they? | Substance | | <ul><li> What wells are near locations with a reported  PFOA contamination above 4ppt? </li></ul>|
-| [2]() | What *soil* samples have been tested for *PFBS*? What is min and max result? | Sample type, substance  | | |
-| [3]() | What *wells* have been tested for *PFOA* at levels above *20 ppt*?  | sampled feature type, substance, result value| | <ul><li> What wells are near locations with a cumulative contamination of above 20ppt? </li> </ul>|
-| [4]() | What *surface water bodies* have a cumulative contamination result of above *20 ppt*? | sampled feature type, aggregate result value| | |
-| [5]() | What is the mean concentration of *PFOA* in *fish tissue* in *Maine*? What is the mean concentration of *PFOA* in *shellfish* harvested in *Maine*?  | sample type, aggregate result value, geography | | |
-| [6]() | What locations have *PFOS* levels above *40ppt* with no known contamination release point nearby? | substance, result value, release point distance | | |
-| [7]() | What known release points exist in *this region*? | s2 cells | | <ul><li> What suspected contamination sources exist above this aquifer?</li><li>How many suspected contamination sources are within a radius of two S2L13 cells of each well?</li></ul>|
+| [CQ1](./CQ1.rq) | What Samples have tested for *PFOA*? What type of sample are they? | Substance | [CQ1-result](./CQ1-result.csv) | <ul><li> What wells are near locations with a reported  PFOA contamination above 4ppt? </li></ul>|
+| [CQ2](./CQ2.rq) | What *soil* samples have been tested for *PFBS*? What is min and max result? | Sample type, substance  | [CQ2-result](./CQ2-result.csv) | |
+| [CQ3](./CQ3.rq) | What *wells* have been tested for *PFOA* at levels below *20 ppt* or it was not detected?  | sampled feature type, substance, result value| [CQ3-result](./CQ3-result.csv) | <ul><li> What wells are near locations with a cumulative contamination of above 20ppt? </li> </ul>|
+| [CQ4](./CQ4.rq) | Samples from what *surface water bodies* have a cumulative contamination result of above *20 ppt*? | sampled feature type, aggregate result value| [CQ4-result](CQ4-result.csv) | |
+| [5]() | What is the mean concentration of *PFOA* in *fish tissue* in *Maine*? | sample type, aggregate result value, geography | |<ul><li> What is the mean concentration of *PFOA* in *shellfish* harvested in *Maine*? </li><li> Of fish samples in this area, which chemical is the highest by species? </li></ul>|
+| [6]() | What was the detection limit of measurement XXXXXX? | | | |
+| [7]() | What known *release points* exist in *this region*? | s2 cells, point type | | <ul><li> What suspected contamination sources exist above this aquifer?</li><li>How many suspected contamination sources are within a radius of two S2L13 cells of each well?</li></ul>|
+| [8]() | What locations have had multiple reported PFAS releases over time? | | | |
+| [9]() | Where did known contaminant releases occur in 2023? | | | |
