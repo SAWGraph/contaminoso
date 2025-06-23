@@ -1,0 +1,22 @@
+# What is the mean concentration of PFOA in fish tissue in Maine?
+
+PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
+PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
+PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+select ?substance ?unit (AVG(?value) as ?AvgConcentration) (COUNT(?observation) as ?sampleCount) where {
+    ?observation a coso:ContaminantSampleObservation; 		# All observations
+    	coso:analyzedSample ?sample;						# with related samples
+    	coso:observedAtPoint ?samplepoint;					# and locations
+    	coso:hasResult ?measurement;						# and results
+    	coso:ofSubstance ?substance.						# and substance
+    ?sample coso:sampleOfMaterialType ?materialType.   # Where the related sample has a material type
+    ?materialType a obo:FOODON_03411222. 				# of Fish 
+    ?samplepoint kwg-ont:sfWithin ?region. 			# and the sample point is within an
+    ?region a kwg-ont:AdministrativeRegion_3. 			# administrative region (town/township)
+    ?measurement coso:measurementValue ?value;		# with the result value
+    			coso:measurementUnit ?unit. 			# and unit
+    SERVICE <repository:Spatial>{
+        ?region kwg-ont:administrativePartOf+ kwgr:administrativeRegion.USA.23 # Where the town is part of Maine
+    } 
+} GROUP BY ?substance ?unit
