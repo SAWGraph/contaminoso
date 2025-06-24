@@ -98,7 +98,7 @@ coso:SampledFeature rdf:type owl:Class ;
 
 coso:ReleaseFeature rdf:type owl:Class ;
     rdfs:label "Release Feature" ;
-    dcterms:description "The discrete spatial phenomenon that is the target of a release observation. ";
+    dcterms:description "The discrete spatial phenomenon that may be the target of a release observation. ";
     rdfs:subClassOf coso:Feature .
 
 coso:MonitoredFeature rdf:type owl:Class ;
