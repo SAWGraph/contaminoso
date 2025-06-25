@@ -46,5 +46,7 @@ coso:ofDatasetSubstance a owl:ObjectProperty;
 comptox:sameAsComptoxSubstance a owl:ObjectProperty;
     rdfs:label "same as comptox substance";
     dcterms:description "A relation between an dataset specific substance and the same substance as identified in comptox.";
-    rdfs:range comptox:ChemicalEntity. 
+    rdfs:range comptox:CompTox_ChemicalEntity. 
 
+comptox:CompTox_ChemicalEntity rdf:type owl:Class;
+    rdfs:subClassOf coso:Substance.
