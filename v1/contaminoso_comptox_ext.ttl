@@ -13,7 +13,7 @@
 @base <http://w3id.org/coso/comptox_ext#> .
 
 <http://w3id.org/coso/comptox_ext#> rdf:type owl:Ontology ;
-                                              owl:versionIRI <http://w3id.org/coso/v1/comptox_ext#>> ;
+                                              owl:versionIRI <http://w3id.org/coso/v1/comptox_ext#> ;
                                               dcterms:created "2025-03-30"@en-us ;
                                               dcterms:creator <http://orcid.org/0000-0002-5331-5052> ,
                                                               <http://orcid.org/0000-0003-3547-8058> ,
@@ -26,7 +26,7 @@
                                               dcterms:source "https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso_comptox_ext.ttl"^^<xsd:anyURI> ;
                                               dcterms:title "Contaminant Observation and Samples Ontology"@en-us ;
                                               rdfs:label "ContaminOSO"@en-us ;
-                                              vann:preferredNamespaceUri <http://w3id.org/coso/comptox_ext#>;
+                                              vann:preferredNamespaceUri <http://w3id.org/coso/v1/comptox_ext#>;
                                               vann:preferredNamespacePrefix "coso_comptox:";
                                               owl:versionInfo "1"@en-us .
 
@@ -34,7 +34,7 @@ coso:ofComptoxSubstance a owl:ObjectProperty;
         rdfs:label "of Comptox Substance";
         dcterms:description "A relation between an entity and a chemical substance as identified by Comptox";
         rdfs:subPropertyOf coso:ofSubstance;
-        rdfs:range comptox:ChemicalEntity;
+        rdfs:range comptox:CompTox_ChemicalEntity;
         owl:ObjectPropertyChain (coso:ofDatasetSubstance comptox:sameAsComptoxSubstance).  
 
 coso:ofDatasetSubstance a owl:ObjectProperty;

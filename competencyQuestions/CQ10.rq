@@ -1,0 +1,15 @@
+# 100 sample points with results
+
+PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+select * where {
+    ?testPoint a coso:SamplePoint;
+        coso:pointFromFeature ?feature;
+        ^coso:observedAtSamplePoint ?observation.
+    ?observation coso:ofSubstance ?substance;
+        coso:hasResult/coso:measurementValue ?concentration;
+    	coso:hasResult/coso:measurementUnit ?unit.
+    
+} limit 100

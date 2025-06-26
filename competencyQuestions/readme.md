@@ -17,3 +17,7 @@ The SAWGraph questions demonstrate some of the more complicated questions that r
 | [7]() | What known *release points* exist in *this region*? | s2 cells, point type | | <ul><li> What suspected contamination sources exist above this aquifer?</li><li>How many suspected contamination sources are within a radius of two S2L13 cells of each well?</li></ul>|
 | [8]() | What locations have had multiple reported PFAS releases over time? | | | |
 | [9]() | Where did known contaminant releases occur in 2023? | | | |
+| [10]() | 100 sample points with results | | | |
+| [11]() | All surface water and fish tissue sample results from one samplepoint | | | |
+| [12]()| Retrieve all sample points and count how many there are for each type of sample point | | | |
+| [13]() | Retrieve all marine samplepoints and determine what and how many of each sample type are there | | | |
