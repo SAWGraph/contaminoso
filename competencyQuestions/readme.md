@@ -21,3 +21,4 @@ The SAWGraph questions demonstrate some of the more complicated questions that r
 | [CQ11](./CQ11.rq) | All *surface water* and *fish tissue* sample results from one samplepoint | sample type| | |
 | [CQ12](./CQ12.rq)| Retrieve all sample points and count how many there are for each type of sample point | | [CQ12-result](./CQ12-result.csv)| |
 | [CQ13](./CQ13.rq) | Retrieve all *marine* samplepoints and determine what and how many of each sample type are there | feature type|  [CQ13-results](./CQ13-results.csv)| |
+| [CQ14](./CQ14.rq) | Retrieve all sample results (that aren't aggregates) with the feature sampled, sample location, sample material type, observed property, substance, and numeric or non-detect result. | | | |

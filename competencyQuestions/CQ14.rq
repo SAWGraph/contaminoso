@@ -1,0 +1,14 @@
+# Retrieve all sample results (that aren't aggregates) with the feature sampled, sample location, sample material type, observed property, substance, and numeric or non-detect result.  
+PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
+SELECT * WHERE {
+    ?observation a coso:ContaminantSampleObservation;
+            coso:hasFeatureOfInterest ?feature;
+            coso:analyzedSample ?sample;
+            coso:observedProperty ?property;
+            coso:ofSubstance ?substance;
+            coso:hasResult ?result.
+    ?result coso:measurementValue ?value.
+    OPTIONAL{?result coso:measurementUnit ?unit.}
+    ?property a coso:SingleContaminantConcentrationQuantityKind.
+    ?sample coso:sampleOfMaterialType ?sampleMaterialType;
+    		coso:fromSamplePoint ?samplePoint.        }
