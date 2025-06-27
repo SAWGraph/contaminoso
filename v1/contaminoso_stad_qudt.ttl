@@ -85,15 +85,16 @@ coso:DetectionLimit rdfs:subClassOf qudt:Quantity.
 
 # Object Properties
 
-qudt:quantityKind rdf:type owl:ObjectProperty .
-
 stad:hasQualityKind rdf:type owl:ObjectProperty .
+
+qudt:hasQuantityKind rdf:type owl:ObjectProperty;
+      rdfs:subPropertyOf stad:hasQualityKind .
 
 stad:hasTransformationKind rdf:type owl:ObjectProperty ;
             rdfs:domain stad:StatisticalAggregateData ; 
             rdfs:range stad:DataTransformation . 
 
-coso:observedProperty rdfs:subPropertyOf stad:hasQualityKind , qudt:hasQuantityKind.
+coso:observedProperty owl:propertyChainAxiom( coso:hasResult qudt:hasQualityKind) 
 
 coso:measurementUnit owl:propertyChainAxiom ( qudt:quantityValue
                                               qudt:hasUnit

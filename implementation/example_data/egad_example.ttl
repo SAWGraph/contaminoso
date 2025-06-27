@@ -20,6 +20,7 @@ me_egad_data:observation.BNOC0591FS.20230918.375951 a me_egad:EGAD-PFAS-Observat
     coso:observedAtSamplePoint me_egad_data:samplePoint.152663 ;
     coso:ofDatasetSubstance me_egad_data:parameter.PFNA_A ;
     coso:observedTime "2023-09-18T11:15:00"^^xsd:dateTime ;
+    coso:observedProperty oso:SingleContaminantConcentrationQuantityKind;
     me_egad:resultType me_egad_data:resultType.TRG ;
     prov:wasAttributedTo me_egad_data:organization.lab.BNO .
 
@@ -33,6 +34,7 @@ me_egad_data:observation.AAWHL192275901.20190529.1763231 a me_egad:EGAD-PFAS-Obs
     coso:observedAtSamplePoint me_egad_data:samplePoint.63787 ;
     coso:ofDatasetSubstance me_egad_data:parameter.PFOS_A ;
     coso:observedTime "2019-05-29T10:05:00"^^xsd:date ;
+    coso:observedProperty oso:SingleContaminantConcentrationQuantityKind;
     me_egad:resultType me_egad_data:resultType.TRG ;
     prov:wasAttributedTo me_egad_data:organization.lab.AAWH .
 
