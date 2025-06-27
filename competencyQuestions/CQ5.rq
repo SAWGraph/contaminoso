@@ -10,8 +10,9 @@ select ?substance ?unit (AVG(?value) as ?AvgConcentration) (COUNT(?observation) 
     	coso:observedAtPoint ?samplepoint;					# and locations
     	coso:hasResult ?measurement;						# and results
     	coso:ofSubstance ?substance.						# and substance
-    ?sample coso:sampleOfMaterialType ?materialType.   # Where the related sample has a material type
-    ?materialType a obo:FOODON_03411222. 				# of Fish 
+    ?sample coso:sampleOfMaterialType ?materialType;		# Where the related sample has a material type
+    		a coso:AnimalTissueSample.   						# of animal tissue
+    ?materialType a obo:FOODON_03411222. 				# and some Fish species
     ?samplepoint kwg-ont:sfWithin ?region. 			# and the sample point is within an
     ?region a kwg-ont:AdministrativeRegion_3. 			# administrative region (town/township)
     ?measurement coso:measurementValue ?value;		# with the result value

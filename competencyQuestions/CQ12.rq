@@ -1,4 +1,4 @@
-# Retrieve all sample points from Maine's EGAD dataset and count how many there are for each type of sample point
+# Retrieve all sample points and count how many there are for each type of sample point
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

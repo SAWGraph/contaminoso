@@ -1,4 +1,4 @@
-# All surface water and fish tissue sample results from one samplepoint
+# All surface water and animal tissue sample results from one samplepoint
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
@@ -7,7 +7,7 @@ PREFIX me_egad_data: <http://w3id.org/sawgraph/v1/me-egad-data#>
 
 select ?materialSample ?observation  (GROUP_CONCAT(DISTINCT(?sampleType); separator=", ") as ?sampleTypes) ?substance ?substanceL ?value ?unit
 where  {
-        VALUES ?samplecategories{coso:WaterSample coso:AnimalMaterialSample} #expand to fish
+        VALUES ?samplecategories{coso:WaterSample coso:AnimalTissueSample} 
         me_egad_data:samplePoint.65555 coso:pointFromFeature/coso:ofFeatureType ?featureType;
             ^coso:fromSamplePoint ?materialSample.   #get samples for the point
         ?observation coso:analyzedSample ?materialSample; #get observations related to the sample

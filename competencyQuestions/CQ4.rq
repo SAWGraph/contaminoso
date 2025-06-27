@@ -1,11 +1,8 @@
-PREFIX sosa: <http://www.w3.org/ns/sosa/>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX unit: <http://qudt.org/vocab/unit/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
-PREFIX me_egad_data: <http://sawgraph.spatialai.org/v1/me-egad-data#>
+PREFIX me_egad_data: <http://w3id.org/sawgraph/v1/me-egad-data#>
 
 # Samples from what surface water bodies have a cumulative contamination result of above 20 ppt?
 
