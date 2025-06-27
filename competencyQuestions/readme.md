@@ -15,8 +15,8 @@ The SAWGraph questions demonstrate some of the more complicated questions that r
 | [CQ5](./CQ5.rq) | What is the mean concentration of *PFOA* in *fish tissue* in *Maine*? | sample type, aggregate result value, geography | [CQ5-result](./CQ5-result.csv) |<ul><li> What is the mean concentration of *PFOA* in *shellfish* harvested in *Maine*? </li><li> Of fish samples in this area, which chemical is the highest by species? </li></ul>|
 | [CQ6](./CQ6.rq) | What was the detection limit of measurement X? | measurements | [CQ6-result](./CQ6-result.csv)  | |
 | [CQ7](./CQ7.rq) | What known *release points* exist in *this region*? | s2 cells, point type | | <ul><li> What suspected contamination sources exist above this aquifer?</li><li>How many suspected contamination sources are within a radius of two S2L13 cells of each well?</li></ul>|
-| [8]() | What locations have had multiple reported PFAS releases over time? |  | | |
-| [9]() | Where did known contaminant releases occur in 2023? | date | | |
+| [CQ8](./CQ8.rq) | What locations have had multiple reported PFAS releases over time? |  | | |
+| [CQ9](./CQ9.rq) | Where did known contaminant releases occur in 2023? | date | | |
 | [CQ10](./CQ10.rq) | 100 sample points with results | | | |
 | [CQ11](./CQ11.rq) | All *surface water* and *fish tissue* sample results from one samplepoint | sample type| | |
 | [CQ12](./CQ12.rq)| Retrieve all sample points and count how many there are for each type of sample point | | [CQ12-result](./CQ12-result.csv)| |
