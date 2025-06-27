@@ -91,22 +91,39 @@ coso:RawWaterSample rdf:type owl:Class;
 # FOODON alignment
 #############################################################
 
-coso:AnimalMaterialSample rdfs:subClassOf [rdf:type owl:Restriction;
+coso:AnimalMaterialSample owl:unionOf (
+            [rdf:type owl:Restriction;
             owl:onProperty coso:sampleOfMaterialType;
-            owl:someValuesFrom obo:FOODON_03420164] . #some animal material
+            owl:someValuesFrom obo:FOODON_03420164]  # some animal material
+            [rdf:type owl:Restriction;
+            owl:onProperty coso:sampleOfMaterialType;
+            owl:someValuesFrom obo:FOODON_00003004] ).  # or some animal 
 
-coso:AnimalBloodSample rdfs:subClassOf [rdf:type owl:Restriction;
+coso:AnimalBloodSample owl:equivalentClass [rdf:type owl:Restriction;
             owl:onProperty coso:sampleOfMaterialType;
             owl:someValuesFrom obo:FOODON_02010015] .# some animal blood
 
-coso:AnimalTissueSample rdfs:subClassOf [rdf:type owl:Restriction; 
+coso:AnimalTissueSample owl:equivalentClass [rdf:type owl:Restriction; 
             owl:onProperty coso:sampleOfMaterialType;
-            owl:someValuesFrom [ owl:unionOf (obo:FOODON_02010032 obo:FOODON_02010029 obo:FOODON_02010028 obo:FOODON_02010107)]] . #some animal muscle, skinless piece, piece with skin, meat piece
+            owl:someValuesFrom [owl:unionOf(obo:FOODON_02010032 obo:FOODON_02010029 obo:FOODON_02010028 obo:FOODON_02010107)]] . #some animal muscle, skinless piece, piece with skin, or meat piece
 
-coso:AnimalOrganSample rdfs:subClassOf [rdf:type owl:Restriction;
+coso:AnimalOrganSample owl:equivalentClass [rdf:type owl:Restriction;
             owl:onProperty coso:sampleOfMaterialType;
             owl:someValuesFrom obo:FOODON_00004436]. #some animal organ
 
-coso:AnimalMilkSample rdfs:subClassOf [rdf:type owl:Restriction;
+coso:AnimalMilkSample owl:equivalentClass [rdf:type owl:Restriction;
             owl:onProperty coso:sampleOfMaterialType;
             owl:someValuesFrom obo:FOODON_02010012] . #some animal milk
+
+coso:PlantMaterialSample owl:unionOf (
+          [rdf:type owl:Restriction;
+            owl:onProperty coso:sampleOfMaterialType;
+            owl:someValueFrom obo:FOODON_00004331 ] # some plant material
+          [rdf:type owl:Restriction;
+            owl:onProperty coso:sampleOfMaterialType;
+            owl:someValuesFrom obo:PO_0000003] # some whole plant
+          [rdf:type owl:Restriction;
+            owl:onProperty coso:sampleOfMaterialType;
+            owl:someValuesFrom obo:FOODON_00001015 ] # or some plant food product
+          
+).   

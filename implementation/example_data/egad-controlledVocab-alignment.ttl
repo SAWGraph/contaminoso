@@ -1,0 +1,141 @@
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix coso: <http://w3id.org/coso/v1/contaminoso#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix me_egad: <http://w3id.org/sawgraph/v1/me-egad#> .
+@prefix me_egad_data: <http://w3id.org/sawgraph/v1/me-egad-data#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix comptox: <http://w3id.org/comptox/>.
+
+<http://w3id.org/sawgraph/v1/me-egad#controlledVocab> rdf:type owl:Ontology ;
+                                             terms:contributor <http://orcid.org/0000-0002-5331-5052> ,
+                                                           <http://orcid.org/0000-0003-3547-8058> ,
+                                                            <https://orcid.org/0000-0003-3271-6700>;
+                                             terms:created "2024-07-26" ;
+                                             terms:creator <http://orcid.org/0000-0002-5331-5052> ,
+                                                           <http://orcid.org/0000-0003-3547-8058> ,
+                                                           <https://orcid.org/0000-0003-3271-6700> ;
+                                             terms:description "This ontology supports SAWGraph"@en ;
+                                             terms:title "Ontology for Maine Environmental and Geographic Analysis Database (EGAD) PFAS Dataset Sample Type mapping"@en ;
+                                             owl:versionInfo "1.0"@en .
+
+me_egad_data:DefEGADSurfaceWaterSample owl:intersectionOf (coso:MaterialSample [rdf:type owl:Restriction;
+  owl:onProperty coso:sampleOfMaterialType;
+  owl:hasValue me_egad_data:sampleMaterialType.SW
+  ]);
+     rdfs:subClassOf coso:WaterSample. #need to add sample location 
+
+me_egad_data:DefEGADGroundWaterSample owl:intersectionOf (coso:MaterialSample [rdf:type owl:Restriction;
+  owl:onProperty coso:sampleOfMaterialType;
+  owl:hasValue me_egad_data:sampleMaterialType.GW
+  ]);
+     rdfs:subClassOf coso:WaterSample. #need to add sample location 
+
+me_egad_data:DefEGADDrinkingWaterSample owl:intersectionOf (coso:MaterialSample [rdf:type owl:Restriction;
+  owl:onProperty coso:sampleOfMaterialType;
+  owl:hasValue me_egad_data:sampleMaterialType.DW
+  ]);
+     rdfs:subClassOf coso:WaterSample. #need to add sample location 
+
+me_egad_data:DefEGADSoilSample owl:intersectionOf (coso:MaterialSample [rdf:type owl:Restriction;
+  owl:onProperty coso:sampleOfMaterialType;
+  owl:hasValue me_egad_data:sampleMaterialType.SL]);
+    rdfs:subClassOf coso:SoilSample.
+  
+
+# sample material type to FOODON organism material and/or food product 
+
+me_egad_data:sampleMaterialType.BD rdf:type obo:FOODON_02010015. #animal blood
+
+me_egad_data:sampleMaterialType.FE rdf:type obo:FOODON_00004172. #feed
+
+me_egad_data:sampleMaterialType.GR rdf:type obo:FOODON_00001093. #cereal grain
+
+me_egad_data:sampleMaterialType.HT rdf:type obo:FOODON_02010042. #animal heart
+
+me_egad_data:sampleMaterialType.LV rdf:type obo:FOODON_02010045. #animal liver
+
+me_egad_data:sampleMaterialType.MEA rdf:type obo:FOODON_02010107. #piece of animal meat
+
+me_egad_data:sampleMaterialType.MLK rdf:type obo:FOODON_02010012. #animal milk
+
+me_egad_data:sampleMaterialType.MTB rdf:type obo:FOODON_02010032. 
+
+me_egad_data:sampleMaterialType.MU rdf:type obo:FOODON_02010032. 
+
+me_egad_data:sampleMaterialType.O rdf:type obo:FOODON_00004436, #animal organ
+                                            obo:FOODON_00002165. #organ meat food product
+
+me_egad_data:sampleMaterialType.SF rdf:type obo:FOODON_02021803. #animal fillet skinless, raw
+
+
+me_egad_data:sampleMaterialType.V rdf:type obo:FOODON_03420150, # plant whole or pieces
+    obo:FOODON_03413358. #plant used as fodder (organism)
+
+me_egad_data:sampleMaterialType.WH rdf:type obo:FOODON_03420116. # whole > organism material
+
+
+# Sample material type maps to FOODON organism and/or food material
+
+me_egad_data:sampleMaterialTypeQualifier.BA rdf:type obo:FOODON_03413378. #fodder/forage
+
+me_egad_data:sampleMaterialTypeQualifier.BE rdf:type obo:FOODON_02020892.  #cow 
+                                                    
+me_egad_data:sampleMaterialTypeQualifier.BI rdf:type obo:FOODON_02020840. # bison
+
+me_egad_data:sampleMaterialTypeQualifier.BKT rdf:type obo:NCBITaxon_8038. #brook trout
+
+me_egad_data:sampleMaterialTypeQualifier.BKTH rdf:type obo:NCBITaxon_8038. #brook trout (hatchery part not currently included)
+
+me_egad_data:sampleMaterialTypeQualifier.BLC rdf:type obo:NCBITaxon_8182. #black crappie 
+
+me_egad_data:sampleMaterialTypeQualifier.BVR rdf:type obo:FOODON_03411325. #beaver
+
+me_egad_data:sampleMaterialTypeQualifier.CH rdf:type obo:FOODON_03411457. #chicken
+
+me_egad_data:sampleMaterialTypeQualifier.CS rdf:type obo:NCBITaxon_381124, obo:FOODON_00003425. #corn 
+
+me_egad_data:sampleMaterialTypeQualifier.CSN rdf:type [owl:intersectionOf (obo:FOODON_00004460 obo:FOODON_03420181)] ;
+  obo:RO_0002162 obo:NCBITaxon_381124.
+
+me_egad_data:sampleMaterialTypeQualifier.DE rdf:type obo:FOODON_03411583. #deer 
+
+me_egad_data:sampleMaterialTypeQualifier.GO rdf:type obo:FOODON_03411328. #goat 
+
+me_egad_data:sampleMaterialTypeQualifier.GRF rdf:type obo:FOODON_03411324, #grain plant
+                                                      obo:FOODON_03413378. # 'straw, fodder or forage of cereal grains and grasses'
+
+me_egad_data:sampleMaterialTypeQualifier.LA rdf:type obo:FOODON_03411669. #lamb
+
+me_egad_data:sampleMaterialTypeQualifier.LMB rdf:type obo:NCBITaxon_27706. #largemouth bass
+
+me_egad_data:sampleMaterialTypeQualifier.MU rdf:type obo:FOODON_03411183. #sheep
+
+me_egad_data:sampleMaterialTypeQualifier.NPK rdf:type obo:NCBITaxon_8010. #northern pike
+
+me_egad_data:sampleMaterialTypeQualifier.PO rdf:type obo:FOODON_02021651. #pig 
+
+me_egad_data:sampleMaterialTypeQualifier.SG rdf:type obo:FOODON_00002477. #game animal food product
+
+me_egad_data:sampleMaterialTypeQualifier.SH rdf:type obo:FOODON_03411183. #sheep
+
+me_egad_data:sampleMaterialTypeQualifier.SI rdf:type obo:FOODON_03413358. #plant used as fodder 
+
+me_egad_data:sampleMaterialTypeQualifier.SMB rdf:type obo:NCBITaxon_147949. #small mouth basshttps://www.startpage.com/do/search?q=graphdb+update+namespace&segment=startpage.vivaldi
+
+me_egad_data:sampleMaterialTypeQualifier.TMR rdf:type obo:FOODON_00004172. #feedstuff
+
+me_egad_data:sampleMaterialTypeQualifier.TU rdf:type obo:FOODON_03411236. #turkey 
+
+me_egad_data:sampleMaterialTypeQualifier.VE rdf:type obo:FOODON_00003083. #veal
+
+me_egad_data:sampleMaterialTypeQualifier.WHP obo:RO_0002162 obo:NCBITaxon_46260. #white perch
+

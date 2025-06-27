@@ -1,0 +1,170 @@
+@prefix me_egad: <http://w3id.org/sawgraph/v1/me-egad#> .
+@prefix me_egad_data: <http://w3id.org/sawgraph/v1/me-egad-data#> .
+@prefix coso: <http://w3id.org/coso/v1/contaminoso#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+me_egad_data:observation.BNOC0591FS.20230918.375951 a me_egad:EGAD-PFAS-Observation ;
+    rdfs:label "EGAD PFAS observation for sample 840 003 243 771 487 / BEAUTY" ;
+    sosa:resultTime "2023-11-21T21:36:00"^^xsd:dateTime ;
+    coso:analysisMethod me_egad_data:testMethod.E537M ;
+    coso:analyzedSample me_egad_data:sample.BNOC0591FS.20230918 ;
+    coso:hasFeatureOfInterest me_egad_data:sampledFeature.152663 ;
+    coso:hasResult me_egad_data:result.C0591FS.BNO.20230918.375951 ;
+    coso:observedAtSamplePoint me_egad_data:samplePoint.152663 ;
+    coso:ofDatasetSubstance me_egad_data:parameter.PFNA_A ;
+    coso:observedTime "2023-09-18T11:15:00"^^xsd:dateTime ;
+    me_egad:resultType me_egad_data:resultType.TRG ;
+    prov:wasAttributedTo me_egad_data:organization.lab.BNO .
+
+me_egad_data:observation.AAWHL192275901.20190529.1763231 a me_egad:EGAD-PFAS-Observation ;
+    rdfs:label "EGAD PFAS observation for sample SW-3" ;
+    sosa:resultTime "2019-06-11T23:24:00"^^xsd:dateTime ;
+    coso:analysisMethod me_egad_data:testMethod.E537M ;
+    coso:analyzedSample me_egad_data:sample.AAWHL192275901.20190529 ;
+    coso:hasFeatureOfInterest me_egad_data:sampledFeature.63787 ;
+    coso:hasResult me_egad_data:result.L192275901.AAWH.20190529.1763231 ;
+    coso:observedAtSamplePoint me_egad_data:samplePoint.63787 ;
+    coso:ofDatasetSubstance me_egad_data:parameter.PFOS_A ;
+    coso:observedTime "2019-05-29T10:05:00"^^xsd:date ;
+    me_egad:resultType me_egad_data:resultType.TRG ;
+    prov:wasAttributedTo me_egad_data:organization.lab.AAWH .
+
+me_egad_data:sample.BNOC0591FS.20230918 a me_egad:EGAD-Sample ;
+    rdfs:label "EGAD sample 840 003 243 771 487 / BEAUTY" ;
+    coso:fromSamplePoint me_egad_data:samplePoint.152663 ;
+    coso:sampleOfMaterialType me_egad_data:sampleMaterialType.BD,
+        me_egad_data:sampleMaterialTypeQualifier.BE ;
+    me_egad:sampleCollectionMethod me_egad_data:samplingMethod.GS ;
+    me_egad:sampleID "840 003 243 771 487 / BEAUTY"^^xsd:string .
+
+me_egad_data:sample.AAWHL192275901.20190529 a me_egad:EGAD-Sample ;
+    rdfs:label "EGAD sample SW-3" ;
+    coso:fromSamplePoint me_egad_data:samplePoint.63787 ;
+    coso:sampleOfMaterialType me_egad_data:sampleMaterialType.SW ;
+    me_egad:sampleCollectionMethod me_egad_data:samplingMethod.GS ;
+    me_egad:sampleID "SW-3"^^xsd:string .
+
+me_egad_data:samplePoint.152663 a me_egad:EGAD-SamplePoint ;
+    rdfs:label "EGAD sample point 152663" ;
+    me_egad:samplePointNumber 152663 ;
+    me_egad:samplePointWebName "840 003 243 771 487_BEAUTY"^^xsd:string ;
+    coso:pointFromFeature me_egad_data:sampledFeature.152663.
+
+me_egad_data:samplePoint.63787 a me_egad:EGAD-SamplePoint ;
+    rdfs:label "EGAD sample point 63787" ;
+    me_egad:samplePointNumber 63787 ;
+    me_egad:samplePointWebName "SW-3"^^xsd:string ;
+    coso:pointFromFeature me_egad_data:sampledFeature.63787.
+
+me_egad_data:sampledFeature.152663 a me_egad:EGAD-SampledFeature ;
+    rdfs:label "EGAD sampled feature associated with sample point 152663" ;
+    me_egad:sampledFeatureType me_egad_data:featureType.BLDG .
+
+me_egad_data:sampledFeature.63787 a me_egad:EGAD-SampledFeature ;
+    rdfs:label "EGAD sampled feature associated with sample point 63787" ;
+    me_egad:sampledFeatureType me_egad_data:featureType.ST .
+
+me_egad_data:result.C0591FS.BNO.20230918.375951 a me_egad:EGAD-SinglePFAS-Concentration ;
+    rdfs:label "EGAD PFAS measurements for sample 840 003 243 771 487 / BEAUTY" ;
+    qudt:quantityValue me_egad_data:quantityValue.C0591FS.BNO.20230918.375951 ;
+    qudt:hasQuantityKind coso:SingleContaminantConcentrationQuantityKind ;
+    me_egad:methodDetectionLimit me_egad_data:mdl.C0591FS.BNO.20230918.375951 ;
+    me_egad:reportingLimit me_egad_data:rl.C0591FS.BNO.20230918.375951 ;
+    me_egad:validationLevel me_egad_data:validationLevel.DEP ;
+    me_egad:validationQualifier me_egad:concentrationQualifier.J .
+
+me_egad_data:result.L192275901.AAWH.20190529.1763231 a me_egad:EGAD-SinglePFAS-Concentration ;
+    rdfs:label "EGAD PFAS measurements for sample SW-3" ;
+    qudt:quantityValue me_egad_data:quantityValue.L192275901.AAWH.20190529.1763231 ;
+    qudt:hasQuantityKind coso:SingleContaminantConcentrationQuantityKind ;
+    me_egad:methodDetectionLimit me_egad_data:mdl.L192275901.AAWH.20190529.1763231 ;
+    me_egad:reportingLimit me_egad_data:rl.L192275901.AAWH.20190529.1763231 ;
+    me_egad:validationLevel me_egad_data:validationLevel.DEP .
+
+me_egad_data:quantityValue.C0591FS.BNO.20230918.375951 a coso:DetectQuantityValue ;
+    qudt:numericValue 17500.0 ;
+    qudt:unit unit:NanoGM-PER-L .
+
+me_egad_data:mdl.C0591FS.BNO.20230918.375951 qudt:numericValue 125.0 ;
+    qudt:unit unit:NanoGM-PER-L .
+
+me_egad_data:rl.C0591FS.BNO.20230918.375951 qudt:numericValue 800.0 ;
+    qudt:unit unit:NanoGM-PER-L .
+
+me_egad_data:quantityValue.L192275901.AAWH.20190529.1763231 a coso:DetectQuantityValue ;
+    qudt:numericValue 32.0 ;
+    qudt:unit unit:NanoGM-PER-L .
+
+me_egad_data:mdl.L192275901.AAWH.20190529.1763231 qudt:numericValue 0.47 ;
+    qudt:unit unit:NanoGM-PER-L.
+
+me_egad_data:rl.L192275901.AAWH.20190529.1763231 qudt:numericValue 1.86 ;
+    qudt:unit unit:NanoGM-PER-L.
+
+me_egad_data:testMethod.E537M a me_egad:EGAD-AnalysisMethod,
+        owl:NamedIndividual ;
+    rdfs:label "EPA: MODIFIED - DETERMINATION OF SELECTED PERFLUORINATED ALKYL ACIDS IN DRINKING WATER BY SOLID PHASE EXTRACTION AND LIQUID CHROMATOGRAPHY/TANDEM MASS SPECTROMETRY (LC/MS/MS). SEPTEMBER 2009." .
+
+me_egad_data:parameter.PFNA_A a me_egad:EGAD-PFAS-ParameterName,
+        coso:Substance,
+        owl:NamedIndividual ;
+    rdfs:label "PERFLUORONONANOIC ACID" ;
+    me_egad:parameterAbbreviation "PFNA_A"^^xsd:string ;
+    me_egad:parameterName "PERFLUORONONANOIC ACID"^^xsd:string .
+
+me_egad_data:parameter.PFOS_A a me_egad:EGAD-PFAS-ParameterName,
+        coso:Substance,
+        owl:NamedIndividual ;
+    rdfs:label "PERFLOUROOCTANE SULFONIC ACID",
+        "PERFLUOROOCTANE SULFONIC ACID" ;
+    me_egad:parameterAbbreviation "PFOS_A"^^xsd:string,
+        "PFOS_A_L + PFOS_A_BR"^^xsd:string ;
+    me_egad:parameterName "PERFLOUROOCTANE SULFONIC ACID"^^xsd:string,
+        "PERFLUOROOCTANE SULFONIC ACID"^^xsd:string .
+
+me_egad_data:resultType.TRG a me_egad:EGAD-ResultType,
+        owl:NamedIndividual ;
+    rdfs:label "TARGET/REGULAR RESULT" .
+
+me_egad_data:organization.lab.BNO a prov:Organization ;
+    rdfs:label "BATTELLE NORWELL OPERATIONS- NORWELL, MA" .
+
+me_egad_data:organization.lab.AAWH a prov:Organization ;
+    rdfs:label "ALPHA ANALYTICAL WOODS HOLE LAB - MANSFIELD, MA" .
+
+me_egad_data:sampleMaterialType.BD a me_egad:EGAD-SampleMaterialType,
+        owl:NamedIndividual ;
+    rdf:type obo:FOODON_02010015 ;
+    rdfs:label "BLOOD" .
+
+me_egad_data:sampleMaterialType.SW a me_egad:EGAD-SampleMaterialType,
+        owl:NamedIndividual ;
+    rdfs:label "SURFACE WATER" .
+
+me_egad_data:sampleMaterialTypeQualifier.BE a me_egad:EGAD-SampleMaterialTypeQualifier,
+        owl:NamedIndividual ;
+    rdf:type obo:NCBITaxon_9913;
+    rdfs:label "BEEF" .
+
+me_egad_data:samplingMethod.GS a me_egad:EGAD-SampleCollectionMethod,
+        owl:NamedIndividual ;
+    rdfs:label "GRAB SAMPLE" .
+
+me_egad_data:featureType.BLDG a me_egad:EGAD-SamplePointType,
+        owl:NamedIndividual ;
+    rdfs:label "BUILDING" .
+
+me_egad_data:featureType.ST a me_egad:EGAD-SamplePointType,
+        owl:NamedIndividual ;
+    rdfs:label "STREAM" .
+
+me_egad_data:validationLevel.DEP a me_egad:EGAD-ValidationLevel,
+        owl:NamedIndividual ;
+    rdfs:label "DEP REVIEW" .
