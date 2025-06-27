@@ -1,4 +1,4 @@
-This data is from [SAWGraph EGAD dataset](https://github.com/SAWGraph/pfas-kg/tree/main/datasets/maine/eg)
+This data is from [SAWGraph EGAD dataset](https://github.com/SAWGraph/pfas-kg/tree/main/datasets/maine/egad)
 
 This is an example from the Maine DEP Environmental and Geographic Analysis Database
 
