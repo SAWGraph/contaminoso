@@ -8,7 +8,7 @@ PREFIX me_egad_data: <http://w3id.org/sawgraph/v1/me-egad-data#>
 select ?materialSample ?observation  (GROUP_CONCAT(DISTINCT(?sampleType); separator=", ") as ?sampleTypes) ?substance ?substanceL ?value ?unit
 where  {
         VALUES ?samplecategories{coso:WaterSample coso:AnimalMaterialSample} #expand to fish
-        me_egad_data:samplePoint.105221 coso:pointFromFeature/coso:ofFeatureType ?featureType;
+        me_egad_data:samplePoint.65555 coso:pointFromFeature/coso:ofFeatureType ?featureType;
             ^coso:fromSamplePoint ?materialSample.   #get samples for the point
         ?observation coso:analyzedSample ?materialSample; #get observations related to the sample
             coso:ofSubstance ?substance;

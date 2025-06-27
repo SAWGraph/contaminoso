@@ -1,0 +1,66 @@
+ftype,typelabel,no_samplepoint
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.PWSW,PRIVATE WATER SUPPLY WELL,2953
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.MW,MONITORING WELL,953
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.FF,FARM FIELD,606
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.LSL,LANDSPREAD SOIL,522
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.SS,SURFACE SOIL,435
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.WI,WILDERNESS,378
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.BLDG,BUILDING,312
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.TB,TEST BORING,296
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.GP,GEOPROBE,212
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.TS,TREATMENT SYSTEM,159
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.PM,PROCESS MATERIAL,137
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.ST,STREAM,123
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.SA,SOIL AUGER,92
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.PUWSW,PUBLIC WATER SUPPLY WELL,90
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.RI,RIVER,85
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.PD,POND,78
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.SD,STORM DRAIN,62
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.MRN,MARINE,49
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.SPM,STOCKPILE MATERIAL,43
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.LS,LEACHATE SYSTEM,35
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.DT,DITCH,32
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.PORE,PORE WATER SAMPLER,30
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.WP,WASTE PILE,28
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.FS,FARM STORAGE,26
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.PRWS,PRIVATE WATER SUPPLY - HISTORIC,25
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.SPR,SPRING/SEEP,24
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.LK,LAKE,22
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.AW,AGRICULTURAL WELL,20
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.DP,DETENTION POND,20
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.EW,EXTRACTION WELL,17
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.PI,PIEZOMETER,12
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.SPT,SEPTIC TANK,11
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.PC,PRODUCT CONTAINER,10
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.MH,MAN HOLE,9
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.CB,CATCH BASIN,9
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.MISA,MULTI-INCREMENT SAMPLE AREA,9
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.WLD,WETLAND,8
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.HT,HIGH TUNNEL,8
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.PP,PUSH POINT,8
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.POWS,PROCESS WATER,7
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.EXS,EXCAVATION SOIL,6
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.PDK,PADDOCK,6
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.LPD,LEACHATE POND,5
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.IM,IMPOUNDMENT,5
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.MUW,MULTI USE WELL,5
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.BT,BULK MILK TANK,4
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.OR,ORCHARD,4
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.PUWSS,PUBLIC WATER SUPPLY SURFACE,3
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.LDS,LEAK DETECTION SYSTEM,3
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.DWS,DISCONTINUED WATER SUPPLY (I.E. WELL EXISTS BUT NOT USED FOR DRINKING WATER),3
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.LPS,LEACHATE PUMP STATION,3
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.AST,ABOVEGROUND STORAGE TANK,2
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.IWSW,INDUSTRIAL WATER SUPPLY WELL,2
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.MP,MANURE PIT,2
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.MI,MICRO-WELL,2
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.QA,QA/QC,2
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.UD,UNDER DRAIN,1
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.TP,TEST PIT,1
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.BR,BARN,1
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.PWSS,PRIVATE WATER SUPPLY SURFACE,1
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.RE,RESERVOIR,1
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.SW,STANDING WATER (E.G. PUDDLE),1
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.PWS,PUBLIC WATER SUPPLY - HISTORIC,1
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.SM,SEEP MARSH,1
+http://w3id.org/sawgraph/v1/me-egad-data#featureType.LG,LAGOON,1

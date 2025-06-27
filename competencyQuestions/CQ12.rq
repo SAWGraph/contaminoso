@@ -1,0 +1,13 @@
+# Retrieve all sample points from Maine's EGAD dataset and count how many there are for each type of sample point
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
+
+SELECT ?ftype ?typelabel (COUNT(?sp) as ?no_samplepoint) WHERE {
+	?sp rdf:type coso:SamplePoint.
+    ?sp coso:pointFromFeature ?feature.
+    ?feature coso:ofFeatureType ?ftype. 
+    ?ftype rdfs:label ?typelabel.
+} group by ?ftype ?typelabel order by DESC(?no_samplepoint)

@@ -1,0 +1,5 @@
+sampletype,typeLabel,no_samples
+http://w3id.org/sawgraph/v1/me-egad-data#sampleMaterialType.WH,WHOLE,49
+http://w3id.org/sawgraph/v1/me-egad-data#sampleMaterialTypeQualifier.NES,NORMAL ENVIRONMENTAL SAMPLE,48
+http://w3id.org/sawgraph/v1/me-egad-data#sampleMaterialType.SD,SEDIMENT,12
+http://w3id.org/sawgraph/v1/me-egad-data#sampleMaterialType.WS,WHOLE WITHOUT SKIN,9
