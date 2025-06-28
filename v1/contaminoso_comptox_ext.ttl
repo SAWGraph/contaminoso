@@ -1,5 +1,5 @@
 @prefix coso: <http://w3id.org/coso/v1/contaminoso#> .
-@prefix comptox: <w3id.org/comptox/>.
+@prefix comptox: <http://w3id.org/comptox/>.
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .

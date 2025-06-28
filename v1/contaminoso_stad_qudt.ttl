@@ -94,7 +94,7 @@ stad:hasTransformationKind rdf:type owl:ObjectProperty ;
             rdfs:domain stad:StatisticalAggregateData ; 
             rdfs:range stad:DataTransformation . 
 
-coso:observedProperty owl:propertyChainAxiom( coso:hasResult qudt:hasQualityKind) .
+coso:observedProperty owl:propertyChainAxiom( coso:hasResult stad:hasQualityKind) .
 
 coso:measurementUnit owl:propertyChainAxiom ( qudt:quantityValue
                                               qudt:hasUnit

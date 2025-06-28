@@ -9,6 +9,7 @@ SELECT * WHERE {
             coso:hasResult ?result.
     ?result coso:measurementValue ?value.
     OPTIONAL{?result coso:measurementUnit ?unit.}
-    ?property a coso:SingleContaminantConcentrationQuantityKind.
+    VALUES ?property{coso:SingleContaminantConcentrationQuantityKind}
     ?sample coso:sampleOfMaterialType ?sampleMaterialType;
     		coso:fromSamplePoint ?samplePoint.        }
+                LIMIT 100
