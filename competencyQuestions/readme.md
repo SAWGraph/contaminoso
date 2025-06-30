@@ -16,9 +16,9 @@ The SAWGraph questions demonstrate some of the more complicated questions that r
 | [CQ6](./CQ6.rq) | What was the detection limit of measurement X? | measurements | [CQ6-result](./CQ6-result.csv)  | |
 | [CQ7](./CQ7.rq) | What known *release points* exist in *this region*? | s2 cells, point type | | <ul><li> What suspected contamination sources exist above this aquifer?</li><li>How many suspected contamination sources are within a radius of two S2L13 cells of each well?</li></ul>|
 | [CQ8](./CQ8.rq) | What locations have had multiple reported PFAS releases over time? |  | | |
-| [CQ9](./CQ9.rq) | Where did known contaminant releases occur in 2023? | date | | |
-| [CQ10](./CQ10.rq) | 100 sample points with results | | | |
-| [CQ11](./CQ11.rq) | All *surface water* and *animal tissue* sample results from one samplepoint | sample type| | |
+| [CQ9](./CQ9.rq) | Where did known contaminant releases occur in 2022? | date |[CQ9-result](./CQ9.rq) | |
+| [CQ10](./CQ10.rq) | 100 sample points with results | | [CQ10-result](./CQ10-result.csv) | |
+| [CQ11](./CQ11.rq) | All *surface water* and *animal tissue* sample results from one samplepoint | sample type|[CQ11-result](./CQ11-result.csv) | |
 | [CQ12](./CQ12.rq)| Retrieve all sample points and count how many there are for each type of sample point | | [CQ12-result](./CQ12-result.csv)| |
 | [CQ13](./CQ13.rq) | Retrieve all *marine* samplepoints and determine what and how many of each sample type are there | feature type|  [CQ13-results](./CQ13-results.csv)| |
 | [CQ14](./CQ14.rq) | Retrieve all sample results (that aren't aggregates) with the feature sampled, sample location, sample material type, observed property, substance, and numeric or non-detect result. | | | |
