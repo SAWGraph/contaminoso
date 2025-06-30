@@ -14,8 +14,8 @@ The SAWGraph questions demonstrate some of the more complicated questions that r
 | [CQ4](./CQ4.rq) | Samples from what *surface water bodies* have a cumulative contamination result of above *20 ppt*? | sampled feature type, aggregate result value| [CQ4-result](CQ4-result.csv) | |
 | [CQ5](./CQ5.rq) | What is the mean concentration of *PFOA* in *fish tissue* in *Maine*? | sample type, aggregate result value, geography | [CQ5-result](./CQ5-result.csv) |<ul><li> What is the mean concentration of *PFOA* in *shellfish* harvested in *Maine*? </li><li> Of fish samples in this area, which chemical is the highest by species? </li></ul>|
 | [CQ6](./CQ6.rq) | What was the detection limit of measurement X? | measurements | [CQ6-result](./CQ6-result.csv)  | |
-| [CQ7](./CQ7.rq) | What known *release points* exist in *this region*? | s2 cells, point type | | <ul><li> What suspected contamination sources exist above this aquifer?</li><li>How many suspected contamination sources are within a radius of two S2L13 cells of each well?</li></ul>|
-| [CQ8](./CQ8.rq) | What locations have had multiple reported PFAS releases over time? |  | | |
+| [CQ7](./CQ7.rq) | What known *release features* exist in *this region*? | s2 cells, feature type |[CQ7-result](./CQ7-result.csv) | <ul><li> What suspected contamination sources exist above this aquifer?</li><li>How many suspected contamination sources are within a radius of two S2L13 cells of each well?</li></ul>|
+| [CQ8](./CQ8.rq) | What locations have had multiple reported PFAS releases over time? |  |[CQ8-result](./CQ8-result.csv) | |
 | [CQ9](./CQ9.rq) | Where did known contaminant releases occur in 2022? | date |[CQ9-result](./CQ9.rq) | |
 | [CQ10](./CQ10.rq) | 100 sample points with results | | [CQ10-result](./CQ10-result.csv) | |
 | [CQ11](./CQ11.rq) | All *surface water* and *animal tissue* sample results from one samplepoint | sample type|[CQ11-result](./CQ11-result.csv) | |
