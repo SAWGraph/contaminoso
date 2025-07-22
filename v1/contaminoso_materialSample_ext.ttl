@@ -43,8 +43,8 @@ coso:WaterSample rdf:type owl:Class;
   rdfs:label "Water Sample";
   rdfs:subClassOf coso:MaterialSample. 
 
-coso:SoilSample rdf:type owl:Class;
-  rdfs:label "Soil Sample";
+coso:SolidMaterialSample rdf:type owl:Class;
+  rdfs:label "Solid Material Sample";
   rdfs:subClassOf coso:MaterialSample. 
 
 coso:PlantMaterialSample rdf:type owl:Class;
@@ -79,13 +79,55 @@ coso:AnimalMilkSample rdf:type owl:Class;
   rdfs:label "Animal Milk Sample";
   rdfs:subClassOf coso:AnimalMaterialSample. 
 
+coso:WaterSampleByTreatment rdf:type owl:Class;
+  rdfs:label "Water Sample by Treatment";
+  rdfs:subClassOf coso:WaterSample. 
+
 coso:FilteredWaterSample rdf:type owl:Class;
   rdfs:label "Filtered Water Sample";
-  rdfs:subClassOf coso:WaterSample. 
+  rdfs:subClassOf coso:WaterSampleByTreatment. 
+
+coso:TreatedWaterSample rdf:type owl:Class;
+  rdfs:label "Treated Water Sample";
+  rdfs:subClassOf coso:WaterSampleByTreatment. 
 
 coso:RawWaterSample rdf:type owl:Class;
   rdfs:label "Raw Water Sample";
+  rdfs:subClassOf coso:WaterSampleByTreatment. 
+ 
+ coso:WaterSampleBySource rdf:type owl:Class;
+  rdfs:label "Water Sample by Source";
   rdfs:subClassOf coso:WaterSample. 
+
+coso:GroundWaterSample rdf:type owl:Class;
+  rdfs:label "Ground Water Sample";
+  rdfs:subClassOf coso:WaterSampleBySource.
+
+coso:SurfaceWaterSample rdf:type owl:Class;
+  rdfs:label "Surface Water Sample";
+  rdfs:subClassOf coso:WaterSampleBySource. 
+
+coso:DrinkingWaterSample rdf:type owl:Class;
+  rdfs:label "Drinking Water Sample";
+  rdfs:subClassOf coso:WaterSampleBySource. 
+
+coso:WasteWaterSample rdf:type owl:Class;
+  rdfs:label "Waste Water Sample";
+  rdfs:subClassOf coso:WaterSampleBySource. 
+
+coso:SoilSample rdf:type owl:Class;
+  rdfs:label "Soil Sample";
+  rdfs:subClassOf coso:SolidMaterialSample. 
+
+
+coso:SedimentSample rdf:type owl:Class;
+  rdfs:label "Sediment Sample";
+  rdfs:subClassOf coso:SolidMaterialSample. 
+
+
+coso:SolidWasteSample rdf:type owl:Class;
+  rdfs:label "Solid Waste Sample";
+  rdfs:subClassOf coso:SolidMaterialSample. 
 
 #############################################################
 # FOODON alignment
@@ -118,12 +160,43 @@ coso:AnimalMilkSample owl:equivalentClass [rdf:type owl:Restriction;
 coso:PlantMaterialSample owl:unionOf (
           [rdf:type owl:Restriction;
             owl:onProperty coso:sampleOfMaterialType;
-            owl:someValueFrom obo:FOODON_00004331 ] # some plant material
+            owl:someValuesFrom obo:FOODON_00004331 ] # some plant material
           [rdf:type owl:Restriction;
             owl:onProperty coso:sampleOfMaterialType;
             owl:someValuesFrom obo:PO_0000003] # some whole plant
           [rdf:type owl:Restriction;
             owl:onProperty coso:sampleOfMaterialType;
             owl:someValuesFrom obo:FOODON_00001015 ] # or some plant food product
-          
 ).   
+
+coso:PlantAbovegroundSample owl:unionOf (
+      [rdf:type owl:Restriction;
+      owl:onProperty coso:sampleOfMaterialType;
+      owl:someValuesFrom obo:FOODON_03420144] #plant above surface, excluding fruit and seed
+      [rdf:type owl:Restriction;
+      owl:onProperty coso:sampleOfMaterialType;
+      owl:someValuesFrom obo:FOODON_00004460] #piece of vegetable
+      [rdf:type owl:Restriction;
+      owl:onProperty coso:sampleOfMaterialType;
+      owl:someValuesFrom obo:FOODON_00001261]  #vegetable food product
+      [rdf:type owl:Restriction;
+      owl:onProperty coso:sampleOfMaterialType;
+      owl:someValuesFrom obo:FOODON_00001262] #botanical fruit food product
+      [rdf:type owl:Restriction;
+      owl:onProperty coso:sampleOfMaterialType;
+      owl:someValuesFrom obo:FOODON_03460177] #plant seed or nut food product
+      [rdf:type owl:Restriction;
+      owl:onProperty coso:sampleOfMaterialType;
+      owl:someValuesFrom obo:FOODON_00001175] #plant stem food product
+      [rdf:type owl:Restriction;
+      owl:onProperty coso:sampleOfMaterialType;
+      owl:someValuesFrom obo:FOODON_00001057] #plant fruit food product
+      ). 
+
+coso:PlantUndergroundSample owl:unionOf ( [rdf:type owl:Restriction;
+      owl:onProperty coso:sampleOfMaterialType;
+      owl:someValuesFrom obo:FOODON_03420238] #root, tuber or bulb
+      [rdf:type owl:Restriction;
+      owl:onProperty coso:sampleOfMaterialType;
+      owl:someValuesFrom obo:FOODON_00002150] #plant root vegetable food product
+      ).
