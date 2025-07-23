@@ -400,6 +400,31 @@ obo:FOODON_00001015 rdf:type owl:Class ;
                     obo:IAO_0000412 obo:foodon.owl ;
                     rdfs:label "plant food product"@en .
 
+###  http://purl.obolibrary.org/obo/FOODON_00002127
+obo:FOODON_00002127 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03309997 ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty obo:RO_0001000 ;
+                                      owl:someValuesFrom obo:PO_0000003
+                                    ] ;
+                    rdfs:label "plant based food product for animal"@en ;
+                    rdfs:seeAlso <https://www.feedipedia.org/> .
+
+###  http://purl.obolibrary.org/obo/FOODON_03301750
+obo:FOODON_03301750 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_00002127 ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "Forage is a plant material (mainly plant leaves and stems) eaten by grazing livestock.  Historically, the term forage has meant only plants eaten by the animals directly as pasture, crop residue, or immature cereal crops, but it is also used more loosely to include similar plants cut for fodder and carried to the animals, especially as hay or silage."@en ;
+                    obo:IAO_0000119 "https://en.wikipedia.org/wiki/Forage"^^xsd:anyURI ;
+                    dcterms:contributor "Damion Dooley" ;
+                    oboInOwl:hasDbXref siren:F1750 ;
+                    rdfs:comment """SIREN DB annotation:
+* whole, natural shape FOODON:03430150
+* not heat-treated FOODON:03440003
+* whole plant or most parts used FOODON:03420150
+* non-food animal as food consumer FOODON:03510013
+* food animal as consumer FOODON:03510015"""@en ;
+                    rdfs:label "forage (animal feed)"@en .
 
 ###  http://purl.obolibrary.org/obo/FOODON_00001040
 obo:FOODON_00001040 rdf:type owl:Class ;
@@ -773,6 +798,27 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
    oboInOwl:hasDbXref "Wikipedia:Egg_%28food%29"
  ] .
 
+###  http://purl.obolibrary.org/obo/FOODON_03420173
+obo:FOODON_03420173 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03420127 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    rdfs:comment "LanguaL curation note: Used when the entire animal body is the food source. Head or tail may have been removed. Use the appropriate narrower term depending on the presence or absence of skin, feathers, scales, fins and/or entrails. The body may have been cut into pieces or disintegrated."@en ;
+                    rdfs:label "whole animal or most parts used"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_02021805
+obo:FOODON_02021805 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_02010028 ;
+                    obo:IAO_0000114 obo:IAO_0000122 ;
+                    obo:IAO_0000115 "An animal fillet that contains skin."@en ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    dcterms:date "2024-03-26T00:13:55Z"^^xsd:dateTime ;
+                    rdfs:label "animal fillet (with skin)"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03420147
+obo:FOODON_03420147 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03420173 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    rdfs:label "whole animal, skinned, defeathered or scaled, not eviscerated"@en .
 
 ###  http://purl.obolibrary.org/obo/FOODON_00001275
 obo:FOODON_00001275 rdf:type owl:Class ;
@@ -2545,6 +2591,18 @@ obo:FOODON_03411179 rdf:type owl:Class ;
                                         "herb-producing plant"@en ;
                     rdfs:label "spice or flavor-producing plant"@en .
 
+###  http://purl.obolibrary.org/obo/FOODON_03301761
+obo:FOODON_03301761 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_00002127 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    oboInOwl:hasDbXref siren:F1761 ;
+                    rdfs:comment """SIREN DB annotation:
+* whole, natural shape FOODON:03430150
+* not heat-treated FOODON:03440003
+* whole plant or most parts used FOODON:03420150
+* non-food animal as food consumer FOODON:03510013
+* food animal as consumer FOODON:03510015"""@en ;
+                    rdfs:label "grass (animal feed)"@en .
 
 ###  http://purl.obolibrary.org/obo/FOODON_03411183
 obo:FOODON_03411183 rdf:type owl:Class ;
