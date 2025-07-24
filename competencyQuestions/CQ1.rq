@@ -1,7 +1,7 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
 PREFIX me_egad_data: <http://w3id.org/sawgraph/v1/me-egad-data#>
-
+PREFIX comptox: <http://w3id.org/comptox/v1/>
 #What Samples have tested for PFOA? What type of sample are they?
 
 SELECT * WHERE {
@@ -9,5 +9,6 @@ SELECT * WHERE {
     		coso:sampleOfMaterialType/rdfs:label ?sampleType;  # with type labels
     		^coso:analyzedSample ?observation. 
     ?observation coso:ofSubstance ?substance. # that were tested for a specific substance
-    VALUES ?substance{me_egad_data:parameter.PFOA_A me_egad_data:parameter.PFOA me_egad_data:parameter.PFOA_A_L me_egad_data:parameter.PFOA_A_BR}  # where the substance is PFOA
+    VALUES ?substance{comptox:CompTox_DTXSID40892486 comptox:CompTox_DTXSID8031865 comptox:CompTox_DTXSID8031865} #where the substance is PFOA (or variant)
+    #VALUES ?substance{me_egad_data:parameter.PFOA_A me_egad_data:parameter.PFOA me_egad_data:parameter.PFOA_A_L me_egad_data:parameter.PFOA_A_BR}  # where the substance is PFOA (by dataset reference)
 } 

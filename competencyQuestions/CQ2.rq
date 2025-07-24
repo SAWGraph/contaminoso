@@ -2,18 +2,21 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
+PREFIX comptox: <http://w3id.org/comptox/v1/>
 
 # What soil samples have been tested for PFBS? What is min and max result?
+
 SELECT * WHERE {
     ?sample a coso:MaterialSample;  # all samples
     		a coso:SoilSample; # soil samples
     		coso:sampleOfMaterialType/rdfs:label ?sampleType;  # with type labels
     		^coso:analyzedSample ?observation. 
-    ?observation coso:ofSubstance/coso:casNumber ?cas;   # that were tested for a specific substance
-    			coso:ofSubstance/rdfs:label ?substanceName;
+    ?observation coso:ofComptoxSubstance ?dtxsid;   # that were tested for a specific substance
+    			coso:ofComptoxSubstance/rdfs:label ?substanceName;
     			coso:hasResult ?measurement.
     ?measurement coso:measurementValue ?value;
     		coso:measurementUnit/qudt:symbol ?unit.
-    VALUES ?cas{'375735'}  # where the substance is PFBS
+    VALUES ?dtxsid{comptox:CompTox_DTXSID5030030} # where the substance is PFBS
+    #VALUES ?substanceName{"Perfluorobutanesulfonic acid"} # Can alternately search substance by name
 
 } ORDER BY ?value
