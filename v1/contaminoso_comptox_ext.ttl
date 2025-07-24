@@ -1,5 +1,5 @@
 @prefix coso: <http://w3id.org/coso/v1/contaminoso#> .
-@prefix comptox: <http://w3id.org/comptox/>.
+@prefix comptox: <http://w3id.org/comptox/v1/>.
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -34,8 +34,8 @@ coso:ofComptoxSubstance a owl:ObjectProperty;
         rdfs:label "of Comptox Substance";
         dcterms:description "A relation between an entity and a chemical substance as identified by Comptox";
         rdfs:subPropertyOf coso:ofSubstance;
-        rdfs:range comptox:CompTox_ChemicalEntity;
-        owl:ObjectPropertyChain (coso:ofDatasetSubstance comptox:sameAsComptoxSubstance).  
+        rdfs:range comptox:ChemicalEntity;
+        owl:propertyChainAxiom (coso:ofDatasetSubstance comptox:sameAsComptoxSubstance).  
 
 coso:ofDatasetSubstance a owl:ObjectProperty;
         rdfs:label "of Dataset Substance";
@@ -46,7 +46,7 @@ coso:ofDatasetSubstance a owl:ObjectProperty;
 comptox:sameAsComptoxSubstance a owl:ObjectProperty;
     rdfs:label "same as comptox substance";
     dcterms:description "A relation between an dataset specific substance and the same substance as identified in comptox.";
-    rdfs:range comptox:CompTox_ChemicalEntity. 
+    rdfs:range comptox:ChemicalEntity. 
 
-comptox:CompTox_ChemicalEntity rdf:type owl:Class;
+comptox:ChemicalEntity rdf:type owl:Class;
     rdfs:subClassOf coso:Substance.
