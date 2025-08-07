@@ -8,7 +8,9 @@
 @prefix terms: <http://purl.org/dc/terms/> .
 @prefix schema: <http://schema.org/> .
 @prefix langual: <http://www.langual.org/langual_thesaurus.asp?termid=> .
+@prefix asfis: <https://www.fao.org/fishery/en/aqspecies/> .
 @prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix go: <http://www.geneontology.org/formats/oboInOwl#> .
 @prefix wikipedia: <https://en.wikipedia.org/wiki/> .
 @base <http://purl.obolibrary.org/obo/FOODON/external/foodon_lite#> .
 
@@ -2550,6 +2552,352 @@ obo:FOODON_03411142 rdf:type owl:Class ;
                     oboInOwl:hasDbXref langual:B1142 ;
                     rdfs:label "aquatic invertebrate animal (excluding shellfish)"@en .
 
+###  http://purl.obolibrary.org/obo/NCBITaxon_154811
+obo:NCBITaxon_154811 rdf:type owl:Class ;
+                     rdfs:subClassOf obo:NCBITaxon_154810 ;
+                     obo:IAO_0000412 obo:ncbitaxon.owl ;
+                     dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                     go:hasBroadSynonym "sucker"@en ;
+                     go:hasDbXref "itis:163919" ;
+                     go:hasExactSynonym "river carpsucker"@en ,
+                                        "river carpsucker" ;
+                     rdfs:label "Carpiodes carpio" ;
+                     rdfs:seeAlso "https://en.wikipedia.org/wiki/River_carpsucker" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_154810
+obo:NCBITaxon_154810 rdf:type owl:Class ;
+                     rdfs:subClassOf obo:NCBITaxon_7968 ;
+                     obo:IAO_0000412 obo:ncbitaxon.owl ;
+                     rdfs:label "Carpiodes" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_225060
+obo:NCBITaxon_225060 rdf:type owl:Class ;
+                     rdfs:subClassOf obo:FOODON_03412665 ,
+                                     obo:NCBITaxon_27705 ;
+                     obo:IAO_0000114 obo:IAO_0000428 ;
+                     obo:IAO_0000118 "spotted bass"@en ;
+                     obo:IAO_0000412 obo:ncbitaxon.owl ;
+                     dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                     go:hasBroadSynonym "bass"@en ;
+                     go:hasDbXref <http://eol.org/pages/205773> ,
+                                  langual:B4030 ,
+                                  asfis:mtt ,
+                                  "itis:168161" ;
+                     go:hasExactSynonym "spotted bass"@en ,
+                                        "spotted bass" ,
+                                        "spotted blackbass" ;
+                     go:hasNarrowSynonym "Micropterus punctulatus" ;
+                     rdfs:label "Micropterus punctulatus" ;
+                     rdfs:seeAlso "https://en.wikipedia.org/wiki/Spotted_bass" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_225389
+obo:NCBITaxon_225389 rdf:type owl:Class ;
+                     rdfs:subClassOf obo:FOODON_03411204 ,
+                                     obo:NCBITaxon_225388 ;
+                     obo:IAO_0000114 obo:IAO_0000428 ;
+                     obo:IAO_0000118 "freshwater drum"@en ;
+                     obo:IAO_0000412 obo:ncbitaxon.owl ;
+                     dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                     go:hasBroadSynonym "freshwater drum"@en ;
+                     go:hasDbXref <http://eol.org/pages/993240> ,
+                                  langual:B1796 ,
+                                  asfis:agr ,
+                                  "CEC1993:707" ,
+                                  "itis:169364" ;
+                     go:hasExactSynonym "freshwater drum"@en ,
+                                        "freshwater drum" ;
+                     go:hasNarrowSynonym "Aplodinotus grunniens" ;
+                     go:hasSynonym "aplodinotus grunniens"@en ,
+                                   "gaspergou"@en ;
+                     rdfs:label "Aplodinotus grunniens" ;
+                     rdfs:seeAlso "https://en.wikipedia.org/wiki/Freshwater_drum" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_283036
+obo:NCBITaxon_283036 rdf:type owl:Class ;
+                     rdfs:subClassOf obo:FOODON_03412004 ,
+                                     obo:NCBITaxon_283033 ;
+                     obo:IAO_0000114 obo:IAO_0000122 ;
+                     obo:IAO_0000115 "A freshwater perciform fish native to most of Canada and to the Northern United States."@en ;
+                     obo:IAO_0000118 "walleye pike"@en ;
+                     obo:IAO_0000119 wikipedia:Walleye ;
+                     obo:IAO_0000412 obo:ncbitaxon.owl ;
+                     dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                     go:hasBroadSynonym "walleye"@en ;
+                     go:hasDbXref <http://eol.org/pages/211303> ,
+                                  langual:B1398 ,
+                                  asfis:stv ,
+                                  "CEC1993:613" ,
+                                  "itis:650173" ;
+                     go:hasExactSynonym "sander vitreus"@en ,
+                                        "stizostedion vitreum"@en ,
+                                        "stizostedion vitreum vitreum"@en ,
+                                        "walleye"@en ,
+                                        "yellow pike"@en ,
+                                        "walleye" ;
+                     go:hasNarrowSynonym "Sander vitreus (Mitchill, 1818)" ,
+                                         "Stizostedion vitreum vitreum (Mitchill, 1818)" ;
+                     rdfs:label "Sander vitreus" ;
+                     rdfs:seeAlso "https://en.wikipedia.org/wiki/Walleye" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_283033
+obo:NCBITaxon_283033 rdf:type owl:Class ;
+                     rdfs:subClassOf obo:NCBITaxon_8165 ;
+                     obo:IAO_0000412 obo:ncbitaxon.owl ;
+                     rdfs:label "Sander" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_34816
+obo:NCBITaxon_34816 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411184 ,
+                                    obo:NCBITaxon_34815 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000118 "striped bass"@en ;
+                    obo:IAO_0000119 "American Fisheries Society" ;
+                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    go:hasBroadSynonym "bass"@en ;
+                    go:hasDbXref <http://eol.org/pages/211032> ,
+                                 langual:B2181 ,
+                                 asfis:stb ,
+                                 "CEC1993:590" ,
+                                 "itis:167680" ;
+                    go:hasExactSynonym "striped bass"@en ,
+                                       "striped bass" ,
+                                       "striped sea-bass" ;
+                    go:hasNarrowSynonym "Morone saxatilis" ;
+                    rdfs:label "Morone saxatilis" ;
+                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Striped_bass" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_46259
+obo:NCBITaxon_46259 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411184 ,
+                                    obo:NCBITaxon_34815 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000118 "white bass"@en ;
+                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    go:hasBroadSynonym "bass"@en ;
+                    go:hasDbXref <http://eol.org/pages/204284> ,
+                                 langual:B1764 ,
+                                 asfis:roy ,
+                                 "CEC1993:589" ,
+                                 "itis:167682" ;
+                    go:hasExactSynonym "white bass"@en ,
+                                       "white bass" ;
+                    go:hasNarrowSynonym "Morone chrysops" ;
+                    go:hasSynonym "bass, white"@en ,
+                                  "morone chrysops"@en ;
+                    rdfs:label "Morone chrysops" ;
+                    rdfs:seeAlso "https://en.wikipedia.org/wiki/White_bass" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_66913
+obo:NCBITaxon_66913 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03412007 ,
+                                    obo:NCBITaxon_7997 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000118 "blue catfish"@en ;
+                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    go:hasBroadSynonym "catfish"@en ;
+                    go:hasDbXref <http://eol.org/pages/995103> ,
+                                 langual:B1900 ,
+                                 asfis:itf ,
+                                 "FDA.RFE.2010:22" ,
+                                 "itis:163997" ;
+                    go:hasExactSynonym "blue catfish"@en ,
+                                       "blue catfish" ;
+                    go:hasNarrowSynonym "Ictalurus furcatus" ;
+                    go:hasSynonym "catfish, blue"@en ,
+                                  "ictalurus furcatus"@en ;
+                    rdfs:label "Ictalurus furcatus" ;
+                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Blue_catfish" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_75288
+obo:NCBITaxon_75288 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03414067 ,
+                                    obo:NCBITaxon_75287 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000118 "flathead catfish species"@en ;
+                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    go:hasBroadSynonym "catfish"@en ;
+                    go:hasDbXref <http://eol.org/pages/221296> ,
+                                 langual:B2582 ,
+                                 asfis:ipo ,
+                                 "itis:164029" ;
+                    go:hasExactSynonym "flathead catfish"@en ,
+                                       "flathead catfish" ;
+                    go:hasNarrowSynonym "Pylodictis olivaris" ;
+                    go:hasSynonym "catfish, flathead"@en ,
+                                  "pylodictis olivaris"@en ;
+                    rdfs:label "Pylodictis olivaris" ;
+                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Flathead_catfish" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_7997
+obo:NCBITaxon_7997 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:NCBITaxon_7996 ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   rdfs:label "Ictalurus" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_7998
+obo:NCBITaxon_7998 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:FOODON_03412007 ,
+                                   obo:NCBITaxon_7997 ;
+                   obo:IAO_0000114 obo:IAO_0000428 ;
+                   obo:IAO_0000118 "channel catfish"@en ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                   go:hasBroadSynonym "catfish"@en ;
+                   go:hasDbXref <http://eol.org/pages/204762> ,
+                                langual:B1899 ,
+                                asfis:itp ,
+                                "CEC1993:380" ,
+                                "FDA.RFE.2010:23" ,
+                                "itis:163998" ;
+                   go:hasExactSynonym "channel catfish"@en ,
+                                      "channel catfish" ;
+                   go:hasNarrowSynonym "Ictalurus punctatus" ;
+                   go:hasSynonym "catfish, channel"@en ,
+                                 "ictalurus punctatus"@en ;
+                   rdfs:label "Ictalurus punctatus" ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Channel_catfish" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_75287
+obo:NCBITaxon_75287 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:NCBITaxon_7996 ;
+                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+                    rdfs:label "Pylodictis" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_8022
+obo:NCBITaxon_8022 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:FOODON_03411126 ,
+                                   obo:NCBITaxon_8016 ;
+                   obo:IAO_0000114 obo:IAO_0000428 ;
+                   obo:IAO_0000118 "rainbow trout"@en ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                   go:hasBroadSynonym "rainbow trout"@en ,
+                                      "steelhead"@en ;
+                   go:hasDbXref <http://eol.org/pages/205250> ,
+                                langual:B1109 ,
+                                asfis:trr ,
+                                "CEC1993:245" ,
+                                "FDA.RFE.2010:43" ,
+                                "itis:161989" ;
+                   go:hasExactSynonym "rainbow trout"@en ,
+                                      "rainbow trout" ;
+                   go:hasNarrowSynonym "Oncorhynchus mykiss" ;
+                   go:hasSynonym "salmo gairdneri"@en ,
+                                 "salmo irideus"@en ,
+                                 "steelhead trout"@en ,
+                                 "trout, rainbow"@en ;
+                   rdfs:label "Oncorhynchus mykiss" ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Rainbow_trout" .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411126
+obo:FOODON_03411126 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03413807 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref <http://eol.org/pages/24383> ,
+                                 langual:B1126 ;
+                    go:hasSynonym "oncorhynchus"@en ,
+                                  "salmon, pacific"@en ;
+                    rdfs:label "pacific salmon"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411204
+obo:FOODON_03411204 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03412005 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref <http://eol.org/pages/99403> ,
+                                 langual:B1204 ;
+                    go:hasSynonym "aplodinotus spp."@en ,
+                                  "river drum"@en ,
+                                  "thunderpumper"@en ;
+                    rdfs:label "freshwater drum genus"@en .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_8016
+obo:NCBITaxon_8016 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:NCBITaxon_504568 ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   rdfs:label "Oncorhynchus" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_8028
+obo:NCBITaxon_8028 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:NCBITaxon_504568 ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   rdfs:label "Salmo" .
+
+###  http://purl.obolibrary.org/obo/FOODON_03414067
+obo:FOODON_03414067 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411040 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref <http://eol.org/pages/28014> ,
+                                 langual:B4067 ;
+                    go:hasSynonym "pylodictis spp."@en ;
+                    rdfs:label "flathead catfish genus"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03412007
+obo:FOODON_03412007 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411040 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref langual:B2007 ;
+                    go:hasSynonym "ictalurus spp."@en ;
+                    rdfs:label "bullhead catfish"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03412005
+obo:FOODON_03412005 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411581 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref <http://eol.org/pages/5211> ,
+                                 langual:B2005 ;
+                    go:hasSynonym "sciaenidae"@en ;
+                    rdfs:label "drum family"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411040
+obo:FOODON_03411040 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411598 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "The *Ictaluridae*, sometimes called ictalurids, are a family of catfish native to North America, where they are important food fish and sometimes as a sport fish. The family includes about 51 species, some commonly known as bullheads, madtoms, channel catfish, and blue catfish. [https://en.wikipedia.org/wiki/Ictaluridae]"@en ;
+                    go:hasDbXref <http://eol.org/pages/5099> ,
+                                 langual:B1040 ;
+                    go:hasSynonym "ictaluridae"@en ;
+                    rdfs:label "bullhead catfish family"@en .
+
+###  http://purl.obolibrary.org/obo/FOODON_03411598
+obo:FOODON_03411598 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411365 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000115 "Catfish (or catfishes; order Siluriformes or Nematognathi) are a diverse group of ray-finned fish. Despite their name, not all catfish have prominent barbel. Members of the Siluriformes order are defined by features of the skull and swimbladder. Catfish are of considerable commercial importance; many of the larger species are farmed or fished for food. [https://en.wikipedia.org/wiki/Catfish]"@en ;
+                    go:hasDbXref <http://eol.org/pages/5083> ,
+                                 langual:B1598 ;
+                    go:hasSynonym "catfishes"@en ,
+                                  "silures"@en ;
+                    rdfs:label "fish, siluriform"@en .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_8032
+obo:NCBITaxon_8032 rdf:type owl:Class ;
+                   rdfs:subClassOf obo:NCBITaxon_8028 ;
+                   obo:IAO_0000412 obo:ncbitaxon.owl ;
+                   dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                   go:hasBroadSynonym "trout"@en ;
+                   go:hasDbXref "itis:161997" ;
+                   go:hasExactSynonym "brown trout"@en ,
+                                      "river trout" ;
+                   rdfs:label "Salmo trutta" ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Whiptail_conger" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_225388
+obo:NCBITaxon_225388 rdf:type owl:Class ;
+                     rdfs:subClassOf obo:NCBITaxon_30870 ;
+                     obo:IAO_0000412 obo:ncbitaxon.owl ;
+                     rdfs:label "Aplodinotus" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_30870
+obo:NCBITaxon_30870 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:NCBITaxon_1489923 ;
+                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+                    go:hasExactSynonym "croakers" ,
+                                       "drums" ;
+                    rdfs:label "Sciaenidae" .
 
 ###  http://purl.obolibrary.org/obo/FOODON_03411151
 obo:FOODON_03411151 rdf:type owl:Class ;
