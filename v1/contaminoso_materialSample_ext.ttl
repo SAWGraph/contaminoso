@@ -200,3 +200,9 @@ coso:PlantUndergroundSample owl:unionOf ( [rdf:type owl:Restriction;
       owl:onProperty coso:sampleOfMaterialType;
       owl:someValuesFrom obo:FOODON_00002150] #plant root vegetable food product
       ).
+
+########################
+# Property Chain 
+########################
+
+coso:sampleFeatureType owl:propertyChainAxiom( coso:isSampleOf coso:ofFeatureType ).
