@@ -40,8 +40,8 @@ coso:ofComptoxSubstance a owl:ObjectProperty;
 coso:ofDatasetSubstance a owl:ObjectProperty;
         rdfs:label "of Dataset Substance";
         dcterms:description "A relation between an entity and a chemical substance as identified in a dataset specific controlled vocabulary";
-        rdfs:subPropertyOf coso:ofSubstance;
-        owl:disjointWith coso:ofComptoxSubstance.  
+        rdfs:subPropertyOf coso:ofSubstance.
+        #range is disjoint with comptox:CheimcalEntity.   
 
 comptox:sameAsComptoxSubstance a owl:ObjectProperty;
     rdfs:label "same as comptox substance";
