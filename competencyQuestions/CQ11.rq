@@ -21,8 +21,8 @@ where  {
         #Filter to a specific substance: 
 		# VALUES ?substance {}.
 
-        ?measure coso:measurementValue ?value;
-            coso:measurementUnit ?unit.
+        ?measure coso:measurementValue ?value.
+        OPTIONAL{?measure coso:measurementUnit ?unit.}
         FILTER NOT EXISTS{ ?measure a coso:AggregateContaminantMeasurement} #remove results that are aggregates
 } GROUP BY ?materialSample ?observation ?substance ?substanceL ?value ?unit 
 LIMIT 100

@@ -2479,6 +2479,15 @@ obo:FOODON_03411129 rdf:type owl:Class ;
                     oboInOwl:hasSynonym "salmonidae"@en ;
                     rdfs:label "trout and salmon family"@en .
 
+###  http://purl.obolibrary.org/obo/FOODON_03414066
+obo:FOODON_03414066 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411040 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref <http://eol.org/pages/24532> ,
+                                 langual:B4066 ;
+                    go:hasSynonym "ameiurus spp."@en ;
+                    rdfs:label "bullhead"@en .                  
+
 
 ###  http://purl.obolibrary.org/obo/FOODON_03411134
 obo:FOODON_03411134 rdf:type owl:Class ;
@@ -2590,6 +2599,29 @@ obo:NCBITaxon_225060 rdf:type owl:Class ;
                      rdfs:label "Micropterus punctulatus" ;
                      rdfs:seeAlso "https://en.wikipedia.org/wiki/Spotted_bass" .
 
+###  http://purl.obolibrary.org/obo/NCBITaxon_66912
+obo:NCBITaxon_66912 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03414066 ,
+                                    obo:NCBITaxon_50384 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000118 "yellow bullhead"@en ;
+                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    go:hasBroadSynonym "bullhead"@en ;
+                    go:hasDbXref <http://eol.org/pages/995105> ,
+                                 langual:B2607 ,
+                                 asfis:itn ,
+                                 "itis:164041" ;
+                    go:hasExactSynonym "yellow bullhead"@en ,
+                                       "yellow bullhead" ;
+                    go:hasNarrowSynonym "Ameiurus natalis" ;
+                    go:hasSynonym "catfish, yellow bullhead"@en ,
+                                  "ictalurus natalis"@en ,
+                                  "yellow catfish"@en ;
+                    rdfs:label "Ameiurus natalis" ;
+                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Yellow_bullhead" .
+
+
 ###  http://purl.obolibrary.org/obo/NCBITaxon_225389
 obo:NCBITaxon_225389 rdf:type owl:Class ;
                      rdfs:subClassOf obo:FOODON_03411204 ,
@@ -2638,6 +2670,42 @@ obo:NCBITaxon_283036 rdf:type owl:Class ;
                                          "Stizostedion vitreum vitreum (Mitchill, 1818)" ;
                      rdfs:label "Sander vitreus" ;
                      rdfs:seeAlso "https://en.wikipedia.org/wiki/Walleye" .
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_13106
+obo:NCBITaxon_13106 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03414028 ,
+                                    obo:NCBITaxon_13105 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    obo:IAO_0000118 "bluegill"@en ;
+                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+                    dcterms:contributor "https://orcid.org/0000-0001-5275-8866" ;
+                    go:hasBroadSynonym "bluegill"@en ;
+                    go:hasDbXref <http://eol.org/pages/207661> ,
+                                 langual:B2079 ,
+                                 asfis:lmm ,
+                                 "itis:168141" ;
+                    go:hasExactSynonym "bluegill"@en ,
+                                       "bluegill" ,
+                                       "bluegill sunfish" ;
+                    go:hasNarrowSynonym "Lepomis macrochirus" ;
+                    go:hasSynonym "lepomis macrochirus"@en ;
+                    rdfs:label "Lepomis macrochirus" ;
+                    rdfs:seeAlso "https://en.wikipedia.org/wiki/Bluegill" .       
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_13105
+obo:NCBITaxon_13105 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:NCBITaxon_8180 ;
+                    obo:IAO_0000412 obo:ncbitaxon.owl ;
+                    rdfs:label "Lepomis" .                               
+
+###  http://purl.obolibrary.org/obo/FOODON_03414028
+obo:FOODON_03414028 rdf:type owl:Class ;
+                    rdfs:subClassOf obo:FOODON_03411818 ;
+                    obo:IAO_0000114 obo:IAO_0000428 ;
+                    go:hasDbXref <http://eol.org/pages/25735> ,
+                                 langual:B4028 ;
+                    go:hasSynonym "lepomis spp."@en ;
+                    rdfs:label "common sunfish"@en .
 
 ###  http://purl.obolibrary.org/obo/NCBITaxon_283033
 obo:NCBITaxon_283033 rdf:type owl:Class ;

@@ -7,9 +7,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT * 
 WHERE{
-    VALUES ?measurement{me_egad_data:result.L204794007RE.AAWH.20201030.68259121}
+    VALUES ?measurement{me_egad_data:result.L204794007RE.AAWH.20201030.68259121} #us_wqp_data:d.wqp.measurement.STORET-987908414
     ?measurement a coso:ContaminantMeasurement;
-    			coso:resultAnnotation ?dl.
+    			coso:hasResultQualifier ?dl.
     ?dl a coso:DetectionLimit;
     	qudt:numericValue ?value;
     	qudt:hasUnit ?unit.   

@@ -10,7 +10,7 @@ SELECT ?sampletype ?typeLabel (COUNT(?sample) as ?no_samples) WHERE {
 	?sp rdf:type coso:SamplePoint;
         coso:pointFromFeature ?feature.
     ?feature coso:ofFeatureType ?featureType.
-    VALUES ?featureType {me_egad_data:featureType.MRN}
+    VALUES ?featureType {me_egad_data:featureType.MRN us-wqp-data:featureType.Ocean}
     ?sample coso:fromSamplePoint ?sp ;
     	coso:sampleOfMaterialType ?sampletype .
     ?sampletype rdfs:label ?typeLabel. 
