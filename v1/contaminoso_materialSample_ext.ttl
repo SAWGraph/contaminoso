@@ -119,16 +119,17 @@ coso:SoilSample rdf:type owl:Class;
   rdfs:label "Soil Sample";
   rdfs:subClassOf coso:SolidMaterialSample. 
 
-
 coso:SedimentSample rdf:type owl:Class;
   rdfs:label "Sediment Sample";
   rdfs:subClassOf coso:SolidMaterialSample. 
-
 
 coso:SolidWasteSample rdf:type owl:Class;
   rdfs:label "Solid Waste Sample";
   rdfs:subClassOf coso:SolidMaterialSample. 
 
+coso:AirSample rdf:type owl:Class;
+  rdfs:label "Air Sample";
+  rdfs:subClassOf coso:MaterialSample.
 #############################################################
 # FOODON alignment
 #############################################################
@@ -139,7 +140,11 @@ coso:AnimalMaterialSample owl:unionOf (
             owl:someValuesFrom obo:FOODON_03420164]  # some animal material
             [rdf:type owl:Restriction;
             owl:onProperty coso:sampleOfMaterialType;
-            owl:someValuesFrom obo:FOODON_00003004] ).  # or some animal 
+            owl:someValuesFrom obo:FOODON_00003004] # or some animal 
+            coso:AnimalBloodSample
+            coso:AnimalTissueSample
+            coso:AnimalOrganSample
+            coso:AnimalMilkSample).  
 
 coso:AnimalBloodSample owl:equivalentClass [rdf:type owl:Restriction;
             owl:onProperty coso:sampleOfMaterialType;

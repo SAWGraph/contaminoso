@@ -333,6 +333,7 @@ coso:hasResult rdf:type owl:ObjectProperty ;
     rdfs:range coso:ContaminantMeasurement.
 
 coso:hasResultQualifier rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf coso:resultAnnotation ;
     rdfs:label "has result qualifier";
     dcterms:description "A relation between measured result and metadata that qualifies the result.";
     rdfs:domain coso:ContaminantMeasurement;
@@ -381,7 +382,6 @@ coso:sampleAnnotation rdf:type owl:ObjectProperty ;
     dcterms:description "A relation between a material sample and additional metadata about the sample.";
     rdfs:domain coso:MaterialSample;
     rdfs:range coso:SampleAnnotation. 
-
 
 coso:sampleOfMaterialType rdf:type owl:ObjectProperty ;
     rdfs:label "sample of material type";
