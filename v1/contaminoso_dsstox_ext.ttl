@@ -1,5 +1,5 @@
 @prefix coso: <http://w3id.org/coso/v1/contaminoso#> .
-@prefix comptox: <http://w3id.org/comptox/v1/>.
+@prefix dsstox: <http://w3id.org/DSSTox/v1/>.
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -12,41 +12,41 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @base <http://w3id.org/coso/comptox_ext#> .
 
-<http://w3id.org/coso/comptox_ext#> rdf:type owl:Ontology ;
+<http://w3id.org/coso/dsstox_ext#> rdf:type owl:Ontology ;
                                               owl:versionIRI <http://w3id.org/coso/v1/comptox_ext#> ;
                                               dcterms:created "2025-03-30"@en-us ;
                                               dcterms:creator <http://orcid.org/0000-0002-5331-5052> ,
                                                               <http://orcid.org/0000-0003-3547-8058> ,
                                                               <https://orcid.org/0000-0003-3271-6700> ;
-                                              dcterms:description "the Contaminant Observation and Samples Ontology (ContaminOSO) extension to support Comptox substance."@en-us ;
+                                              dcterms:description "the Contaminant Observation and Samples Ontology (ContaminOSO) extension to support DSSTox substance."@en-us ;
                                               dcterms:abstract "";
                                               dcterms:issued "2025-03-30"^^xsd:date ;
                                               dcterms:modified "2025-03-30"^^xsd:date ;
                                               dcterms:publisher <http://spatialai.org> ;
-                                              dcterms:source "https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso_comptox_ext.ttl"^^<xsd:anyURI> ;
+                                              dcterms:source "https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso_dsstox_ext.ttl"^^<xsd:anyURI> ;
                                               dcterms:title "Contaminant Observation and Samples Ontology"@en-us ;
                                               rdfs:label "ContaminOSO"@en-us ;
-                                              vann:preferredNamespaceUri <http://w3id.org/coso/v1/comptox_ext#>;
-                                              vann:preferredNamespacePrefix "coso_comptox:";
+                                              vann:preferredNamespaceUri <http://w3id.org/coso/v1/dsstox_ext#>;
+                                              vann:preferredNamespacePrefix "coso_dsstox:";
                                               owl:versionInfo "1"@en-us .
 
-coso:ofComptoxSubstance a owl:ObjectProperty;
+coso:ofDSSToxSubstance a owl:ObjectProperty;
         rdfs:label "of Comptox Substance";
-        dcterms:description "A relation between an entity and a chemical substance as identified by Comptox";
+        dcterms:description "A relation between an entity and a chemical substance as identified by DSSTox";
         rdfs:subPropertyOf coso:ofSubstance;
         rdfs:range comptox:ChemicalEntity;
-        owl:propertyChainAxiom (coso:ofDatasetSubstance comptox:sameAsComptoxSubstance).  
+        owl:propertyChainAxiom (coso:ofDatasetSubstance comptox:sameAsDSSToxSubstance).  
 
 coso:ofDatasetSubstance a owl:ObjectProperty;
         rdfs:label "of Dataset Substance";
         dcterms:description "A relation between an entity and a chemical substance as identified in a dataset specific controlled vocabulary";
         rdfs:subPropertyOf coso:ofSubstance.
-        #range is disjoint with comptox:CheimcalEntity.   
+        #range is disjoint with dsstox:CheimcalEntity.   
 
-comptox:sameAsComptoxSubstance a owl:ObjectProperty;
-    rdfs:label "same as comptox substance";
+dsstox:sameAsDSSToxSubstance a owl:ObjectProperty;
+    rdfs:label "same as DSSTox substance";
     dcterms:description "A relation between an dataset specific substance and the same substance as identified in comptox.";
     rdfs:range comptox:ChemicalEntity. 
 
-comptox:ChemicalEntity rdf:type owl:Class;
+dsstox:ChemicalEntity rdf:type owl:Class;
     rdfs:subClassOf coso:Substance.

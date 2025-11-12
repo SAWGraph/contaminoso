@@ -6,6 +6,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix siren: <https://bioregistry.io/reference/siren:> .
 @prefix terms: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix schema: <http://schema.org/> .
 @prefix langual: <http://www.langual.org/langual_thesaurus.asp?termid=> .
 @prefix asfis: <https://www.fao.org/fishery/en/aqspecies/> .
