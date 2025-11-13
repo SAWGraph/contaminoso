@@ -31,11 +31,11 @@
                                               owl:versionInfo "1"@en-us .
 
 coso:ofDSSToxSubstance a owl:ObjectProperty;
-        rdfs:label "of Comptox Substance";
+        rdfs:label "of DSSTox Substance";
         dcterms:description "A relation between an entity and a chemical substance as identified by DSSTox";
         rdfs:subPropertyOf coso:ofSubstance;
-        rdfs:range comptox:ChemicalEntity;
-        owl:propertyChainAxiom (coso:ofDatasetSubstance comptox:sameAsDSSToxSubstance).  
+        rdfs:range dsstox:ChemicalEntity;
+        owl:propertyChainAxiom (coso:ofDatasetSubstance dsstox:sameAsDSSToxSubstance).  
 
 coso:ofDatasetSubstance a owl:ObjectProperty;
         rdfs:label "of Dataset Substance";
@@ -45,8 +45,8 @@ coso:ofDatasetSubstance a owl:ObjectProperty;
 
 dsstox:sameAsDSSToxSubstance a owl:ObjectProperty;
     rdfs:label "same as DSSTox substance";
-    dcterms:description "A relation between an dataset specific substance and the same substance as identified in comptox.";
-    rdfs:range comptox:ChemicalEntity. 
+    dcterms:description "A relation between an dataset specific substance and the same substance as identified in dsstox.";
+    rdfs:range dsstox:ChemicalEntity. 
 
 dsstox:ChemicalEntity rdf:type owl:Class;
     rdfs:subClassOf coso:Substance.
