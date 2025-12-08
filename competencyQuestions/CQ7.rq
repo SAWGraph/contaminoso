@@ -10,5 +10,5 @@ SELECT *
 WHERE{
     ?releasePoint a coso:ReleaseFeature. 
     ?releasePoint kwg-ont:sfWithin ?region.
-    VALUES ?region{dcgeoid:2300571990
+    VALUES ?region{dcgeoid:2300571990}
 }
