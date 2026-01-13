@@ -57,7 +57,7 @@ unit:NanoGM-PER-MicroL
   qudt:hasDimensionVector qkdv:A0E0L-3I0M1H0T0D0 ;
   qudt:hasQuantityKind quantitykind:Density ;
   qudt:hasQuantityKind quantitykind:MassDensity ;
-  qudt:symbol "ng/ÂµL" ;
+  qudt:symbol "ng/μL" ;
   qudt:ucumCode "ng.uL-1"^^qudt:UCUMcs ;
   qudt:ucumCode "ng/uL"^^qudt:UCUMcs ;
   rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
@@ -104,7 +104,7 @@ unit:MicroGM-PER-KiloGM
   qudt:plainTextDescription "mass ratio as 0.000000001-fold of the SI base unit kilogram divided by the SI base unit kilogram" ;
   qudt:qkdvDenominator qkdv:A0E0L0I0M1H0T0D0 ;
   qudt:qkdvNumerator qkdv:A0E0L0I0M1H0T0D0 ;
-  qudt:symbol "Î¼g/kg" ;
+  qudt:symbol "μg/kg" ;
   qudt:ucumCode "ug.kg-1"^^qudt:UCUMcs ;
   qudt:ucumCode "ug/kg"^^qudt:UCUMcs ;
   qudt:uneceCommonCode "J33" ;
@@ -127,7 +127,7 @@ unit:MicroGM-PER-L
   qudt:hasQuantityKind quantitykind:MassDensity ;
   qudt:iec61360Code "0112/2///62720#UAA084" ;
   qudt:plainTextDescription "0.000000001-fold of the SI base unit kilogram divided by the unit litre" ;
-  qudt:symbol "Î¼g/L" ;
+  qudt:symbol "μg/L" ;
   qudt:ucumCode "ug.L-1"^^qudt:UCUMcs ;
   qudt:ucumCode "ug/L"^^qudt:UCUMcs ;
   qudt:uneceCommonCode "H29" ;
