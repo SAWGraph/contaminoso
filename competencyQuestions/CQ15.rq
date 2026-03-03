@@ -1,0 +1,28 @@
+#Find all soil samples that detected PFOS above the detection limit.
+# SUCCESSFULLY TESTED ON FRINK 2026-03-02
+
+PREFIX ds: <http://purl.org/ctic/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
+PREFIX dsstox: <http://w3id.org/DSSTox/v1/>
+
+SELECT * WHERE {
+    ?sample a coso:MaterialSample;  # all samples
+    		a coso:SoilSample; # soil samples
+    		coso:sampleOfMaterialType/rdfs:label ?sampleType.  # with type labels
+    ?observation  coso:analyzedSample ?sample ;
+    	coso:ofSubstance ?substance; # that were tested for a specific substance
+        coso:hasResult ?result.
+  ?substance rdf:type dsstox:ChemicalEntity ;
+        skos:altLabel ?substanceLabel.
+  VALUES ?substance {dsstox:DTXSID3031864} # where the substance is PFOS
+  ?result coso:measurementValue ?measurement.
+  FILTER NOT EXISTS {?measurement owl:sameAs coso:non-detect. } 
+
+} ORDER BY ?value

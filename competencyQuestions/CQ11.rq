@@ -1,4 +1,6 @@
-# All surface water and animal tissue sample results from one samplepoint
+# Find all surface water and animal tissue sample results that report the contamination by an individual substance from one samplepoint (Maine EGAS SamplePoint 65555).
+# SUCCESSFULLY TESTED ON FRINK 2026-03-02
+
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
@@ -21,8 +23,7 @@ where  {
         #Filter to a specific substance: 
 		# VALUES ?substance {}.
 
-        ?measure coso:measurementValue ?value.
-        OPTIONAL{?measure coso:measurementUnit ?unit.}
+        ?measure coso:measurementValue ?value. 
+		OPTIONAL { ?measure             coso:measurementUnit ?unit.}
         FILTER NOT EXISTS{ ?measure a coso:AggregateContaminantMeasurement} #remove results that are aggregates
 } GROUP BY ?materialSample ?observation ?substance ?substanceL ?value ?unit 
-LIMIT 100

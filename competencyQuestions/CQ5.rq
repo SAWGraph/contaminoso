@@ -1,9 +1,13 @@
-# What is the mean concentration of PFOA in fish tissue in Maine?
+# What is the mean concentration of all different PFAS tested for in fish tissue in Maine?
+# SUCCESSFULLY TESTED ON FRINK 2026-03-02
+
 
 PREFIX kwgr: <http://stko-kwg.geog.ucsb.edu/lod/resource/>
 PREFIX kwg-ont: <http://stko-kwg.geog.ucsb.edu/lod/ontology/>
 PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+
 select ?substance ?unit (AVG(?value) as ?AvgConcentration) (COUNT(?observation) as ?sampleCount) where {
     ?observation a coso:ContaminantSampleObservation; 		# All observations
     	coso:analyzedSample ?sample;						# with related samples
@@ -17,7 +21,5 @@ select ?substance ?unit (AVG(?value) as ?AvgConcentration) (COUNT(?observation) 
     ?region a kwg-ont:AdministrativeRegion_3. 			# administrative region (town/township)
     ?measurement coso:measurementValue ?value;		# with the result value
     			coso:measurementUnit ?unit. 			# and unit
-    SERVICE <repository:Spatial>{
         ?region kwg-ont:administrativePartOf+ kwgr:administrativeRegion.USA.23 # Where the town is part of Maine
-    } 
 } GROUP BY ?substance ?unit
