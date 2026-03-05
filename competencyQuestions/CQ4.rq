@@ -1,10 +1,11 @@
+# Samples (in Maine) from what surface water bodies have a cumulative PFAS contamination result of above 20 ppt?
+# SUCCESSFULLY TESTED ON FRINK 2026-03-02
+
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX unit: <http://qudt.org/vocab/unit/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
 PREFIX me_egad_data: <http://w3id.org/sawgraph/v1/me-egad-data#>
-
-# Samples from what surface water bodies have a cumulative contamination result of above 20 ppt?
 
 SELECT ?feature ?featureType ?sample ?date (SUM(?value) as ?cumulativeConcentration) ?unit WHERE {
     ?sample a coso:WaterSample; 									# All Water Samples

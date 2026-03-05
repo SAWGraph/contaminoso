@@ -1,4 +1,5 @@
-# Retrieve all marine samplepoints and determine what and how many of each sample type are there
+# Retrieve all marine samplepoints and determine what types they are and how many of each type there are
+# SUCCESSFULLY TESTED ON FRINK 2026-03-02
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -6,6 +7,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX coso: <http://w3id.org/coso/v1/contaminoso#>
 PREFIX me_egad_data: <http://w3id.org/sawgraph/v1/me-egad-data#>
 PREFIX us-wqp-data: <http://w3id.org/sawgraph/v1/us-wqp-data#>
+
 
 SELECT ?sampletype ?typeLabel (COUNT(?sample) as ?no_samples) WHERE {
 	?sp rdf:type coso:SamplePoint;
