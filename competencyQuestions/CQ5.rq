@@ -17,7 +17,7 @@ select ?substance ?unit (AVG(?value) as ?AvgConcentration) (COUNT(?observation) 
     ?region a kwg-ont:AdministrativeRegion_3. 			# administrative region (town/township)
     ?measurement coso:measurementValue ?value;		# with the result value
     			coso:measurementUnit ?unit. 			# and unit
-    SERVICE <repository:Spatial>{
+    #SERVICE <repository:Spatial>{
         ?region kwg-ont:administrativePartOf+ kwgr:administrativeRegion.USA.23 # Where the town is part of Maine
-    } 
+    #} 
 } GROUP BY ?substance ?unit
