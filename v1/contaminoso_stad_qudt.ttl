@@ -4,7 +4,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix coso: <http://w3id.org/coso/v1/contaminoso#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix time: <http://www.w3.org/2006/time#> .
@@ -103,6 +102,7 @@ coso:measurementUnit owl:propertyChainAxiom ( qudt:quantityValue
 
 coso:measurementValue owl:propertyChainAxiom ( qudt:quantityValue
                                                qudt:enumeratedValue
+                                               qudt:symbol
                                              ) ,
                                              ( qudt:quantityValue
                                                qudt:numericValue
@@ -117,3 +117,8 @@ coso:NanoGM-PER-GM rdf:type <http://qudt.org/schema/qudt/Unit> ;
   qudt:ucumCode "ng/g"^^qudt:UCUMcs;
   rdfs:isDefinedBy <http://w3id.org/coso/contaminoso-stad-qudt#> ;
   rdfs:label "Nanogram per Gram"@en .
+
+coso:MaximumContaminantConcentrationQuantityKind rdf:type stad:StatisticalQuantityKind.
+
+
+coso:SummedContaminantVolumeQuantityKind rdf:type stad:StatisticalQuantityKind.

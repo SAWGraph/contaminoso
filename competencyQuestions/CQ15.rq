@@ -23,6 +23,6 @@ SELECT * WHERE {
         skos:altLabel ?substanceLabel.
   VALUES ?substance {dsstox:DTXSID3031864} # where the substance is PFOS
   ?result coso:measurementValue ?measurement.
-  FILTER NOT EXISTS {?measurement owl:sameAs coso:non-detect. } 
+  MINUS {?measurement rdf:type coso:NonDetectQuantityValue } 
 
 } ORDER BY ?value

@@ -107,6 +107,11 @@ coso:ContaminantAbsoluteMeasurement rdf:type owl:Class ;
 ###  http://w3id.org/coso/v1/contaminoso#Feature
 coso:Feature owl:disjointWith coso:Point .
 
+coso:NonDetectQuantityValue rdfs:subClassOf [ rdf:type owl:Restriction;
+                            owl:onProperty qudt:symbol;  
+                            owl:hasValue "non-detect"^^xsd:string
+                            ] .
+
 #################################################################
 #    General axioms
 #################################################################

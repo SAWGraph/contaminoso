@@ -18,7 +18,7 @@ SELECT (max(?value) as ?max_value)  (min(?value) as ?min_value) WHERE {
     			coso:hasResult ?measurement.
     ?measurement coso:measurementValue ?value;
     		coso:measurementUnit/qudt:symbol ?unit.
-  FILTER NOT EXISTS {?value owl:sameAs coso:non-detect } # and 
+    MINUS {?measurement a coso:NonDetectQuantityValue } # and 
     VALUES ?dtxsid{dsstox:DTXSID5030030} # where the substance is PFBS
 
 } ORDER BY ?value

@@ -182,3 +182,103 @@ unit:PERCENT
   rdfs:label "Percent" ;
   rdfs:label "Percent"@en ;
 .
+
+unit:NanoGM-PER-MilliL
+  a qudt:Unit ;
+  dcterms:description "One 10**12 part of the SI standard unit of mass of the measurand per millilitre volume of matrix."@en ;
+  qudt:applicableSystem sou:CGS ;
+  qudt:applicableSystem sou:CGS-EMU ;
+  qudt:applicableSystem sou:CGS-GAUSS ;
+  qudt:applicableSystem sou:SI ;
+  qudt:conversionMultiplier 0.000001 ;
+  qudt:conversionMultiplierSN 1.0E-6 ;
+  qudt:hasDimensionVector qkdv:A0E0L-3I0M1H0T0D0 ;
+  qudt:hasFactorUnit [
+    a qudt:FactorUnit ;
+    qudt:exponent -1 ;
+    qudt:hasUnit unit:MilliL ;
+  ] ;
+  qudt:hasFactorUnit [
+    a qudt:FactorUnit ;
+    qudt:exponent 1 ;
+    qudt:hasUnit unit:NanoGM ;
+  ] ;
+  qudt:hasQuantityKind quantitykind:Density ;
+  qudt:hasQuantityKind quantitykind:MassConcentration ;
+  qudt:hasQuantityKind quantitykind:MassDensity ;
+  qudt:symbol "ng/mL" ;
+  qudt:ucumCode "ng.mL-1"^^qudt:UCUMcs ;
+  rdfs:isDefinedBy <http://qudt.org/3.1.11/vocab/unit> ;
+  rdfs:label "Nanogram per Milliliter"@en-US ;
+  rdfs:label "Nanogram per Millilitre" ;
+  rdfs:label "Nanogram per Millilitre"@en .
+
+  unit:PicoGM-PER-L
+  a qudt:Unit ;
+  dcterms:description "One 10**15 part of the SI standard unit of mass of the measurand per litre volume of matrix.."@en ;
+  qudt:applicableSystem sou:CGS ;
+  qudt:applicableSystem sou:CGS-EMU ;
+  qudt:applicableSystem sou:CGS-GAUSS ;
+  qudt:applicableSystem sou:SI ;
+  qudt:conversionMultiplier 0.000000000001 ;
+  qudt:conversionMultiplierSN 1.0E-12 ;
+  qudt:hasDimensionVector qkdv:A0E0L-3I0M1H0T0D0 ;
+  qudt:hasFactorUnit [
+    a qudt:FactorUnit ;
+    qudt:exponent -1 ;
+    qudt:hasUnit unit:L ;
+  ] ;
+  qudt:hasFactorUnit [
+    a qudt:FactorUnit ;
+    qudt:exponent 1 ;
+    qudt:hasUnit unit:PicoGM ;
+  ] ;
+  qudt:hasQuantityKind quantitykind:Density ;
+  qudt:hasQuantityKind quantitykind:MassDensity ;
+  qudt:symbol "pg/L" ;
+  qudt:ucumCode "pg.L-1"^^qudt:UCUMcs ;
+  qudt:wikidataMatch <http://www.wikidata.org/entity/Q104786084> ;
+  rdfs:isDefinedBy <http://qudt.org/3.1.11/vocab/unit> ;
+  rdfs:label "Picogram per Liter"@en-US ;
+  rdfs:label "Picogram per Litre" ;
+  rdfs:label "Picogram per Litre"@en .
+
+  unit:PicoGM-PER-GM
+  a qudt:Unit ;
+  dcterms:description "One part per 10**12 (trillion) by mass of the measurand in the matrix."@en ;
+  qudt:applicableSystem sou:CGS ;
+  qudt:applicableSystem sou:CGS-EMU ;
+  qudt:applicableSystem sou:CGS-GAUSS ;
+  qudt:applicableSystem sou:SI ;
+  qudt:conversionMultiplier 0.000000000001 ;
+  qudt:conversionMultiplierSN 1.0E-12 ;
+  qudt:hasDimensionVector qkdv:A0E0L0I0M0H0T0D1 ;
+  qudt:hasFactorUnit [
+    a qudt:FactorUnit ;
+    qudt:exponent -1 ;
+    qudt:hasUnit unit:GM ;
+  ] ;
+  qudt:hasFactorUnit [
+    a qudt:FactorUnit ;
+    qudt:exponent 1 ;
+    qudt:hasUnit unit:PicoGM ;
+  ] ;
+  qudt:hasQuantityKind quantitykind:MassRatio ;
+  qudt:qkdvDenominator qkdv:A0E0L0I0M1H0T0D0 ;
+  qudt:qkdvNumerator qkdv:A0E0L0I0M1H0T0D0 ;
+  qudt:symbol "pg/g" ;
+  qudt:ucumCode "pg.g-1"^^qudt:UCUMcs ;
+  rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
+  rdfs:label "Picogram na Gram"@cs ;
+  rdfs:label "Picogram na Gram"@pl ;
+  rdfs:label "Picogram na Gram"@sl ;
+  rdfs:label "Picogram pe Gram"@ro ;
+  rdfs:label "Picogram per Gram" ;
+  rdfs:label "Picogram per Gram"@en ;
+  rdfs:label "Picogram per Gram"@ms ;
+  rdfs:label "Picogram per Gram"@tr ;
+  rdfs:label "Picogramm pro Gramm"@de ;
+  rdfs:label "Picogramme par Gramme"@fr ;
+  rdfs:label "Picogrammo per Grammo"@it ;
+  rdfs:label "Picogramo por Gramo"@es .
+
