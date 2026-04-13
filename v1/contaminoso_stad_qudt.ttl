@@ -82,6 +82,13 @@ coso:QuantitationLimit rdfs:subClassOf qudt:Quantity.
 
 coso:DetectionLimit rdfs:subClassOf qudt:Quantity.
 
+coso:NonDetectQuantityValue rdfs:subClassOf qudt:EnumeratedValue,
+    [
+      rdf:type owl:Restriction ;
+      owl:onProperty qudt:symbol ;
+      owl:hasValue "non-detect"^^xsd:string
+      ].
+
 # Object Properties
 
 stad:hasQualityKind rdf:type owl:ObjectProperty .
@@ -101,7 +108,6 @@ coso:measurementUnit owl:propertyChainAxiom ( qudt:quantityValue
 
 
 coso:measurementValue owl:propertyChainAxiom ( qudt:quantityValue
-                                               qudt:enumeratedValue
                                                qudt:symbol
                                              ) ,
                                              ( qudt:quantityValue
@@ -120,5 +126,6 @@ coso:NanoGM-PER-GM rdf:type <http://qudt.org/schema/qudt/Unit> ;
 
 coso:MaximumContaminantConcentrationQuantityKind rdf:type stad:StatisticalQuantityKind.
 
-
 coso:SummedContaminantVolumeQuantityKind rdf:type stad:StatisticalQuantityKind.
+
+coso:AggregateContaminationConcentrationQuantityKind rdf:type stad:StatisticalQuantityKind.

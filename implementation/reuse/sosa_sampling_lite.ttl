@@ -377,17 +377,17 @@ sosa:implementedBy
   schema:rangeIncludes sosa:Sampler ;
   rdfs:isDefinedBy sosa-common: .
 
-sosa:hasInput 
-  rdfs:isDefinedBy sosa-common: .
+#sosa:hasInput 
+#  rdfs:isDefinedBy sosa-common: .
 
-sosa:inputFor 
-  rdfs:isDefinedBy sosa-common: .
+#sosa:inputFor 
+#  rdfs:isDefinedBy sosa-common: .
 
-sosa:hasOutput 
-  rdfs:isDefinedBy sosa-common: .
+#sosa:hasOutput 
+#  rdfs:isDefinedBy sosa-common: .
 
-sosa:outputFor 
-  rdfs:isDefinedBy sosa-common: .
+#sosa:outputFor 
+#  rdfs:isDefinedBy sosa-common: .
 
 ## Executions
 

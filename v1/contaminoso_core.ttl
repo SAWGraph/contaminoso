@@ -11,7 +11,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @base <http://w3id.org/coso/contaminoso#> .
 
-<http://w3id.org/coso/contaminoso#> rdf:type owl:Ontology ;
+<http://w3id.org/coso/contaminoso> rdf:type owl:Ontology ;
                                               owl:versionIRI coso: ;
                                               dcterms:created "2025-03-30"@en-us ;
                                               dcterms:creator <http://orcid.org/0000-0002-5331-5052> ,
@@ -448,6 +448,10 @@ coso:MaximumContaminantConcentrationQuantityKind rdf:type owl:NamedIndividual ,
 coso:SingleContaminantConcentrationQuantityKind rdf:type owl:NamedIndividual ,
                                                      coso:ContaminantConcentrationQuantityKind ;
                                         rdfs:label "Single Contaminant Concentration Quantity" .
+
+coso:AggregateContaminationConcentrationQuantityKind rdf:type owl:NamedIndividual ,
+                                                     coso:ContaminantConcentrationQuantityKind ;
+                                        rdfs:label "Aggregate Contaminant Concentration Quantity" .
 
 coso:SingleContaminantVolumeQuantityKind rdf:type owl:NamedIndividual ,
                                               coso:ContaminantVolumeQuantityKind ;

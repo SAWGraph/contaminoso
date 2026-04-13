@@ -224,16 +224,16 @@ sosa:observedProperty
 #  owl:inverseOf sosa:wasOriginatedBy ;
 #  rdfs:isDefinedBy sosa-obs: .
 
-sosa:qualityOf 
-  a owl:ObjectProperty ;
-  rdfs:label "result quality of" ;
-  skos:definition """
-  Link to the observation or collection that this data quality assessment applies to.
-  """@en ;
-  schema:rangeIncludes sosa:Observation ;
-  schema:rangeIncludes sosa:ObservationCollection ;
-  owl:inverseOf sosa:resultQuality ;
-  rdfs:isDefinedBy sosa-obs: .
+#sosa:qualityOf 
+#  a owl:ObjectProperty ;
+#  rdfs:label "result quality of" ;
+#  skos:definition """
+#  Link to the observation or collection that this data quality assessment applies to.
+#  """@en ;
+#  schema:rangeIncludes sosa:Observation ;
+#  schema:rangeIncludes sosa:ObservationCollection ;
+#  owl:inverseOf sosa:resultQuality ;
+#  rdfs:isDefinedBy sosa-obs: .
 
 #sosa:relatedObservation 
 #  a owl:ObjectProperty ;
@@ -336,13 +336,13 @@ sosa:isPropertyOf
 sosa:hasProcedure 
   rdfs:isDefinedBy sosa-common: .
 
-sosa:propertyFor
-  schema:rangeIncludes sosa:Sensor ;
-  rdfs:isDefinedBy sosa-common: .
+#sosa:propertyFor
+#  schema:rangeIncludes sosa:Sensor ;
+#  rdfs:isDefinedBy sosa-common: .
 
-sosa:forProperty 
-  schema:domainIncludes sosa:Sensor ;
-  rdfs:isDefinedBy sosa-common: .
+#sosa:forProperty 
+#  schema:domainIncludes sosa:Sensor ;
+#  rdfs:isDefinedBy sosa-common: .
 
 
 ## Procedures
