@@ -16,129 +16,13 @@
 ### Extracted from https://github.com/qudt/qudt-public-repo/blob/main/src/main/rdf/schema/SCHEMA_QUDT.ttl 
 <http://qudt.org/2.1/schema/qudt>
   a owl:Ontology ;
-  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
-  owl:imports <http://www.linkedmodel.org/schema/vaem> ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  #owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  #owl:imports <http://www.linkedmodel.org/schema/vaem> ;
+  #owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionIRI <http://qudt.org/2.1/schema/qudt> ;
   rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
-  rdfs:label "QUDT Schema - Version $$QUDT_VERSION$$" ;
+  rdfs:label "QUDT Schema - Version 2.1.47" ;
   vaem:hasGraphMetadata vaem:GMD_QUDT-SCHEMA .
-
-
-qudt:Datatype
-  a owl:Class ;
-  dcterms:description "A data type is a definition of a set of values (for example, \"all integers between 0 and 10\"), and the allowable operations on those values; the meaning of the data; and the way values of that type can be stored. Some types are primitive - built-in to the language, with no visible internal structure - e.g. Boolean; others are composite - constructed from one or more other types (of either kind) - e.g. lists, arrays, structures, unions. Object-oriented programming extends this with classes which encapsulate both the structure of a type and the operations that can be performed on it. Some languages provide strong typing, others allow implicit type conversion and/or explicit type conversion." ;
-  qudt:informativeReference "http://en.wikipedia.org/wiki/Data_type"^^xsd:anyURI ;
-  qudt:informativeReference "http://foldoc.org/data+type"^^xsd:anyURI ;
-  qudt:informativeReference "http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Data_type.html"^^xsd:anyURI ;
-  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
-  rdfs:label "QUDT Datatype" ;
-  rdfs:subClassOf qudt:Concept ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom qudt:CardinalityType ;
-    owl:onProperty qudt:cardinality ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom qudt:Datatype ;
-    owl:onProperty qudt:basis ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom qudt:OrderedType ;
-    owl:onProperty qudt:orderedType ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:ansiSQLName ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:basis ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:bounded ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:cName ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:cardinality ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:id ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:javaName ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:jsName ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:matlabName ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:microsoftSQLServerName ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:mySQLName ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:odbcName ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:oleDBName ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:oracleSQLName ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:orderedType ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:protocolBuffersName ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:pythonName ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality 1 ;
-    owl:onProperty qudt:vbName ;
-  ] .
 
 qudt:EnumeratedValue
   a owl:Class ;
@@ -175,41 +59,6 @@ qudt:EnumeratedValue
     ] ;
 .
 
-qudt:Enumeration
-  a owl:Class ;
-  qudt:dbpediaMatch "http://dbpedia.org/resource/Enumeration"^^xsd:anyURI ;
-  qudt:informativeReference "http://en.wikipedia.org/wiki/Enumerated_type"^^xsd:anyURI ;
-  qudt:informativeReference "http://en.wikipedia.org/wiki/Enumeration"^^xsd:anyURI ;
-  rdfs:comment """<p>An enumeration is a set of literals from which a single value is selected. Each literal can have a tag as an integer within a standard encoding appropriate to the range of integer values. Consistency of enumeration types will allow them, and the enumerated values, to be referred to unambiguously either through symbolic name or encoding. Enumerated values are also controlled vocabularies and as such need to be standardized. Without this consistency enumeration literals can be stated differently and result in  data conflicts and misinterpretations.</p><p>The tags are a set of positive whole numbers, not necessarily contiguous and having no numerical significance, each corresponding to the associated literal identifier. An order attribute can also be given on the enumeration elements. An enumeration can itself be a member of an enumeration. This allows enumerations to be enumerated in a selection. Enumerations are also subclasses of <em>Scalar Datatype</em>. This allows them to be used as the reference of a datatype specification.</p>"""^^rdf:HTML ;
-  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
-  rdfs:label "Enumeration" ;
-  rdfs:subClassOf qudt:Concept ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom qudt:EnumeratedValue ;
-    owl:onProperty qudt:default ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom qudt:EnumeratedValue ;
-    owl:onProperty qudt:element ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality "1"^^xsd:int ;
-    owl:onProperty qudt:abbreviation ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onProperty qudt:default ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onProperty qudt:element ;
-  ] .
-
 qudt:Quantity
   a owl:Class ;
   qudt:dbpediaMatch "http://dbpedia.org/resource/Quantity"^^xsd:anyURI ;
@@ -228,11 +77,11 @@ qudt:Quantity
     owl:allValuesFrom qudt:QuantityValue ;
     owl:onProperty qudt:quantityValue ;
   ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom xsd:boolean ;
-    owl:onProperty qudt:isDeltaQuantity ;
-  ] ;
+  #rdfs:subClassOf [
+  #  a owl:Restriction ;
+  #  owl:allValuesFrom xsd:boolean ;
+  #  owl:onProperty qudt:isDeltaQuantity ;
+  #] ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:minCardinality "0"^^xsd:nonNegativeInteger ;
@@ -244,96 +93,14 @@ qudt:QuantityKind
   qudt:informativeReference "http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=112-01-04"^^xsd:anyURI ;
   rdfs:comment "A <b>Quantity Kind</b> is any observable property that can be  measured and quantified numerically. Familiar examples include physical properties such as length, mass, time, force, energy, power, electric charge, etc. Less familiar examples include currency, interest rate, price to earning ratio, and information capacity."^^rdf:HTML ;
   rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
-  rdfs:label "Quantity Kind" ;
+  rdfs:label "Quantity Kind" .
   #rdfs:subClassOf qudt:AbstractQuantityKind ;
   #rdfs:subClassOf qudt:Verifiable ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom qudt:QuantityKind ;
-    owl:onProperty qudt:exactMatch ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom qudt:QuantityKind ;
-    owl:onProperty qudt:generalization ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom qudt:QuantityKindDimensionVector ;
-    owl:onProperty qudt:hasDimensionVector ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom qudt:QuantityKindDimensionVector_SI ;
-    owl:onProperty qudt:dimensionVectorForSI ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom xsd:string ;
-    owl:onProperty qudt:iec61360Code ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality "1"^^xsd:int ;
-    owl:onProperty qudt:generalization ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onProperty qudt:dimensionVectorForSI ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onProperty qudt:latexDefinition ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-    owl:onProperty qudt:mathMLdefinition ;
-  ] ;
   #rdfs:subClassOf [
   #  a owl:Restriction ;
-  #  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-  #  owl:onClass qudt:QuantityKindDimensionVector ;
-  #  owl:onProperty qudt:qkdvDenominator ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-  #  owl:onClass qudt:QuantityKindDimensionVector ;
-  #  owl:onProperty qudt:qkdvNumerator ;
-  #] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-    owl:onProperty qudt:applicableCGSUnit ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-    owl:onProperty qudt:applicableISOUnit ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-    owl:onProperty qudt:applicableImperialUnit ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-    owl:onProperty qudt:applicableSIUnit ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-    owl:onProperty qudt:applicableUSCustomaryUnit ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-    owl:onProperty qudt:applicableUnit ;
-  ] .
+  #  owl:allValuesFrom qudt:QuantityKind ;
+  #  owl:onProperty qudt:exactMatch ;
+  #] .
 
 qudt:QuantityValue
   a owl:Class ;
@@ -369,124 +136,19 @@ qudt:Unit
   ] ;
   #rdfs:subClassOf [
   #  a owl:Restriction ;
-  #  owl:allValuesFrom qudt:QuantityKind ;
-  #  owl:onProperty qudt:hasQuantityKind ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:allValuesFrom qudt:QuantityKindDimensionVector ;
-  #  owl:onProperty qudt:hasDimensionVector ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:allValuesFrom qudt:QuantityKindDimensionVector ;
-  #  owl:onProperty qudt:qkdvDenominator ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:allValuesFrom qudt:QuantityKindDimensionVector ;
-  #  owl:onProperty qudt:qkdvNumerator ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:allValuesFrom qudt:SystemOfUnits ;
-  #  owl:onProperty qudt:applicableSystem ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:allValuesFrom qudt:SystemOfUnits ;
-  #  owl:onProperty qudt:definedUnitOfSystem ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:allValuesFrom qudt:SystemOfUnits ;
-  #  owl:onProperty qudt:derivedCoherentUnitOfSystem ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:allValuesFrom qudt:SystemOfUnits ;
-  #  owl:onProperty qudt:derivedUnitOfSystem ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:allValuesFrom qudt:UCUMcs ;
-  #  owl:onProperty qudt:ucumCode ;
-  #] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom qudt:Unit ;
-    owl:onProperty qudt:exactMatch ;
-  ] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:allValuesFrom xsd:string ;
-  #  owl:onProperty qudt:iec61360Code ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:allValuesFrom xsd:string ;
-  #  owl:onProperty qudt:udunitsCode ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:allValuesFrom xsd:string ;
-  #  owl:onProperty qudt:uneceCommonCode ;
+  #  owl:allValuesFrom qudt:Unit ;
+  #  owl:onProperty qudt:exactMatch ;
   #] ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:maxCardinality "1"^^xsd:int ;
     owl:onProperty qudt:conversionMultiplier ;
   ] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:maxCardinality "1"^^xsd:int ;
-  #  owl:onProperty qudt:conversionMultiplierSN ;
-  #] ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:maxCardinality "1"^^xsd:int ;
     owl:onProperty qudt:conversionOffset ;
   ] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:maxCardinality "1"^^xsd:int ;
-  #  owl:onProperty qudt:conversionOffsetSN ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-  #  owl:onProperty qudt:hasDimensionVector ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-  #  owl:onProperty qudt:mathMLdefinition ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-  #  owl:onProperty qudt:qkdvDenominator ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-  #  owl:onProperty qudt:qkdvNumerator ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-  #  owl:onProperty qudt:latexDefinition ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-  #  owl:onProperty qudt:latexSymbol ;
-  #] ;
-  #rdfs:subClassOf [
-  #  a owl:Restriction ;
-  #  owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-  #  owl:onProperty qudt:siUnitsExpression ;
-  #] ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:minCardinality "0"^^xsd:int ;
@@ -497,9 +159,16 @@ qudt:Unit
     owl:minCardinality "0"^^xsd:nonNegativeInteger ;
     owl:onProperty qudt:symbol ;
   ] .
+qudt:NumericUnion
+  a owl:Class ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "Numeric union" ;
+  rdfs:subClassOf dtype:numericUnion ;
+  rdfs:subClassOf qudt:Concept .
 
-
+############################## 
 # Object Properties
+##############################
 
 qudt:hasQuantity
   a owl:ObjectProperty ;
@@ -547,7 +216,23 @@ qudt:valueQuantity
   rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
   rdfs:label "value for quantity" .
 
-# Data property
+qudt:cardinality
+  a owl:ObjectProperty ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "cardinality" .
+
+qudt:applicableUnit
+  a owl:ObjectProperty ;
+  dcterms:description "See https://github.com/qudt/qudt-public-repo/wiki/Advanced-User-Guide#4-computing-applicable-units-for-a-quantitykind on how `qudt:applicableUnit` is computed from `qudt:hasQuantityKind` and then materialized"^^rdf:HTML ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "applicable unit" ;
+  rdfs:range qudt:Unit .
+
+#########################
+# Datatype properties
+#########################
+
+dcterms:description a owl:DatatypeProperty. 
 
 qudt:abbreviation
   a owl:DatatypeProperty ;
@@ -562,19 +247,107 @@ qudt:numericValue
   rdfs:label "numeric value" ;
   rdfs:range qudt:NumericUnion .
 
-# Special Class
+qudt:id
+  a owl:DatatypeProperty ;
+  dcterms:description "The \"qudt:id\" is an identifier string that uniquely identifies a QUDT concept.  The identifier is constructed using a prefix. For example, units are coded using the pattern: \"UCCCENNNN\", where \"CCC\" is a numeric code or a category and \"NNNN\" is a digit string for a member element of that category. For scaled units there may be an addition field that has the format \"QNN\" where \"NN\" is a digit string representing an exponent power, and \"Q\" is a qualifier that indicates with the code \"P\" that the power is a positive decimal exponent, or the code \"N\" for a negative decimal exponent, or the code \"B\" for binary positive exponents."^^rdf:HTML ;
+  rdfs:domain qudt:Concept ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "qudt id" ;
+  rdfs:range xsd:string .
 
-qudt:EnumeratedQuantity
-  #a qudt:AspectClass ;
-  rdfs:label "Enumerated Quantity" ;
-  rdfs:subClassOf qudt:Concept ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom qudt:EnumeratedValue ;
-    owl:onProperty qudt:enumeratedValue ;
+qudt:symbol
+  a owl:DatatypeProperty ;
+  dcterms:description """
+  The symbol is a glyph that is used to represent some concept, typically a unit or a quantity, in a compact form. 
+  For example, the symbol for an Ohm is $ohm$. 
+  This contrasts with 'unit:abbreviation', which gives a short alphanumeric abbreviation for the unit, 'ohm' for Ohm.
+  """^^qudt:LatexString ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "symbol" ;
+  rdfs:subPropertyOf dtype:literal .
+
+qudt:abbreviation
+  a owl:DatatypeProperty ;
+  dcterms:description "An abbreviation for a unit is a short ASCII string that is used in place of the full name for the unit in contexts where non-ASCII characters would be problematic, or where using the abbreviation will enhance readability. When a power of abase unit needs to be expressed, such as squares this can be done using abbreviations rather than symbols. For example, <em>sq ft</em> means <em>square foot</em>, and <em>cu ft</em> means <em>cubic foot</em>."^^rdf:HTML ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "abbreviation" ;
+  rdfs:range xsd:string .
+
+qudt:conversionMultiplier
+  a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "conversion multiplier" ;
+  rdfs:range xsd:decimal .
+
+qudt:conversionOffset
+  a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "conversion offset" ;
+  rdfs:range xsd:decimal .
+
+qudt:altSymbol
+  a owl:DatatypeProperty ;
+  dcterms:description "An alternative symbol"^^qudt:LatexString ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "alt symbol" ;
+  rdfs:subPropertyOf dtype:literal .
+
+qudt:symbol
+  a owl:DatatypeProperty ;
+  dcterms:description """
+  The symbol is a glyph that is used to represent some concept, typically a unit or a quantity, in a compact form. 
+  For example, the symbol for an Ohm is $ohm$. 
+  This contrasts with 'unit:abbreviation', which gives a short alphanumeric abbreviation for the unit, 'ohm' for Ohm.
+  """^^qudt:LatexString ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "symbol" ;
+  rdfs:subPropertyOf dtype:literal .
+
+qudt:abbreviation
+  a owl:DatatypeProperty ;
+  dcterms:description "An abbreviation for a unit is a short ASCII string that is used in place of the full name for the unit in contexts where non-ASCII characters would be problematic, or where using the abbreviation will enhance readability. When a power of abase unit needs to be expressed, such as squares this can be done using abbreviations rather than symbols. For example, <em>sq ft</em> means <em>square foot</em>, and <em>cu ft</em> means <em>cubic foot</em>."^^rdf:HTML ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "abbreviation" ;
+  rdfs:range xsd:string .
+
+qudt:informativeReference
+  a owl:AnnotationProperty ;
+  dcterms:description "Provides a way to reference a source that provided useful but non-normative information."^^rdf:HTML ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "informative reference" ;
+  rdfs:range xsd:anyURI .
+
+qudt:isoNormativeReference
+  a owl:DatatypeProperty ;
+  dcterms:description "Provides a way to reference the ISO unit definition."^^rdf:HTML ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "normative reference (ISO)" ;
+  rdfs:range xsd:anyURI ;
+  rdfs:subPropertyOf qudt:normativeReference .
+
+qudt:latexDefinition
+  a owl:DatatypeProperty ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "latex definition" ;
+  rdfs:range qudt:LatexString .
+
+qudt:plainTextDescription
+  a owl:DatatypeProperty ;
+  dcterms:description "A plain text description is used to provide a description with only simple ASCII characters for cases where LaTeX , HTML or other markup would not be appropriate."^^rdf:HTML ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "description (plain text)" ;
+  rdfs:range xsd:string .
+
+qudt:ucumCode
+  a owl:DatatypeProperty ;
+  dcterms:description "<p><em>ucumCode</em> associates a QUDT unit with its UCUM code (case-sensitive). </p><p>In SHACL the values are derived from specific ucum properties using 'sh:values'.</p>"^^rdf:HTML ;
+  dcterms:source "https://ucum.org/ucum.html"^^xsd:anyURI ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "ucum code" ;
+  rdfs:range [
+    a owl:Class ;
+    owl:unionOf ( qudt:UCUMcs qudt:UCUMcs-term ) ;
   ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom qudt:Enumeration ;
-    owl:onProperty qudt:enumeration ;
-  ] .
+  rdfs:seeAlso <https://ucum.org/ucum.html> ;
+  rdfs:subPropertyOf skos:notation .
+
