@@ -12,18 +12,19 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://w3id.org/coso/v1/contaminoso-full#> .
 
-<http://w3id.org/coso/contaminoso-full#> rdf:type owl:Ontology ;
+<http://w3id.org/coso/v1/contaminoso-full> rdf:type owl:Ontology ;
                                                    owl:versionIRI <http://w3id.org/coso/v1/contaminoso-full#> ;
                                                    owl:imports <http://w3id.org/coso/v1/contaminoso-core#> ;
                                                    owl:imports <http://w3id.org/coso/v1/contaminoso-stad-qudt#> ;
                                                    owl:imports <http://w3id.org/coso/v1/contaminoso-materialsample-ext#> ;
+                                                   owl:imports <http://w3id.org/coso/v1/contaminoso-dsstox-ext#> ;
                                                    dcterms:created "2025-03-30"@en-us ;
                                                    dcterms:creator <http://orcid.org/0000-0002-5331-5052> ,
                                                                    <http://orcid.org/0000-0003-3547-8058> ,
                                                                    <https://orcid.org/0000-0003-3271-6700> ;
                                                    dcterms:description "the Contaminant Observation and Samples Ontology (ContaminOSO) developed as part of the AIKnowsPFAS and SAWGraph projects."@en-us ;
                                                    dcterms:issued "2025-03-30"^^xsd:date ;
-                                                   dcterms:modified "2025-03-30"^^xsd:date ;
+                                                   dcterms:modified "2026-04-20"^^xsd:date ;
                                                    dcterms:publisher <http://spatialai.org> ;
                                                    dcterms:source "https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso_full.ttl" ;
                                                    dcterms:title "Contaminant Observation and Samples Ontology (ContaminOSO) Full"@en-us ;
@@ -61,56 +62,64 @@ qudt:unit rdf:type owl:ObjectProperty .
 ###  http://w3id.org/coso/v1/contaminoso#observedAtSamplePoint
 coso:observedAtSamplePoint owl:propertyChainAxiom ( coso:analyzedSample
                                                     coso:fromSamplePoint
-                                                  ) .
+                                                  );
+                                                  rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso-full> .
 
 coso:isSampleOf owl:propertyChainAxiom ( coso:fromSamplePoint 
                                           coso:pointFromFeature
-                                          ) .
+                                          ) ;
+                                          rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso-full> .
 
-coso:observedTime owl:propertyChainAxiom ( sosa:phenomenonTime time:inXSDDateTime).
+coso:observedTime owl:propertyChainAxiom ( sosa:phenomenonTime time:inXSDDateTime);
+                                          rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso-full> .
 
-coso:observedTime owl:propertyChainAxiom ( sosa:phenomenonTime time:inXSDgYear).
+coso:observedTime owl:propertyChainAxiom ( sosa:phenomenonTime time:inXSDgYear);
+                                          rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso-full> .
 
 #################################################################
 #    Classes
 #################################################################
 
 ###  http://w3id.org/coso/v1/contaminoso#AggregateContaminantMeasurement
-coso:AggregateContaminantMeasurement owl:disjointWith coso:SingleContaminantMeasurement .
+coso:AggregateContaminantMeasurement owl:disjointWith coso:SingleContaminantMeasurement; 
+                                          rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso-full> .
 
 
 ###  http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationMeasurement
-coso:ContaminantRelativeMeasurement rdf:type owl:Class ;
-                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+coso:ContaminantRelativeMeasurement rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                            owl:onProperty coso:observedProperty ;
                                                            owl:allValuesFrom coso:ContaminantRelativeQuantityKind
                                                          ] ;
-                                         owl:disjointWith coso:ContaminantAbsoluteMeasurement .
+                                         owl:disjointWith coso:ContaminantAbsoluteMeasurement;
+                                          rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso-full> .
 
 
 ###  http://w3id.org/coso/v1/contaminoso#ContaminantConcentrationQuantityKind
-coso:ContaminantConcentrationQuantityKind owl:disjointWith coso:ContaminantAbsoluteQuantityKind .
-
+coso:ContaminantConcentrationQuantityKind owl:disjointWith coso:ContaminantAbsoluteQuantityKind ;
+                                         rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso-full> .
 
 ###  http://w3id.org/coso/v1/contaminoso#ContaminantReleaseObservation
-coso:ContaminantReleaseObservation owl:disjointWith coso:ContaminantSampleObservation .
+coso:ContaminantReleaseObservation owl:disjointWith coso:ContaminantSampleObservation ;
+                                          rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso-full> .
 
 
 ###  http://w3id.org/coso/v1/contaminoso#ContaminantAbsoluteMeasurement
-coso:ContaminantAbsoluteMeasurement rdf:type owl:Class ;
-                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+coso:ContaminantAbsoluteMeasurement rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                     owl:onProperty coso:observedProperty ;
                                                     owl:allValuesFrom coso:ContaminantAbsoluteQuantityKind
-                                                  ] .
+                                                  ] ;
+                                          rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso-full> .
 
 
 ###  http://w3id.org/coso/v1/contaminoso#Feature
-coso:Feature owl:disjointWith coso:Point .
+coso:Feature owl:disjointWith coso:Point ;
+                                          rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso-full> .
 
 coso:NonDetectQuantityValue rdfs:subClassOf [ rdf:type owl:Restriction;
                             owl:onProperty qudt:symbol;  
                             owl:hasValue "non-detect"^^xsd:string
-                            ] .
+                            ] ;
+                                          rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso-full> .
 
 #################################################################
 #    General axioms

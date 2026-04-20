@@ -11,7 +11,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @base <http://w3id.org/coso/contaminoso#> .
 
-<http://w3id.org/coso/contaminoso> rdf:type owl:Ontology ;
+<http://w3id.org/coso/v1/contaminoso> rdf:type owl:Ontology ;
                                               owl:versionIRI coso: ;
                                               dcterms:created "2025-03-30"@en-us ;
                                               dcterms:creator <http://orcid.org/0000-0002-5331-5052> ,
@@ -20,7 +20,7 @@
                                               dcterms:description "the Contaminant Observation and Samples Ontology (ContaminOSO) developed as part of the AIKnowsPFAS and SAWGraph projects."@en-us ;
                                               dcterms:abstract "";
                                               dcterms:issued "2025-03-30"^^xsd:date ;
-                                              dcterms:modified "2025-03-30"^^xsd:date ;
+                                              dcterms:modified "2026-04-20"^^xsd:date ;
                                               dcterms:publisher <http://spatialai.org> ;
                                               dcterms:source "https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso.ttl"^^<xsd:anyURI> ;
                                               dcterms:title "Contaminant Observation and Samples Ontology"@en-us ;
@@ -69,167 +69,206 @@ xsd:date rdf:type rdfs:Datatype .
 coso:ContaminantObservation rdf:type owl:Class ;
     rdfs:label "Contaminant Observation" ;
     dcterms:description "An observation of a contaminant." ;
-    rdfs:subClassOf sosa:Observation .
+    rdfs:subClassOf sosa:Observation;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso>.
 
 coso:ContaminantReleaseObservation rdf:type owl:Class ;
     rdfs:label "Contaminant Release Observation" ;
     dcterms:description "An observation of a contaminant that was released into the environment.";
-    rdfs:subClassOf coso:ContaminantObservation .
+    rdfs:subClassOf coso:ContaminantObservation ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:ContaminantSampleObservation rdf:type owl:Class ;
     rdfs:label "Contaminant Sample Observation" ;
     dcterms:description "An observation of a contaminant that was sampled from the environment. ";
-    rdfs:subClassOf coso:ContaminantObservation .
+    rdfs:subClassOf coso:ContaminantObservation ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:Feature rdf:type owl:Class ;
     rdfs:label "Feature" ;
     dcterms:description "The discrete spatial phenomenon that is the target of the observation. " ;
     rdfs:subClassOf geo:Feature ,
-                    sosa:FeatureOfInterest .
+                    sosa:FeatureOfInterest ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso>.
 
 coso:FeatureType rdf:type owl:Class ;
     rdfs:label "Feature Type" ;
-    dcterms:description "A category applied to differentiate discrete spatial phenomenon. ". 
+    dcterms:description "A category applied to differentiate discrete spatial phenomenon. ";
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso>. 
 
 coso:SampledFeature rdf:type owl:Class ;
     rdfs:label "Sampled Feature" ;
     dcterms:description "The discrete spatial phenomenon that is the target of a sample observation. ";
-    rdfs:subClassOf coso:Feature .
+    rdfs:subClassOf coso:Feature ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso>.
 
 coso:ReleaseFeature rdf:type owl:Class ;
     rdfs:label "Release Feature" ;
     dcterms:description "The discrete spatial phenomenon that may be the target of a release observation. ";
-    rdfs:subClassOf coso:Feature .
+    rdfs:subClassOf coso:Feature ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso>.
 
 coso:MonitoredFeature rdf:type owl:Class ;
     rdfs:label "Monitored Feature" ;
     dcterms:description "The discrete spatial phenomenon that is the target of a release observation due to environmental monitoring. ";
-    rdfs:subClassOf coso:ReleaseFeature .
+    rdfs:subClassOf coso:ReleaseFeature ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso>.
 
 coso:Point rdf:type owl:Class ;
     rdfs:label "Point" ;
     dcterms:description "The point location at which an observation occurred.";
     rdfs:subClassOf geo:Feature ,
-                    sosa:FeatureOfInterest .
+                    sosa:FeatureOfInterest ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso>.
 
 coso:SamplePoint rdf:type owl:Class ;
     rdfs:label "Sample Point" ;
     dcterms:description "The point location at which a sample observation occurred.";
-    rdfs:subClassOf coso:Point .
+    rdfs:subClassOf coso:Point ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso>.
 
 coso:ReleasePoint rdf:type owl:Class ;
     rdfs:label "Release Point" ;
     dcterms:description "The point location at which a release observation occurred.";
-    rdfs:subClassOf coso:Point .
+    rdfs:subClassOf coso:Point ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso>.
 
 coso:MaterialSample rdf:type owl:Class ;
     rdfs:label "Material Sample" ;
     dcterms:description "A physical, tangible sample." ;
-    rdfs:subClassOf sosa:Sample .
+    rdfs:subClassOf sosa:Sample;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:SampleMaterialType rdf:type owl:Class ;
     rdfs:label "Sample Material Type" ;
-    dcterms:description "The type of material that was sampled".
+    dcterms:description "The type of material that was sampled";
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:AnalysisMethod rdf:type owl:Class ;
     rdfs:label "Analysis Method" ;
     dcterms:description "The analysis method used to identify the contaminant."; 
-    rdfs:subClassOf sosa:Procedure .
+    rdfs:subClassOf sosa:Procedure ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:ContaminationProperty rdf:type owl:Class ;
     rdfs:label "Contamination Property" ;
     dcterms:description "An observable quality of a feature related to its contamination. "; 
-    rdfs:subClassOf sosa:Property .
+    rdfs:subClassOf sosa:Property ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:ContaminantAbsoluteQuantityKind rdf:type owl:Class ;
     rdfs:label "Contaminant Absolute Quantity Kind" ;
     dcterms:description "A type of contaminant quantity that is an absolute amount, such as a mass or volume.";
-    rdfs:subClassOf coso:ContaminationProperty .
+    rdfs:subClassOf coso:ContaminationProperty;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:ContaminantRelativeQuantityKind rdf:type owl:Class ;
     rdfs:label "Contaminant Relative Quantity Kind" ;
      dcterms:description "A type of contaminant quantity that is a relative amount, such as a concentration.";
-    rdfs:subClassOf coso:ContaminationProperty .
+    rdfs:subClassOf coso:ContaminationProperty ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:ContaminantMassQuantityKind rdf:type owl:Class ;
     rdfs:label "Contaminant Quantity Kind" ;
     dcterms:description "The type of quantity that is measured for the contaminant.";
-    rdfs:subClassOf coso:ContaminantAbsoluteQuantityKind .
+    rdfs:subClassOf coso:ContaminantAbsoluteQuantityKind ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:ContaminantVolumeQuantityKind rdf:type owl:Class ;
     rdfs:label "Contaminant Volume Quantity Kind" ;
     dcterms:description "A type of contaminant quantity that is a volume measurement.";
-    rdfs:subClassOf coso:ContaminantAbsoluteQuantityKind .
+    rdfs:subClassOf coso:ContaminantAbsoluteQuantityKind ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:ContaminantConcentrationQuantityKind rdf:type owl:Class ;
     rdfs:label "Contaminant Concentration Quantity Kind" ;
     dcterms:description "A type of contaminant quantity that is a concentration measurement.";
-    rdfs:subClassOf coso:ContaminantRelativeQuantityKind.
+    rdfs:subClassOf coso:ContaminantRelativeQuantityKind ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:ContaminantMeasurement rdf:type owl:Class ;
     rdfs:label "Contaminant Measurement" ;
     dcterms:description "The result of an observation about a contaminant or contaminants." ;
-    rdfs:subClassOf sosa:Result .
+    rdfs:subClassOf sosa:Result ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:ContaminantAbsoluteMeasurement rdf:type owl:Class ;
     rdfs:label "Contaminant Absolute Measurement" ;
     dcterms:description "The result of an observation about a contaminant that is an absolute measurement." ;
-    rdfs:subClassOf coso:ContaminantMeasurement .
+    rdfs:subClassOf coso:ContaminantMeasurement ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:ContaminantRelativeMeasurement rdf:type owl:Class ;
     rdfs:label "Contaminant Relative Measurement" ;
     dcterms:description "The result of an observation about a contaminant that is a relative measurement." ;
-    rdfs:subClassOf coso:ContaminantMeasurement .
+    rdfs:subClassOf coso:ContaminantMeasurement ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:AggregateContaminantMeasurement rdf:type owl:Class ;
     rdfs:label "Aggregate Contaminant Measurement";
     dcterms:description "The result of an observation about contaminant(s) that is an aggregate measurement. This can be a spatial, temporal or contaminant aggregate." ;
-    rdfs:subClassOf coso:ContaminantMeasurement .
+    rdfs:subClassOf coso:ContaminantMeasurement ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:SingleContaminantMeasurement rdf:type owl:Class ;
     rdfs:label "Single Contaminant Measurement" ;
     dcterms:description "The result of an observation about a contaminant that is a single measurement, i.e. a single contaminant at one location from one sample." ;
-    rdfs:subClassOf coso:ContaminantMeasurement .
+    rdfs:subClassOf coso:ContaminantMeasurement ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:QuantityValue rdf:type owl:Class;
     dcterms:description "A Quantity Value expresses the magnitude and kind of a quantity as a product of a numerical value or enumerated value and a unit of measure." ;
     rdfs:label "Quantity Value" .
 
 coso:DetectQuantityValue rdf:type owl:Class ;
-    rdfs:label "Detect Quantity Value" ;
-    dcterms:description "A Quantity Value that represents a detection of the contaminant.";
-    rdfs:subClassOf coso:QuantityValue .
+    rdfs:label "Quantified Detect Quantity Value" ;
+    dcterms:description "A Quantity Value that represents a quantified detection of the contaminant.";
+    rdfs:subClassOf coso:QuantityValue ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
+
+coso:NonQuantifiedQuantityValue rdf:type owl:Class ;
+    rdfs:label "Non-Quantified Quantity Value" ;
+    dcterms:description "A Quantity Value that represents a non-detection or a non-quantified detection of the contaminant. No numeric value is specified.";
+    rdfs:subClassOf coso:QuantityValue ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:NonDetectQuantityValue rdf:type owl:Class ;
     rdfs:label "Non-Detect Quantity Value" ;
     dcterms:description "A Quantity Value that represents a non-detection of the contaminant. No numeric value is specified.";
-    rdfs:subClassOf coso:QuantityValue .
+    rdfs:subClassOf coso:NonQuantifiedQuantityValue ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:ResultQualifier rdf:type owl:Class ;
     rdfs:label "Result Qualifier"; 
-    dcterms:description "Something that qualifies the result, such as quality control assessment, limitation on the precision or minimum detectable amount. ".
+    dcterms:description "Something that qualifies the result, such as quality control assessment, limitation on the precision or minimum detectable amount. ";
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:DetectionLimit rdf:type owl:Class ;
     rdfs:label "Detection Limit" ;
     dcterms:description "The lowest concentration of a substance that can be reliably detected as present with a reasonable degree of confidence.";
-    rdfs:subClassOf coso:ResultQualifier .
+    rdfs:subClassOf coso:ResultQualifier ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:QuantitationLimit rdf:type owl:Class ;
     rdfs:label "Quantitation Limit" ;
     dcterms:description "The lowest concentration of a substance that can be reliably measured with acceptable precision and accuracy.";
-    rdfs:subClassOf coso:ResultQualifier .
+    rdfs:subClassOf coso:ResultQualifier ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:ObservationAnnotation rdf:type owl:Class ;
     rdfs:label "Observation Annotation";
-    dcterms:description "Metadata that qualifies an observation".
+    dcterms:description "Metadata that qualifies an observation";
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:SampleAnnotation rdf:type owl:Class ;
     rdfs:label "Sample Annotation"; 
-    dcterms:description "Metadata that qualifies a sample".
+    dcterms:description "Metadata that qualifies a sample";
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:Substance rdf:type owl:Class ;
     rdfs:label "Substance";
-    dcterms:description "Any organic or inorganic substance of a particular molecular identity, including any combination of these substances occurring in whole or in part as a result of a chemical reaction or occurring in nature, and any element or uncombined radical.".
+    dcterms:description "Any organic or inorganic substance of a particular molecular identity, including any combination of these substances occurring in whole or in part as a result of a chemical reaction or occurring in nature, and any element or uncombined radical.";
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:SubstanceCollection rdf:type owl:Class ;
     rdfs:label "Substance Collection" ;
@@ -237,7 +276,8 @@ coso:SubstanceCollection rdf:type owl:Class ;
     rdfs:subClassOf [ rdf:type owl:Restriction ;
                         owl:onProperty rdfs:member ;
                         owl:allValuesFrom coso:Substance
-                    ] .
+                    ] ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 ## Reused Classes
 sosa:Observation rdf:type owl:Class. 
@@ -262,101 +302,116 @@ coso:hasAnyFeatureOfInterest rdf:type owl:ObjectProperty ;
     rdfs:label "has any feature of interest";
     dcterms:description "A relation between an observation of a contaminant and a feature it is the subject of. There are no specific scale or cardinality constraints that limit the feature."; 
     rdfs:domain coso:ContaminantObservation ;
-    rdfs:range sosa:FeatureOfInterest .
+    rdfs:range sosa:FeatureOfInterest ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:analyzedSample rdf:type owl:ObjectProperty ;
     rdfs:label "analyzed sample";
     dcterms:description "A relation between an observation of a contaminant and the sample that was analyzed."; 
     rdfs:subPropertyOf coso:hasAnyFeatureOfInterest ;
     rdfs:domain coso:ContaminantSampleObservation ;
-    rdfs:range coso:MaterialSample .
+    rdfs:range coso:MaterialSample ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:hasFeatureOfInterest rdf:type owl:ObjectProperty ;
     rdfs:label "has feature of interest";
     dcterms:description "A relation between an observation of a contaminant and a feature it is the subject of.";
     rdfs:subPropertyOf coso:hasAnyFeatureOfInterest ;
-    rdfs:range coso:Feature .
+    rdfs:range coso:Feature ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:sampledFeature rdf:type owl:ObjectProperty ;
     rdfs:label "sampled feature";
     dcterms:description "A relation between an observation of a contaminant from a sample and the feature that was sampled.";
     rdfs:subPropertyOf coso:hasFeatureOfInterest ;
     rdfs:domain coso:ContaminantSampleObservation ;
-    rdfs:range coso:SampledFeature .
+    rdfs:range coso:SampledFeature ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:releaseFeature rdf:type owl:ObjectProperty ;
     rdfs:label "release feature";
     rdfs:subPropertyOf coso:hasFeatureOfInterest ;
     dcterms:description "A relation between an observation of a contaminant that was released and the feature where it was released.";
     rdfs:domain coso:ContaminantReleaseObservation ;
-    rdfs:range coso:ReleaseFeature .
+    rdfs:range coso:ReleaseFeature ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:observedAtPoint rdf:type owl:ObjectProperty ;
     rdfs:label "observed at point";
     rdfs:subPropertyOf coso:hasAnyFeatureOfInterest ;
     dcterms:description "A relation between an observation of a contaminant and the point that the observation applies to.";
     rdfs:domain coso:ContaminantObservation ;
-    rdfs:range coso:Point .
+    rdfs:range coso:Point ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:observedAtReleasePoint rdf:type owl:ObjectProperty ;
     rdfs:label "observed at release point";
     dcterms:description "A relation between an observation of a contaminant that was released and the point where the observation was made and where the release occurred.";
     rdfs:subPropertyOf coso:observedAtPoint ;
     rdfs:domain coso:ContaminantReleaseObservation ;
-    rdfs:range coso:ReleasePoint .
+    rdfs:range coso:ReleasePoint ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:observedAtSamplePoint rdf:type owl:ObjectProperty ;
     rdfs:label "observed at sample point";
     dcterms:description "A relation between an observation of a contaminant from a material sample and the point where the sample was taken.";
     rdfs:subPropertyOf coso:observedAtPoint ;
     rdfs:domain coso:ContaminantSampleObservation ;
-    rdfs:range coso:SamplePoint .
+    rdfs:range coso:SamplePoint ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:fromSamplePoint rdf:type owl:ObjectProperty ;
     rdfs:label "from sample point";
     dcterms:description "A relation between a physical material sample and the location where the sample was taken.";
     rdfs:domain coso:MaterialSample ;
-    rdfs:range coso:SamplePoint .
+    rdfs:range coso:SamplePoint ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:isSampleOf rdf:type owl:ObjectProperty ;
     rdfs:label "is sample of";
     dcterms:description "A relation between a physcial material sample and the geographic feature the sample was taken from.";
     rdfs:subPropertyOf sosa:isSampleOf ;
     rdfs:domain coso:MaterialSample ;
-    rdfs:range coso:SampledFeature .
+    rdfs:range coso:SampledFeature ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:hasResult rdf:type owl:ObjectProperty ;
     rdfs:label "has result";
     dcterms:description "A relation between an observation of a contaminant and the measurement that is the result of the observation.";
     rdfs:subPropertyOf sosa:hasResult;
     rdfs:domain coso:ContaminantObservation;
-    rdfs:range coso:ContaminantMeasurement.
+    rdfs:range coso:ContaminantMeasurement;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:hasResultQualifier rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf coso:resultAnnotation ;
     rdfs:label "has result qualifier";
     dcterms:description "A relation between measured result and metadata that qualifies the result.";
     rdfs:domain coso:ContaminantMeasurement;
-    rdfs:range coso:ResultQualifier .
+    rdfs:range coso:ResultQualifier ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:pointFromFeature rdf:type owl:ObjectProperty ;
     rdfs:label "point from feature";
     dcterms:description "A relation between a point location and the larger geospatial feature it is a part of.";
     rdfs:domain coso:Point ;
-    rdfs:range coso:Feature .
+    rdfs:range coso:Feature ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:observationAnnotation rdf:type owl:ObjectProperty ;
     rdfs:label "observation annotation";
     dcterms:description "A relation between an observation of a contaminant and additional metadata about the observation.";
     rdfs:domain coso:ContaminantObservation;
-    rdfs:range coso:ObservationAnnotation.
+    rdfs:range coso:ObservationAnnotation;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:observedProperty rdf:type owl:ObjectProperty ;
     rdfs:label "observed property";
     dcterms:description "A relation between an observation and the type of contamination property being observed. ";
     rdfs:subPropertyOf sosa:observedProperty ;
     rdfs:domain coso:ContaminantObservation ;
-    rdfs:range coso:ContaminationProperty .
+    rdfs:range coso:ContaminationProperty ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:ofSubstance rdf:type owl:ObjectProperty ;
     rdfs:label "of substance";
@@ -366,35 +421,41 @@ coso:ofSubstance rdf:type owl:ObjectProperty ;
                  owl:unionOf ( coso:Substance
                                coso:SubstanceCollection
                               )
-                ] .
+                ];
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:ofFeatureType rdf:type owl:ObjectProperty ;
     rdfs:label "of feature type";
     dcterms:description "A relation between a feature and a controlled vocabulary term that describes the type of feature";
-    rdfs:range coso:FeatureType. 
+    rdfs:range coso:FeatureType ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> . 
 
 coso:resultAnnotation rdf:type owl:ObjectProperty ;
     rdfs:label "result annotation"; 
-    dcterms:description "A relation between a result and additional metadata about the result.".
+    dcterms:description "A relation between a result and additional metadata about the result.";
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:sampleAnnotation rdf:type owl:ObjectProperty ;
     rdfs:label "sample annotation";
     dcterms:description "A relation between a material sample and additional metadata about the sample.";
     rdfs:domain coso:MaterialSample;
-    rdfs:range coso:SampleAnnotation. 
+    rdfs:range coso:SampleAnnotation;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> . 
 
 coso:sampleOfMaterialType rdf:type owl:ObjectProperty ;
     rdfs:label "sample of material type";
     dcterms:description "A relation between a material sample and the type of material.";
     rdfs:domain coso:MaterialSample ;
-    rdfs:range coso:SampleMaterialType .
+    rdfs:range coso:SampleMaterialType ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:usedAnalysisMethod rdf:type owl:ObjectProperty ;
     rdfs:label "used analysis method";
     dcterms:description "A relation between an observation of a contaminant and the analysis method that was used to perform the observation.";
     rdfs:subPropertyOf sosa:usedProcedure ;
     rdfs:domain coso:ContaminantObservation ;
-    rdfs:range coso:AnalysisMethod .
+    rdfs:range coso:AnalysisMethod ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 ###  Reused Object Properties
 
@@ -414,27 +475,32 @@ sosa:usedProcedure rdf:type owl:ObjectProperty.
 coso:substanceID rdf:type owl:DatatypeProperty;
     rdfs:label "substance identifier" ;
     dcterms:description "The unique identifier for the substance.";
-    rdfs:subPropertyOf dcterms:identifier. 
+    rdfs:subPropertyOf dcterms:identifier; 
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:casNumber rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf coso:substanceID ;
     dcterms:description "The cas number of the substance.";
-    rdfs:label "cas number" .
+    rdfs:label "cas number" ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:measurementUnit rdf:type owl:DatatypeProperty ;
     rdfs:label "measurement unit" ;
     dcterms:description "The unit of measurement the describes the result.";
-    rdfs:domain coso:ContaminantMeasurement.
+    rdfs:domain coso:ContaminantMeasurement ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:measurementValue rdf:type owl:DatatypeProperty ;
     rdfs:label "measurement value" ;
     dcterms:description "The numeric value or enumerated value that quantifies or qualifies the result.";
-    rdfs:domain coso:ContaminantMeasurement.
+    rdfs:domain coso:ContaminantMeasurement ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:observedTime rdf:type owl:DatatypeProperty ;
     rdfs:label "observed time" ;
     dcterms:description "The time at which the contaminant was observed in the environment.";
-    rdfs:domain coso:ContaminantObservation. 
+    rdfs:domain coso:ContaminantObservation ;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 #################################################################
 #    Individuals
@@ -442,21 +508,26 @@ coso:observedTime rdf:type owl:DatatypeProperty ;
 
 coso:MaximumContaminantConcentrationQuantityKind rdf:type owl:NamedIndividual ,
                                                       coso:ContaminantConcentrationQuantityKind ;
-                                        rdfs:label "Maximum Contaminant Concentration Quantity" .
+                                        rdfs:label "Maximum Contaminant Concentration Quantity" ;
+                                        rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 
 coso:SingleContaminantConcentrationQuantityKind rdf:type owl:NamedIndividual ,
                                                      coso:ContaminantConcentrationQuantityKind ;
-                                        rdfs:label "Single Contaminant Concentration Quantity" .
+                                        rdfs:label "Single Contaminant Concentration Quantity" ;
+                                        rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:AggregateContaminationConcentrationQuantityKind rdf:type owl:NamedIndividual ,
                                                      coso:ContaminantConcentrationQuantityKind ;
-                                        rdfs:label "Aggregate Contaminant Concentration Quantity" .
+                                        rdfs:label "Aggregate Contaminant Concentration Quantity" ;
+                                        rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:SingleContaminantVolumeQuantityKind rdf:type owl:NamedIndividual ,
                                               coso:ContaminantVolumeQuantityKind ;
-                                        rdfs:label "Single Contaminant Volume Quantity" .
+                                        rdfs:label "Single Contaminant Volume Quantity" ;
+                                        rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .
 
 coso:SummedContaminantVolumeQuantityKind rdf:type owl:NamedIndividual ,
                                               coso:ContaminantVolumeQuantityKind ;
-                                        rdfs:label "Summed Contaminant Volume Quantity" .
+                                        rdfs:label "Summed Contaminant Volume Quantity" ;
+                                        rdfs:isDefinedBy <http://w3id.org/coso/v1/contaminoso> .

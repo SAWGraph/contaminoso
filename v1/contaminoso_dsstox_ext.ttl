@@ -12,7 +12,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @base <http://w3id.org/coso/dsstox_ext#> .
 
-<http://w3id.org/coso/dsstox_ext#> rdf:type owl:Ontology ;
+<http://w3id.org/coso/dsstox_ext> rdf:type owl:Ontology ;
                                               owl:versionIRI <http://w3id.org/coso/v1/dsstox_ext#> ;
                                               dcterms:created "2025-03-30"@en-us ;
                                               dcterms:creator <http://orcid.org/0000-0002-5331-5052> ,
@@ -21,7 +21,7 @@
                                               dcterms:description "the Contaminant Observation and Samples Ontology (ContaminOSO) extension to support DSSTox substance."@en-us ;
                                               dcterms:abstract "";
                                               dcterms:issued "2025-03-30"^^xsd:date ;
-                                              dcterms:modified "2025-03-30"^^xsd:date ;
+                                              dcterms:modified "2026-04-20"^^xsd:date ;
                                               dcterms:publisher <http://spatialai.org> ;
                                               dcterms:source "https://raw.githubusercontent.com/SAWGraph/kg-construction/master/ontologies/v1/contaminoso_dsstox_ext.ttl"^^<xsd:anyURI> ;
                                               dcterms:title "Contaminant Observation and Samples Ontology"@en-us ;
@@ -35,18 +35,22 @@ coso:ofDSSToxSubstance a owl:ObjectProperty;
         dcterms:description "A relation between an entity and a chemical substance as identified by DSSTox";
         rdfs:subPropertyOf coso:ofSubstance;
         rdfs:range dsstox:ChemicalEntity;
-        owl:propertyChainAxiom (coso:ofDatasetSubstance dsstox:sameAsDSSToxSubstance).  
+        owl:propertyChainAxiom (coso:ofDatasetSubstance dsstox:sameAsDSSToxSubstance);
+        rdfs:isDefinedBy <http://w3id.org/coso/v1/dsstox_ext> .
 
 coso:ofDatasetSubstance a owl:ObjectProperty;
         rdfs:label "of Dataset Substance";
         dcterms:description "A relation between an entity and a chemical substance as identified in a dataset specific controlled vocabulary";
-        rdfs:subPropertyOf coso:ofSubstance.
+        rdfs:subPropertyOf coso:ofSubstance;
+        rdfs:isDefinedBy <http://w3id.org/coso/v1/dsstox_ext> .
         #range is disjoint with dsstox:ChemicalEntity.   
 
 dsstox:sameAsDSSToxSubstance a owl:ObjectProperty;
     rdfs:label "same as DSSTox substance";
     dcterms:description "A relation between an dataset specific substance and the same substance as identified in dsstox.";
-    rdfs:range dsstox:ChemicalEntity. 
+    rdfs:range dsstox:ChemicalEntity;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/dsstox_ext> .
 
 dsstox:ChemicalEntity rdf:type owl:Class;
-    rdfs:subClassOf coso:Substance.
+    rdfs:subClassOf coso:Substance;
+    rdfs:isDefinedBy <http://w3id.org/coso/v1/dsstox_ext> .
