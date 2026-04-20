@@ -208,9 +208,6 @@ skos:altLabel rdf:type owl:DatatypeProperty .
 #    Classes
 #################################################################
 
-###  http://qudt.org/schema/qudt/Enumeration
-qudt:Enumeration rdf:type owl:Class .
-
 
 ###  http://qudt.org/schema/qudt/Quantity
 qudt:Quantity rdf:type owl:Class .
@@ -292,15 +289,13 @@ me_egad:EGAD-AggregatePFAS-Concentration rdf:type owl:Class ;
 
 ###  http://w3id.org/sawgraph/v1/me-egad#EGAD-AnalysisMethod
 me_egad:EGAD-AnalysisMethod rdf:type owl:Class ;
-                            rdfs:subClassOf qudt:Enumeration ,
-                                            coso:AnalysisMethod ;
+                            rdfs:subClassOf coso:AnalysisMethod ;
                             rdfs:label "EGAD - Analysis Method" .
 
 
 ###  http://w3id.org/sawgraph/v1/me-egad#EGAD-ConcentrationQualifier
 me_egad:EGAD-ConcentrationQualifier rdf:type owl:Class ;
-                                    rdfs:subClassOf qudt:Enumeration ,
-                                                    coso:ResultQualifier ;
+                                    rdfs:subClassOf coso:ResultQualifier ;
                                     rdfs:label "EGAD - Lab Qualifier" .
 
 
@@ -320,8 +315,7 @@ me_egad:EGAD-PFAS-Observation rdf:type owl:Class ;
 
 ###  http://w3id.org/sawgraph/v1/me-egad#EGAD-PFAS-ParameterName
 me_egad:EGAD-PFAS-ParameterName rdf:type owl:Class ;
-                                rdfs:subClassOf qudt:Enumeration ,
-                                                coso:Substance ;
+                                rdfs:subClassOf coso:Substance ;
                                 rdfs:label "EGAD - PFAS Parameter Name" .
 
 
@@ -339,8 +333,7 @@ me_egad:EGAD-ReportingLimit rdf:type owl:Class ;
 
 ###  http://w3id.org/sawgraph/v1/me-egad#EGAD-ResultType
 me_egad:EGAD-ResultType rdf:type owl:Class ;
-                        rdfs:subClassOf qudt:Enumeration ,
-                                        coso:ObservationAnnotation ;
+                        rdfs:subClassOf coso:ObservationAnnotation ;
                         rdfs:label "EGAD - Result Type" .
 
 
@@ -352,29 +345,25 @@ me_egad:EGAD-Sample rdf:type owl:Class ;
 
 ###  http://w3id.org/sawgraph/v1/me-egad#EGAD-SampleCollectionMethod
 me_egad:EGAD-SampleCollectionMethod rdf:type owl:Class ;
-                                    rdfs:subClassOf qudt:Enumeration ,
-                                                    coso:SampleAnnotation ;
+                                    rdfs:subClassOf coso:SampleAnnotation ;
                                     rdfs:label "EGAD - Sample Collection Method" .
 
 
 ###  http://w3id.org/sawgraph/v1/me-egad#EGAD-SampleDetailedLocation
 me_egad:EGAD-SampleDetailedLocation rdf:type owl:Class ;
-                                    rdfs:subClassOf qudt:Enumeration ,
-                                                    coso:SampleAnnotation ;
+                                    rdfs:subClassOf coso:SampleAnnotation ;
                                     rdfs:label "EGAD - Sample Detailed Location" .
 
 
 ###  http://w3id.org/sawgraph/v1/me-egad#EGAD-SampleMaterialType
 me_egad:EGAD-SampleMaterialType rdf:type owl:Class ;
-                                rdfs:subClassOf qudt:Enumeration ,
-                                                coso:SampleMaterialType ;
+                                rdfs:subClassOf coso:SampleMaterialType ;
                                 rdfs:label "EGAD - Sample Material Type" .
 
 
 ###  http://w3id.org/sawgraph/v1/me-egad#EGAD-SampleMaterialTypeQualifier
 me_egad:EGAD-SampleMaterialTypeQualifier rdf:type owl:Class ;
-                                         rdfs:subClassOf qudt:Enumeration ,
-                                                         coso:SampleMaterialType ;
+                                         rdfs:subClassOf coso:SampleMaterialType ;
                                          rdfs:label "EGAD - Sample Material Type Qualifier" .
 
 
@@ -386,8 +375,7 @@ me_egad:EGAD-SamplePoint rdf:type owl:Class ;
 
 ###  http://w3id.org/sawgraph/v1/me-egad#EGAD-SamplePointType
 me_egad:EGAD-SamplePointType rdf:type owl:Class ;
-                             rdfs:subClassOf qudt:Enumeration ,
-                                             coso:FeatureType ;
+                             rdfs:subClassOf coso:FeatureType ;
                              rdfs:label "EGAD - Sample Point Type" .
 
 
@@ -417,14 +405,13 @@ me_egad:EGAD-Site rdf:type owl:Class ;
 
 ###  http://w3id.org/sawgraph/v1/me-egad#EGAD-SiteType
 me_egad:EGAD-SiteType rdf:type owl:Class ;
-                      rdfs:subClassOf qudt:Enumeration ;
+                      rdfs:subclassOf coso:FeatureType ;
                       rdfs:label "EGAD - Site Type" .
 
 
 ###  http://w3id.org/sawgraph/v1/me-egad#EGAD-ValidationLevel
 me_egad:EGAD-ValidationLevel rdf:type owl:Class ;
-                             rdfs:subClassOf qudt:Enumeration ,
-                                             coso:ResultQualifier ;
+                             rdfs:subClassOf coso:ResultQualifier ;
                              rdfs:label "EGAD - Validation Level" .
 
 

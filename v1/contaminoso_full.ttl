@@ -56,7 +56,7 @@ qudt:quantityValue rdf:type owl:ObjectProperty .
 
 
 ###  http://qudt.org/schema/qudt/unit
-qudt:unit rdf:type owl:ObjectProperty .
+qudt:hasUnit rdf:type owl:ObjectProperty .
 
 
 ###  http://w3id.org/coso/v1/contaminoso#observedAtSamplePoint

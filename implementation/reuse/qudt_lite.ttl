@@ -287,11 +287,11 @@ qudt:unit
   rdfs:label "unit" ;
   rdfs:range qudt:Unit .
 
-qudt:unitFor
-  a owl:ObjectProperty ;
-  owl:inverseOf qudt:unit ;
-  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
-  rdfs:label "unit for" .
+#qudt:unitFor
+#  a owl:ObjectProperty ;
+#  owl:inverseOf qudt:unit ;
+#  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+#  rdfs:label "unit for" .
 
 qudt:quantityValue
   a owl:ObjectProperty ;
@@ -299,11 +299,11 @@ qudt:quantityValue
   rdfs:label "quantity value" ;
   rdfs:range qudt:QuantityValue .
 
-qudt:valueQuantity
-  a owl:ObjectProperty ;
-  owl:inverseOf qudt:quantityValue ;
-  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
-  rdfs:label "value for quantity" .
+#qudt:valueQuantity
+#  a owl:ObjectProperty ;
+#  owl:inverseOf qudt:quantityValue ;
+#  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+#  rdfs:label "value for quantity" .
 
 qudt:cardinality
   a owl:ObjectProperty ;
