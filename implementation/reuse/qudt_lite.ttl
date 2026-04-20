@@ -171,21 +171,21 @@ qudt:Concept
   rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
   rdfs:label "QUDT Concept" ;
   rdfs:subClassOf owl:Thing ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom qudt:Rule ;
-    owl:onProperty qudt:hasRule ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality "1"^^xsd:int ;
-    owl:onProperty dcterms:description ;
-  ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality "1"^^xsd:int ;
-    owl:onProperty dcterms:isReplacedBy ;
-  ] ;
+  #rdfs:subClassOf [
+  #  a owl:Restriction ;
+  #  owl:allValuesFrom qudt:Rule ;
+  #  owl:onProperty qudt:hasRule ;
+  #] ;
+  #rdfs:subClassOf [
+  #  a owl:Restriction ;
+  #  owl:maxCardinality "1"^^xsd:int ;
+  #  owl:onProperty dcterms:description ;
+  #] ;
+  #rdfs:subClassOf [
+  #  a owl:Restriction ;
+  #  owl:maxCardinality "1"^^xsd:int ;
+  #  owl:onProperty dcterms:isReplacedBy ;
+  #] ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:maxCardinality "1"^^xsd:int ;
@@ -212,11 +212,11 @@ qudt:Quantifiable
   rdfs:comment "<p><em>Quantifiable</em> ascribes to some thing the capability of being measured, observed, or counted.</p>"^^rdf:HTML ;
   rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
   rdfs:label "Quantifiable" ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom qudt:Datatype ;
-    owl:onProperty qudt:datatype ;
-  ] ;
+  #rdfs:subClassOf [
+  #  a owl:Restriction ;
+  #  owl:allValuesFrom qudt:Datatype ;
+  #  owl:onProperty qudt:datatype ;
+  #] ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:allValuesFrom qudt:Unit ;
@@ -227,11 +227,11 @@ qudt:Quantifiable
     owl:allValuesFrom qudt:Unit ;
     owl:onProperty qudt:unit ;
   ] ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:maxCardinality "1"^^xsd:int ;
-    owl:onProperty qudt:datatype ;
-  ] ;
+  #rdfs:subClassOf [
+  #  a owl:Restriction ;
+  #  owl:maxCardinality "1"^^xsd:int ;
+  #  owl:onProperty qudt:datatype ;
+  #] ;
   rdfs:subClassOf [
     a owl:Restriction ;
     owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -440,3 +440,14 @@ qudt:ucumCode
   rdfs:seeAlso <https://ucum.org/ucum.html> ;
   rdfs:subPropertyOf skos:notation .
 
+qudt:deprecated
+  a owl:DatatypeProperty ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "deprecated" ;
+  rdfs:range xsd:boolean .
+
+qudt:value
+  a owl:DatatypeProperty ;
+  dcterms:description "A property to relate an observable thing with a value of any kind"^^rdf:HTML ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "value" .
