@@ -10,7 +10,6 @@
 @prefix qudt.type: <http://qudt.org/vocab/type/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
-@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
 
 
 ### Extracted from https://github.com/qudt/qudt-public-repo/blob/main/src/main/rdf/schema/SCHEMA_QUDT.ttl 
@@ -129,11 +128,11 @@ qudt:Unit
   rdfs:label "Unit" ;
   rdfs:subClassOf qudt:Concept ;
   rdfs:subClassOf qudt:Verifiable ;
-  rdfs:subClassOf [
-    a owl:Restriction ;
-    owl:allValuesFrom qudt:Prefix ;
-    owl:onProperty qudt:prefix ;
-  ] ;
+  #rdfs:subClassOf [
+  #  a owl:Restriction ;
+  #  owl:allValuesFrom qudt:Prefix ;
+  #  owl:onProperty qudt:prefix ;
+  #] ;
   #rdfs:subClassOf [
   #  a owl:Restriction ;
   #  owl:allValuesFrom qudt:Unit ;
@@ -165,6 +164,96 @@ qudt:NumericUnion
   rdfs:label "Numeric union" ;
   rdfs:subClassOf dtype:numericUnion ;
   rdfs:subClassOf qudt:Concept .
+
+qudt:Concept
+  a owl:Class ;
+  rdfs:comment "The root class for all QUDT concepts."^^rdf:HTML ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "QUDT Concept" ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:allValuesFrom qudt:Rule ;
+    owl:onProperty qudt:hasRule ;
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:maxCardinality "1"^^xsd:int ;
+    owl:onProperty dcterms:description ;
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:maxCardinality "1"^^xsd:int ;
+    owl:onProperty dcterms:isReplacedBy ;
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:maxCardinality "1"^^xsd:int ;
+    owl:onProperty qudt:abbreviation ;
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:maxCardinality "1"^^xsd:int ;
+    owl:onProperty qudt:deprecated ;
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:maxCardinality "1"^^xsd:int ;
+    owl:onProperty qudt:id ;
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:maxCardinality "1"^^xsd:int ;
+    owl:onProperty qudt:plainTextDescription ;
+  ] .
+
+qudt:Quantifiable
+  a owl:Class ;
+  rdfs:comment "<p><em>Quantifiable</em> ascribes to some thing the capability of being measured, observed, or counted.</p>"^^rdf:HTML ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "Quantifiable" ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:allValuesFrom qudt:Datatype ;
+    owl:onProperty qudt:datatype ;
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:allValuesFrom qudt:Unit ;
+    owl:onProperty qudt:hasUnit ;
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:allValuesFrom qudt:Unit ;
+    owl:onProperty qudt:unit ;
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:maxCardinality "1"^^xsd:int ;
+    owl:onProperty qudt:datatype ;
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onProperty qudt:hasUnit ;
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onProperty qudt:unit ;
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onProperty qudt:value ;
+  ] ;
+.
+
+qudt:Verifiable
+  #a qudt:AspectClass ;
+  rdfs:comment "An aspect class that holds properties that provide external knowledge and specifications of a given resource." ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "Verifiable" .
 
 ############################## 
 # Object Properties
