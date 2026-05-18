@@ -129,7 +129,7 @@ me_egad_data:sampleMaterialTypeQualifier.SH rdf:type obo:FOODON_03411183. #sheep
 
 me_egad_data:sampleMaterialTypeQualifier.SI rdf:type obo:FOODON_03413358. #plant used as fodder 
 
-me_egad_data:sampleMaterialTypeQualifier.SMB rdf:type obo:NCBITaxon_147949. #small mouth basshttps://www.startpage.com/do/search?q=graphdb+update+namespace&segment=startpage.vivaldi
+me_egad_data:sampleMaterialTypeQualifier.SMB rdf:type obo:NCBITaxon_147949. #small mouth bass
 
 me_egad_data:sampleMaterialTypeQualifier.TMR rdf:type obo:FOODON_00004172. #feedstuff
 
