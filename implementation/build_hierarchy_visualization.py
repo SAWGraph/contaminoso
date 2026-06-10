@@ -432,14 +432,6 @@ def render_tree(nodes: dict[URIRef, NodeInfo], selected: set[URIRef], shared_tar
 def build_html(nodes: dict[URIRef, NodeInfo], selected: set[URIRef], shared_targets: set[URIRef], title: str) -> str:
     tree_markup = render_tree(nodes, selected, shared_targets)
     namespaces = namespace_prefixes_in_view(nodes, selected)
-    overlap_items = []
-    for uri in sorted(shared_targets, key=lambda term: nodes[term].label.lower() if term in nodes else local_name(term).lower()):
-        node = nodes.get(uri)
-        label = html.escape(node.label if node else local_name(uri))
-        overlap_items.append(
-            f"<li><span class='ns-box ns-{namespace_class_for_uri(uri)}'>{html.escape(namespace_prefix_for_uri(uri))}</span>"
-            f"<span class='instance-pill ns-{namespace_class_for_uri(uri)}'>{label}</span> <span class='uri'>{html.escape(str(uri))}</span></li>"
-        )
 
     return f"""<!doctype html>
 <html lang='en'>
@@ -590,18 +582,12 @@ def build_html(nodes: dict[URIRef, NodeInfo], selected: set[URIRef], shared_targ
 <body>
   <main>
     <h1>{html.escape(title)}</h1>
-    <p>Hierarchy extracted from the ontology sources, with shared alignment targets from the EGAD and WQP alignment files highlighted.</p>
+        <p>Hierarchy extracted from the ontology sources, with EGAD and WQP highlights shown inline where they map onto FOODON and COSO classes.</p>
     <section class='legend'>
             <strong>Namespaces</strong>
       <div class='tags'>
                 {''.join(f"<span class='ns-box ns-{ns.lower()}'>{html.escape(ns)}</span>" for ns in namespaces)}
       </div>
-    </section>
-    <section class='summary'>
-      <strong>Shared alignment targets</strong>
-      <ul class='summary-list'>
-        {''.join(overlap_items) if overlap_items else '<li>No shared alignment targets were found in the supplied alignment files.</li>'}
-      </ul>
     </section>
     <section class='tree'>
       <ul>{tree_markup}</ul>
